@@ -428,6 +428,242 @@ a:hover { color: var(--blue-deep); }
 .ach-card h4 { font-size: 0.8rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
 .ach-card p { font-size: 0.72rem; color: var(--text-sec); line-height: 1.4; }
 
+/* ═══ TRIAL CARDS — club badge + name ═══ */
+.trial-card {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 14px; text-align: center;
+  background: var(--card); border: 1px solid var(--border-lt);
+  border-radius: 12px; padding: 28px 22px;
+  box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+  transition: transform 0.16s, box-shadow 0.16s, border-color 0.16s;
+}
+.trial-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,32,64,0.12); border-color: var(--amber); }
+.trial-badge {
+  width: 80px; height: 80px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--card);
+  border-radius: 50%;
+  padding: 4px;
+}
+.trial-badge img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+.trial-badge-fallback {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.trial-card h3 { font-size: 1rem; font-weight: 800; color: var(--text); margin: 0; line-height: 1.2; }
+.trial-card .trial-meta { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.3px; }
+/* Achievement icon colour variants */
+.ach-i--amber { background: rgba(255,185,29,0.15); color: var(--amber-deep); }
+.ach-i--green { background: rgba(0,103,71,0.10); color: var(--green); }
+
+/* Cards with a photo header — image on top, content below */
+.ach-card.has-photo { padding: 0; overflow: hidden; text-align: left; }
+.ach-photo {
+  position: relative; width: 100%; aspect-ratio: 4 / 3;
+  overflow: hidden; background: #0a1a2e;
+}
+.ach-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  object-position: center 18%; /* bias to top — sport photos usually have heads up there */
+  transition: transform 0.4s ease;
+}
+.ach-photo.contain { background: #0a1a2e; }
+.ach-photo.contain img { object-fit: contain; }
+.ach-photo.center img { object-position: center center; }
+.ach-photo.top img { object-position: center top; }
+.ach-card.has-photo:hover .ach-photo img { transform: scale(1.04); }
+.ach-photo-tag {
+  position: absolute; top: 8px; left: 8px;
+  padding: 3px 8px; border-radius: 4px;
+  font-size: 9px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  background: rgba(0,0,0,0.65); color: #fff;
+  backdrop-filter: blur(8px);
+}
+.ach-photo-tag.amber { background: var(--amber); color: var(--blue-deep); }
+.ach-photo-tag.green { background: var(--green); color: #fff; }
+.ach-card.has-photo .ach-body { padding: 14px 18px 18px; }
+.ach-card.has-photo h4 { font-size: 0.85rem; margin-bottom: 4px; }
+.ach-card.has-photo p { font-size: 0.72rem; }
+
+/* Club card photo strip — small social-media-style thumbnail inside a club card */
+.club-photo {
+  margin-top: 8px;
+  display: flex; gap: 8px; align-items: stretch;
+  background: rgba(0,32,64,0.025);
+  border: 1px solid var(--border-lt);
+  border-radius: 8px; padding: 8px;
+  text-decoration: none;
+}
+.club-photo-img {
+  flex-shrink: 0;
+  width: 64px; height: 64px;
+  border-radius: 6px; overflow: hidden;
+  background: #0a1a2e;
+}
+.club-photo-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.club-photo-meta {
+  display: flex; flex-direction: column; justify-content: center; gap: 2px;
+  flex: 1; min-width: 0;
+}
+.club-photo-meta .cp-eyebrow {
+  font-size: 9px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  color: var(--green);
+}
+.club-photo-meta .cp-title {
+  font-size: 11.5px; font-weight: 700; color: var(--text);
+  line-height: 1.3;
+}
+
+/* ═══ CAREER STACK — season-grouped club spell cards ═══ */
+.cstack { display: flex; flex-direction: column; gap: 18px; margin-top: 28px; }
+.cseason {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--border-lt);
+}
+.cseason:first-child { border-top: none; padding-top: 0; }
+.cseason-label {
+  position: sticky; top: 70px;
+  align-self: start;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.cseason-year {
+  font-family: var(--font-display);
+  font-size: 1.75rem; font-weight: 700;
+  color: var(--blue-deep); line-height: 1;
+  letter-spacing: -0.5px;
+}
+.cseason-tag {
+  display: inline-block; padding: 3px 8px;
+  font-size: 9.5px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  border-radius: 4px; width: fit-content;
+}
+/* Tag colours — Senior = green, Academy = blue, Debut/Step5 = amber */
+.cseason-tag.senior { background: rgba(0,103,71,0.10); color: var(--green); }
+.cseason-tag.academy { background: rgba(0,94,184,0.10); color: var(--blue); }
+.cseason-tag.debut { background: rgba(255,185,29,0.18); color: var(--amber-deep); }
+.cseason-tag.recent { background: var(--border-lt); color: var(--text-sec); }
+.cseason-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.cseason-clubs {
+  display: flex; flex-direction: column; gap: 10px;
+}
+/* Within a season: senior row on top, academy row below */
+.cseason-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+.club-card {
+  background: var(--card); border: 1px solid var(--border-lt);
+  border-radius: 10px; padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 8px;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  position: relative;
+}
+.club-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,32,64,0.10); }
+/* Senior step 5 → amber highlight (current peak) */
+.club-card.senior-step5 { border-left: 4px solid var(--amber); padding-left: 14px; background: linear-gradient(135deg, rgba(255,185,29,0.05), transparent); }
+/* Senior (step 6 / step 7) → green */
+.club-card.senior { border-left: 4px solid var(--green); padding-left: 14px; }
+/* Academy → blue */
+.club-card.academy { border-left: 4px solid var(--blue); padding-left: 14px; background: rgba(0,94,184,0.025); }
+.club-card-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+}
+.club-name { font-size: 0.95rem; font-weight: 800; color: var(--text); line-height: 1.25; }
+.club-level {
+  font-size: 9.5px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+/* Level labels picked up from card colour scheme */
+.club-level.step5 { color: var(--amber-deep); }
+.club-level.step6 { color: var(--green); }
+.club-level.academy { color: var(--blue); }
+.club-card-body {
+  display: flex; gap: 16px;
+  border-top: 1px dashed var(--border-lt);
+  padding-top: 8px;
+}
+.club-stat { display: flex; flex-direction: column; gap: 1px; }
+.club-stat-val { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--blue-deep); line-height: 1; }
+.club-stat-lbl { font-size: 8.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.club-note { font-size: 11px; color: var(--text-muted); font-style: italic; }
+
+@media (max-width: 760px) {
+  .cseason { grid-template-columns: 1fr; gap: 12px; }
+  .cseason-label { position: static; }
+  .cseason-year { font-size: 1.45rem; }
+}
+
+/* ═══ CAREER SNAPSHOT — hero stats banner ═══ */
+.snap {
+  margin-top: 16px;
+  padding: 30px 34px;
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 10px 32px rgba(0,32,64,0.28);
+  position: relative;
+  overflow: hidden;
+}
+.snap::before {
+  content: ''; position: absolute;
+  top: -50%; right: -10%;
+  width: 65%; height: 200%;
+  background: radial-gradient(circle, rgba(255,185,29,0.18), transparent 65%);
+  pointer-events: none;
+}
+.snap::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--amber), transparent);
+}
+.snap-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  position: relative; z-index: 1;
+}
+.snap-item { display: flex; flex-direction: column; gap: 4px; }
+.snap-val {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4.2vw, 3.1rem);
+  font-weight: 700; line-height: 1;
+  color: #fff; letter-spacing: -1px;
+}
+.snap-val .accent { color: var(--amber); }
+.snap-lbl {
+  font-size: 11px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.85);
+  margin-top: 6px;
+}
+.snap-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+  letter-spacing: 0.2px;
+}
+@media (max-width: 720px) {
+  .snap { padding: 24px 22px; }
+  .snap-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+}
+
 /* ═══ CONTACT CARDS ═══ */
 .contact-card {
   background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);

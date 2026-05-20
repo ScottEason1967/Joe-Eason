@@ -125,13 +125,32 @@
       text-align: center; padding: 5%;
       text-decoration: none; color: inherit;
       z-index: 5;
+      overflow: hidden;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    .hub-center::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('img/hub-center.jpg');
+      background-size: cover; background-position: center;
+      opacity: 0.55;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .hub-center::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.45) 75%, rgba(255,255,255,0.05) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hub-center > * { position: relative; z-index: 2; }
     .hub-center:hover { transform: translate(-50%, -50%) scale(1.03); box-shadow: 0 16px 44px rgba(0,32,64,0.36); }
-    .hub-center .num { font-family: var(--font-display); font-size: clamp(36px, 6vw, 56px); font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 4px; }
-    .hub-center .lbl { font-size: 11px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
-    .hub-center .sub { font-size: 11.5px; color: var(--text-sec); line-height: 1.45; max-width: 92%; }
-    .hub-center .cta { font-size: 11px; font-weight: 700; color: var(--blue); margin-top: 10px; letter-spacing: 0.3px; }
+    .hub-center:hover::before { opacity: 0.70; }
+    .hub-center .num { font-family: var(--font-display); font-size: clamp(36px, 6vw, 56px); font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 4px; text-shadow: 0 1px 2px rgba(255,255,255,0.6); }
+    .hub-center .lbl { font-size: 11px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; text-shadow: 0 1px 1px rgba(255,255,255,0.7); }
+    .hub-center .sub { font-size: 11.5px; color: var(--text); line-height: 1.45; max-width: 92%; font-weight: 500; text-shadow: 0 1px 1px rgba(255,255,255,0.7); }
+    .hub-center .cta { font-size: 11px; font-weight: 700; color: var(--blue); margin-top: 10px; letter-spacing: 0.3px; text-shadow: 0 1px 1px rgba(255,255,255,0.7); }
 
     /* Mobile fallback — stacked tile list instead of petals */
     .hub-mobile { display: none; }
@@ -205,8 +224,8 @@
     .bar-val { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: #fff; }
     .bar-lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; font-weight: 700; }
     .impact-big { text-align: center; margin-top: 16px; }
-    .impact-big-num { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: var(--blue); }
-    .impact-big-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+    .impact-big-num { font-family: var(--font-display); font-size: 5rem; font-weight: 700; color: var(--blue); line-height: 0.95; }
+    .impact-big-label { font-size: 11px; color: var(--text); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-top: 4px; }
     .impact-text h3 { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 12px; letter-spacing: -0.3px; }
     .impact-text p { font-size: 13.5px; color: var(--text-sec); line-height: 1.65; }
 
@@ -386,7 +405,8 @@
       <li><a href="highlights.html">Highlights</a></li>
       <li><a href="appearances.html">Appearances</a></li>
       <li><a href="bio.html">Bio</a></li>
-      <li><a href="athletic-profile.html">Athletic Profile</a></li>
+      <li><a href="athletic-profile.html">Training Standards</a></li>
+      <li><a href="futsal.html">Futsal</a></li>
       <li><a href="references.html">References</a></li>
     </ul>
   </div>
@@ -408,9 +428,15 @@
         <div class="hero-stat"><strong>CM</strong><small>Position</small></div>
       </div>
     </div>
-    <div class="hero-photo" style="display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;flex-direction:column;gap:8px;">
-      <i class="fas fa-camera" style="font-size:1.5rem;opacity:0.3;"></i>
-      <span>Action Photo</span>
+    <div class="hero-photo">
+      <img src="img/joe-action.jpg" alt="Joe Eason in action"
+           style="width:100%;height:100%;object-fit:cover;display:block;"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;flex-direction:column;gap:8px;">
+        <i class="fas fa-camera" style="font-size:1.5rem;opacity:0.3;"></i>
+        <span>Action Photo</span>
+        <small style="font-size:9px;letter-spacing:0.8px;">Save to site/img/joe-action.jpg</small>
+      </div>
     </div>
   </div>
 
@@ -567,12 +593,12 @@
       <div class="stat-card">
         <div class="s-label">Top Speed</div>
         <div class="s-val">34km/h</div>
-        <div class="s-detail"><span class="badge badge-pro">Pro Range</span></div>
+        <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
       <div class="stat-card">
         <div class="s-label">IMTP</div>
         <div class="s-val">3.30x</div>
-        <div class="s-detail"><span class="badge badge-pro">Pro Range</span></div>
+        <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
     </div>
     <a href="athletic-profile.html" class="stats-link">Full athletic profile <i class="fas fa-arrow-right"></i></a>
@@ -599,7 +625,7 @@
       </div>
       <div class="impact-text">
         <h3>Defensive Impact</h3>
-        <p>Marske United concede 0.91 goals per 90 minutes with Joe on the pitch, compared to 2.74 without. Based on 987 minutes on pitch (10 goals conceded) versus 1,443 minutes without (44 goals conceded). The pattern is consistent across a meaningful sample size in the 2025/26 season.</p>
+        <p>Marske United concede <strong>0.91 goals per 90 minutes</strong> with Joe on the pitch, compared to <strong>2.74 without</strong>. The pattern holds consistently across the 2025/26 season — positioning, communication and willingness to cover, applied for 90 minutes from minute one.</p>
       </div>
     </div>
   </div>

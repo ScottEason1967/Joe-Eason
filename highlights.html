@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Highlights — Joe Eason | Match Footage & Reels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* HIGHLIGHTS — page-specific styles */
+    .panel {
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 14px; margin-top: 16px;
+      padding: 28px 32px;
+      box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+    }
+    .panel-eyebrow {
+      font-size: 11px; font-weight: 800; letter-spacing: 1.8px;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .panel h2 {
+      font-size: 1.4rem; font-weight: 800; color: var(--text);
+      letter-spacing: -0.4px; line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .panel .panel-sub {
+      font-size: 0.88rem; color: var(--text-sec);
+      line-height: 1.6; margin-bottom: 18px; max-width: 700px;
+    }
+
+    /* Hero featured single video */
+    .hero-video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .hero-video img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: 0.9; transition: opacity 0.3s, transform 0.3s;
+    }
+    .hero-video:hover img { opacity: 1; transform: scale(1.02); }
+    .hero-video.playing img,
+    .hero-video.playing .hv-play,
+    .hero-video.playing .hv-tag { display: none; }
+    .hero-video iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    .hv-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 78px; height: 78px; border-radius: 50%;
+      background: rgba(0,48,135,0.92);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 2;
+      border: 3px solid rgba(255,255,255,0.95);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .hero-video:hover .hv-play { background: var(--blue); transform: translate(-50%, -50%) scale(1.08); }
+    .hv-play i { color: #fff; font-size: 1.5rem; margin-left: 4px; }
+    .hv-tag {
+      position: absolute; top: 16px; left: 16px;
+      padding: 6px 12px; border-radius: 6px;
+      background: rgba(0,0,0,0.7); color: #fff;
+      font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 1px;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+    .hv-tag.amber { background: var(--amber); color: var(--blue-deep); }
+    .hv-fallback {
+      position: absolute; bottom: 12px; right: 12px;
+      padding: 6px 12px; border-radius: 6px;
+      background: rgba(0,0,0,0.7); color: #fff;
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.6px;
+      text-decoration: none; z-index: 3;
+      display: none;
+    }
+    .hero-video.playing .hv-fallback { display: inline-block; }
+
+    /* Playlist cards — 2-up grid */
+    .pl-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 16px;
+    }
+    .pl-card {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a1a2e, #1a2e4a);
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .pl-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,32,64,0.25); }
+    .pl-card.playing { cursor: default; }
+    .pl-card.playing .pl-overlay,
+    .pl-card.playing .pl-strip,
+    .pl-card.playing .pl-play,
+    .pl-card.playing .pl-content { display: none; }
+    .pl-card iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    /* Filmstrip decoration suggesting multiple videos */
+    .pl-strip {
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 35%;
+      background:
+        linear-gradient(135deg, rgba(0,94,184,0.25), rgba(0,48,135,0.05)),
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent 18px,
+          rgba(255,255,255,0.06) 18px,
+          rgba(255,255,255,0.06) 22px
+        );
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+    .pl-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,30,60,0.4), transparent 60%);
+    }
+    .pl-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 35%;
+      padding: 20px 22px;
+      color: #fff;
+    }
+    .pl-count {
+      display: inline-block;
+      padding: 4px 9px;
+      background: rgba(255,185,29,0.95);
+      color: var(--blue-deep);
+      font-size: 10px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .pl-content h3 {
+      font-size: 1.05rem; font-weight: 800;
+      line-height: 1.25; margin-bottom: 4px;
+      color: #fff;
+    }
+    .pl-content p {
+      font-size: 0.78rem; color: rgba(255,255,255,0.75);
+      line-height: 1.45; margin: 0;
+    }
+    .pl-play {
+      position: absolute; top: 50%; right: 17.5%;
+      transform: translate(50%, -50%);
+      width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,48,135,0.92);
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid rgba(255,255,255,0.9);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      transition: transform 0.2s, background 0.2s;
+      z-index: 2;
+    }
+    .pl-card:hover .pl-play { background: var(--blue); transform: translate(50%, -50%) scale(1.08); }
+    .pl-play i { color: #fff; font-size: 1.1rem; margin-left: 3px; }
+
+    /* Full-width single playlist (for Full Games — the most important one) */
+    .pl-full {
+      aspect-ratio: 21 / 9;
+      max-width: 100%;
+    }
+    .pl-full .pl-content { right: 35%; padding: 26px 30px; }
+    .pl-full .pl-content h3 { font-size: 1.25rem; }
+    .pl-full .pl-content p { font-size: 0.85rem; max-width: 380px; }
+
+    /* CTA section */
+    .yt-cta {
+      text-align: center;
+      padding: 18px 0;
+    }
+    .yt-cta a {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 26px;
+      background: var(--card);
+      border: 1px solid var(--border-lt);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.92rem; font-weight: 700;
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+    .yt-cta a:hover { border-color: var(--amber); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,32,64,0.10); }
+    .yt-cta a i { color: #FF0000; font-size: 1.1rem; }
+
+    @media (max-width: 760px) {
+      .pl-grid { grid-template-columns: 1fr; }
+      .pl-full { aspect-ratio: 16 / 9; }
+      .panel { padding: 24px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-brand">Joe <em>Eason</em></a>
+    <button class="nav-ham" id="navHam"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="central-midfielder.html">The Complete 8</a></li>
+      <li><a href="highlights.html" class="on">Highlights</a></li>
+      <li><a href="appearances.html">Appearances</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="athletic-profile.html">Training Standards</a></li>
+      <li><a href="futsal.html">Futsal</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="pg-header">
+  <div class="wrap">
+    <div class="pg-label">Video</div>
+    <h1>Highlights & Match Footage</h1>
+    <p>Senior men's reel, full-game footage, and academy highlights archived by season. Click any panel below to play in place.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- HERO — Senior Men's Highlights single video -->
+  <div class="panel fi">
+    <div class="panel-eyebrow">Featured · Senior Men's Football</div>
+    <h2>2024/25 Senior Men's Highlights</h2>
+    <p class="panel-sub">Headline reel from the 2024/25 season at senior men's level. Best showcase of his game in one cut.</p>
+    <a href="https://www.youtube.com/watch?v=6bnzzGiVr_A" target="_blank" rel="noopener" class="hero-video" data-vid="6bnzzGiVr_A">
+      <img src="https://img.youtube.com/vi/6bnzzGiVr_A/maxresdefault.jpg" alt="2024/25 Senior Men's Highlights"
+           onerror="this.src='https://img.youtube.com/vi/6bnzzGiVr_A/hqdefault.jpg';">
+      <span class="hv-tag amber">Featured</span>
+      <div class="hv-play"><i class="fas fa-play"></i></div>
+    </a>
+  </div>
+
+  <!-- FULL GAMES PLAYLIST — get its own panel since it's the deepest evidence -->
+  <div class="panel fi">
+    <div class="panel-eyebrow">Full Matches</div>
+    <h2>Full Games & Associated Highlights</h2>
+    <p class="panel-sub">Complete match footage for scouts who want to see the 90 minutes, not just the cut. Six matches with highlight reels alongside.</p>
+    <div class="pl-card pl-full" data-playlist="PL0mkj0MPRllEr6vS7pYpyQbaYPZBIUxg9">
+      <div class="pl-strip"></div>
+      <div class="pl-overlay"></div>
+      <div class="pl-content">
+        <span class="pl-count"><i class="fas fa-list"></i> 6 Matches</span>
+        <h3>Full Games & Associated Highlights</h3>
+        <p>Full-match recordings paired with their highlight reels. Senior men's football, multiple opponents and clubs.</p>
+      </div>
+      <div class="pl-play"><i class="fas fa-play"></i></div>
+    </div>
+  </div>
+
+  <!-- ACADEMY HIGHLIGHTS — 2 seasons side by side -->
+  <div class="panel fi">
+    <div class="panel-eyebrow">Academy Football</div>
+    <h2>Highlight Reels by Season</h2>
+    <p class="panel-sub">Season-by-season reels from Gateshead Academy and Scarborough Athletic U19s.</p>
+    <div class="pl-grid">
+      <div class="pl-card" data-playlist="PL0mkj0MPRllHnvtGAALJX1e6eOC5hmXxu">
+        <div class="pl-strip"></div>
+        <div class="pl-overlay"></div>
+        <div class="pl-content">
+          <span class="pl-count"><i class="fas fa-list"></i> 6 Reels</span>
+          <h3>2024/25 Highlight Reels</h3>
+          <p>Gateshead U17, Scarborough U19, Grangetown.</p>
+        </div>
+        <div class="pl-play"><i class="fas fa-play"></i></div>
+      </div>
+      <div class="pl-card" data-playlist="PL0mkj0MPRllEUsskR_lgYAZBrqQHw61i4">
+        <div class="pl-strip"></div>
+        <div class="pl-overlay"></div>
+        <div class="pl-content">
+          <span class="pl-count"><i class="fas fa-list"></i> 8 Reels</span>
+          <h3>2023/24 Highlight Reels</h3>
+          <p>Various parts of the game from U15 &amp; U16 football.</p>
+        </div>
+        <div class="pl-play"><i class="fas fa-play"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube channel CTA -->
+  <div class="yt-cta fi">
+    <a href="https://www.youtube.com/@JoeE2007" target="_blank" rel="noopener">
+      <i class="fab fa-youtube"></i> Browse the full archive on YouTube
+    </a>
+  </div>
+
+</div><!-- /wrap -->
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <p>&copy; 2026 Joe Eason</p>
+  </div>
+</footer>
+
+<script>
+const ham = document.getElementById('navHam');
+const links = document.getElementById('navLinks');
+if (ham) {
+  ham.addEventListener('click', () => links.classList.toggle('on'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('on')));
+}
+document.querySelectorAll('.fi').forEach(el => {
+  new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }).observe(el);
+});
+
+// Click-to-play — handles both single-video heroes (data-vid) and playlists (data-playlist)
+(() => {
+  function buildIframe(src, title) {
+    const ifr = document.createElement('iframe');
+    ifr.src = src;
+    ifr.title = title || 'Video';
+    ifr.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+    ifr.setAttribute('allowfullscreen', '');
+    return ifr;
+  }
+
+  // Single video — hero embed
+  document.querySelectorAll('.hero-video[data-vid]').forEach(slot => {
+    slot.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      if (slot.classList.contains('playing')) return;
+      if (e.target.closest('.hv-fallback') || e.target.tagName === 'IFRAME') return;
+      e.preventDefault();
+      const vid = slot.dataset.vid;
+      const url = 'https://www.youtube-nocookie.com/embed/' + vid +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      slot.appendChild(buildIframe(url, slot.querySelector('img')?.alt));
+      // Fallback link
+      const fb = document.createElement('a');
+      fb.className = 'hv-fallback';
+      fb.href = 'https://www.youtube.com/watch?v=' + vid;
+      fb.target = '_blank';
+      fb.rel = 'noopener';
+      fb.textContent = 'Open on YouTube ↗';
+      slot.appendChild(fb);
+      slot.classList.add('playing');
+    });
+  });
+
+  // Playlist embed
+  document.querySelectorAll('.pl-card[data-playlist]').forEach(slot => {
+    slot.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      if (slot.classList.contains('playing')) return;
+      if (e.target.tagName === 'IFRAME') return;
+      e.preventDefault();
+      const list = slot.dataset.playlist;
+      const url = 'https://www.youtube-nocookie.com/embed/videoseries?list=' + list +
+        '&autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      slot.appendChild(buildIframe(url, 'Playlist'));
+      slot.classList.add('playing');
+    });
+  });
+})();
+</script>
+</body>
+</html>
