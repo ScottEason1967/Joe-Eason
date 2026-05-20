@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complete 8 — Joe Eason | Central Midfielder Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* COMPLETE 8 — PAGE-SPECIFIC STYLES */
+    .c8-intro {
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 14px; padding: 48px 40px;
+      margin-top: 16px; box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+    }
+    .c8-intro .lead {
+      font-size: 1.05rem; color: var(--text); line-height: 1.85;
+      max-width: 720px;
+    }
+    .c8-intro .lead strong { color: var(--blue-deep); }
+
+    /* SKILL SECTIONS */
+    .skill-section {
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 14px; margin-top: 16px;
+      box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+      overflow: hidden;
+    }
+    .skill-header {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      min-height: 280px;
+    }
+    .skill-header.flip { direction: rtl; }
+    .skill-header.flip > * { direction: ltr; }
+    .skill-video {
+      position: relative; overflow: hidden;
+      background: #000; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .skill-video img {
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: 0.85; transition: opacity 0.3s, transform 0.3s;
+    }
+    .skill-video:hover img { opacity: 1; transform: scale(1.03); }
+    .skill-video .play-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(0,48,135,0.85);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 2;
+    }
+    .skill-video:hover .play-btn { background: var(--blue); transform: translate(-50%, -50%) scale(1.08); }
+    .skill-video .play-btn i { color: #fff; font-size: 1rem; margin-left: 3px; }
+    .skill-video .vid-label {
+      position: absolute; bottom: 12px; left: 12px;
+      padding: 4px 10px; border-radius: 4px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; background: rgba(0,48,135,0.8); color: #fff;
+      z-index: 2;
+    }
+    .skill-text {
+      padding: 36px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .skill-text .skill-num {
+      font-family: var(--font-display); font-size: 2.4rem;
+      font-weight: 700; color: var(--blue); line-height: 1;
+      opacity: 0.15; margin-bottom: 4px;
+    }
+    .skill-text h3 {
+      font-size: 1.2rem; font-weight: 800; color: var(--text);
+      margin-bottom: 12px; letter-spacing: -0.3px; line-height: 1.2;
+    }
+    .skill-text p {
+      font-size: 0.88rem; color: var(--text-sec);
+      line-height: 1.8; margin-bottom: 12px;
+    }
+    .skill-text .scout-note {
+      font-size: 0.82rem; color: var(--text-sec);
+      font-style: italic; line-height: 1.7;
+      border-left: 3px solid var(--blue); padding-left: 14px;
+      margin-top: 8px;
+    }
+    .skill-text .scout-note cite {
+      display: block; font-style: normal; font-weight: 700;
+      font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;
+    }
+
+    /* ATHLETIC EVIDENCE SECTION */
+    .evidence-section {
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 14px; margin-top: 16px; padding: 48px 40px;
+      box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+    }
+    .evidence-section .ev-label {
+      font-size: 11px; font-weight: 700; color: var(--blue);
+      text-transform: uppercase; letter-spacing: 2.2px; margin-bottom: 10px;
+    }
+    .evidence-section h2 {
+      font-size: 1.6rem; font-weight: 800; color: var(--text);
+      margin-bottom: 8px; letter-spacing: -0.3px;
+    }
+    .evidence-section .ev-sub {
+      font-size: 0.88rem; color: var(--text-sec); line-height: 1.75;
+      max-width: 640px; margin-bottom: 28px;
+    }
+    .ev-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      margin-bottom: 20px;
+    }
+    .ev-stat {
+      background: rgba(0,94,184,0.04); border: 1px solid var(--border-lt);
+      border-radius: 10px; padding: 18px 14px; text-align: center;
+    }
+    .ev-stat .ev-val {
+      font-family: var(--font-display); font-size: 1.6rem;
+      font-weight: 700; color: var(--blue-deep); line-height: 1;
+    }
+    .ev-stat .ev-metric {
+      font-size: 10px; color: var(--text-muted); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px; margin-top: 6px;
+    }
+    .ev-stat .ev-badge {
+      display: inline-block; padding: 2px 7px; border-radius: 8px;
+      font-size: 8px; font-weight: 800; text-transform: uppercase;
+      margin-top: 5px; background: rgba(0,103,71,0.1); color: var(--green);
+    }
+    .ev-link {
+      font-size: 13px; font-weight: 700; color: var(--blue);
+    }
+    .ev-link:hover { color: var(--blue-deep); }
+    .ev-link i { margin-left: 4px; transition: transform 0.15s; }
+    .ev-link:hover i { transform: translateX(3px); }
+
+    /* DEFENSIVE IMPACT */
+    .impact-section {
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 14px; margin-top: 16px; padding: 48px 40px;
+      box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+    }
+    .impact-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px;
+      align-items: center; margin-top: 24px;
+    }
+    .impact-visual { text-align: center; }
+    .impact-big-num {
+      font-family: var(--font-display); font-size: 4.5rem;
+      font-weight: 700; color: var(--blue); line-height: 1;
+    }
+    .impact-big-label {
+      font-size: 10px; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 1.5px;
+      font-weight: 700; margin-top: 4px; margin-bottom: 20px;
+    }
+    .impact-bars { display: flex; gap: 36px; align-items: flex-end; justify-content: center; }
+    .impact-col { text-align: center; }
+    .impact-bar {
+      width: 80px; border-radius: 8px 8px 0 0;
+      display: flex; align-items: flex-end; justify-content: center;
+      padding-bottom: 10px;
+    }
+    .bar-good { height: 60px; background: linear-gradient(to top, var(--blue), #60a5fa); }
+    .bar-bad { height: 200px; background: linear-gradient(to top, #ccc, #999); }
+    .bar-val { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .bar-lbl { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; font-weight: 700; }
+    .impact-narrative h3 {
+      font-size: 1.2rem; font-weight: 800; color: var(--text);
+      margin-bottom: 12px;
+    }
+    .impact-narrative p {
+      font-size: 0.88rem; color: var(--text-sec);
+      line-height: 1.8; margin-bottom: 14px;
+    }
+    .impact-narrative .def-videos {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px;
+    }
+    .def-vid {
+      display: flex; align-items: center; gap: 10px; padding: 10px 12px;
+      background: rgba(0,94,184,0.04); border: 1px solid var(--border-lt);
+      border-radius: 8px; text-decoration: none; color: inherit;
+      transition: background 0.15s;
+    }
+    .def-vid:hover { background: rgba(0,94,184,0.08); }
+    .def-vid i { color: var(--blue); font-size: 0.8rem; flex-shrink: 0; }
+    .def-vid span { font-size: 0.75rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .skill-header, .skill-header.flip { grid-template-columns: 1fr; direction: ltr; }
+      .skill-header.flip > * { direction: ltr; }
+      .skill-video { min-height: 220px; }
+      .skill-text { padding: 28px 24px; }
+      .ev-stats { grid-template-columns: repeat(2, 1fr); }
+      .impact-grid { grid-template-columns: 1fr; }
+      .impact-narrative .def-videos { grid-template-columns: 1fr; }
+      .c8-intro, .evidence-section, .impact-section { padding: 32px 22px; }
+    }
+    @media (max-width: 768px) {
+      .skill-text .skill-num { font-size: 1.8rem; }
+      .skill-text h3 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-brand">Joe <em>Eason</em></a>
+    <button class="nav-ham" id="navHam"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="central-midfielder.html" class="on">The Complete 8</a></li>
+      <li><a href="highlights.html">Highlights</a></li>
+      <li><a href="appearances.html">Appearances</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="athletic-profile.html">Athletic Profile</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="pg-header">
+  <div class="wrap">
+    <div class="pg-label">The Complete 8</div>
+    <h1>What Makes a Complete Central Midfielder?</h1>
+    <p>A central midfielder who genuinely does a bit of everything is rare. Here's the evidence that Joe Eason is one.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+  <div class="c8-intro fi">
+    <p class="lead">
+      The number 8 role demands more than any other position on the pitch. You need to defend, carry, create, tackle, head, pass short, pass long, read the game and set the tempo. Most players do two or three of those well. Joe does all of them, and the footage, data and scout assessments from the 2025/26 season back it up.
+    </p>
+    <p class="lead" style="margin-top: 14px;">
+      Below, each area of his game is broken down with video evidence from <strong>senior men's football at Step 5</strong>, supported by verified athletic testing data and third-party assessments. This isn't academy football against kids his own age. This is grown men's football, and he's been playing it regularly since he was 16.
+    </p>
+  </div>
+
+  <!-- 1. BALL CARRYING -->
+  <div class="skill-section fi">
+    <div class="skill-header">
+      <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" class="skill-video">
+        <img src="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" alt="Ball Carrying & Driving Runs">
+        <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+      </a>
+      <div class="skill-text">
+        <div class="skill-num">01</div>
+        <h3>Ball Carrying & Driving Runs</h3>
+        <p>
+          Joe carries the ball with purpose. He doesn't dribble for the sake of it — he drives forward to break lines, commit defenders and create advantages for the players around him. At 6'2" and 84kg with a verified top speed of 34 km/h, defenders can't just bump him off the ball or run him down.
+        </p>
+        <p>
+          Watch how he picks his moments: he recognises when a carry is more effective than a pass, and he has the physical tools to execute it against senior men.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. TECHNICAL QUALITY -->
+  <div class="skill-section fi">
+    <div class="skill-header flip">
+      <a href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" class="skill-video">
+        <img src="https://img.youtube.com/vi/DMwCNd98Mjw/hqdefault.jpg" alt="Technical Quality & Close Control">
+        <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+      </a>
+      <div class="skill-text">
+        <div class="skill-num">02</div>
+        <h3>Technical Quality & Close Control</h3>
+        <p>
+          Two-footed, composed on the ball, and clean in his execution. Joe's first touch is consistently good under pressure, and he picks the right pass rather than the safe one. His weight of pass — the ability to play the ball at exactly the right pace — is something scouts have highlighted repeatedly.
+        </p>
+        <div class="scout-note">
+          "Superb two-footed technician with vision and awareness. Dominates through intelligence and calmness in possession."
+          <cite>Mark Hodgson, Head Coach, Brazilian Soccer Schools</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. RECEIVING & TURNING -->
+  <div class="skill-section fi">
+    <div class="skill-header">
+      <a href="https://www.youtube.com/watch?v=QVeIEv2-YFg" target="_blank" class="skill-video">
+        <img src="https://img.youtube.com/vi/QVeIEv2-YFg/hqdefault.jpg" alt="Receiving & Turning Under Pressure">
+        <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+      </a>
+      <div class="skill-text">
+        <div class="skill-num">03</div>
+        <h3>Receiving & Turning Under Pressure</h3>
+        <p>
+          This is the bit that separates midfielders who can play at a higher level from those who can't. Can you receive the ball with your back to goal, with a man on you, and play forward? Joe does it consistently. He receives on his back foot, uses his body to shield, and turns or plays forward before the pressure arrives.
+        </p>
+        <div class="scout-note">
+          "Receive on back foot well, hold off man, head up to know where to play early or utilises his strength to roll man and play forward."
+          <cite>David Banjura, Former National League Chief Scout</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SHORT PASSING & TEMPO -->
+  <div class="skill-section fi">
+    <div class="skill-header flip">
+      <a href="https://www.youtube.com/watch?v=RFJdLW0SnmU" target="_blank" class="skill-video">
+        <img src="https://img.youtube.com/vi/RFJdLW0SnmU/hqdefault.jpg" alt="Short Passing & Tempo Control">
+        <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+      </a>
+      <div class="skill-text">
+        <div class="skill-num">04</div>
+        <h3>Short Passing & Tempo Control</h3>
+        <p>
+          Joe dictates the rhythm of the game. When the team needs to keep it, he keeps it. When the tempo needs to go up, he accelerates it. His short passing is crisp and purposeful — he doesn't just recycle; he moves the team forward through intelligent combinations.
+        </p>
+        <div class="scout-note">
+          "Powerful runner, good range of passing and able to control the tempo of the game. Comfortable in possession in any area of the park."
+          <cite>William Kinniburgh, Scout, Motherwell / Oxford United</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. LONGER RANGE PASSING -->
+  <div class="skill-section fi">
+    <div class="skill-header">
+      <a href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" class="skill-video">
+        <img src="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" alt="Longer Range Passing, Switches & Crossing">
+        <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+      </a>
+      <div class="skill-text">
+        <div class="skill-num">05</div>
+        <h3>Longer Range Passing, Switches & Crossing</h3>
+        <p>
+          This is where Joe's range really shows. He switches the play accurately over 40-50 yards, fizzes balls through the lines into feet and runners, and delivers quality from wide and deep positions. The ability to see a forward pass and execute it with the right weight is what multiple scouts have flagged as his standout quality.
+        </p>
+        <div class="scout-note">
+          "Your ability to see a forward pass is excellent. Your control and composure is very good. The standard in your passing and receiving a ball in space would only improve with better players around you."
+          <cite>William Kinniburgh, Scout, Motherwell / Oxford United</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATHLETIC EVIDENCE -->
+  <div class="evidence-section fi">
+    <div class="ev-label">Verified Data</div>
+    <h2>The Physical Platform</h2>
+    <p class="ev-sub">
+      Everything above is underpinned by elite-level physical attributes, verified through nine years of structured strength and conditioning work with PROformance Athlete Development. Joe doesn't just have the technical and tactical ability — he has the physical tools to deliver it against senior men, consistently, for 90 minutes.
+    </p>
+    <div class="ev-stats">
+      <div class="ev-stat">
+        <div class="ev-val">0.91s</div>
+        <div class="ev-metric">5m Sprint</div>
+        <div class="ev-badge">Elite</div>
+      </div>
+      <div class="ev-stat">
+        <div class="ev-val">305cm</div>
+        <div class="ev-metric">Broad Jump</div>
+        <div class="ev-badge">Elite</div>
+      </div>
+      <div class="ev-stat">
+        <div class="ev-val">62.5cm</div>
+        <div class="ev-metric">Abalakov Jump</div>
+        <div class="ev-badge">Elite</div>
+      </div>
+      <div class="ev-stat">
+        <div class="ev-val">34km/h</div>
+        <div class="ev-metric">Top Speed</div>
+        <div class="ev-badge">Pro Range</div>
+      </div>
+    </div>
+    <a href="athletic-profile.html" class="ev-link">Full athletic profile & testing history <i class="fas fa-arrow-right"></i></a>
+  </div>
+
+  <!-- 6. DEFENSIVE — BLOCKING, TACKLING, COVER -->
+  <div class="skill-section fi">
+    <div class="skill-header flip">
+      <a href="https://www.youtube.com/watch?v=RwaoxySKSFo" target="_blank" class="skill-video">
+        <img src="https://img.youtube.com/vi/RwaoxySKSFo/hqdefault.jpg" alt="Out of Possession: Blocking, Tackling & Defensive Cover">
+        <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+      </a>
+      <div class="skill-text">
+        <div class="skill-num">06</div>
+        <h3>Out of Possession: Blocking, Tackling & Defensive Cover</h3>
+        <p>
+          A midfielder who can't defend is half a player. Joe wins the ball cleanly, blocks shots, and covers his centre-backs when they step forward. He reads the game early enough to be in position before the danger develops. He's not just willing to defend — he's good at it.
+        </p>
+        <div class="scout-note">
+          "Physically strong, athletic and technically assured. Carried out instructions to the letter and played for the team showing good discipline and understanding."
+          <cite>John Rhodes, Scout, Shrewsbury Town FC</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. RECOVERY RUNS & HEADING -->
+  <div class="skill-section fi">
+    <div class="skill-header">
+      <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" class="skill-video">
+        <img src="https://img.youtube.com/vi/xvypi_6BQps/hqdefault.jpg" alt="Out of Possession: Recovery Runs & Heading">
+        <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+      </a>
+      <div class="skill-text">
+        <div class="skill-num">07</div>
+        <h3>Recovery Runs, Interceptions & Heading</h3>
+        <p>
+          At 6'2" with elite sprint acceleration (0.91s over 5m), Joe wins aerial duels and recovers ground quickly when caught upfield. His heading is strong defensively and his recovery runs are purposeful — he doesn't jog back, he sprints. This is where the athletic profile pays for itself in match situations.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEFENSIVE IMPACT -->
+  <div class="impact-section fi">
+    <div class="ev-label">2025/26 Season Data</div>
+    <h2>Defensive Impact</h2>
+    <p class="ev-sub">
+      The defensive videos above aren't just for show. The numbers from Marske United's 2025/26 season tell a stark story about what happens when Joe is on the pitch versus when he isn't.
+    </p>
+    <div class="impact-grid">
+      <div class="impact-visual">
+        <div class="impact-big-num">3x</div>
+        <div class="impact-big-label">Fewer goals conceded per 90</div>
+        <div class="impact-bars" style="margin-top: 20px;">
+          <div class="impact-col">
+            <div class="impact-bar bar-good"><span class="bar-val">0.91</span></div>
+            <div class="bar-lbl">With Joe</div>
+          </div>
+          <div class="impact-col">
+            <div class="impact-bar bar-bad"><span class="bar-val">2.74</span></div>
+            <div class="bar-lbl">Without</div>
+          </div>
+        </div>
+      </div>
+      <div class="impact-narrative">
+        <h3>The Numbers Behind It</h3>
+        <p>
+          Marske concede 0.91 goals per 90 minutes with Joe on the pitch, compared to 2.74 without him. That's based on 987 minutes on pitch (10 goals conceded) versus 1,443 minutes without (44 goals conceded). The pattern is consistent across a meaningful sample.
+        </p>
+        <p>
+          This isn't a coincidence or a small-sample anomaly. It's the result of his positioning intelligence, communication, willingness to cover, and ability to read transitions early. He organises the team around him from minute one.
+        </p>
+        <div class="def-videos">
+          <a href="https://www.youtube.com/watch?v=RwaoxySKSFo" target="_blank" class="def-vid">
+            <i class="fas fa-play"></i>
+            <span>Blocking, Tackling & Cover</span>
+          </a>
+          <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" class="def-vid">
+            <i class="fas fa-play"></i>
+            <span>Recovery Runs & Heading</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEADERSHIP CLOSER -->
+  <div class="c8-intro fi" style="margin-top: 16px;">
+    <div class="ev-label">Leadership</div>
+    <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text); margin-bottom: 12px; letter-spacing: -0.3px;">The Bit You Can't Coach</h2>
+    <p class="lead">
+      Every scout and coach who has worked with Joe mentions the same thing unprompted: his leadership. He organises from the first whistle, sets standards for those around him, and shows a maturity that people don't expect from an 18-year-old.
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px;">
+      <div class="scout-note" style="font-size: 0.82rem; color: var(--text-sec); font-style: italic; line-height: 1.7; border-left: 3px solid var(--blue); padding-left: 14px;">
+        "I really like your on-field personality, you appear to take responsibility. You very much come across as a leader. Keep this level of communication and leadership up as it is rare to see from young players."
+        <cite style="display:block;font-style:normal;font-weight:700;font-size:0.72rem;color:var(--text-muted);margin-top:4px;">Aaron Barnes, Scout, Stoke City FC</cite>
+      </div>
+      <div class="scout-note" style="font-size: 0.82rem; color: var(--text-sec); font-style: italic; line-height: 1.7; border-left: 3px solid var(--blue); padding-left: 14px;">
+        "Shows maturity beyond his years. Leading, instructing and organising teammates from the moment he steps on the pitch."
+        <cite style="display:block;font-style:normal;font-weight:700;font-size:0.72rem;color:var(--text-muted);margin-top:4px;">Stoke City, U23 Trial Assessment</cite>
+      </div>
+    </div>
+    <p class="lead" style="margin-top: 20px;">
+      <a href="references.html" style="font-weight: 700; color: var(--blue);">Read all scout reports and references →</a>
+    </p>
+  </div>
+
+</div><!-- /wrap -->
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <p>&copy; 2026 Joe Eason</p>
+  </div>
+</footer>
+
+<script>
+const ham = document.getElementById('navHam');
+const links = document.getElementById('navLinks');
+if (ham) {
+  ham.addEventListener('click', () => links.classList.toggle('on'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('on')));
+}
+document.querySelectorAll('.fi').forEach(el => {
+  new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }).observe(el);
+});
+</script>
+</body>
+</html>
