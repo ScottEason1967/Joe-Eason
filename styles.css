@@ -575,14 +575,16 @@ a:hover { color: var(--blue-deep); }
   position: relative;
 }
 .club-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,32,64,0.10); }
-/* Senior step 5 → amber highlight (current peak) */
+/* Senior step 4 → red accent (current peak) */
+.club-card.senior-step4 { border-left: 4px solid #d43333; padding-left: 14px; background: linear-gradient(135deg, rgba(212,51,51,0.06), transparent); }
+/* Senior step 5 → amber highlight (previous peak) */
 .club-card.senior-step5 { border-left: 4px solid var(--amber); padding-left: 14px; background: linear-gradient(135deg, rgba(255,185,29,0.05), transparent); }
 /* Senior (step 6 / step 7) → green */
 .club-card.senior { border-left: 4px solid var(--green); padding-left: 14px; }
 /* Academy → blue */
 .club-card.academy { border-left: 4px solid var(--blue); padding-left: 14px; background: rgba(0,94,184,0.025); }
 .club-card-head {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
 }
 .club-name { font-size: 0.95rem; font-weight: 800; color: var(--text); line-height: 1.25; }
 .club-level {
@@ -592,9 +594,15 @@ a:hover { color: var(--blue-deep); }
   white-space: nowrap;
 }
 /* Level labels picked up from card colour scheme */
+.club-level.step4 { color: #d43333; }
 .club-level.step5 { color: var(--amber-deep); }
 .club-level.step6 { color: var(--green); }
 .club-level.academy { color: var(--blue); }
+/* Crest inline in club-card-head */
+.club-crest { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
+.club-head-l { display: flex; align-items: center; gap: 10px; min-width: 0; }
+/* "Signed but not yet started" note replacing stats block */
+.club-signed-note { font-size: 11.5px; color: var(--amber-deep); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding-top: 8px; border-top: 1px dashed var(--border-lt); }
 .club-card-body {
   display: flex; gap: 16px;
   border-top: 1px dashed var(--border-lt);
