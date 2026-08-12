@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>The Modern Centre-Back — Joe Eason | Also profiled at CB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* CB PAGE — inherits pattern from The Complete 8 */
+    .cb-intro {
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 14px; padding: 44px 40px; margin-top: 16px;
+      box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+    }
+    .cb-intro .lead {
+      font-size: 1.05rem; color: var(--text); line-height: 1.85; max-width: 760px;
+    }
+    .cb-intro .lead strong { color: var(--blue-deep); }
+    .cb-intro .lead + .lead { margin-top: 14px; }
+
+    /* PENTAGON HUB */
+    .cb-hub-label { margin: 24px 0 24px; text-align: center; }
+    .cb-hub-label .rule { width: 72px; height: 4px; background: var(--amber); border-radius: 2px; margin: 0 auto 16px; }
+    .cb-hub-label .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; color: rgba(255,255,255,0.9); text-transform: uppercase; margin-bottom: 8px; }
+    .cb-hub-label h2 { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.6px; line-height: 1.1; margin-bottom: 6px; }
+    .cb-hub-label p { font-size: 14.5px; color: rgba(255,255,255,0.88); line-height: 1.55; max-width: 620px; margin: 0 auto; }
+
+    .cb-hub-stage {
+      position: relative; width: 100%; max-width: 720px;
+      margin: 0 auto 40px; aspect-ratio: 1 / 1;
+    }
+    .cb-hub-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .cb-hub-svg .petal { cursor: pointer; }
+    .cb-hub-svg .petal-stroke { stroke: rgba(255,255,255,0.22); stroke-width: 1.5; transition: stroke 0.22s ease, stroke-width 0.22s ease; }
+    .cb-hub-svg .petal-shade { transition: opacity 0.22s ease; }
+    .cb-hub-svg .petal:hover .petal-shade { opacity: 0.30; }
+    .cb-hub-svg .petal:hover .petal-stroke { stroke: var(--amber); stroke-width: 3; }
+    .cb-hub-svg .petal-title {
+      font-family: var(--font-display); font-size: 15.5px; font-weight: 700;
+      fill: #fff; text-transform: uppercase; letter-spacing: 0.6px;
+      paint-order: stroke; stroke: rgba(0,20,50,0.75); stroke-width: 3; stroke-linejoin: round;
+      pointer-events: none;
+    }
+    .cb-hub-svg .petal-num {
+      font-family: var(--font-display); font-size: 12px; font-weight: 700;
+      fill: rgba(255,255,255,0.7); text-transform: uppercase;
+      pointer-events: none;
+    }
+    .cb-hub-svg .petal-bg { fill: rgba(0,48,135,0.55); transition: fill 0.22s ease; }
+    .cb-hub-svg .petal:hover .petal-bg { fill: rgba(0,48,135,0.72); }
+
+    /* Centre disc */
+    .cb-hub-center {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 33%; aspect-ratio: 1/1; border-radius: 50%;
+      background: var(--card);
+      box-shadow: 0 12px 38px rgba(0,32,64,0.30);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 5%; z-index: 5;
+    }
+    .cb-hub-center .num { font-family: var(--font-display); font-size: clamp(30px, 5vw, 46px); font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+    .cb-hub-center .lbl { font-size: 10.5px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
+    .cb-hub-center .sub { font-size: 11px; color: var(--text); line-height: 1.4; font-weight: 500; max-width: 90%; }
+
+    /* Mobile: replace SVG hub with a stacked tile list */
+    .cb-hub-mobile { display: none; }
+    .cb-hub-mobile-list { display: grid; gap: 10px; margin: 20px 0 30px; }
+    .cb-mtile {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 12px; padding: 14px 16px;
+      text-decoration: none; color: inherit;
+    }
+    .cb-mtile .num { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--blue); flex-shrink: 0; width: 32px; }
+    .cb-mtile .title { font-size: 0.92rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+
+    /* SKILL SWITCHER — 5 tabs */
+    .cb-switch { margin-top: 20px; }
+    .cb-tabs {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 8px; margin-bottom: 24px;
+    }
+    .cb-tab {
+      position: relative; cursor: pointer;
+      background: var(--card); border: 1.5px solid var(--border-lt);
+      border-radius: 10px; overflow: hidden;
+      text-align: left; padding: 0;
+      font-family: inherit;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+      box-shadow: 0 1px 4px rgba(0,32,64,0.06);
+    }
+    .cb-tab:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,32,64,0.14); border-color: var(--blue); }
+    .cb-tab.active { border-color: var(--amber); box-shadow: 0 6px 16px rgba(0,94,184,0.18); }
+    .cb-tab.active::after {
+      content: ''; position: absolute; bottom: -10px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 10px solid var(--amber);
+    }
+    .cb-tab-thumb {
+      position: relative; aspect-ratio: 16/9;
+      background: #0d1f3a; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; padding: 6px; text-align: center;
+    }
+    .cb-tab-thumb img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: 0.85; transition: opacity 0.2s, transform 0.2s;
+    }
+    .cb-tab:hover .cb-tab-thumb img { opacity: 1; transform: scale(1.05); }
+    .cb-tab.active .cb-tab-thumb img { opacity: 1; }
+    .cb-tab-thumb.placeholder {
+      background: linear-gradient(135deg, #1a3866, #0d1f3a);
+      color: rgba(255,255,255,0.55);
+    }
+    .cb-tab-thumb.placeholder i { font-size: 1.15rem; opacity: 0.55; }
+    .cb-tab-thumb.placeholder .lbl { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+    .cb-tab-num {
+      position: absolute; top: 4px; left: 7px;
+      font-family: var(--font-display); font-size: 12px; font-weight: 700;
+      color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+      letter-spacing: 0.4px; z-index: 2;
+    }
+    .cb-tab-title {
+      padding: 6px 10px 8px;
+      font-size: 10.5px; font-weight: 800; color: var(--text);
+      line-height: 1.25; min-height: 36px;
+      background: var(--card);
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    .cb-tab.active .cb-tab-title { color: var(--blue-deep); background: rgba(255,185,29,0.08); }
+
+    /* Panels — reuses .case-* pattern from the Complete 8 */
+    .cb-panels { position: relative; }
+    .cb-panel {
+      display: none;
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+      animation: cb-fade 0.22s ease;
+    }
+    .cb-panel.active { display: block; }
+    @keyframes cb-fade {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CASE FILE layout (mirrors central-midfielder.html patterns) */
+    .case { padding: 32px 36px 28px; }
+    .case-banner {
+      display: flex; align-items: baseline; gap: 16px;
+      padding-bottom: 16px; margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-lt);
+    }
+    .case-banner .num {
+      font-family: var(--font-display); font-size: 2.2rem;
+      font-weight: 700; color: var(--blue); line-height: 1;
+      opacity: 0.85; flex-shrink: 0;
+    }
+    .case-banner .heads { display: flex; flex-direction: column; gap: 2px; }
+    .case-banner h3 {
+      font-size: 1.35rem; font-weight: 800; color: var(--text);
+      letter-spacing: -0.3px; line-height: 1.15;
+    }
+    .case-banner .role {
+      font-size: 11px; font-weight: 700; color: var(--blue);
+      text-transform: uppercase; letter-spacing: 1.5px;
+    }
+    .case-lead {
+      font-size: 1rem; color: var(--text); line-height: 1.7;
+      max-width: 760px; margin-bottom: 24px;
+    }
+    .case-lead strong { color: var(--blue-deep); }
+
+    /* Video placeholder in flow */
+    .case .cb-video-slot {
+      position: relative; display: flex; align-items: center; justify-content: center;
+      width: 100%; max-width: 760px; aspect-ratio: 16 / 9;
+      margin: 0 auto 22px; border-radius: 10px;
+      background: repeating-linear-gradient(45deg, #f4f6f8, #f4f6f8 10px, #eaeef2 10px, #eaeef2 20px);
+      border: 2px dashed var(--border-lt);
+      color: var(--text-muted); text-align: center; padding: 20px;
+    }
+    .case .cb-video-slot i { font-size: 1.6rem; margin-bottom: 10px; opacity: 0.55; display: block; }
+    .case .cb-video-slot span { display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
+    .case .cb-video-slot small { display: block; font-size: 10.5px; font-style: italic; opacity: 0.8; }
+
+    /* Stats */
+    .case-stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px; margin-bottom: 22px;
+    }
+    .case-stat {
+      padding: 12px 12px; text-align: center;
+      background: rgba(0,94,184,0.05);
+      border: 1px solid var(--border-lt); border-radius: 8px;
+    }
+    .case-stat .v { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--blue-deep); line-height: 1; }
+    .case-stat .l { font-size: 9.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 4px; }
+    .case-stat .b {
+      display: inline-block; margin-top: 4px;
+      padding: 2px 6px; border-radius: 6px;
+      font-size: 8.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px;
+      background: rgba(0,103,71,0.10); color: var(--green);
+    }
+
+    /* Evidence quotes */
+    .case-evidence {
+      display: grid; gap: 10px; margin-bottom: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .case-quote {
+      padding: 14px 16px; border-radius: 8px;
+      background: #fafbfc; border: 1px solid var(--border-lt);
+      border-left: 3px solid var(--blue);
+    }
+    .case-quote .qkind {
+      display: inline-block; margin-bottom: 8px;
+      padding: 2px 7px; border-radius: 6px;
+      font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px;
+      background: rgba(0,94,184,0.10); color: var(--blue);
+    }
+    .case-quote .q { font-size: 0.86rem; color: var(--text-sec); line-height: 1.65; font-style: italic; margin-bottom: 8px; }
+    .case-quote .a { font-size: 0.78rem; font-weight: 800; color: var(--text); line-height: 1.3; }
+    .case-quote .src { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
+    .case-quote.placeholder {
+      background: repeating-linear-gradient(45deg, #fafbfc, #fafbfc 8px, #f1f3f5 8px, #f1f3f5 16px);
+      border-left-color: var(--amber);
+    }
+    .case-quote.placeholder .qkind { background: rgba(255,185,29,0.15); color: var(--amber-deep); }
+    .case-quote.placeholder .q { color: var(--text-muted); font-style: normal; }
+
+    .case-analysis { max-width: 760px; }
+    .case-analysis p { font-size: 0.9rem; color: var(--text-sec); line-height: 1.8; margin-bottom: 12px; }
+
+    /* Match Experience section (shared with all panels but shown outside) */
+    .cb-experience {
+      background: var(--card); border: 1px solid var(--border-lt);
+      border-radius: 14px; padding: 40px; margin-top: 20px;
+      box-shadow: 0 2px 8px rgba(0,32,64,0.06);
+    }
+    .cb-experience h2 {
+      font-size: 1.4rem; font-weight: 800; color: var(--text);
+      letter-spacing: -0.3px; margin-bottom: 12px;
+    }
+    .cb-experience .lead { font-size: 0.95rem; color: var(--text-sec); line-height: 1.75; max-width: 720px; margin-bottom: 22px; }
+    .cb-exp-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .cb-exp-tile {
+      background: #fafbfc; border: 1px solid var(--border-lt);
+      border-radius: 10px; padding: 16px; text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .cb-exp-tile .crest { width: 46px; height: 46px; object-fit: contain; }
+    .cb-exp-tile .club { font-size: 0.82rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+    .cb-exp-tile .level { font-size: 9.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; }
+    .cb-exp-total {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border-lt);
+    }
+    .cb-exp-total .n { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: var(--blue-deep); line-height: 1; }
+    .cb-exp-total .t { font-size: 12px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 1.2px; }
+
+    /* External signal block */
+    .cb-signal {
+      background: linear-gradient(135deg, rgba(255,185,29,0.10), rgba(255,185,29,0.02));
+      border: 1px solid rgba(255,185,29,0.35); border-radius: 14px;
+      padding: 32px 36px; margin-top: 20px; text-align: center;
+    }
+    .cb-signal .eyebrow { font-size: 11px; font-weight: 800; color: var(--amber-deep); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+    .cb-signal p { font-size: 1.02rem; color: var(--text); line-height: 1.7; max-width: 700px; margin: 0 auto; }
+    .cb-signal p strong { color: var(--blue-deep); }
+
+    @media (max-width: 900px) {
+      .cb-hub-stage { display: none; }
+      .cb-hub-mobile { display: block; }
+      .cb-tabs { grid-template-columns: repeat(3, 1fr); }
+      .cb-exp-row { grid-template-columns: repeat(2, 1fr); }
+      .cb-intro { padding: 32px 22px; }
+      .cb-experience, .cb-signal { padding: 28px 22px; }
+    }
+    @media (max-width: 520px) {
+      .cb-tabs { grid-template-columns: repeat(2, 1fr); }
+      .case { padding: 24px 22px 20px; }
+      .case-evidence { grid-template-columns: 1fr; }
+    }
+
+    /* Anchor scroll offset so the sticky nav doesn't cover the switcher */
+    #cb-switch { scroll-margin-top: 70px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-brand">Joe <em>Eason</em></a>
+    <button class="nav-ham" id="navHam"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="central-midfielder.html">The Complete 8</a></li>
+      <li><a href="centre-back.html" class="on">Centre-Back</a></li>
+      <li><a href="highlights.html">Highlights</a></li>
+      <li><a href="appearances.html">Appearances</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="athletic-profile.html">Training Standards</a></li>
+      <li><a href="futsal.html">Futsal</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="pg-header">
+  <div class="wrap">
+    <div class="pg-label">Also profiled at Centre-Back</div>
+    <h1>The Modern Centre-Back</h1>
+    <p>Central midfield is Joe's primary position — the analysis on <a href="central-midfielder.html" style="color:var(--amber); text-decoration: underline;">The Complete 8</a> is built around it. He is also profiled at centre-back, with 13 senior games across four clubs and current EFL interest in the role.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+  <div class="cb-intro fi">
+    <p class="lead">
+      The modern centre-back is not the same job it was ten years ago. Height and heart are the starting point, not the finish. Recruiters now look for <strong>five things at the same time</strong>: aerial dominance, recovery pace, positional intelligence, front-foot defending, and the ability to play out from the back under pressure.
+    </p>
+    <p class="lead">
+      At 6'2" with the athletic and technical profile evidenced across this site, Joe has the full modern CB profile. He has played <strong>13 senior games at centre-back</strong> across four clubs — Scarborough Athletic U19s, Gateshead Academy, Billingham Town and Marske United — spanning academy football through Step 5, and is currently being profiled by EFL clubs for the position.
+    </p>
+  </div>
+
+  <!-- PENTAGON HUB -->
+  <div class="cb-hub-label">
+    <div class="rule"></div>
+    <div class="eyebrow">Five Competencies</div>
+    <h2>What a Modern CB Needs</h2>
+    <p>Five areas of the game a modern centre-back has to deliver. Click any petal to jump to Joe's evidence for that competency.</p>
+  </div>
+
+  <div class="cb-hub-stage fi">
+    <svg class="cb-hub-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Modern Centre-Back pentagon hub">
+      <g class="petals">
+
+        <!-- Petal 1 — AERIAL DOMINANCE -->
+        <a href="#cb-switch" class="petal" data-tab="1" aria-label="Aerial Dominance — jump to section">
+          <path d="M 317.24 277.30 A 148 148 0 0 1 482.76 277.30 L 612.49 84.97 A 380 380 0 0 0 187.51 84.97 Z" class="petal-bg"/>
+          <path d="M 317.24 277.30 A 148 148 0 0 1 482.76 277.30 L 612.49 84.97 A 380 380 0 0 0 187.51 84.97 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+          <path d="M 317.24 277.30 A 148 148 0 0 1 482.76 277.30 L 612.49 84.97 A 380 380 0 0 0 187.51 84.97 Z" class="petal-stroke" fill="none"/>
+          <text x="400.00" y="130.00" class="petal-num" text-anchor="middle">01</text>
+          <text x="400.00" y="205.60" class="petal-title" text-anchor="middle"><tspan x="400.00" dy="0">Aerial</tspan><tspan x="400.00" dy="18">Dominance</tspan></text>
+        </a>
+
+        <!-- Petal 2 — RECOVERY PACE -->
+        <a href="#cb-switch" class="petal" data-tab="2" aria-label="Recovery Pace — jump to section">
+          <path d="M 491.12 283.37 A 148 148 0 0 1 542.27 440.79 L 765.28 504.74 A 380 380 0 0 0 633.95 100.56 Z" class="petal-bg"/>
+          <path d="M 491.12 283.37 A 148 148 0 0 1 542.27 440.79 L 765.28 504.74 A 380 380 0 0 0 633.95 100.56 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+          <path d="M 491.12 283.37 A 148 148 0 0 1 542.27 440.79 L 765.28 504.74 A 380 380 0 0 0 633.95 100.56 Z" class="petal-stroke" fill="none"/>
+          <text x="640.00" y="270.00" class="petal-num" text-anchor="middle">02</text>
+          <text x="584.89" y="339.93" class="petal-title" text-anchor="middle"><tspan x="584.89" dy="0">Recovery</tspan><tspan x="584.89" dy="18">Pace</tspan></text>
+        </a>
+
+        <!-- Petal 3 — READING & POSITIONING -->
+        <a href="#cb-switch" class="petal" data-tab="3" aria-label="Reading and Positioning — jump to section">
+          <path d="M 539.07 450.62 A 148 148 0 0 1 405.17 547.91 L 413.26 779.77 A 380 380 0 0 0 757.08 529.97 Z" class="petal-bg"/>
+          <path d="M 539.07 450.62 A 148 148 0 0 1 405.17 547.91 L 413.26 779.77 A 380 380 0 0 0 757.08 529.97 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+          <path d="M 539.07 450.62 A 148 148 0 0 1 405.17 547.91 L 413.26 779.77 A 380 380 0 0 0 757.08 529.97 Z" class="petal-stroke" fill="none"/>
+          <text x="560.00" y="620.00" class="petal-num" text-anchor="middle">03</text>
+          <text x="514.27" y="557.27" class="petal-title" text-anchor="middle"><tspan x="514.27" dy="0">Reading &amp;</tspan><tspan x="514.27" dy="18">Positioning</tspan></text>
+        </a>
+
+        <!-- Petal 4 — FRONT-FOOT DEFENDING -->
+        <a href="#cb-switch" class="petal" data-tab="4" aria-label="Front-Foot Defending — jump to section">
+          <path d="M 394.83 547.91 A 148 148 0 0 1 260.93 450.62 L 42.92 529.97 A 380 380 0 0 0 386.74 779.77 Z" class="petal-bg"/>
+          <path d="M 394.83 547.91 A 148 148 0 0 1 260.93 450.62 L 42.92 529.97 A 380 380 0 0 0 386.74 779.77 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+          <path d="M 394.83 547.91 A 148 148 0 0 1 260.93 450.62 L 42.92 529.97 A 380 380 0 0 0 386.74 779.77 Z" class="petal-stroke" fill="none"/>
+          <text x="240.00" y="620.00" class="petal-num" text-anchor="middle">04</text>
+          <text x="285.73" y="557.27" class="petal-title" text-anchor="middle"><tspan x="285.73" dy="0">Front-Foot</tspan><tspan x="285.73" dy="18">Defending</tspan></text>
+        </a>
+
+        <!-- Petal 5 — PLAYING OUT -->
+        <a href="#cb-switch" class="petal" data-tab="5" aria-label="Playing Out from the Back — jump to section">
+          <path d="M 257.73 440.79 A 148 148 0 0 1 308.88 283.37 L 166.05 100.56 A 380 380 0 0 0 34.72 504.74 Z" class="petal-bg"/>
+          <path d="M 257.73 440.79 A 148 148 0 0 1 308.88 283.37 L 166.05 100.56 A 380 380 0 0 0 34.72 504.74 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
+          <path d="M 257.73 440.79 A 148 148 0 0 1 308.88 283.37 L 166.05 100.56 A 380 380 0 0 0 34.72 504.74 Z" class="petal-stroke" fill="none"/>
+          <text x="160.00" y="270.00" class="petal-num" text-anchor="middle">05</text>
+          <text x="215.11" y="339.93" class="petal-title" text-anchor="middle"><tspan x="215.11" dy="0">Playing</tspan><tspan x="215.11" dy="18">Out</tspan></text>
+        </a>
+
+      </g>
+    </svg>
+
+    <!-- Centre disc -->
+    <div class="cb-hub-center">
+      <div class="num">5</div>
+      <div class="lbl">Modern CB</div>
+      <div class="sub">The five competencies a modern centre-back has to deliver.</div>
+    </div>
+  </div>
+
+  <!-- Mobile fallback: stacked tiles -->
+  <div class="cb-hub-mobile">
+    <div class="cb-hub-mobile-list">
+      <a href="#cb-switch" class="cb-mtile" data-tab="1"><div class="num">01</div><div class="title">Aerial Dominance</div></a>
+      <a href="#cb-switch" class="cb-mtile" data-tab="2"><div class="num">02</div><div class="title">Recovery Pace</div></a>
+      <a href="#cb-switch" class="cb-mtile" data-tab="3"><div class="num">03</div><div class="title">Reading &amp; Positioning</div></a>
+      <a href="#cb-switch" class="cb-mtile" data-tab="4"><div class="num">04</div><div class="title">Front-Foot Defending</div></a>
+      <a href="#cb-switch" class="cb-mtile" data-tab="5"><div class="num">05</div><div class="title">Playing Out</div></a>
+    </div>
+  </div>
+
+  <!-- SKILL SWITCHER -->
+  <div class="cb-switch fi" id="cb-switch">
+    <div class="cb-tabs" role="tablist" aria-label="The five competencies of a modern centre-back">
+      <button class="cb-tab active" data-tab="1" role="tab" aria-selected="true" type="button">
+        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">01</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="cb-tab-title">Aerial Dominance</div>
+      </button>
+      <button class="cb-tab" data-tab="2" role="tab" aria-selected="false" type="button">
+        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">02</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="cb-tab-title">Recovery Pace</div>
+      </button>
+      <button class="cb-tab" data-tab="3" role="tab" aria-selected="false" type="button">
+        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">03</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="cb-tab-title">Reading &amp; Positioning</div>
+      </button>
+      <button class="cb-tab" data-tab="4" role="tab" aria-selected="false" type="button">
+        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">04</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="cb-tab-title">Front-Foot Defending</div>
+      </button>
+      <button class="cb-tab" data-tab="5" role="tab" aria-selected="false" type="button">
+        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">05</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
+        <div class="cb-tab-title">Playing Out</div>
+      </button>
+    </div>
+
+    <div class="cb-panels">
+
+      <!-- PANEL 1 — AERIAL DOMINANCE -->
+      <div class="cb-panel active" data-panel="1" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">01</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Dominate the aerial battle, both boxes</h3>
+            </div>
+          </div>
+          <p class="case-lead">The modern CB has to <strong>win aerial duels on both sides of the pitch</strong> — defending set pieces and long balls, and attacking corners as a genuine goal threat. Height and jump numbers are the starting point; timing and intent are what turn them into wins.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Aerial footage compiling</span>
+              <small>Headed goal from a corner + attacking header hitting the bar</small>
+            </div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">6'2"</div><div class="l">Height</div></div>
+            <div class="case-stat"><div class="v">60cm</div><div class="l">CMJ</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">62.5cm</div><div class="l">Abalakov Jump</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">84kg</div><div class="l">Frame</div></div>
+          </div>
+          <div class="case-evidence">
+            <div class="case-quote placeholder">
+              <span class="qkind">Scout — to verify</span>
+              <p class="q">Verbatim scout quote on aerial ability / physical dominance to be selected from source PDFs and slotted here.</p>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>Joe wins his headers because he combines the physical base (6'2", genuinely explosive vertical) with the timing to attack the ball at its highest point rather than react to it. The verified <strong>60cm countermovement jump</strong> and <strong>62.5cm Abalakov jump</strong> place him firmly in the elite range for his age group.</p>
+            <p>That physical base translates into two jobs: dominating defensive set pieces at Step 4 and higher, and being a genuine attacking threat from corners. Both boxes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2 — RECOVERY PACE -->
+      <div class="cb-panel" data-panel="2" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">02</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Cover the space behind the line</h3>
+            </div>
+          </div>
+          <p class="case-lead">Modern back lines defend high. That works only if the centre-backs have the <strong>recovery pace to close down a runner in behind</strong>, and the acceleration to stop attackers turning into space. Slow CBs cost goals; fast CBs let a whole team play higher.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Recovery pace footage compiling</span>
+              <small>Match clips of tracking runners and last-man cover — to be added</small>
+            </div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">1.62s</div><div class="l">10m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">3.89s</div><div class="l">30m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat feat"><div class="v">34 km/h</div><div class="l">Top Speed</div></div>
+          </div>
+          <div class="case-evidence">
+            <div class="case-quote placeholder">
+              <span class="qkind">Scout — to verify</span>
+              <p class="q">Verbatim quote on pace / physical athleticism from source PDFs (Lee Moore reference already on the Complete 8 references the improvement in running speed and technique — a strong candidate to reuse here).</p>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>Joe's <strong>34 km/h top speed</strong> is verified across three independent platforms: PROformance instrumented testing, STATSports GPS in match conditions, and PlayerMaker boot-strap data. That speed is not lab-only — it shows up when he is chasing a ball or a runner in a game.</p>
+            <p>The 5m sprint at 0.91s matters more than the top-end for a CB. It is the burst that turns a lost yard into a recovered one when an attacker gets on the shoulder. Both numbers give a coach freedom to play a higher line.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3 — READING & POSITIONING -->
+      <div class="cb-panel" data-panel="3" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">03</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Read the game and organise the back line</h3>
+            </div>
+          </div>
+          <p class="case-lead">The centre-back is the eyes of the back line. He is <strong>reading the game two passes ahead</strong>, positioning early, and organising the players around him so the defence never has to react — it acts. This is the difference between a defender who runs a lot and one who covers ground he never has to.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Positioning &amp; organisation footage compiling</span>
+              <small>Clips of interceptions, covering runs and organising the line</small>
+            </div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat feat"><div class="v">0.91</div><div class="l">Goals conceded per 90 with Joe</div></div>
+            <div class="case-stat"><div class="v">2.74</div><div class="l">Without Joe</div></div>
+            <div class="case-stat"><div class="v">−67%</div><div class="l">Difference</div><span class="b">Marske 25/26</span></div>
+          </div>
+          <div class="case-evidence">
+            <div class="case-quote placeholder">
+              <span class="qkind">Scout — to verify</span>
+              <p class="q">Verbatim quotes on reading the game, positioning, organising — several relevant lines exist in the source PDFs (Kinniburgh, Barnes and others). To be selected and slotted here.</p>
+            </div>
+            <div class="case-quote placeholder">
+              <span class="qkind">Scout — to verify</span>
+              <p class="q">Second complementary quote on leadership / communication.</p>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>The <strong>0.91 vs 2.74 goals-per-90 pattern</strong> at Marske United across 2025/26 is a defensive impact number — it does not care whether Joe is nominally playing midfield or the back line. The intelligence that reduces goals against from a midfield position transfers directly to CB, and typically becomes even more valuable there where the whole back line takes its cue from the CB's positioning.</p>
+            <p>This is also where the leadership signal sits. Multiple scouts have flagged Joe's communication and organising quality as unusually mature for his age. In a back-line role, that quality shows up in the shape of the entire defence, not just his own actions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 4 — FRONT-FOOT DEFENDING -->
+      <div class="cb-panel" data-panel="4" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">04</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Front-foot, don't back off</h3>
+            </div>
+          </div>
+          <p class="case-lead">Modern CBs <strong>step out to defend, not shuffle back</strong>. They engage early, meet attackers on the front foot, and win the physical exchange when it comes. The alternative — dropping and dropping — gives strikers time to turn, pick a pass, and shoot.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Front-foot defending footage compiling</span>
+              <small>Duels, tackles, front-foot engagements from senior matches</small>
+            </div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">6'2" / 84kg</div><div class="l">Physical Frame</div></div>
+            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Burst</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
+          </div>
+          <div class="case-evidence">
+            <div class="case-quote placeholder">
+              <span class="qkind">Scout — to verify</span>
+              <p class="q">Aaron Barnes (Stoke) quote on tackling — the strong tackling line already on The Complete 8 lifts naturally to this section.</p>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>Joe defends on the front foot because he has the physical tools to make that decision safely — the 5m burst to close space, the frame to hold his line in a duel, and the strength to win a shoulder-to-shoulder. He does not need to sit off.</p>
+            <p>The verified <strong>broad jump of 305cm</strong> is a proxy for lateral power — the same trait that shows up in a defensive slide tackle or a hold-off against a striker's roll.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 5 — PLAYING OUT -->
+      <div class="cb-panel" data-panel="5" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">05</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Two-footed, comfortable receiving, plays forward</h3>
+            </div>
+          </div>
+          <p class="case-lead">The recruitment gap between CBs who play out from the back and CBs who just hoof it is now huge. Pro clubs want the <strong>ball-playing centre-back</strong>: two-footed, comfortable receiving under pressure from a pressing striker, able to progress the ball with a pass through the lines rather than around them.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Playing-out footage compiling</span>
+              <small>Progressive passes from deeper positions — to be added</small>
+            </div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">Both</div><div class="l">Two-footed</div></div>
+            <div class="case-stat"><div class="v">Long</div><div class="l">Passing Range</div><span class="b">Verified</span></div>
+            <div class="case-stat"><div class="v">Composed</div><div class="l">Receiving Under Pressure</div></div>
+          </div>
+          <div class="case-evidence">
+            <div class="case-quote placeholder">
+              <span class="qkind">Scout — to verify</span>
+              <p class="q">David Banjura or William Kinniburgh quote on passing weight / receiving under pressure — both scouts already give strong verbatim on this from midfield positions. Lifts directly to CB context.</p>
+            </div>
+            <div class="case-quote placeholder">
+              <span class="qkind">Scout — to verify</span>
+              <p class="q">Second quote on two-footedness or playing forward.</p>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>The passing evidence for Joe already exists on this site, gathered from his midfield performances. Two-footed, verified for weight and range, comfortable receiving on the back foot with a defender close. All of that is exactly what a pressing striker asks a CB to demonstrate — and it is the part of a CB's game that decides which level a player ends up at.</p>
+            <p>This is the section that will grow fastest as CB-specific footage is added, because the evidence base from midfield is already deep.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MATCH EXPERIENCE -->
+  <div class="cb-experience fi">
+    <h2>Match experience at Centre-Back</h2>
+    <p class="lead">Thirteen senior games at centre-back across four clubs, spanning academy football through Step 5. Consistent selection across multiple coaches independently seeing the CB profile.</p>
+    <div class="cb-exp-row">
+      <div class="cb-exp-tile"><img class="crest" src="img/crest-scarborough.png" alt=""><div class="club">Scarborough Athletic U19s</div><div class="level">Academy</div></div>
+      <div class="cb-exp-tile"><img class="crest" src="img/crest-gateshead.jpg" alt=""><div class="club">Gateshead Academy</div><div class="level">Academy</div></div>
+      <div class="cb-exp-tile"><img class="crest" src="img/crest-billingham.png" alt=""><div class="club">Billingham Town FC</div><div class="level">Step 6</div></div>
+      <div class="cb-exp-tile"><img class="crest" src="img/crest-marske.png" alt=""><div class="club">Marske United FC</div><div class="level">Step 5</div></div>
+    </div>
+    <div class="cb-exp-total">
+      <div class="n">13</div>
+      <div class="t">Senior Games<br>at Centre-Back</div>
+    </div>
+  </div>
+
+  <!-- EXTERNAL SIGNAL -->
+  <div class="cb-signal fi">
+    <div class="eyebrow">Current Scout Interest</div>
+    <p>Alongside the ongoing central-midfielder pathway, Joe is <strong>currently being profiled by EFL clubs for the centre-back position</strong> — a direct scout signal that the modern CB profile above matches what pro clubs are actively recruiting for.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <p>&copy; 2026 Joe Eason</p>
+  </div>
+</footer>
+
+<script>
+// Nav mobile toggle
+const ham = document.getElementById('navHam');
+const links = document.getElementById('navLinks');
+if (ham) {
+  ham.addEventListener('click', () => links.classList.toggle('on'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('on')));
+}
+
+// Fade-in observer
+document.querySelectorAll('.fi').forEach(el => {
+  new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }).observe(el);
+});
+
+// Tab switcher — activate tab by data-tab number
+function activateTab(tabId) {
+  document.querySelectorAll('.cb-tab').forEach(b => {
+    const active = b.dataset.tab === tabId;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+  document.querySelectorAll('.cb-panel').forEach(p => {
+    p.classList.toggle('active', p.dataset.panel === tabId);
+  });
+}
+
+document.querySelectorAll('.cb-tab').forEach(btn => {
+  btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+});
+
+// Petal + mobile tile clicks open the corresponding tab AND scroll to switcher
+document.querySelectorAll('.cb-hub-svg .petal, .cb-mtile').forEach(el => {
+  el.addEventListener('click', (e) => {
+    const tabId = el.dataset.tab;
+    if (tabId) {
+      activateTab(tabId);
+      // href="#cb-switch" handles the scroll for us
+    }
+  });
+});
+</script>
+</body>
+</html>
