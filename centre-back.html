@@ -22,6 +22,22 @@
     }
     .cb-intro .lead strong { color: var(--blue-deep); }
     .cb-intro .lead + .lead { margin-top: 14px; }
+    .cb-intro-split {
+      display: grid; grid-template-columns: 1.55fr 1fr;
+      gap: 36px; align-items: center;
+    }
+    .cb-intro-photo {
+      width: 100%; aspect-ratio: 4 / 5;
+      border-radius: 12px; overflow: hidden;
+      background: linear-gradient(135deg, #eef3f8, #d9e3ec);
+      border: 1px solid var(--border-lt);
+      box-shadow: 0 4px 14px rgba(0,32,64,0.10);
+    }
+    .cb-intro-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 760px) {
+      .cb-intro-split { grid-template-columns: 1fr; gap: 24px; }
+      .cb-intro-photo { max-width: 320px; margin: 0 auto; aspect-ratio: 4/5; }
+    }
 
     /* PENTAGON HUB */
     .cb-hub-label { margin: 24px 0 24px; text-align: center; }
@@ -331,13 +347,18 @@
 <div class="wrap">
 
   <!-- INTRO -->
-  <div class="cb-intro fi">
-    <p class="lead">
-      The modern centre-back is not the same job it was ten years ago. Height and heart are the starting point, not the finish. Recruiters now look for <strong>five things at the same time</strong>: aerial dominance, recovery pace, positional intelligence, front-foot defending, and the ability to play out from the back under pressure.
-    </p>
-    <p class="lead">
-      At 6'2" with the athletic and technical profile evidenced across this site, Joe has the full modern CB profile. He has played <strong>13 senior games at centre-back</strong> across four clubs — Scarborough Athletic U19s, Gateshead Academy, Billingham Town and Marske United — spanning academy football through Step 5, and is currently being profiled by EFL clubs for the position.
-    </p>
+  <div class="cb-intro cb-intro-split fi">
+    <div class="cb-intro-text">
+      <p class="lead">
+        The modern centre-back is not the same job it was ten years ago. Height and heart are the starting point, not the finish. Recruiters now look for <strong>five things at the same time</strong>: aerial dominance, recovery pace, positional intelligence, front-foot defending, and the ability to play out from the back under pressure.
+      </p>
+      <p class="lead">
+        At 6'2" with the athletic and technical profile evidenced across this site, Joe has the full modern CB profile. He has played <strong>13 senior games at centre-back</strong> across four clubs — Scarborough Athletic U19s, Gateshead Academy, Billingham Town and Marske United — spanning academy football through Step 5, and is currently being profiled by EFL clubs for the position.
+      </p>
+    </div>
+    <div class="cb-intro-photo">
+      <img src="img/photo-cb-hero.jpg" alt="Joe Eason making a front-foot tackle in a senior match for Marske United">
+    </div>
   </div>
 
   <!-- PENTAGON HUB -->
