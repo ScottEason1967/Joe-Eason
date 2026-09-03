@@ -265,12 +265,23 @@
       border-radius: 14px; padding: 40px; margin-top: 20px;
       box-shadow: 0 2px 8px rgba(0,32,64,0.06);
     }
+    .cb-exp-split {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 36px; align-items: center;
+    }
+    .cb-exp-photo {
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,32,64,0.16);
+      background: #0d1f3a;
+    }
+    .cb-exp-photo img { width: 100%; height: auto; display: block; }
     .cb-experience h2 {
       font-size: 1.4rem; font-weight: 800; color: var(--text);
       letter-spacing: -0.3px; margin-bottom: 12px;
     }
-    .cb-experience .lead { font-size: 0.95rem; color: var(--text-sec); line-height: 1.75; max-width: 720px; margin-bottom: 22px; }
-    .cb-exp-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .cb-experience .lead { font-size: 0.95rem; color: var(--text-sec); line-height: 1.75; margin-bottom: 22px; }
+    .cb-exp-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
     .cb-exp-tile {
       background: #fafbfc; border: 1px solid var(--border-lt);
       border-radius: 10px; padding: 16px; text-align: center;
@@ -301,6 +312,8 @@
       .cb-hub-mobile { display: block; }
       .cb-tabs { grid-template-columns: repeat(3, 1fr); }
       .cb-exp-row { grid-template-columns: repeat(2, 1fr); }
+      .cb-exp-split { grid-template-columns: 1fr; gap: 24px; }
+      .cb-exp-photo { max-width: 320px; margin: 0 auto; }
       .cb-intro { padding: 32px 22px; }
       .cb-experience, .cb-signal { padding: 28px 22px; }
     }
@@ -662,17 +675,24 @@
 
   <!-- MATCH EXPERIENCE -->
   <div class="cb-experience fi">
-    <h2>Match experience at Centre-Back</h2>
-    <p class="lead">Thirteen senior games at centre-back across four clubs, spanning academy football through Step 5. Consistent selection across multiple coaches independently seeing the CB profile.</p>
-    <div class="cb-exp-row">
-      <div class="cb-exp-tile"><img class="crest" src="img/crest-scarborough.png" alt=""><div class="club">Scarborough Athletic U19s</div><div class="level">Academy</div></div>
-      <div class="cb-exp-tile"><img class="crest" src="img/crest-gateshead.jpg" alt=""><div class="club">Gateshead Academy</div><div class="level">Academy</div></div>
-      <div class="cb-exp-tile"><img class="crest" src="img/crest-billingham.png" alt=""><div class="club">Billingham Town FC</div><div class="level">Step 6</div></div>
-      <div class="cb-exp-tile"><img class="crest" src="img/crest-marske.png" alt=""><div class="club">Marske United FC</div><div class="level">Step 5</div></div>
-    </div>
-    <div class="cb-exp-total">
-      <div class="n">13</div>
-      <div class="t">Senior Games<br>at Centre-Back</div>
+    <div class="cb-exp-split">
+      <div class="cb-exp-photo">
+        <img src="img/photo-cb-number4.jpg" alt="Joe Eason wearing number 4 for Ashington AFC in a senior match">
+      </div>
+      <div class="cb-exp-content">
+        <h2>Match experience at Centre-Back</h2>
+        <p class="lead">Thirteen senior games at centre-back across four clubs, spanning academy football through Step 5. Consistent selection across multiple coaches independently seeing the CB profile.</p>
+        <div class="cb-exp-row">
+          <div class="cb-exp-tile"><img class="crest" src="img/crest-scarborough.png" alt=""><div class="club">Scarborough Athletic U19s</div><div class="level">Academy</div></div>
+          <div class="cb-exp-tile"><img class="crest" src="img/crest-gateshead.jpg" alt=""><div class="club">Gateshead Academy</div><div class="level">Academy</div></div>
+          <div class="cb-exp-tile"><img class="crest" src="img/crest-billingham.png" alt=""><div class="club">Billingham Town FC</div><div class="level">Step 6</div></div>
+          <div class="cb-exp-tile"><img class="crest" src="img/crest-marske.png" alt=""><div class="club">Marske United FC</div><div class="level">Step 5</div></div>
+        </div>
+        <div class="cb-exp-total">
+          <div class="n">13</div>
+          <div class="t">Senior Games<br>at Centre-Back</div>
+        </div>
+      </div>
     </div>
   </div>
 
