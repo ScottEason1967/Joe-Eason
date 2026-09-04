@@ -288,6 +288,13 @@
       display: flex; flex-direction: column; align-items: center; gap: 8px;
     }
     .cb-exp-tile .crest { width: 46px; height: 46px; object-fit: contain; }
+    .cb-exp-tile .crest-fallback {
+      width: 46px; height: 46px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+      color: #fff; font-family: var(--font-display); font-size: 15px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      letter-spacing: 0.5px;
+    }
     .cb-exp-tile .club { font-size: 0.82rem; font-weight: 800; color: var(--text); line-height: 1.2; }
     .cb-exp-tile .level { font-size: 9.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; }
     .cb-exp-total {
@@ -297,15 +304,18 @@
     .cb-exp-total .n { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: var(--blue-deep); line-height: 1; }
     .cb-exp-total .t { font-size: 12px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 1.2px; }
 
-    /* External signal block */
+    /* External signal block — dark spotlight callout with white text */
     .cb-signal {
-      background: linear-gradient(135deg, rgba(255,185,29,0.10), rgba(255,185,29,0.02));
-      border: 1px solid rgba(255,185,29,0.35); border-radius: 14px;
+      background: linear-gradient(135deg, rgba(0,32,64,0.90), rgba(0,48,135,0.75));
+      border: 1px solid rgba(255,185,29,0.45);
+      border-left: 4px solid var(--amber);
+      border-radius: 14px;
       padding: 32px 36px; margin-top: 20px; text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
-    .cb-signal .eyebrow { font-size: 11px; font-weight: 800; color: var(--amber-deep); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-    .cb-signal p { font-size: 1.02rem; color: var(--text); line-height: 1.7; max-width: 700px; margin: 0 auto; }
-    .cb-signal p strong { color: var(--blue-deep); }
+    .cb-signal .eyebrow { font-size: 11px; font-weight: 800; color: var(--amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+    .cb-signal p { font-size: 1.02rem; color: #fff; line-height: 1.7; max-width: 700px; margin: 0 auto; }
+    .cb-signal p strong { color: var(--amber); font-weight: 700; }
 
     @media (max-width: 900px) {
       .cb-hub-stage { display: none; }
@@ -366,7 +376,7 @@
         The modern centre-back is not the same job it was ten years ago. Height and heart are the starting point, not the finish. Recruiters now look for <strong>five things at the same time</strong>: aerial dominance, recovery pace, positional intelligence, front-foot defending, and the ability to play out from the back under pressure.
       </p>
       <p class="lead">
-        At 6'2" with the athletic and technical profile evidenced across this site, Joe has the full modern CB profile. He has played <strong>13 senior games at centre-back</strong> across four clubs — Scarborough Athletic U19s, Gateshead Academy, Billingham Town and Marske United — spanning academy football through Step 5, and is currently being profiled by EFL clubs for the position.
+        At 6'2" with the athletic and technical profile evidenced across this site, Joe has the full modern CB profile. He has played <strong>17 senior games at centre-back</strong> across five clubs — Scarborough Athletic U19s, Gateshead Academy, Billingham Town, Marske United and Northallerton Town — spanning academy football through Step 5, and is currently being profiled by EFL clubs for the position.
       </p>
     </div>
     <div class="cb-intro-photo">
@@ -681,15 +691,16 @@
       </div>
       <div class="cb-exp-content">
         <h2>Match experience at Centre-Back</h2>
-        <p class="lead">Thirteen senior games at centre-back across four clubs, spanning academy football through Step 5. Consistent selection across multiple coaches independently seeing the CB profile.</p>
+        <p class="lead">Seventeen senior games at centre-back across five clubs, spanning academy football through Step 5. Consistent selection across multiple coaches independently seeing the CB profile.</p>
         <div class="cb-exp-row">
           <div class="cb-exp-tile"><img class="crest" src="img/crest-scarborough.png" alt=""><div class="club">Scarborough Athletic U19s</div><div class="level">Academy</div></div>
           <div class="cb-exp-tile"><img class="crest" src="img/crest-gateshead.jpg" alt=""><div class="club">Gateshead Academy</div><div class="level">Academy</div></div>
           <div class="cb-exp-tile"><img class="crest" src="img/crest-billingham.png" alt=""><div class="club">Billingham Town FC</div><div class="level">Step 6</div></div>
           <div class="cb-exp-tile"><img class="crest" src="img/crest-marske.png" alt=""><div class="club">Marske United FC</div><div class="level">Step 5</div></div>
+          <div class="cb-exp-tile"><div class="crest-fallback">NT</div><div class="club">Northallerton Town</div><div class="level">Step 5</div></div>
         </div>
         <div class="cb-exp-total">
-          <div class="n">13</div>
+          <div class="n">17</div>
           <div class="t">Senior Games<br>at Centre-Back</div>
         </div>
       </div>
