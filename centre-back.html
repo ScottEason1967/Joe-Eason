@@ -223,6 +223,18 @@
     }
     .case-stat .v { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--blue-deep); line-height: 1; }
     .case-stat .l { font-size: 9.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 4px; }
+    .case-stat .l i { margin-right: 4px; }
+    .case-stat.sc-sp, .case-stat.sc-jp, .case-stat.sc-pw, .case-stat.sc-nu { border-top-width: 3px; }
+    .case-stat.sc-sp { background: rgba(0,94,184,0.07); border-top-color: var(--blue); }
+    .case-stat.sc-sp .v { color: var(--blue-deep); }
+    .case-stat.sc-jp { background: rgba(255,185,29,0.13); border-top-color: var(--amber); }
+    .case-stat.sc-jp .v { color: #8a6412; }
+    .case-stat.sc-jp .l i { color: #a9741a; }
+    .case-stat.sc-sp .l i { color: var(--blue); }
+    .case-stat.sc-pw { background: rgba(206,17,38,0.06); border-top-color: #CE1126; }
+    .case-stat.sc-pw .v { color: #CE1126; }
+    .case-stat.sc-pw .l i { color: #CE1126; }
+    .case-stat.sc-nu { background: rgba(0,32,64,0.04); border-top-color: #b8bec4; }
     .case-stat .b {
       display: inline-block; margin-top: 4px;
       padding: 2px 6px; border-radius: 6px;
@@ -509,10 +521,10 @@
             </div>
           </div>
           <div class="case-stats">
-            <div class="case-stat"><div class="v">6'2"</div><div class="l">Height</div></div>
-            <div class="case-stat"><div class="v">60cm</div><div class="l">CMJ</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">62.5cm</div><div class="l">Abalakov Jump</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">84kg</div><div class="l">Frame</div></div>
+            <div class="case-stat sc-nu"><div class="v">6'2"</div><div class="l">Height</div></div>
+            <div class="case-stat sc-jp"><div class="v">60cm</div><div class="l"><i class="fas fa-arrow-up"></i> CMJ</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-jp"><div class="v">62.5cm</div><div class="l"><i class="fas fa-arrow-up"></i> Abalakov Jump</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-nu"><div class="v">89.9kg</div><div class="l">Frame</div></div>
           </div>
           <div class="case-evidence">
             <div class="case-quote placeholder">
@@ -623,7 +635,7 @@
             </div>
           </div>
           <div class="case-stats">
-            <div class="case-stat"><div class="v">6'2" / 84kg</div><div class="l">Physical Frame</div></div>
+            <div class="case-stat"><div class="v">6'2" / 89.9kg</div><div class="l">Physical Frame</div></div>
             <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Burst</div><span class="b">Elite</span></div>
             <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
           </div>

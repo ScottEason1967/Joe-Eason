@@ -499,6 +499,18 @@
     }
     .case-stat.feat .v { color: #fff; }
     .case-stat.feat .l { color: rgba(255,255,255,0.85); }
+    .case-stat .l i { margin-right: 4px; }
+    .case-stat.sc-sp, .case-stat.sc-jp, .case-stat.sc-pw, .case-stat.sc-nu { border-top-width: 3px; }
+    .case-stat.sc-sp { background: rgba(0,94,184,0.07); border-top-color: var(--blue); }
+    .case-stat.sc-sp .v { color: var(--blue-deep); }
+    .case-stat.sc-sp .l i { color: var(--blue); }
+    .case-stat.sc-jp { background: rgba(255,185,29,0.13); border-top-color: var(--amber); }
+    .case-stat.sc-jp .v { color: #8a6412; }
+    .case-stat.sc-jp .l i { color: #a9741a; }
+    .case-stat.sc-pw { background: rgba(206,17,38,0.06); border-top-color: #CE1126; }
+    .case-stat.sc-pw .v { color: #CE1126; }
+    .case-stat.sc-pw .l i { color: #CE1126; }
+    .case-stat.sc-nu { background: rgba(0,32,64,0.04); border-top-color: #b8bec4; }
 
     /* Evidence — references + scout reports as quote cards (adapts to 2 or 3 cards) */
     .case-evidence {
@@ -682,10 +694,10 @@
             <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
           </a>
           <div class="case-stats">
-            <div class="case-stat"><div class="v">34 km/h</div><div class="l">Top Speed</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">6'2" / 84kg</div><div class="l">Physical Frame</div></div>
+            <div class="case-stat sc-sp"><div class="v">34 km/h</div><div class="l"><i class="fas fa-gauge-high"></i> Top Speed</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-sp"><div class="v">0.91s</div><div class="l"><i class="fas fa-bolt"></i> 5m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-jp"><div class="v">305cm</div><div class="l"><i class="fas fa-arrow-up"></i> Broad Jump</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-nu"><div class="v">6'2" / 89.9kg</div><div class="l">Physical Frame</div></div>
           </div>
           <div class="case-evidence">
             <div class="case-quote ref">
@@ -708,7 +720,7 @@
             </div>
           </div>
           <div class="case-analysis">
-            <p>Joe carries with purpose. He doesn't dribble for the sake of it — he drives forward to break lines, commit defenders and create advantages for the players around him. At 6'2" and 84kg with a verified top speed of 34 km/h, defenders can't bump him off the ball or run him down.</p>
+            <p>Joe carries with purpose. He doesn't dribble for the sake of it — he drives forward to break lines, commit defenders and create advantages for the players around him. At 6'2" and 89.9kg with a verified top speed of 34 km/h, defenders can't bump him off the ball or run him down.</p>
             <p>Watch how he picks his moments. He recognises when a carry is more effective than a pass, and he has the physical tools to execute it against senior men.</p>
           </div>
         </div>
@@ -773,9 +785,9 @@
             <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
           </a>
           <div class="case-stats">
-            <div class="case-stat"><div class="v">6'2" / 84kg</div><div class="l">Physical Frame</div></div>
-            <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">3.30×</div><div class="l">IMTP (bodyweight)</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-nu"><div class="v">6'2" / 89.9kg</div><div class="l">Physical Frame</div></div>
+            <div class="case-stat sc-jp"><div class="v">305cm</div><div class="l"><i class="fas fa-arrow-up"></i> Broad Jump</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-pw"><div class="v">3.7×</div><div class="l"><i class="fas fa-dumbbell"></i> IMTP (bodyweight)</div><span class="b">Elite</span></div>
           </div>
           <div class="case-evidence">
             <div class="case-quote ref">
@@ -798,7 +810,7 @@
             </div>
           </div>
           <div class="case-analysis">
-            <p>Joe receives on his back foot, uses his body to shield, and turns or plays forward before the pressure arrives. The IMTP (isometric mid-thigh pull) score at 3.30× bodyweight is what lets him hold off senior men in midfield without getting bullied off the ball.</p>
+            <p>Joe receives on his back foot, uses his body to shield, and turns or plays forward before the pressure arrives. The IMTP (isometric mid-thigh pull) score at 3.7× bodyweight is what lets him hold off senior men in midfield without getting bullied off the ball.</p>
           </div>
         </div>
       </div>
@@ -964,10 +976,10 @@
             <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
           </a>
           <div class="case-stats">
-            <div class="case-stat"><div class="v">34 km/h</div><div class="l">Top Speed</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">62.5cm</div><div class="l">Abalakov Jump</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">6'2"</div><div class="l">Height</div></div>
+            <div class="case-stat sc-sp"><div class="v">34 km/h</div><div class="l"><i class="fas fa-gauge-high"></i> Top Speed</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-jp"><div class="v">62.5cm</div><div class="l"><i class="fas fa-arrow-up"></i> Abalakov Jump</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-sp"><div class="v">0.91s</div><div class="l"><i class="fas fa-bolt"></i> 5m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-nu"><div class="v">6'2"</div><div class="l">Height</div></div>
           </div>
           <div class="case-evidence">
             <div class="case-quote ref">

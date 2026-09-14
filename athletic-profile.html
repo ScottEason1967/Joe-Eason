@@ -201,6 +201,23 @@
       .pros-photo { aspect-ratio: 1/1; min-height: 0; }
       .pros-narrative { padding: 24px 22px; }
     }
+    /* --- Physical category colour-coding (Speed / Jump / Power) --- */
+    .rgc-speed .stat-card { border-top: 3px solid var(--blue); }
+    .rgc-speed .s-label i { color: var(--blue); }
+    .rgc-speed .s-val { color: var(--blue-deep); }
+    .rgc-jump .stat-card { border-top: 3px solid var(--amber); }
+    .rgc-jump .s-label i { color: #a9741a; }
+    .rgc-jump .s-val { color: #8a6412; }
+    .rgc-power .stat-card { border-top: 3px solid #CE1126; }
+    .rgc-power .s-label i { color: #CE1126; }
+    .rgc-power .s-val { color: #CE1126; }
+    /* --- Testing-partner logo strip --- */
+    .verify-strip { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 14px 18px; max-width: 660px; margin: 26px auto 0; background: #fff; border-radius: 12px; padding: 14px 22px; box-shadow: 0 4px 16px rgba(0,32,64,0.10); }
+    .verify-strip .vs-lead { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.8px; color: var(--text-sec); }
+    .verify-strip .vs-chip { display: flex; align-items: center; justify-content: center; height: 46px; padding: 0 14px; border-radius: 9px; }
+    .verify-strip .vs-chip img { height: 30px; width: auto; object-fit: contain; display: block; }
+    .verify-strip .vs-dark { background: #0c0c0c; }
+    .verify-strip .vs-light { background: #fff; border: 1px solid rgba(0,32,64,0.12); }
   </style>
 </head>
 <body>
@@ -230,6 +247,11 @@
     <div class="pg-label">Standards &amp; Verified Data</div>
     <h1>Training Standards &amp; Athletic Profile</h1>
     <p>Who Joe trains alongside, how he trains, and the verified physical numbers that come out of it. Nine years on a structured strength and conditioning programme with PROformance.</p>
+    <div class="verify-strip fi">
+      <span class="vs-lead">Independently tested &amp; verified</span>
+      <span class="vs-chip vs-dark"><img src="img/logo-proformance.jpg" alt="PROformance"></span>
+      <span class="vs-chip vs-light"><img src="img/crest-gateshead.png" alt="Gateshead Academy"></span>
+    </div>
   </div>
 </div>
 
@@ -413,7 +435,7 @@
   <div class="wrap">
     <div class="sec-label">Speed</div>
     <div class="sec-title">Sprint Performance</div>
-    <div class="g4" style="margin-top: 32px;">
+    <div class="g4 rgc-speed" style="margin-top: 32px;">
       <div class="stat-card fi">
         <div class="s-label"><i class="fas fa-bolt"></i> 5m Sprint</div>
         <div class="s-val">0.91s</div>
@@ -442,12 +464,12 @@
   </div>
 </section>
 
-<!-- EXPLOSIVE POWER -->
+<!-- JUMP -->
 <section class="sec sec-alt">
   <div class="wrap">
-    <div class="sec-label">Power</div>
-    <div class="sec-title">Explosive Power</div>
-    <div class="g2" style="margin-top: 32px;">
+    <div class="sec-label">Jump</div>
+    <div class="sec-title">Explosive Jump</div>
+    <div class="g3 rgc-jump" style="margin-top: 32px;">
       <div class="stat-card fi">
         <div class="s-label"><i class="fas fa-arrow-right"></i> Broad Jump</div>
         <div class="s-val">305cm</div>
@@ -466,18 +488,34 @@
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
         <div class="s-detail">First to hit 60cm+ at PROformance. Personal best: Dec 2025</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- POWER -->
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-label">Power</div>
+    <div class="sec-title">Lower-Body Power</div>
+    <div class="g2 rgc-power" style="margin-top: 32px;">
+      <div class="stat-card fi">
+        <div class="s-label"><i class="fas fa-dumbbell"></i> Mid-Thigh Pull</div>
+        <div class="s-val">3.7&times; BW</div>
+        <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
+        <div class="s-detail">Isometric mid-thigh pull. Peak force 3.7&times; bodyweight.</div>
+      </div>
       <div class="stat-card fi">
         <div class="s-label"><i class="fas fa-bolt"></i> Drop Jump RSI</div>
         <div class="s-val">2.95 m/s</div>
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
-        <div class="s-detail">Personal best: Dec 2025</div>
+        <div class="s-detail">Reactive Strength Index. Personal best: Dec 2025</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CORE STRENGTH -->
-<section class="sec sec-dark">
+<section class="sec sec-alt">
   <div class="wrap">
     <div class="sec-label">Core</div>
     <div class="sec-title">Core Strength</div>
@@ -487,28 +525,20 @@
           <tr>
             <th>Test</th>
             <th>Best</th>
-            <th>Dec 2025</th>
-            <th>Aug 2025</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Side Plank (R)</td>
             <td class="num">2:16</td>
-            <td class="num">2:16</td>
-            <td class="num">1:55</td>
           </tr>
           <tr>
             <td>Side Plank (L)</td>
             <td class="num">2:16</td>
-            <td class="num">2:16</td>
-            <td class="num">1:55</td>
           </tr>
           <tr>
             <td>Plank</td>
             <td class="num">2:35</td>
-            <td class="num">2:35</td>
-            <td class="num">2:02</td>
           </tr>
         </tbody>
       </table>
@@ -517,7 +547,7 @@
 </section>
 
 <!-- COACH FEEDBACK -->
-<section class="sec sec-alt">
+<section class="sec sec-dark">
   <div class="wrap">
     <div class="sec-label">Feedback</div>
     <div class="sec-title">What PROformance Say</div>
