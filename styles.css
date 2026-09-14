@@ -379,6 +379,20 @@ a:hover { color: var(--blue-deep); }
 .q-foot .qa, .q-foot .qr { margin: 0; }
 .q-crest { flex-shrink: 0; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
 .q-crest img { max-width: 100%; max-height: 50px; width: auto; object-fit: contain; display: block; }
+/* Bio — "Away from the pitch" credentials */
+.beyond { margin-top: 26px; padding: 24px 26px; background: linear-gradient(135deg, rgba(0,94,184,0.06), rgba(0,94,184,0.02)); border: 1px solid var(--border-lt); border-left: 3px solid var(--blue); border-radius: 12px; }
+.beyond .h { font-size: 11px; font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+.cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cred { display: flex; align-items: center; gap: 11px; background: #fff; border: 1px solid var(--border-lt); border-radius: 10px; padding: 10px 12px; }
+.cred-ic { width: 60px; height: 46px; border-radius: 8px; background: #f4f7fa; border: 1px solid var(--border-lt); flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.cred-ic img { max-width: 52px; max-height: 40px; object-fit: contain; display: block; position: relative; z-index: 1; }
+.cred-ic img.round { border-radius: 8px; }
+.cred-ic i { position: absolute; font-size: 1.1rem; }
+.cred-ic:not(.ni) i { display: none; }
+.cred-ic i.ic-blue { color: var(--blue); } .cred-ic i.ic-green { color: var(--green); } .cred-ic i.ic-deep { color: var(--blue-deep); } .cred-ic i.ic-amber { color: var(--amber); }
+.cred .ct { font-size: 0.82rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+.cred .cs { font-size: 0.72rem; color: var(--text-sec); line-height: 1.25; margin-top: 2px; }
+@media (max-width: 900px) { .cred-grid { grid-template-columns: 1fr; } }
 
 /* ═══ IMPACT BARS ═══ */
 .impact-bars {
@@ -497,6 +511,8 @@ a:hover { color: var(--blue-deep); }
 }
 .ach-photo.contain { background: #0a1a2e; }
 .ach-photo.contain img { object-fit: contain; }
+.ach-photo.contain.light { background: #fff; }
+.ach-photo.contain.light img { padding: 16px; box-sizing: border-box; }
 .ach-photo.center img { object-position: center center; }
 .ach-photo.top img { object-position: center top; }
 .ach-card.has-photo:hover .ach-photo img { transform: scale(1.04); }

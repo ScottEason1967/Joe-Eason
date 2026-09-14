@@ -542,6 +542,14 @@
     .case-quote .src {
       font-size: 0.72rem; color: var(--text-muted); font-weight: 600;
     }
+    /* Crest + attribution pinned to the bottom of every quote tile */
+    .case-quote { display: flex; flex-direction: column; }
+    .case-quote .q { flex: 1; }
+    .cq-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin-top: 10px; padding-top: 9px; border-top: 1px solid var(--border-lt); }
+    .cq-who { min-width: 0; }
+    .cq-crest { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+    .cq-crest img { max-width: 100%; max-height: 40px; width: auto; object-fit: contain; display: block; }
+    .cq-crest img.round { border-radius: 7px; }
     .case-quote.placeholder {
       background: repeating-linear-gradient(45deg, #fafbfc, #fafbfc 8px, #f1f3f5 8px, #f1f3f5 16px);
       border-left-color: var(--amber);
@@ -703,20 +711,26 @@
             <div class="case-quote ref">
               <span class="qkind">Reference</span>
               <p class="q">"Over the years, his dedication to refining his running technique has yielded remarkable improvements in his overall speed and agility. The technical cues in his running and the improvements in his speed over the last few years have been ridiculous."</p>
-              <p class="a">Lee Moore</p>
-              <p class="src">Head Coach, PROformance Athlete Development (9 years)</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Lee Moore</p><p class="src">Head Coach, PROformance Athlete Development (9 years)</p></div>
+                <span class="cq-crest"><img src="img/logo-proformance.jpg" class="round" alt="PROformance"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Showed the confidence and technical ability to carry the ball out of defence and into higher midfield areas."</p>
-              <p class="a">Jack Manship</p>
-              <p class="src">Scout, Doncaster Rovers / Minnesota United</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Jack Manship</p><p class="src">Scout, Doncaster Rovers / Minnesota United</p></div>
+                <span class="cq-crest"><img src="img/badge-doncaster.png" alt="Doncaster Rovers FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"When you were able to drive forwards you were an asset to the attacking play. As a strong competitor you can really drive at players and draw fouls or threaten."</p>
-              <p class="a">John Rhodes</p>
-              <p class="src">Scout, Shrewsbury Town FC</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">John Rhodes</p><p class="src">Scout, Shrewsbury Town FC</p></div>
+                <span class="cq-crest"><img src="img/badge-shrewsbury.png" alt="Shrewsbury Town FC"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -746,20 +760,26 @@
             <div class="case-quote ref">
               <span class="qkind">Reference</span>
               <p class="q">"From a technical aspect I can't speak highly enough of Joe and would say this is his outstanding attribute. Superb with both right and left foot in terms of close ball control, first touch and short passing."</p>
-              <p class="a">Mark Hodgson</p>
-              <p class="src">Head Coach, Brazilian Soccer Schools (11 years)</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools (11 years)</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Lovely weight of pass, fizzes the ball through the lines into feet and runners."</p>
-              <p class="a">David Banjura</p>
-              <p class="src">Former National League Chief Scout</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">David Banjura</p><p class="src">Former National League Chief Scout</p></div>
+                <span class="cq-crest"><img src="img/badge-national-league.png" alt="National League"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Calm and composed on the ball. Good ability and control shown."</p>
-              <p class="a">William Kinniburgh</p>
-              <p class="src">Scout, Motherwell / Oxford United</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">William Kinniburgh</p><p class="src">Scout, Motherwell / Oxford United</p></div>
+                <span class="cq-crest"><img src="img/badge-motherwell.png" alt="Motherwell FC"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -793,20 +813,26 @@
             <div class="case-quote ref">
               <span class="qkind">Reference · 11 years</span>
               <p class="q">"He is very rarely flustered when under pressure and is able to turn away from defenders, protecting the ball, with great ease, as well as being able to drive forwards into space with the ability to beat defenders in 1 vs 1 situations."</p>
-              <p class="a">Mark Hodgson</p>
-              <p class="src">Head Coach, Brazilian Soccer Schools</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Receive on back foot well, hold off man, head up to know where to play early or utilises his strength to roll man and play forward."</p>
-              <p class="a">David Banjura</p>
-              <p class="src">Former National League Chief Scout</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">David Banjura</p><p class="src">Former National League Chief Scout</p></div>
+                <span class="cq-crest"><img src="img/badge-national-league.png" alt="National League"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Joe showed good technical ability to turn against the flow and play an accurate progressive pass."</p>
-              <p class="a">Tom Fry</p>
-              <p class="src">Scout, Port Vale FC</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Tom Fry</p><p class="src">Scout, Port Vale FC</p></div>
+                <span class="cq-crest"><img src="img/badge-portvale.png" alt="Port Vale FC"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -835,20 +861,26 @@
             <div class="case-quote ref">
               <span class="qkind">Reference</span>
               <p class="q">"His passing is very accurate, having the ability to play short passes in tight areas, as well as often switching the play to help form another attack on the opposite side of the pitch. This could be done using either foot."</p>
-              <p class="a">Mark Hodgson</p>
-              <p class="src">Head Coach, Brazilian Soccer Schools (11 years)</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools (11 years)</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Joe displayed a good variety to his ability as he showed the ability to control the tempo from the back and in midfield in small moments, as well as showing the initiative to push possession forward with either a progressive pass or carry."</p>
-              <p class="a">Jack Manship</p>
-              <p class="src">Scout, Doncaster Rovers / Minnesota United</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Jack Manship</p><p class="src">Scout, Doncaster Rovers / Minnesota United</p></div>
+                <span class="cq-crest"><img src="img/badge-doncaster.png" alt="Doncaster Rovers FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Powerful runner, good range of passing and able to control the tempo of the game. Comfortable in possession in any area of the park."</p>
-              <p class="a">William Kinniburgh</p>
-              <p class="src">Scout, Motherwell / Oxford United</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">William Kinniburgh</p><p class="src">Scout, Motherwell / Oxford United</p></div>
+                <span class="cq-crest"><img src="img/badge-motherwell.png" alt="Motherwell FC"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -877,20 +909,26 @@
             <div class="case-quote ref">
               <span class="qkind">Reference</span>
               <p class="q">"The level of ball control Joe has developed over his 11 years with us at Brazilian Soccer Schools has given him superb awareness and vision, as he has the ability to play with head up and scan the pitch both with and without the ball."</p>
-              <p class="a">Mark Hodgson</p>
-              <p class="src">Head Coach, Brazilian Soccer Schools (11 years)</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools (11 years)</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Your ability to see a forward pass is excellent. Your control and composure is very good. The standard in your passing and receiving a ball in space would only improve with better players around you."</p>
-              <p class="a">William Kinniburgh</p>
-              <p class="src">Scout, Motherwell / Oxford United</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">William Kinniburgh</p><p class="src">Scout, Motherwell / Oxford United</p></div>
+                <span class="cq-crest"><img src="img/badge-motherwell.png" alt="Motherwell FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"He is a threat with the ball, can pick a hard pass, play through the lines, and judges his attacking runs well."</p>
-              <p class="a">David Banjura</p>
-              <p class="src">Former National League Chief Scout</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">David Banjura</p><p class="src">Former National League Chief Scout</p></div>
+                <span class="cq-crest"><img src="img/badge-national-league.png" alt="National League"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -937,20 +975,26 @@
             <div class="case-quote ref">
               <span class="qkind">Reference · 11 years</span>
               <p class="q">"He has now developed into an extremely strong and physical athlete. This allows him to not only cover huge distances during games, but also dominate physically due to his height and strength."</p>
-              <p class="a">Mark Hodgson</p>
-              <p class="src">Head Coach, Brazilian Soccer Schools</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Covers in well deep allowing CBs to step out to engage, and to press wide."</p>
-              <p class="a">David Banjura</p>
-              <p class="src">Former National League Chief Scout</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">David Banjura</p><p class="src">Former National League Chief Scout</p></div>
+                <span class="cq-crest"><img src="img/badge-national-league.png" alt="National League"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"On field personality and combative nature which allows you to win duels all over the pitch."</p>
-              <p class="a">Aaron Barnes</p>
-              <p class="src">Scout, Stoke City FC</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Aaron Barnes</p><p class="src">Scout, Stoke City FC</p></div>
+                <span class="cq-crest"><img src="img/badge-stoke.png" alt="Stoke City FC"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -985,20 +1029,26 @@
             <div class="case-quote ref">
               <span class="qkind">Reference</span>
               <p class="q">"Physically he is for want of a better term 'a machine' with strength — pace — power and stamina to boot. He fits the modern profile of being athletically capable to play at the intensity the game requires."</p>
-              <p class="a">Danny Fowler</p>
-              <p class="src">UEFA A Licence, DF Coaching / Middlesbrough Academy</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Danny Fowler</p><p class="src">UEFA A Licence, DF Coaching / Middlesbrough Academy</p></div>
+                <span class="cq-crest"><img src="img/logo-boro.jpg" class="round" alt="Middlesbrough FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Cover the ground well on recovery run. From 1 side of the pitch to the other stopping a counterattack and winning a throw in."</p>
-              <p class="a">William Kinniburgh</p>
-              <p class="src">Scout, Motherwell / Oxford United</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">William Kinniburgh</p><p class="src">Scout, Motherwell / Oxford United</p></div>
+                <span class="cq-crest"><img src="img/badge-motherwell.png" alt="Motherwell FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Recovery running and desire to defend as a cover was excellent."</p>
-              <p class="a">Richard Eyley</p>
-              <p class="src">Scout, Sheffield United FC</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Richard Eyley</p><p class="src">Scout, Sheffield United FC</p></div>
+                <span class="cq-crest"><img src="img/badge-sheffieldutd.png" alt="Sheffield United FC"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -1025,56 +1075,74 @@
             <div class="case-quote ref">
               <span class="qkind">Reference · 11 years</span>
               <p class="q">"Joe is an incredibly hard working young man who is always willing to push himself to his limits, but also strives to help everyone he works with, making him an excellent team player."</p>
-              <p class="a">Mark Hodgson</p>
-              <p class="src">Head Coach, Brazilian Soccer Schools</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Brazilian Soccer Schools"></span>
+              </div>
             </div>
             <div class="case-quote ref">
               <span class="qkind">Reference · 9 years</span>
               <p class="q">"I have never met anyone as determined as Joe in terms of mindset and wanting to achieve at something. From the first session I could see how determined and committed he was. He is like a sponge. He listens, commits and I only need to show him something once and he's away with it."</p>
-              <p class="a">Lee Moore</p>
-              <p class="src">Head Coach, PROformance Athlete Development</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Lee Moore</p><p class="src">Head Coach, PROformance Athlete Development</p></div>
+                <span class="cq-crest"><img src="img/logo-proformance.jpg" class="round" alt="PROformance"></span>
+              </div>
             </div>
             <div class="case-quote ref">
               <span class="qkind">Reference</span>
               <p class="q">"Joe not only communicates on the pitch to help organise his team but he vocalises messages as captain in pre match and half time team talks which have clear messages for the team."</p>
-              <p class="a">Tom Thorogood</p>
-              <p class="src">Head of Years 9–11, Red House School</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Tom Thorogood</p><p class="src">Head of Years 9–11, Red House School</p></div>
+                <span class="cq-crest"><img src="img/logo-redhouse.png" class="round" alt="Red House School"></span>
+              </div>
             </div>
             <div class="case-quote ref">
               <span class="qkind">Reference</span>
               <p class="q">"Psychologically Joe has an inner drive and confidence where he knows he's on a journey to achieve whatever the best outcome may be for him. He has confidence in his ability but never crosses that line into arrogance with it. He is very self-aware and conscientious."</p>
-              <p class="a">Danny Fowler</p>
-              <p class="src">UEFA A Licence, DF Coaching / Middlesbrough Academy</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Danny Fowler</p><p class="src">UEFA A Licence, DF Coaching / Middlesbrough Academy</p></div>
+                <span class="cq-crest"><img src="img/logo-boro.jpg" class="round" alt="Middlesbrough FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"I really like your on-field personality, you appear take responsibility. You very much come across as a leader, talking and giving instructions to teammates the moment you came on to the pitch to the final whistle and even tactical in game information by point and passing on runners to your Centre Backs. Keep this level of communication and leadership up as it rare to see from young players and very much an important attribute that scouts look at when assessing a player."</p>
-              <p class="a">Aaron Barnes</p>
-              <p class="src">Scout, Stoke City FC</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Aaron Barnes</p><p class="src">Scout, Stoke City FC</p></div>
+                <span class="cq-crest"><img src="img/badge-stoke.png" alt="Stoke City FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"Despite carrying an injury and despite the early heavy scoreline against his team, Joe showed no visible signs of getting over-frustrated or blaming teammates after a mistake. Multiple instances of Joe offering advice to teammates. Showed other good leadership qualities such as encouraging and praising teammates throughout the game."</p>
-              <p class="a">Jack Manship</p>
-              <p class="src">Scout, Doncaster Rovers / Minnesota United</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Jack Manship</p><p class="src">Scout, Doncaster Rovers / Minnesota United</p></div>
+                <span class="cq-crest"><img src="img/badge-doncaster.png" alt="Doncaster Rovers FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"I sense a positive and encouraging character. Body language suggests a calm positivity. Confident to receive under pressure. Showed a high level of responsibility."</p>
-              <p class="a">Richard Eyley</p>
-              <p class="src">Scout, Sheffield United FC</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Richard Eyley</p><p class="src">Scout, Sheffield United FC</p></div>
+                <span class="cq-crest"><img src="img/badge-sheffieldutd.png" alt="Sheffield United FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"On scoring, his teammates all enjoyed his success, all ten outfield players quick to congratulate him. There was no orchestrated nor ego focused celebration, he looked a well-liked member of the Gateshead team."</p>
-              <p class="a">Tony Kinnear</p>
-              <p class="src">Head Scout, Partick Thistle FC</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Tony Kinnear</p><p class="src">Head Scout, Partick Thistle FC</p></div>
+                <span class="cq-crest"><img src="img/badge-partick.png" alt="Partick Thistle FC"></span>
+              </div>
             </div>
             <div class="case-quote">
               <span class="qkind">Scout report</span>
               <p class="q">"The communication of the player was superb from the moment he came onto the pitch until the match finished, even in the late stages when the match was all but over as a contest."</p>
-              <p class="a">David Straughair</p>
-              <p class="src">Scout, Middlesbrough FC</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">David Straughair</p><p class="src">Scout, Middlesbrough FC</p></div>
+                <span class="cq-crest"><img src="img/logo-boro.jpg" class="round" alt="Middlesbrough FC"></span>
+              </div>
             </div>
           </div>
 

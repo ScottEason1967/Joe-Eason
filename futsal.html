@@ -87,6 +87,12 @@
       line-height: 1.5; margin: 0;
     }
 
+    /* Why it fits — text + profile photo */
+    .why-grid { display: grid; grid-template-columns: 1fr 300px; gap: 28px; align-items: start; margin-top: 4px; }
+    .why-photo { border-radius: 14px; overflow: hidden; border: 1px solid var(--border-lt); box-shadow: 0 6px 20px rgba(0,32,64,0.16); aspect-ratio: 3 / 4; }
+    .why-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    @media (max-width: 860px) { .why-grid { grid-template-columns: 1fr; } .why-photo { max-width: 300px; margin: 0 auto; } }
+
     /* Video pair */
     .futsal-videos {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -325,44 +331,39 @@
   <div class="panel fi">
     <div class="panel-eyebrow">Why It Fits Joe</div>
     <h2>The skills already verified in football carry straight over</h2>
-    <p>At <strong>6'2" and 89.9kg with an IMTP of 3.7× bodyweight</strong>, Joe wins the physical duels that decide futsal pivot play. The shielding, the back-foot receiving, the strength to roll a defender — all flagged in scout reports from his eleven-a-side game — are exactly what the role needs. The difference is the space and the time: futsal compresses both, so the margins are tighter and the contact harder.</p>
-    <p>The defensive side of the pivot role lands particularly well. He plays as a <strong>defensive midfielder</strong> in eleven-a-side: screening, closing passing lanes, reading what the opposition wants to do before they do it. Those exact instincts make him a natural fit as the team's furthest-forward defender — applying the same screening intelligence from a different starting position.</p>
-    <p>What scouts have said about his football game maps directly onto his futsal:</p>
-    <p style="font-style: italic; color: var(--text-sec); border-left: 3px solid var(--green); padding-left: 14px; max-width: 700px;">
-      "Receive on back foot well, hold off man, head up to know where to play early or utilises his strength to roll man and play forward."<br>
-      <span style="font-style: normal; font-weight: 700; font-size: 0.78rem; color: var(--text); display: inline-block; margin-top: 6px;">David Banjura, Former National League Chief Scout</span>
-    </p>
-    <p>That description IS the pivot role. Same evidence, second sport.</p>
+    <div class="why-grid">
+      <div class="why-text">
+        <p>At <strong>6'2" and 89.9kg with an IMTP of 3.7× bodyweight</strong>, Joe wins the physical duels that decide futsal pivot play. The shielding, the back-foot receiving, the strength to roll a defender — all flagged in scout reports from his eleven-a-side game — are exactly what the role needs. The difference is the space and the time: futsal compresses both, so the margins are tighter and the contact harder.</p>
+        <p>The defensive side of the pivot role lands particularly well. He plays as a <strong>defensive midfielder</strong> in eleven-a-side: screening, closing passing lanes, reading what the opposition wants to do before they do it. Those exact instincts make him a natural fit as the team's furthest-forward defender — applying the same screening intelligence from a different starting position.</p>
+        <p>What scouts have said about his football game maps directly onto his futsal:</p>
+        <p style="font-style: italic; color: var(--text-sec); border-left: 3px solid var(--green); padding-left: 14px;">
+          "Receive on back foot well, hold off man, head up to know where to play early or utilises his strength to roll man and play forward."<br>
+          <span style="font-style: normal; font-weight: 700; font-size: 0.78rem; color: var(--text); display: inline-block; margin-top: 6px;">David Banjura, Former National League Chief Scout</span>
+        </p>
+        <p style="margin-bottom: 0;">That description IS the pivot role. Same evidence, second sport.</p>
+      </div>
+      <div class="why-photo">
+        <img src="img/20260823_202532000_iOS.jpg" alt="Joe Eason — 6'2&quot;, 89.9kg frame in senior men's football">
+      </div>
+    </div>
   </div>
 
   <!-- VIDEOS -->
   <div class="panel fi" style="padding: 28px 32px;">
     <div class="panel-eyebrow">Video Evidence</div>
-    <h2>Two films from senior men's futsal</h2>
-    <p>Click either thumbnail to play in place.</p>
-    <div class="futsal-videos">
+    <h2>The Making of a Pivot &middot; 7 min</h2>
+    <p>One short film covering Joe at pivot. The full competency-by-competency breakdown and the rest of the footage live on <a href="https://joeeasonfutsal.com" target="_blank" rel="noopener" style="color: var(--blue); font-weight: 700;">joeeasonfutsal.com</a>.</p>
+    <div class="futsal-videos" style="grid-template-columns: 1fr;">
       <div class="futsal-video-card">
-        <a href="https://www.youtube.com/watch?v=guLvoXAmj4E" target="_blank" rel="noopener" class="skill-video" data-vid="guLvoXAmj4E" id="vid-futsal-1">
-          <img src="https://img.youtube.com/vi/guLvoXAmj4E/hqdefault.jpg" alt="Joe Eason futsal highlights">
+        <a href="https://www.youtube.com/watch?v=pAU2eoXO0ZA" target="_blank" rel="noopener" class="skill-video" data-vid="pAU2eoXO0ZA" id="vid-futsal-1">
+          <img src="https://img.youtube.com/vi/pAU2eoXO0ZA/hqdefault.jpg" alt="The Making of a Pivot — 7 minute highlights film">
           <div class="play-btn"><i class="fas fa-play"></i></div>
           <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
         </a>
         <div class="futsal-video-card-body">
-          <div class="vc-eyebrow">Multi-match reel</div>
-          <h3>Season highlights at pivot</h3>
-          <p>Clips from across the season — receiving under pressure, holding play, finishing in tight space, defensive work as the front of the press.</p>
-        </div>
-      </div>
-      <div class="futsal-video-card">
-        <a href="https://www.youtube.com/watch?v=bwodYG8QC7g" target="_blank" rel="noopener" class="skill-video" data-vid="bwodYG8QC7g" id="vid-futsal-2">
-          <img src="https://img.youtube.com/vi/bwodYG8QC7g/hqdefault.jpg" alt="Joe Eason futsal — full match vs league leaders">
-          <div class="play-btn"><i class="fas fa-play"></i></div>
-          <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
-        </a>
-        <div class="futsal-video-card-body">
-          <div class="vc-eyebrow">Single match</div>
-          <h3>Full performance vs the league leaders</h3>
-          <p>Joe at pivot against the top team in the league. Same job, highest level of opposition — back to goal, link play, finishing in tight space against the best defending pivot.</p>
+          <div class="vc-eyebrow">Highlights film &middot; 7 min</div>
+          <h3>The Making of a Pivot</h3>
+          <p>Joe at pivot in senior men's futsal — receiving under pressure, holding play, finishing in tight space and leading the first line of the press.</p>
         </div>
       </div>
     </div>
