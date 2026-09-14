@@ -258,6 +258,16 @@
     .stat-card .s-label { font-size: 10px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
     .stat-card .s-val { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--blue-deep); line-height: 1; }
     .stat-card .s-detail { margin-top: 6px; }
+    .stat-card .s-label i { margin-right: 5px; }
+    .stat-card.sc-sp { border-top: 3px solid var(--blue); }
+    .stat-card.sc-sp .s-val { color: var(--blue-deep); }
+    .stat-card.sc-sp .s-label i { color: var(--blue); }
+    .stat-card.sc-jp { border-top: 3px solid var(--amber); }
+    .stat-card.sc-jp .s-val { color: #8a6412; }
+    .stat-card.sc-jp .s-label i { color: #a9741a; }
+    .stat-card.sc-pw { border-top: 3px solid #CE1126; }
+    .stat-card.sc-pw .s-val { color: #CE1126; }
+    .stat-card.sc-pw .s-label i { color: #CE1126; }
     .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
     .badge-elite { background: rgba(0,103,71,0.1); color: var(--green); }
     .badge-pro { background: rgba(0,94,184,0.1); color: var(--blue); }
@@ -272,9 +282,11 @@
       background: var(--card); border: 1px solid var(--border-lt);
       border-radius: 14px; padding: 36px;
       box-shadow: 0 4px 16px rgba(0,32,64,0.08);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+      display: grid; grid-template-columns: 0.85fr 0.85fr 1.2fr; gap: 30px; align-items: center;
     }
-    .impact-bars { display: flex; gap: 40px; align-items: flex-end; justify-content: center; padding: 16px 0; }
+    .impact-photo { border-radius: 12px; overflow: hidden; align-self: stretch; min-height: 240px; }
+    .impact-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .impact-bars { display: flex; gap: 34px; align-items: flex-end; justify-content: center; padding: 16px 0; }
     .impact-col { text-align: center; }
     .impact-bar { width: 90px; border-radius: 8px 8px 0 0; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12px; }
     .bar-good { height: 70px; background: linear-gradient(to top, var(--blue), #60a5fa); }
@@ -322,6 +334,19 @@
     .explore-card i { color: var(--blue); font-size: 0.9rem; margin-bottom: 10px; display: block; }
     .explore-card h3 { font-size: 13.5px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
     .explore-card p { font-size: 11.5px; color: var(--text-sec); line-height: 1.5; }
+    /* Scout tile: club badge + attribution pinned to bottom */
+    .q-card { display: flex; flex-direction: column; }
+    .q-card .qt { flex: 1; }
+    .q-src { display: flex; align-items: center; gap: 11px; margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--border-lt); }
+    .q-badge { width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .q-badge img { max-width: 100%; max-height: 42px; width: auto; object-fit: contain; display: block; }
+    .q-badge.fb { background: #0b2350; border-radius: 9px; color: #fff; font-size: 15px; }
+    .q-who { display: flex; flex-direction: column; min-width: 0; }
+    /* Explore cards: photo thumbnail */
+    .explore-card { padding: 0; overflow: hidden; }
+    .explore-thumb { width: 100%; height: 152px; overflow: hidden; background: var(--blue-deep); }
+    .explore-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .explore-body { padding: 15px 18px 18px; }
 
     /* CONTACT */
     .contact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 48px; }
@@ -658,33 +683,33 @@
     <div class="eyebrow">Verified by PROformance</div>
     <h2>Physical Attributes</h2>
     <div class="stats-grid">
-      <div class="stat-card">
-        <div class="s-label">5m Sprint</div>
+      <div class="stat-card sc-sp">
+        <div class="s-label"><i class="fas fa-bolt"></i> 5m Sprint</div>
         <div class="s-val">0.91s</div>
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
-      <div class="stat-card">
-        <div class="s-label">10m Sprint</div>
+      <div class="stat-card sc-sp">
+        <div class="s-label"><i class="fas fa-bolt"></i> 10m Sprint</div>
         <div class="s-val">1.62s</div>
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
-      <div class="stat-card">
-        <div class="s-label">Broad Jump</div>
+      <div class="stat-card sc-jp">
+        <div class="s-label"><i class="fas fa-arrow-up"></i> Broad Jump</div>
         <div class="s-val">305cm</div>
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
-      <div class="stat-card">
-        <div class="s-label">Abalakov</div>
+      <div class="stat-card sc-jp">
+        <div class="s-label"><i class="fas fa-arrow-up"></i> Abalakov</div>
         <div class="s-val">62.5cm</div>
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
-      <div class="stat-card">
-        <div class="s-label">Top Speed</div>
+      <div class="stat-card sc-sp">
+        <div class="s-label"><i class="fas fa-gauge-high"></i> Top Speed</div>
         <div class="s-val">34km/h</div>
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
-      <div class="stat-card">
-        <div class="s-label">IMTP</div>
+      <div class="stat-card sc-pw">
+        <div class="s-label"><i class="fas fa-dumbbell"></i> IMTP</div>
         <div class="s-val">3.7×</div>
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
@@ -695,6 +720,7 @@
   <!-- DEFENSIVE IMPACT -->
   <div class="impact-section fi">
     <div class="impact-card">
+      <div class="impact-photo"><img src="img/photo-cb-hero.jpg" alt="Joe Eason defending for Marske United"></div>
       <div>
         <div class="impact-bars">
           <div class="impact-col">
@@ -726,18 +752,24 @@
     <div class="quotes-grid">
       <div class="q-card">
         <p class="qt">Will go on to have a professional career in the game.</p>
-        <p class="qa">Charlton Athletic</p>
-        <p class="qr">U18 Trial Assessment</p>
+        <div class="q-src">
+          <span class="q-badge"><img src="img/badge-charlton.png" alt="Charlton Athletic"></span>
+          <span class="q-who"><span class="qa">Charlton Athletic</span><span class="qr">U18 Trial Assessment</span></span>
+        </div>
       </div>
       <div class="q-card">
         <p class="qt">Lovely weight of pass, fizzes the ball through the lines into feet and runners. Receive on back foot well, hold off man, head up to know where to play early.</p>
-        <p class="qa">David Banjura</p>
-        <p class="qr">Former National League Chief Scout</p>
+        <div class="q-src">
+          <span class="q-badge"><img src="img/badge-national-league.png" alt="National League"></span>
+          <span class="q-who"><span class="qa">David Banjura</span><span class="qr">Former National League Chief Scout</span></span>
+        </div>
       </div>
       <div class="q-card">
         <p class="qt">I really like your on-field personality, you appear to take responsibility. You very much come across as a leader. It is rare to see from young players.</p>
-        <p class="qa">Aaron Barnes</p>
-        <p class="qr">Scout, Stoke City FC</p>
+        <div class="q-src">
+          <span class="q-badge"><img src="img/badge-stoke.png" alt="Stoke City FC"></span>
+          <span class="q-who"><span class="qa">Aaron Barnes</span><span class="qr">Scout, Stoke City FC</span></span>
+        </div>
       </div>
     </div>
   </div>
@@ -749,34 +781,46 @@
     <h2>Explore Profile</h2>
     <div class="explore-grid">
       <a href="central-midfielder.html" class="explore-card">
-        <i class="fas fa-futbol"></i>
-        <h3>The Complete 8</h3>
-        <p>Written analysis of what makes Joe a complete central midfielder.</p>
+        <div class="explore-thumb"><img src="img/thumb-complete8.jpg" alt=""></div>
+        <div class="explore-body">
+          <h3>The Complete 8</h3>
+          <p>Written analysis of what makes Joe a complete central midfielder.</p>
+        </div>
       </a>
       <a href="highlights.html" class="explore-card">
-        <i class="fas fa-play-circle"></i>
-        <h3>Highlights</h3>
-        <p>Extended match footage and highlight reels.</p>
+        <div class="explore-thumb"><img src="img/thumb-highlights.jpg" alt=""></div>
+        <div class="explore-body">
+          <h3>Highlights</h3>
+          <p>Extended match footage and highlight reels.</p>
+        </div>
       </a>
       <a href="appearances.html" class="explore-card">
-        <i class="fas fa-trophy"></i>
-        <h3>Appearances &amp; Awards</h3>
-        <p>Career stats, appearance data and recognition.</p>
+        <div class="explore-thumb"><img src="img/thumb-appearances.jpg" alt=""></div>
+        <div class="explore-body">
+          <h3>Appearances &amp; Awards</h3>
+          <p>Career stats, appearance data and recognition.</p>
+        </div>
       </a>
       <a href="bio.html" class="explore-card">
-        <i class="fas fa-user"></i>
-        <h3>Bio</h3>
-        <p>Who Joe is, how he plays, his background.</p>
+        <div class="explore-thumb"><img src="img/thumb-bio.jpg" alt=""></div>
+        <div class="explore-body">
+          <h3>Bio</h3>
+          <p>Who Joe is, how he plays, his background.</p>
+        </div>
       </a>
       <a href="athletic-profile.html" class="explore-card">
-        <i class="fas fa-dumbbell"></i>
-        <h3>Athletic Profile</h3>
-        <p>Full PROformance testing data and progression.</p>
+        <div class="explore-thumb"><img src="img/thumb-athletic.jpg" alt=""></div>
+        <div class="explore-body">
+          <h3>Athletic Profile</h3>
+          <p>Full PROformance testing data and progression.</p>
+        </div>
       </a>
       <a href="references.html" class="explore-card">
-        <i class="fas fa-file-alt"></i>
-        <h3>References</h3>
-        <p>Scout reports, coaching references and downloadable PDFs.</p>
+        <div class="explore-thumb"><img src="img/thumb-references.jpg" alt=""></div>
+        <div class="explore-body">
+          <h3>References</h3>
+          <p>Scout reports, coaching references and downloadable PDFs.</p>
+        </div>
       </a>
     </div>
   </div>

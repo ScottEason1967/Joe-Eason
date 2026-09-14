@@ -370,6 +370,15 @@ a:hover { color: var(--blue-deep); }
   background: rgba(0,94,184,0.1); color: var(--blue);
   border-radius: 10px;
 }
+/* Quote card with club crest + attribution pinned to the bottom */
+.q-card.wc { display: flex; flex-direction: column; }
+.q-card.wc .q-badge { align-self: flex-end; float: none; margin-bottom: 8px; }
+.q-card.wc .qt { flex: 1; }
+.q-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--border-lt); }
+.q-foot .q-who { min-width: 0; }
+.q-foot .qa, .q-foot .qr { margin: 0; }
+.q-crest { flex-shrink: 0; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+.q-crest img { max-width: 100%; max-height: 50px; width: auto; object-fit: contain; display: block; }
 
 /* ═══ IMPACT BARS ═══ */
 .impact-bars {
