@@ -1283,10 +1283,16 @@ document.querySelectorAll('.fi').forEach(el => {
   });
 
   // Deep-link support: #skill-N or #leadership
-  if (location.hash === '#leadership') activateTab('lead');
+  let deepLinked = false;
+  if (location.hash === '#leadership') { activateTab('lead'); deepLinked = true; }
   else {
     const m = location.hash.match(/^#skill-(\d)$/);
-    if (m) activateTab(m[1]);
+    if (m) { activateTab(m[1]); deepLinked = true; }
+  }
+  // Arriving on a deep link should land on the switcher, not the top of the page
+  if (deepLinked) {
+    const sw = document.querySelector('.c8-switch');
+    if (sw) requestAnimationFrame(() => sw.scrollIntoView({ block: 'start' }));
   }
 })();
 </script>

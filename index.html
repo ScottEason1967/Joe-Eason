@@ -211,6 +211,23 @@
     .hub-center .lbl { font-size: 11px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; text-shadow: 0 1px 1px rgba(255,255,255,0.7); }
     .hub-center .sub { font-size: 11.5px; color: var(--text); line-height: 1.45; max-width: 92%; font-weight: 500; text-shadow: 0 1px 1px rgba(255,255,255,0.7); }
     .hub-center .cta { font-size: 11px; font-weight: 700; color: var(--blue); margin-top: 10px; letter-spacing: 0.3px; text-shadow: 0 1px 1px rgba(255,255,255,0.7); }
+    /* Centre of the flower = the eighth quality, the intangibles */
+    .hub-star {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--amber), #dfa317);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue-deep); font-size: 1.15rem;
+      margin-bottom: 9px; flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(0,32,64,0.22);
+    }
+    .hub-center .ttl {
+      font-family: var(--font-display); font-size: 1.22rem; font-weight: 700;
+      color: var(--blue-deep); line-height: 1.08; margin: 3px 0 7px;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+    }
+    .hub-center .sub { max-width: 86%; }
+    .hub-mobile .m-center .hub-star { width: 38px; height: 38px; font-size: 1rem; margin-bottom: 4px; }
+    .hub-mobile .m-center .ttl { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--blue-deep); line-height: 1.1; }
 
     /* Mobile fallback — stacked tile list instead of petals */
     .hub-mobile { display: none; }
@@ -639,19 +656,21 @@
       </svg>
 
       <!-- Centre disc — clickable, sits above SVG -->
-      <a href="central-midfielder.html" class="hub-center">
-        <div class="num">8</div>
-        <div class="lbl">The Complete 8</div>
-        <div class="sub">What makes a good all-round central midfielder?</div>
+      <a href="central-midfielder.html#leadership" class="hub-center">
+        <div class="hub-star"><i class="fas fa-star"></i></div>
+        <div class="lbl">Intangibles</div>
+        <div class="ttl">The Bit You Can&rsquo;t Coach</div>
+        <div class="sub">The eighth quality &mdash; leadership and on-field personality, mentioned by every coach.</div>
         <div class="cta">Read the analysis →</div>
       </a>
     </div>
 
     <!-- Mobile fallback — stacked tile list -->
     <div class="hub-mobile">
-      <a href="central-midfielder.html" class="m-center">
-        <div class="num">8</div>
-        <div class="lbl">The Complete 8</div>
+      <a href="central-midfielder.html#leadership" class="m-center">
+        <div class="hub-star"><i class="fas fa-star"></i></div>
+        <div class="lbl">Intangibles</div>
+        <div class="ttl">The Bit You Can&rsquo;t Coach</div>
         <div class="cta">Read the analysis →</div>
       </a>
       <div class="hub-mobile-list">
