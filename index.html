@@ -214,7 +214,8 @@
     /* "Read the analysis" covers the whole disc; the star badge on the bottom
        loop of the 8 is a separate link to the intangibles. */
     .hub-center-link { position: absolute; inset: 0; z-index: 3; border-radius: 50%; }
-    .num-wrap { position: relative; display: inline-block; z-index: 4; }
+    /* pointer-events off so the numeral doesn't block the disc-wide link; the star opts back in */
+    .num-wrap { position: relative; display: inline-block; z-index: 4; pointer-events: none; }
     /* Bigger 8 so the star can sit inside its lower loop and the numeral still reads.
        The size lives on .num-wrap so the star scales with the numeral. */
     .hub-center .num-wrap { font-size: clamp(56px, 9vw, 88px); }
@@ -228,13 +229,23 @@
       color: var(--blue-deep);
       box-shadow: 0 2px 8px rgba(0,32,64,0.35);
       border: 2px solid #fff;
-      text-decoration: none;
+      text-decoration: none; pointer-events: auto;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     .hub-star i { font-size: 0.145em; line-height: 1; }
     /* Invisible padding so the tap target stays finger-sized on small screens */
     .hub-star::before { content: ''; position: absolute; inset: -9px; border-radius: 50%; }
     .hub-star:hover { transform: translate(-50%, -50%) scale(1.14); box-shadow: 0 4px 14px rgba(0,32,64,0.45); }
+    /* Worded partner for the star badge, so it's obvious it's a link */
+    .cta-star {
+      position: relative; z-index: 4;
+      margin-top: 5px; font-size: 10.5px; font-weight: 800;
+      letter-spacing: 0.2px; color: #a9741a; text-decoration: none;
+      text-shadow: 0 1px 1px rgba(255,255,255,0.7);
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .cta-star i { font-size: 9px; }
+    .cta-star:hover { text-decoration: underline; }
     .hub-mobile .m-center .num-wrap { z-index: 4; font-size: 56px; }
 
     /* Mobile fallback — stacked tile list instead of petals */
@@ -416,6 +427,19 @@
     /* Hub: shrink petal labels on medium screens */
     @media (max-width: 720px) {
       .hub-svg .petal-title { font-size: 14px; }
+    }
+    /* Hub disc shrinks with the stage but its type doesn't, so trim it to fit the circle */
+    @media (max-width: 900px) {
+      .hub-center .sub { display: none; }
+      .hub-center .cta { font-size: 10px; margin-top: 7px; }
+      .hub-center .cta-star { font-size: 9.5px; }
+      .hub-center .cta-star i { font-size: 8px; }
+    }
+    @media (max-width: 660px) {
+      .hub-center .num-wrap { font-size: 46px; }
+      .hub-center .lbl { font-size: 9.5px; letter-spacing: 1px; margin-bottom: 4px; }
+      .hub-center .cta { font-size: 9px; margin-top: 5px; }
+      .hub-center .cta-star { font-size: 8.5px; gap: 4px; margin-top: 3px; }
     }
     /* Hub: swap petals for stacked list on small screens */
     @media (max-width: 560px) {
@@ -675,6 +699,7 @@
         <div class="lbl">The Complete 8</div>
         <div class="sub">What makes a good all-round central midfielder?</div>
         <div class="cta">Read the analysis →</div>
+        <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
         <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
       </div>
     </div>
@@ -690,6 +715,7 @@
         </div>
         <div class="lbl">The Complete 8</div>
         <div class="cta">Read the analysis →</div>
+        <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
         <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
       </div>
       <div class="hub-mobile-list">
