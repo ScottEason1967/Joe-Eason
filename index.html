@@ -129,7 +129,9 @@
     .hero-stat:last-child { border-right: none; }
     .hero-stat strong { display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--blue-deep); }
     .hero-stat small { font-size: 0.58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
-    .hero-photo { width: 100%; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: var(--card); border: 1px solid var(--border-lt); box-shadow: 0 6px 20px rgba(0,32,64,0.16); }
+    .hero-photo { width: 100%; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #000; border: 1px solid var(--border-lt); box-shadow: 0 6px 20px rgba(0,32,64,0.16); }
+    /* Muted, looping YouTube reel — ambient, so taps can't accidentally pause it */
+    .hero-photo .hero-reel { width: 100%; height: 100%; border: 0; display: block; pointer-events: none; }
 
     /* HUB */
     .hub { position: relative; margin-bottom: 56px; }
@@ -530,13 +532,12 @@
       </div>
       <div class="hero-media">
         <div class="hero-photo">
-          <img src="img/joe-action.jpg" alt="Joe Eason in action"
-               style="width:100%;height:100%;object-fit:cover;display:block;"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;flex-direction:column;gap:8px;">
-            <i class="fas fa-camera" style="font-size:1.5rem;opacity:0.3;"></i>
-            <span>Match montage</span>
-          </div>
+          <iframe class="hero-reel"
+                  src="https://www.youtube-nocookie.com/embed/dzkiCMYU0IU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=dzkiCMYU0IU&amp;controls=0&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0"
+                  title="Joe Eason &mdash; introductory loop"
+                  loading="eager"
+                  allow="autoplay; encrypted-media"
+                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
     </div>
