@@ -111,7 +111,7 @@
     .joe-chip:hover .joe-chip-pop, .joe-chip:focus-within .joe-chip-pop { opacity: 1; visibility: visible; transform: translateY(-50%) scale(1); }
     .joe-chip-pop .jq { display: block; font-size: 13px; font-style: italic; line-height: 1.55; color: var(--text); }
     .joe-chip-pop .jq-attr { display: block; margin-top: 9px; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--blue-deep); }
-    @media (max-width: 900px) { .joe-chip-pop { position: fixed; left: 50%; right: auto; top: auto; bottom: 16px; width: min(340px, 92vw); transform: translateX(-50%) translateY(8px); } .joe-chip-pop::before { display: none; } .joe-chip:hover .joe-chip-pop, .joe-chip:focus-within .joe-chip-pop { transform: translateX(-50%) translateY(0); } }
+    @media (max-width: 900px) { .joe-chip-pop { position: absolute; top: calc(100% + 12px); bottom: auto; left: var(--chip-pop-left, -175px); right: auto; width: min(340px, 92vw); transform: translateY(8px); } .joe-chip-pop::before { display: block; top: -12px; left: var(--chip-pop-arrow, 183px); transform: none; border: 8px solid transparent; border-right-color: transparent; border-bottom-color: var(--amber); } .joe-chip:hover .joe-chip-pop, .joe-chip:focus-within .joe-chip-pop { transform: translateY(0); } }
 
     /* JOE'S VOICE — quote band between hero and hub */
     .joe-voice { padding: 20px 0 56px; text-align: center; position: relative; }
@@ -375,6 +375,15 @@
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .wrap { padding: 0 22px; }
       .page { padding: 40px 22px 0; }
+    }
+    /* Mobile: keep the two badge tiles side by side under the stats tile */
+    @media (max-width: 640px) {
+      .hero-tile.stats { flex: 1 1 100%; }
+      .hero-tile.badge { flex: 1 1 0; min-width: 0; gap: 9px; padding: 11px 12px; justify-content: flex-start; }
+      .hero-tile.badge img { width: 44px; height: 34px; }
+      .hero-tile.badge:not(.efb) img { width: 29px; }
+      .hero-tile.badge .hb-k { font-size: 8px; letter-spacing: 1px; }
+      .hero-tile.badge .hb-v { font-size: 0.78rem; }
     }
     /* Hub: shrink petal labels on medium screens */
     @media (max-width: 720px) {
@@ -917,6 +926,32 @@ document.querySelectorAll('.fi').forEach(el => {
   closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+})();
+
+/* Mobile: Joe's quote opens directly beneath the chip (CSS), horizontally centred
+   in the viewport (here) so it can never run off either edge. */
+(function () {
+  const chip = document.querySelector('.joe-chip');
+  const pop = chip && chip.querySelector('.joe-chip-pop');
+  if (!chip || !pop) return;
+  function place() {
+    if (window.innerWidth > 900) {
+      pop.style.removeProperty('--chip-pop-left');
+      pop.style.removeProperty('--chip-pop-arrow');
+      return;
+    }
+    const w = Math.min(340, window.innerWidth * 0.92);
+    const chipL = chip.getBoundingClientRect().left;
+    const offset = Math.round((window.innerWidth - w) / 2 - chipL);
+    pop.style.setProperty('--chip-pop-left', offset + 'px');
+    // Keep the arrow pointing at the middle of the chip.
+    pop.style.setProperty('--chip-pop-arrow', Math.round(-offset + chip.offsetWidth / 2 - 8) + 'px');
+  }
+  ['pointerenter', 'focusin', 'click', 'touchstart'].forEach(ev =>
+    chip.addEventListener(ev, place, { passive: true })
+  );
+  window.addEventListener('resize', place);
+  place();
 })();
 </script>
 </body>

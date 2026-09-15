@@ -418,7 +418,34 @@
       .case-stat-wide .csw-bars { justify-content: center; }
     }
     @media (max-width: 520px) {
-      .c8-tabs { grid-template-columns: repeat(2, 1fr); }
+      /* Mobile only: pull the Intangibles button into the same grid as the seven
+         video tiles so it reads as an even 4x2 block instead of 4 + 3 + orphan. */
+      .c8-switch { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .c8-tabs { display: contents; }
+      .c8-tabs-extra { display: contents; }
+      .c8-panels { grid-column: 1 / -1; margin-top: 16px; }
+
+      .c8-tab-lead {
+        display: flex; flex-direction: column; align-items: stretch;
+        width: 100%; padding: 0; gap: 0; overflow: hidden;
+        border-width: 1.5px; box-shadow: 0 1px 4px rgba(0,32,64,0.06);
+      }
+      .c8-tab-lead i {
+        display: flex; align-items: center; justify-content: center;
+        aspect-ratio: 16/9; width: 100%;
+        background: linear-gradient(135deg, var(--amber), #dfa317);
+        color: var(--blue-deep); font-size: 1.5rem;
+      }
+      .c8-tab-lead.active i { color: var(--blue-deep); }
+      .c8-tab-lead > div { padding: 6px 8px 8px; min-height: 36px; text-align: left; }
+      .c8-tab-lead .c8-lead-eyebrow { font-size: 8px; letter-spacing: 1.2px; margin-bottom: 1px; }
+      .c8-tab-lead .c8-lead-title {
+        font-family: inherit; font-size: 10.5px; font-weight: 800;
+        line-height: 1.25; color: var(--text);
+      }
+      .c8-tab-lead.active { background: var(--card); }
+      .c8-tab-lead.active > div { background: rgba(255,185,29,0.18); }
+      .c8-tab-lead.active .c8-lead-title { color: var(--blue-deep); }
     }
 
     /* CASE FILE — new richer per-skill layout (replacing the old 2-col .skill-header) */
