@@ -239,7 +239,7 @@
     /* Worded partner for the star badge, so it's obvious it's a link */
     .cta-star {
       position: relative; z-index: 4;
-      margin-top: 5px; font-size: 10.5px; font-weight: 800;
+      margin: 4px 0 11px; font-size: 10.5px; font-weight: 800;
       letter-spacing: 0.2px; color: #a9741a; text-decoration: none;
       text-shadow: 0 1px 1px rgba(255,255,255,0.7);
       display: inline-flex; align-items: center; gap: 5px;
@@ -430,7 +430,6 @@
     }
     /* Hub disc shrinks with the stage but its type doesn't, so trim it to fit the circle */
     @media (max-width: 900px) {
-      .hub-center .sub { display: none; }
       .hub-center .cta { font-size: 10px; margin-top: 7px; }
       .hub-center .cta-star { font-size: 9.5px; }
       .hub-center .cta-star i { font-size: 8px; }
@@ -438,8 +437,13 @@
     @media (max-width: 660px) {
       .hub-center .num-wrap { font-size: 46px; }
       .hub-center .lbl { font-size: 9.5px; letter-spacing: 1px; margin-bottom: 4px; }
+      .hub-center .sub { font-size: 10px; }
       .hub-center .cta { font-size: 9px; margin-top: 5px; }
-      .hub-center .cta-star { font-size: 8.5px; gap: 4px; margin-top: 3px; }
+      .hub-center .cta-star { font-size: 8.5px; gap: 4px; margin: 3px 0 8px; }
+    }
+    /* Smallest stage the petals still render at — drop the question line to keep it in the circle */
+    @media (max-width: 600px) {
+      .hub-center .sub { display: none; }
     }
     /* Hub: swap petals for stacked list on small screens */
     @media (max-width: 560px) {
@@ -696,10 +700,10 @@
              aria-label="Intangibles — The Bit You Can't Coach"
              title="Intangibles — The Bit You Can&rsquo;t Coach"><i class="fas fa-star"></i></a>
         </div>
+        <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
         <div class="lbl">The Complete 8</div>
         <div class="sub">What makes a good all-round central midfielder?</div>
         <div class="cta">Read the analysis →</div>
-        <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
         <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
       </div>
     </div>
@@ -713,9 +717,9 @@
              aria-label="Intangibles — The Bit You Can't Coach"
              title="Intangibles — The Bit You Can&rsquo;t Coach"><i class="fas fa-star"></i></a>
         </div>
+        <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
         <div class="lbl">The Complete 8</div>
         <div class="cta">Read the analysis →</div>
-        <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
         <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
       </div>
       <div class="hub-mobile-list">
