@@ -301,13 +301,26 @@
       text-align: left;
     }
     .c8-tab-lead:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,32,64,0.14); }
-    .c8-tab-lead > i {
-      display: flex; align-items: center; justify-content: center;
+    /* the mark: blue 8 with the amber star in its lower loop — same as the hub disc */
+    .c8-lead-mark {
       aspect-ratio: 16/9; width: 100%;
-      background: linear-gradient(135deg, var(--amber), #dfa317);
-      color: var(--blue-deep); font-size: 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #eef3f8, #dbe5ee);
+      container-type: size;
     }
-    .c8-tab-lead > div { padding: 6px 8px 8px; min-height: 36px; background: var(--card); }
+    .eight-star { position: relative; display: inline-block; line-height: 1; }
+    .c8-lead-mark .eight-star { font-size: 78px; font-size: 62cqh; }
+    .es-num { display: block; font-family: var(--font-display); font-weight: 700; color: var(--blue); line-height: 1; }
+    .es-star {
+      position: absolute; left: 50%; top: 76%; transform: translate(-50%, -50%);
+      width: 0.32em; height: 0.32em; border-radius: 50%;
+      background: linear-gradient(135deg, var(--amber), #dfa317);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue-deep); border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,32,64,0.35);
+    }
+    .es-star i { font-size: 0.145em; line-height: 1; }
+    .c8-tab-lead .c8-lead-txt { padding: 6px 8px 8px; min-height: 36px; background: var(--card); }
     .c8-tab-lead .c8-lead-eyebrow {
       display: block; font-size: 8px; font-weight: 800; letter-spacing: 1.2px;
       text-transform: uppercase; color: var(--text-muted); margin-bottom: 1px;
@@ -317,7 +330,7 @@
       line-height: 1.25; color: var(--text);
     }
     .c8-tab-lead.active { border-color: var(--amber); box-shadow: 0 6px 16px rgba(255,185,29,0.35); }
-    .c8-tab-lead.active > div { background: rgba(255,185,29,0.14); }
+    .c8-tab-lead.active .c8-lead-txt { background: rgba(255,185,29,0.14); }
     .c8-tab-lead.active .c8-lead-title { color: var(--blue-deep); }
     .c8-tab-lead.active::after {
       content: ''; position: absolute; bottom: -10px; left: 50%;
@@ -711,8 +724,13 @@
       </button>
       <!-- 8th tile — the intangibles, amber where the others carry a thumbnail -->
       <button class="c8-tab-lead" data-tab="lead" role="tab" aria-selected="false" type="button">
-        <i class="fas fa-star"></i>
-        <div>
+        <div class="c8-lead-mark">
+          <span class="eight-star" aria-hidden="true">
+            <span class="es-num">8</span>
+            <span class="es-star"><i class="fas fa-star"></i></span>
+          </span>
+        </div>
+        <div class="c8-lead-txt">
           <span class="c8-lead-eyebrow">Intangibles</span>
           <span class="c8-lead-title">The Bit You Can&rsquo;t Coach</span>
         </div>
