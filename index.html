@@ -261,6 +261,18 @@
     .hub-mobile .m-center .lbl { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text); }
     .hub-mobile .m-center .cta { font-size: 11px; font-weight: 700; color: var(--blue); }
     .hub-mobile-list { display: grid; gap: 10px; }
+    /* Signpost from the hub down to the End Product section */
+    .hub-endprod {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 6px 14px; margin: 26px auto 0; max-width: 680px;
+      padding: 14px 22px; text-decoration: none;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 12px; transition: background 0.16s ease, transform 0.16s ease;
+    }
+    .hub-endprod:hover { background: rgba(255,255,255,0.17); transform: translateY(-2px); }
+    .hub-endprod .he-k { font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--amber); }
+    .hub-endprod .he-v { font-size: 13.5px; font-weight: 700; color: #fff; display: inline-flex; align-items: center; gap: 8px; }
+    .hub-endprod .he-v i { font-size: 10px; }
     .m-tile {
       display: flex; align-items: center; gap: 12px;
       background: var(--card); border: 1px solid var(--border-lt);
@@ -753,6 +765,12 @@
         </a>
       </div>
     </div>
+
+    <!-- Signpost down to the closing argument of the Complete 8 -->
+    <a href="central-midfielder.html#end-product" class="hub-endprod">
+      <span class="he-k">What the seven produce</span>
+      <span class="he-v">End Product &mdash; chances created, assists, goals <i class="fas fa-arrow-right"></i></span>
+    </a>
   </div>
 
   <!-- PHYSICAL HIGHLIGHTS -->

@@ -241,6 +241,105 @@
     /* Anchor scroll offset so the sticky nav doesn't cover the section */
     .skill-section, #sec-athletic, #sec-defensive, #sec-leadership { scroll-margin-top: 70px; }
 
+    /* ═══ END PRODUCT — the conclusion of the Complete 8 ═══
+       Deliberately dark and full-width so it reads as the closing argument,
+       not as a ninth competency. */
+    .endprod {
+      margin-top: 30px; padding: 40px 42px 44px;
+      background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+      border-radius: 16px; color: #fff; position: relative; overflow: hidden;
+      box-shadow: 0 12px 38px rgba(0,32,64,0.28);
+    }
+    .endprod::before {
+      content: ''; position: absolute; top: -60%; right: -18%;
+      width: 72%; height: 230%; pointer-events: none;
+      /* closest-side so the wash is fully transparent at the box edge — no seam */
+      background: radial-gradient(circle closest-side, rgba(255,185,29,0.20), transparent 100%);
+    }
+    .endprod > * { position: relative; z-index: 1; }
+    .ep-rule { width: 64px; height: 4px; background: var(--amber); border-radius: 2px; margin-bottom: 16px; }
+    .ep-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+    .endprod h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 700; letter-spacing: -0.4px; line-height: 1.05; margin-bottom: 13px; }
+    .ep-lead { font-size: 1rem; line-height: 1.72; color: rgba(255,255,255,0.88); max-width: 760px; }
+    .ep-lead strong { color: #fff; }
+
+    /* headline counts */
+    .ep-counts {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+      margin: 26px 0 8px; max-width: 620px;
+    }
+    .ep-count {
+      background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 11px; padding: 15px 16px;
+    }
+    .ep-count .n { font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; line-height: 1; color: var(--amber); }
+    .ep-count .k { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-top: 7px; }
+    .ep-note { font-size: 11.5px; color: rgba(255,255,255,0.58); margin-top: 12px; line-height: 1.55; }
+
+    /* the entries */
+    .ep-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 26px; }
+    .ep-card {
+      background: rgba(255,255,255,0.97); color: var(--text);
+      border-radius: 12px; overflow: hidden; text-align: left;
+      border: 0; padding: 0; font-family: inherit; width: 100%;
+      display: flex; flex-direction: column;
+      box-shadow: 0 4px 14px rgba(0,16,40,0.22);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .ep-card[data-vid] { cursor: pointer; }
+    .ep-card[data-vid]:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(0,16,40,0.34); }
+    .ep-top { display: flex; align-items: center; gap: 9px; padding: 12px 15px 0; flex-wrap: wrap; }
+    .ep-tag {
+      font-size: 9.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 4px 9px; border-radius: 5px; flex-shrink: 0;
+    }
+    .ep-tag.chance { background: rgba(255,185,29,0.20); color: #8a6412; }
+    .ep-tag.assist { background: rgba(0,103,71,0.13); color: var(--green); }
+    .ep-tag.goal   { background: rgba(206,17,38,0.12); color: #CE1126; }
+    .ep-meta { font-size: 10.5px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.3px; }
+    .ep-status {
+      margin-left: auto; font-size: 9px; font-weight: 800; letter-spacing: 1.1px;
+      text-transform: uppercase; color: var(--text-muted);
+      border: 1px dashed var(--border); border-radius: 5px; padding: 3px 7px;
+    }
+    /* once a data-vid is added the card becomes clickable and the status is replaced by a play prompt */
+    .ep-card[data-vid] .ep-status { display: none; }
+    .ep-card:not([data-vid]) { cursor: default; }
+    .ep-body { padding: 10px 15px 0; }
+    .ep-desc { font-size: 13px; line-height: 1.6; color: var(--text); }
+    .ep-outcome { font-size: 11.5px; font-weight: 800; margin-top: 9px; letter-spacing: 0.2px; }
+    .ep-outcome.hit { color: var(--green); }
+    .ep-outcome.miss { color: var(--text-muted); }
+    /* the link back to the seven — what produced it */
+    .ep-from {
+      margin-top: auto; padding: 12px 15px 13px;
+      display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+      border-top: 1px solid var(--border-lt);
+    }
+    .ep-from .lbl { font-size: 9px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: var(--text-muted); margin-right: 2px; }
+    .ep-pet {
+      font-size: 10px; font-weight: 700; color: var(--blue-deep);
+      background: rgba(0,94,184,0.09); border: 1px solid rgba(0,94,184,0.18);
+      padding: 3px 8px; border-radius: 20px; white-space: nowrap;
+    }
+    .ep-play { display: flex; align-items: center; gap: 6px; font-size: 10.5px; font-weight: 800; color: var(--blue); letter-spacing: 0.4px; text-transform: uppercase; }
+    .ep-card.pending { background: rgba(255,255,255,0.13); color: #fff; border: 1px dashed rgba(255,255,255,0.34); box-shadow: none; }
+    .ep-card.pending .ep-tag { background: rgba(255,255,255,0.20); color: #fff; }
+    .ep-card.pending .ep-status { color: rgba(255,255,255,0.62); border-color: rgba(255,255,255,0.30); }
+    .ep-card.pending .ep-desc { color: rgba(255,255,255,0.80); }
+    .ep-card.pending .ep-meta { color: rgba(255,255,255,0.62); }
+    .ep-card.pending .ep-from { border-top-color: rgba(255,255,255,0.18); }
+    .ep-card.pending .ep-from .lbl { color: rgba(255,255,255,0.58); }
+    .ep-card.pending .ep-pet { color: #fff; background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.26); }
+    @media (max-width: 860px) {
+      .endprod { padding: 32px 24px 34px; }
+      .ep-grid { grid-template-columns: 1fr; }
+      .ep-counts { grid-template-columns: repeat(3, 1fr); gap: 9px; }
+      .ep-count { padding: 12px 11px; }
+      .ep-count .n { font-size: 1.7rem; }
+      .ep-count .k { font-size: 9px; letter-spacing: 1px; }
+    }
+
     /* SKILL SWITCHER — 7 tabs + 1 active panel below */
     .c8-switch { margin-top: 16px; }
     .c8-tabs {
@@ -1182,6 +1281,105 @@
 
     </div>
   </div>
+
+  <!-- END PRODUCT — closing argument: what the seven competencies produce -->
+  <section class="endprod fi" id="end-product">
+    <div class="ep-rule"></div>
+    <div class="ep-eyebrow">What it adds up to</div>
+    <h2>End Product</h2>
+    <p class="ep-lead">Seven competencies are only worth what they produce. Every entry below is cut to <strong>the moment the ball leaves his foot</strong> &mdash; the last thing he controlled &mdash; and says honestly what happened next. The ones that weren&rsquo;t finished are kept in on purpose. Each one is tagged with the parts of his game that built it.</p>
+
+    <div class="ep-counts">
+      <!-- TODO Scott: confirm 'converted' once the three 2025/26 clips are chosen -->
+      <div class="ep-count"><div class="n">7</div><div class="k">Chances created</div></div>
+      <div class="ep-count"><div class="n">1</div><div class="k">Converted</div></div>
+      <div class="ep-count"><div class="n">1</div><div class="k">Goal</div></div>
+    </div>
+    <p class="ep-note">Clips catalogued so far. Conversion is the striker&rsquo;s job &mdash; the creation is his.</p>
+
+    <div class="ep-grid">
+
+      <!-- 1 — ASSIST (Step 4) -->
+      <button class="ep-card" type="button" data-clip-title="Assist — ball over the top">
+        <div class="ep-top"><span class="ep-tag assist">Assist</span><span class="ep-meta">Ashington AFC &middot; Step 4 &middot; as a 10</span><span class="ep-status">Clip to come</span></div>
+        <div class="ep-body">
+          <p class="ep-desc">Collected from a throw-in, chested it under control, turned, and clipped a left-footed pass over the defence to release the striker.</p>
+          <p class="ep-outcome hit">Finished.</p>
+        </div>
+        <div class="ep-from"><span class="lbl">Built from</span>
+          <span class="ep-pet">Receiving &amp; Turning</span><span class="ep-pet">Technical Quality</span><span class="ep-pet">Range &amp; Switches</span>
+        </div>
+      </button>
+
+      <!-- 2 — CHANCE (Step 4) -->
+      <button class="ep-card" type="button" data-clip-title="Chance created — the turn and the through ball">
+        <div class="ep-top"><span class="ep-tag chance">Chance created</span><span class="ep-meta">Ashington AFC &middot; Step 4 &middot; as a 10</span><span class="ep-status">Clip to come</span></div>
+        <div class="ep-body">
+          <p class="ep-desc">Picked the ball up in his own half, stepped across it to send his marker the wrong way, came away on the other side, carried it forward and slid a through ball in behind.</p>
+          <p class="ep-outcome miss">Missed.</p>
+        </div>
+        <div class="ep-from"><span class="lbl">Built from</span>
+          <span class="ep-pet">Receiving &amp; Turning</span><span class="ep-pet">Ball Carrying</span><span class="ep-pet">Passing &amp; Tempo</span>
+        </div>
+      </button>
+
+      <!-- 3 — CHANCE (Step 4) -->
+      <button class="ep-card" type="button" data-clip-title="Chance created — control, lay-off, drive and cutback">
+        <div class="ep-top"><span class="ep-tag chance">Chance created</span><span class="ep-meta">Ashington AFC &middot; Step 4 &middot; as a 10</span><span class="ep-status">Clip to come</span></div>
+        <div class="ep-body">
+          <p class="ep-desc">Dropped short for a long ball, scanned, took it down under pressure with a man on his back, laid it off to the right winger, shrugged his marker away and drove to the byline before cutting it back across the box.</p>
+          <p class="ep-outcome miss">Missed.</p>
+        </div>
+        <div class="ep-from"><span class="lbl">Built from</span>
+          <span class="ep-pet">Receiving &amp; Turning</span><span class="ep-pet">Technical Quality</span><span class="ep-pet">Ball Carrying</span><span class="ep-pet">Passing &amp; Tempo</span>
+        </div>
+      </button>
+
+      <!-- 4 — CHANCE (Step 4) -->
+      <button class="ep-card" type="button" data-clip-title="Chance created — the drive and the left-foot cross">
+        <div class="ep-top"><span class="ep-tag chance">Chance created</span><span class="ep-meta">Ashington AFC &middot; Step 4 &middot; as a 10</span><span class="ep-status">Clip to come</span></div>
+        <div class="ep-body">
+          <p class="ep-desc">Ball dropped loose near halfway; won the race to it, carried it with power down the left and delivered with his left foot.</p>
+          <p class="ep-outcome miss">Missed.</p>
+        </div>
+        <div class="ep-from"><span class="lbl">Built from</span>
+          <span class="ep-pet">Ball Carrying</span><span class="ep-pet">Technical Quality</span>
+        </div>
+      </button>
+
+      <!-- 5 — GOAL (Step 5) -->
+      <button class="ep-card" type="button" data-clip-title="Goal — back post volley from a corner">
+        <div class="ep-top"><span class="ep-tag goal">Goal</span><span class="ep-meta">2025/26 &middot; Step 5</span><span class="ep-status">Clip to come</span></div>
+        <div class="ep-body">
+          <p class="ep-desc">Corner in. Lost his marker with a shift of movement, arrived at the back post and met it first time &mdash; sliding right-foot volley, finished.</p>
+          <p class="ep-outcome hit">Scored.</p>
+        </div>
+        <div class="ep-from"><span class="lbl">Built from</span>
+          <span class="ep-pet">Technical Quality</span>
+        </div>
+      </button>
+
+      <!-- 6, 7, 8 — TO BE ADDED (Scott: three 2025/26 chance creations) -->
+      <button class="ep-card pending" type="button" disabled>
+        <div class="ep-top"><span class="ep-tag chance">Chance created</span><span class="ep-meta">2025/26 &middot; Step 5</span></div>
+        <div class="ep-body"><p class="ep-desc">Clip to be added.</p></div>
+        <div class="ep-from"><span class="lbl">Built from</span><span class="ep-pet">TBC</span></div>
+      </button>
+
+      <button class="ep-card pending" type="button" disabled>
+        <div class="ep-top"><span class="ep-tag chance">Chance created</span><span class="ep-meta">2025/26 &middot; Step 5</span></div>
+        <div class="ep-body"><p class="ep-desc">Clip to be added.</p></div>
+        <div class="ep-from"><span class="lbl">Built from</span><span class="ep-pet">TBC</span></div>
+      </button>
+
+      <button class="ep-card pending" type="button" disabled>
+        <div class="ep-top"><span class="ep-tag chance">Chance created</span><span class="ep-meta">2025/26 &middot; Step 5</span></div>
+        <div class="ep-body"><p class="ep-desc">Clip to be added.</p></div>
+        <div class="ep-from"><span class="lbl">Built from</span><span class="ep-pet">TBC</span></div>
+      </button>
+
+    </div>
+  </section>
 
   <!-- CB CROSSLINK — nod to the secondary position page -->
   <section class="fi" style="margin-top: 24px; padding: 36px 40px; background: var(--card); border: 1px solid var(--border-lt); border-left: 4px solid var(--amber); border-radius: 14px; text-align: center; box-shadow: 0 2px 8px rgba(0,32,64,0.06);">
