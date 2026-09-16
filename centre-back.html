@@ -252,6 +252,12 @@
       background: #fafbfc; border: 1px solid var(--border-lt);
       border-left: 3px solid var(--blue);
     }
+    /* attribution + club crest pinned to the foot of each quote */
+    .cq-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin-top: 10px; padding-top: 9px; border-top: 1px solid var(--border-lt); }
+    .cq-who { min-width: 0; }
+    .cq-crest { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+    .cq-crest img { max-width: 100%; max-height: 40px; width: auto; object-fit: contain; display: block; }
+    .cq-crest img.round { border-radius: 7px; }
     .case-quote .qkind {
       display: inline-block; margin-bottom: 8px;
       padding: 2px 7px; border-radius: 6px;
@@ -527,9 +533,13 @@
             <div class="case-stat sc-nu"><div class="v">89.9kg</div><div class="l">Frame</div></div>
           </div>
           <div class="case-evidence">
-            <div class="case-quote placeholder">
-              <span class="qkind">Scout — to verify</span>
-              <p class="q">Verbatim scout quote on aerial ability / physical dominance to be selected from source PDFs and slotted here.</p>
+            <div class="case-quote">
+              <span class="qkind">Reference &middot; 11 years</span>
+              <p class="q">"He has now developed into an extremely strong and physical athlete. This allows him to not only cover huge distances during games, but also dominate physically due to his height and strength."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Mark Hodgson"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -564,9 +574,13 @@
             <div class="case-stat feat"><div class="v">34 km/h</div><div class="l">Top Speed</div></div>
           </div>
           <div class="case-evidence">
-            <div class="case-quote placeholder">
-              <span class="qkind">Scout — to verify</span>
-              <p class="q">Verbatim quote on pace / physical athleticism from source PDFs (Lee Moore reference already on the Complete 8 references the improvement in running speed and technique — a strong candidate to reuse here).</p>
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"Cover the ground well on recovery run. From 1 side of the pitch to the other stopping a counterattack and winning a throw in."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">William Kinniburgh</p><p class="src">Scout, Motherwell / Oxford United</p></div>
+                <span class="cq-crest"><img src="img/badge-motherwell.png" alt="William Kinniburgh"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -600,13 +614,21 @@
             <div class="case-stat"><div class="v">−67%</div><div class="l">Difference</div><span class="b">Marske 25/26</span></div>
           </div>
           <div class="case-evidence">
-            <div class="case-quote placeholder">
-              <span class="qkind">Scout — to verify</span>
-              <p class="q">Verbatim quotes on reading the game, positioning, organising — several relevant lines exist in the source PDFs (Kinniburgh, Barnes and others). To be selected and slotted here.</p>
+            <div class="case-quote">
+              <span class="qkind">Academy assessment</span>
+              <p class="q">"Excellent reading of the game and decision-making. Very good range of passing and excellent positioning; tactically disciplined and composed in possession."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Middlesbrough FC</p><p class="src">Academy Assessment</p></div>
+                <span class="cq-crest"><img src="img/logo-boro.jpg" class="round" alt="Middlesbrough FC"></span>
+              </div>
             </div>
-            <div class="case-quote placeholder">
-              <span class="qkind">Scout — to verify</span>
-              <p class="q">Second complementary quote on leadership / communication.</p>
+            <div class="case-quote">
+              <span class="qkind">Trial assessment</span>
+              <p class="q">"Shows maturity beyond his years. Leading, instructing and organising teammates from the moment he steps on the pitch."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Stoke City</p><p class="src">U23 Trial Assessment</p></div>
+                <span class="cq-crest"><img src="img/badge-stoke.png" alt="Stoke City"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -640,9 +662,13 @@
             <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
           </div>
           <div class="case-evidence">
-            <div class="case-quote placeholder">
-              <span class="qkind">Scout — to verify</span>
-              <p class="q">Aaron Barnes (Stoke) quote on tackling — the strong tackling line already on The Complete 8 lifts naturally to this section.</p>
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"On field personality and combative nature which allows you to win duels all over the pitch."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Aaron Barnes</p><p class="src">Scout, Stoke City FC</p></div>
+                <span class="cq-crest"><img src="img/badge-stoke.png" alt="Aaron Barnes"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">
@@ -676,13 +702,21 @@
             <div class="case-stat"><div class="v">Composed</div><div class="l">Receiving Under Pressure</div></div>
           </div>
           <div class="case-evidence">
-            <div class="case-quote placeholder">
-              <span class="qkind">Scout — to verify</span>
-              <p class="q">David Banjura or William Kinniburgh quote on passing weight / receiving under pressure — both scouts already give strong verbatim on this from midfield positions. Lifts directly to CB context.</p>
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"Receive on back foot well, hold off man, head up to know where to play early or utilises his strength to roll man and play forward."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">David Banjura</p><p class="src">Former National League Chief Scout</p></div>
+                <span class="cq-crest"><img src="img/badge-national-league.png" alt="David Banjura"></span>
+              </div>
             </div>
-            <div class="case-quote placeholder">
-              <span class="qkind">Scout — to verify</span>
-              <p class="q">Second quote on two-footedness or playing forward.</p>
+            <div class="case-quote">
+              <span class="qkind">Reference &middot; 11 years</span>
+              <p class="q">"From a technical aspect I can't speak highly enough of Joe and would say this is his outstanding attribute. Superb with both right and left foot in terms of close ball control, first touch and short passing."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Mark Hodgson"></span>
+              </div>
             </div>
           </div>
           <div class="case-analysis">

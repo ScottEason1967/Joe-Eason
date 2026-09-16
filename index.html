@@ -327,6 +327,9 @@
       .epm-head h3 .ep10 { font-size: 1.7rem; }
     }
     .hub-mobile .m-center .num-wrap { z-index: 4; font-size: 56px; }
+    .hub-mobile .m-center .hub-end { margin-top: 12px; padding: 8px 18px 7px; }
+    .hub-mobile .m-center .hub-end .ep10 { font-size: 1.1rem; }
+    .hub-mobile .m-center .hub-end::before { width: 70px; top: -8px; }
 
     /* Mobile fallback — stacked tile list instead of petals */
     .hub-mobile { display: none; }
@@ -513,8 +516,8 @@
       .hub-center .cta { font-size: 10px; margin-top: 7px; }
       .hub-center .cta-star { font-size: 9.5px; }
       .hub-center .cta-star i { font-size: 8px; }
-      .hub-end { margin-top: 7px; padding: 5px 10px 4px; }
-      .hub-end .ep10 { font-size: 0.88rem; }
+      .hub-center .hub-end { margin-top: 7px; padding: 5px 10px 4px; }
+      .hub-center .hub-end .ep10 { font-size: 0.88rem; }
     }
     @media (max-width: 660px) {
       .hub-center .num-wrap { font-size: 42px; }
@@ -522,9 +525,9 @@
       .hub-center .sub { font-size: 10px; }
       .hub-center .cta { font-size: 9px; margin-top: 5px; }
       .hub-center .cta-star { font-size: 8.5px; gap: 4px; margin: 3px 0 6px; }
-      .hub-end { margin-top: 5px; padding: 4px 9px 3px; }
-      .hub-end .ep10 { font-size: 0.76rem; }
-      .hub-end::before { width: 42px; top: -6px; }
+      .hub-center .hub-end { margin-top: 5px; padding: 4px 9px 3px; }
+      .hub-center .hub-end .ep10 { font-size: 0.76rem; }
+      .hub-center .hub-end::before { width: 42px; top: -6px; }
     }
     /* Smallest stage the petals still render at — drop the question line to keep it in the circle */
     @media (max-width: 600px) {
@@ -808,6 +811,9 @@
         <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
         <div class="lbl">The Complete 8</div>
         <div class="cta">Read the analysis →</div>
+        <button class="hub-end" type="button" data-endproduct aria-label="End Product — chances created, assists and goals">
+          <span class="ep10">END P<span class="ep10-r">R<span class="ep10-stem" aria-hidden="true">R</span></span><span class="ep10-o">O</span>DUCT</span>
+        </button>
         <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
       </div>
       <div class="hub-mobile-list">
