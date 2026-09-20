@@ -375,18 +375,6 @@
     html.fonts-ready .ep10-stem { display: block; }
     .ep10-o { color: var(--amber); }
 
-    /* Placeholder until the End Product reel exists */
-    .ep-vid-wait {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 7px; width: 100%; aspect-ratio: 16/9; text-align: center; padding: 20px;
-      background: linear-gradient(135deg, #eef3f8, #dbe5ee);
-      border: 1.5px dashed var(--border); border-radius: 12px; color: var(--text-muted);
-    }
-    .ep-vid-wait i { font-size: 1.6rem; opacity: 0.4; }
-    .ep-vid-wait span { font-size: 12px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--text-sec); }
-    .ep-vid-wait small { font-size: 11px; }
-    .ep-vid-wait code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 10.5px; background: rgba(0,32,64,0.07); padding: 1px 5px; border-radius: 4px; }
-    .skill-video:not([data-vid]) { cursor: default; }
 
     /* Leadership panel content layout */
     .lead-grid {
@@ -1229,12 +1217,10 @@
             The eight above are the means. This is the end. Chances created, assists and goals &mdash; drawn from senior men&rsquo;s football at <strong>Step 5 and Step 4</strong>, with each clip captioned on screen to show which parts of his game produced it. The ones a teammate didn&rsquo;t finish are left in deliberately: <strong>creating the chance is the midfielder&rsquo;s job</strong>, converting it isn&rsquo;t.
           </p>
 
-          <a class="skill-video" id="vid-end">
-            <div class="ep-vid-wait">
-              <i class="fas fa-film"></i>
-              <span>End Product reel</span>
-              <small>Add <code>data-vid="&lt;YouTube ID&gt;"</code> to this element to wire it up</small>
-            </div>
+          <a href="https://www.youtube.com/watch?v=8nT0fmOoSeg" target="_blank" rel="noopener" class="skill-video" data-vid="8nT0fmOoSeg" id="vid-end">
+            <img src="https://img.youtube.com/vi/8nT0fmOoSeg/hqdefault.jpg" alt="End Product &mdash; chances created, assists and goals">
+            <div class="play-btn"><i class="fas fa-play"></i></div>
+            <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
           </a>
 
           <div class="case-evidence">
