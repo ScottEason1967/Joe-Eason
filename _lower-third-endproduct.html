@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1920px; height:1080px; background:transparent; }
+body { font-family:'Oswald','Arial Narrow',sans-serif; position:relative; }
+
+.lt {
+  position:absolute; left:92px; bottom:78px;
+  display:inline-flex; flex-direction:column; justify-content:center;
+  background:#0b2350; border-radius:14px;
+  border-left:12px solid #FFB91D;
+  box-shadow:0 18px 50px rgba(0,0,0,.45);
+  padding:26px 48px 28px 40px;
+  min-width:1120px;   /* fixed so every card is the same width in the edit */
+}
+/* the petals that built the moment */
+.lt-petals { color:#FFB91D; font-weight:600; font-size:27px; letter-spacing:4.5px; text-transform:uppercase; white-space:nowrap; line-height:1.45; }
+/* the outcome */
+.lt-title  { color:#fff; font-weight:700; font-size:80px; line-height:1; letter-spacing:1px; text-transform:uppercase; margin:8px 0 12px; }
+/* END PRODUCT with the 10 in the R's stem and the O */
+.lt-ep {
+  color:#fff; font-weight:700; font-size:46px; line-height:1;
+  letter-spacing:2px; text-transform:uppercase; white-space:nowrap;
+  padding-top:14px; border-top:2px solid rgba(255,255,255,.18);
+}
+.ep10-r { position:relative; display:inline-block; }
+.ep10-stem { position:absolute; left:0; top:0; color:#FFB91D; clip-path:inset(0 60% 0 0); }
+.ep10-o { color:#FFB91D; }
+</style></head>
+<body>
+  <div class="lt">
+    <div class="lt-petals" id="petals">RECEIVING &amp; TURNING &middot; TECHNICAL QUALITY &middot; RANGE &amp; SWITCHES</div>
+    <div class="lt-title" id="title">Assist</div>
+    <div class="lt-ep">END P<span class="ep10-r">R<span class="ep10-stem">R</span></span><span class="ep10-o">O</span>DUCT</div>
+  </div>
+</body></html>
