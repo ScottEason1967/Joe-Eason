@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1920px; height:1080px; }
+body { display:flex; font-family:'Oswald','Arial Narrow',sans-serif;
+  background:linear-gradient(135deg,#0b2350 0%,#0f2a55 55%,#16365f 100%); }
+.left { width:1180px; height:1080px; padding:80px 92px 78px; display:flex; flex-direction:column; }
+.logobox { background:#fff; border-radius:18px; padding:24px 34px; display:inline-flex; align-items:center; gap:22px; align-self:flex-start; box-shadow:0 10px 30px rgba(0,0,0,.25); margin-top:56px; }
+.logobox img { height:92px; width:auto; display:block; }
+.logobox .lb { font-weight:700; font-size:40px; line-height:.94; color:#0b2350; letter-spacing:1px; }
+.block { margin-top:auto; }
+.eyebrow { color:#FFB91D; font-weight:600; font-size:30px; letter-spacing:7px; margin-bottom:40px; }
+.title { color:#fff; font-weight:700; font-size:104px; line-height:.95; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; }
+
+/* the 8 carries the amber, and the star sits in its lower loop — the site's own mark */
+.eight { position:relative; display:inline-block; color:#FFB91D; }
+.eight .star { position:absolute; left:50%; top:76%; transform:translate(-50%,-50%);
+  width:.30em; height:.30em; border-radius:50%; background:linear-gradient(135deg,#FFB91D,#dfa317);
+  border:3px solid #0f2a55; display:flex; align-items:center; justify-content:center; }
+.eight .star svg { width:.16em; height:.16em; display:block; }
+
+.pillrow { display:flex; align-items:center; gap:22px; margin-top:34px; }
+.pill { display:inline-flex; align-items:center; background:#FFB91D; color:#0b2350; font-weight:700; font-size:31px; letter-spacing:3px; padding:13px 28px; border-radius:11px; text-transform:uppercase; box-shadow:0 8px 22px rgba(0,0,0,.2); }
+.name-row { margin-top:auto; }
+.jname { color:#fff; font-weight:700; font-size:66px; line-height:1; letter-spacing:1px; }
+.jrole { color:#9db4d6; font-weight:500; font-size:26px; letter-spacing:3px; margin-top:8px; text-transform:uppercase; }
+.right { width:740px; height:1080px; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr 1fr; gap:5px; background:#16365f; }
+.cell { overflow:hidden; position:relative; }
+.cell img { width:100%; height:100%; object-fit:cover; display:block; }
+.c1 img{object-position:38% 32%;} .c2 img{object-position:center 30%;}
+.c3 img{object-position:center 22%;} .c4 img{object-position:center 18%;}
+.c5 img{object-position:center 26%;} .c6 img{object-position:center 6%;}
+</style></head>
+<body>
+  <div class="left">
+    <div class="block">
+      <div class="eyebrow">SEVEN COMPETENCIES ON FILM</div>
+      <div class="title">THE COMPLETE <span class="eight">8<span class="star"><svg viewBox="0 0 24 24" fill="#0b2350"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span></span></div>
+      <div class="pillrow">
+        <span class="pill">Plus the end product</span>
+      </div>
+    </div>
+    <div class="name-row">
+      <div class="jname">JOE EASON</div>
+      <div class="jrole">Central Midfielder</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="cell c1"><img src="img/_cover-goal.jpg"></div>
+    <div class="cell c2"><img src="img/apps and awards.jpg"></div>
+    <div class="cell c3"><img src="img/joe-action.jpg"></div>
+    <div class="cell c4"><img src="img/photo-bio.jpg"></div>
+    <div class="cell c5"><img src="img/20260808_132241300_iOS.jpg"></div>
+    <div class="cell c6"><img src="img/20260823_202532000_iOS.jpg"></div>
+  </div>
+</body></html>

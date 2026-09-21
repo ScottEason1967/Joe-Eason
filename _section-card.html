@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1920px; height:1080px; }
+body { position:relative; font-family:'Oswald','Arial Narrow',sans-serif;
+  background:linear-gradient(135deg,#0b2350 0%,#0f2a55 55%,#16365f 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:80px 92px; overflow:hidden; }
+body::before { content:''; position:absolute; top:-40%; right:-12%; width:62%; height:200%;
+  background:radial-gradient(circle closest-side, rgba(255,185,29,.16), transparent 100%); pointer-events:none; }
+body > * { position:relative; z-index:1; }
+
+.eyebrow { color:#FFB91D; font-weight:600; font-size:27px; letter-spacing:7px; text-transform:uppercase; margin-bottom:26px; }
+.title { color:#fff; font-weight:700; font-size:118px; line-height:1; letter-spacing:1px; text-transform:uppercase; text-align:center; white-space:nowrap; }
+.amb { color:#FFB91D; }
+
+/* big section numeral, sits above the eyebrow */
+.num { color:#FFB91D; font-weight:700; font-size:112px; line-height:.9; letter-spacing:2px; opacity:.28; margin-bottom:6px; }
+
+/* END PRODUCT — the 10 hides in the R's stem and the O */
+.ep10-r { position:relative; display:inline-block; }
+.ep10-stem { position:absolute; left:0; top:0; color:#FFB91D; clip-path:inset(0 60% 0 0); }
+.ep10-o { color:#FFB91D; }
+.rule { width:92px; height:5px; background:#FFB91D; border-radius:3px; margin:30px 0 30px; }
+.pill { display:inline-flex; align-items:center; background:#FFB91D; color:#0b2350; font-weight:700; font-size:29px;
+  letter-spacing:3px; padding:13px 30px; border-radius:11px; text-transform:uppercase; }
+.note { color:#9db4d6; font-weight:500; font-size:27px; letter-spacing:1.5px; margin-top:26px; text-align:center; }
+.foot { position:absolute; bottom:64px; left:0; right:0; text-align:center; }
+.foot .jname { color:#fff; font-weight:700; font-size:34px; letter-spacing:2px; }
+.foot .jrole { color:#6f89b4; font-weight:500; font-size:20px; letter-spacing:3px; margin-top:6px; text-transform:uppercase; }
+</style></head>
+<body>
+  <div class="num" id="num"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="title" id="title"></div>
+  <div class="rule"></div>
+  <span class="pill" id="pill"></span>
+  <div class="note" id="note"></div>
+  <div class="foot">
+    <div class="jname">JOE EASON</div>
+    <div class="jrole" id="jrole">Central Midfielder</div>
+  </div>
+</body></html>
