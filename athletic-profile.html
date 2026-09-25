@@ -94,8 +94,9 @@
     .sc-metric .l { font-size: 10px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; margin-top: 6px; }
     .sc-translate { font-size: 0.9rem; color: var(--text-sec); line-height: 1.7; }
     .sc-translate strong { color: var(--blue-deep); font-weight: 700; }
-    .sc-c8 { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 4px 11px; border-radius: 14px; background: #fff; border: 1px solid var(--border); font-size: 11px; font-weight: 800; letter-spacing: 0.3px; color: var(--blue-deep); text-decoration: none; transition: border-color .15s, background .15s; }
-    .sc-c8 span { font-weight: 700; color: var(--text-muted); text-transform: uppercase; font-size: 9.5px; letter-spacing: 0.8px; }
+    .sc-game { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 9px; }
+    .sc-game-l { font-size: 9.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-right: 2px; }
+    .sc-c8 { display: inline-flex; align-items: center; gap: 5px; padding: 4px 11px; border-radius: 14px; background: #fff; border: 1px solid var(--border); font-size: 11px; font-weight: 800; letter-spacing: 0.3px; color: var(--blue-deep); text-decoration: none; transition: border-color .15s, background .15s; }
     .sc-c8:hover { border-color: var(--amber); background: rgba(255,185,29,0.10); }
 
     /* The Tests on Film */
@@ -128,6 +129,7 @@
       .ph-logos { justify-content: flex-start; }
       .af-block { grid-template-columns: 1fr; }
       .sc-row { grid-template-columns: 1fr; gap: 10px; text-align: center; }
+      .sc-game { justify-content: center; }
       .v-card.card-portrait, .v-card.card-landscape { width: 100%; max-width: 380px; }
       .v-frame { flex: none; height: auto; }
       .v-frame.f-portrait { aspect-ratio: 408 / 720; }
@@ -218,7 +220,7 @@
           <div class="rg-tiles">
             <div class="p-tile"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span><div class="src">PROformance &middot; Dec 2025</div></div>
             <div class="p-tile"><div class="v">1.62s</div><div class="l">10m Sprint</div><span class="b">Elite</span><div class="src">PROformance &middot; Dec 2025</div></div>
-            <div class="p-tile"><div class="v">3.89s</div><div class="l">30m Sprint</div><span class="b">Elite</span><div class="src">Gateshead Academy testing</div></div>
+            <div class="p-tile"><div class="v">3.89s</div><div class="l">30m Sprint</div><span class="b">Elite</span><div class="src">Speed gates &middot; Gateshead Academy</div></div>
             <div class="p-tile"><div class="v">34 km/h</div><div class="l">Top Speed</div><span class="b">Elite</span><div class="src">Max in-match speed &middot; verified on three platforms</div></div>
           </div>
         </div>
@@ -250,51 +252,52 @@
     </div>
 
     <!-- WHAT THE NUMBERS MEAN -->
+    <!-- 'In his game': every part of The Complete 8 each number feeds, strongest first -->
     <div class="phys-panel" id="ptab-means">
-      <p class="sec-sub">Each verified number translated into a demand of the central midfield role in 11-a-side football &mdash; and linked to the part of The Complete 8 where you can see it.</p>
+      <p class="sec-sub">Each verified number translated into a demand of the central midfield role in 11-a-side football &mdash; and linked to the parts of The Complete 8 where you can see it.</p>
       <div class="means-groups">
         <div class="res-group rg-speed">
           <div class="rg-head"><i class="fas fa-gauge-high"></i> Speed</div>
           <div class="sc-row">
             <div class="sc-metric"><div class="v">0.91s</div><div class="l">5m sprint</div></div>
-            <div class="sc-translate"><strong>The first step away from pressure.</strong> Most of a central midfielder's sprints are short ones &mdash; getting away from the nearest man after receiving on the half-turn, or stepping in to intercept. Elite over 5m is what turns a turn into space.<br><a class="sc-c8" href="central-midfielder.html#skill-3"><span>In his game</span> Receiving &amp; Turning &rarr;</a></div>
+            <div class="sc-translate"><strong>Sharpness off the mark.</strong> Most of a central midfielder&rsquo;s sprints are short ones &mdash; spinning away from his man after receiving on the half-turn, getting back goal-side when the ball turns over, or breaking away with it. Elite over 5m is that sharpness.<div class="sc-game"><span class="sc-game-l">In his game</span><a class="sc-c8" href="central-midfielder.html#skill-3">Receiving &amp; Turning &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-7">Recovery &amp; Heading &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-1">Ball Carrying &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-6">Tackling &amp; Cover &rarr;</a></div></div>
           </div>
           <div class="sc-row">
             <div class="sc-metric"><div class="v">34 km/h</div><div class="l">Top speed</div></div>
-            <div class="sc-translate"><strong>Recovery runs &mdash; and arriving in the box.</strong> Top-end pace decides whether a box-to-box midfielder is back in shape after a turnover, and whether he gets there in time at the other end. Verified across PROformance testing, STATSports GPS in match and PlayerMaker boot data.<br><a class="sc-c8" href="central-midfielder.html#skill-7"><span>In his game</span> Recovery &amp; Heading &rarr;</a></div>
+            <div class="sc-translate"><strong>Recovery runs &mdash; and running with the ball.</strong> Top-end pace decides whether a box-to-box midfielder gets back goal-side after a turnover, and whether he gets away when he breaks forward with the ball. Verified across PROformance testing, STATSports GPS in match and PlayerMaker boot data.<div class="sc-game"><span class="sc-game-l">In his game</span><a class="sc-c8" href="central-midfielder.html#skill-7">Recovery &amp; Heading &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-1">Ball Carrying &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-6">Tackling &amp; Cover &rarr;</a></div></div>
           </div>
         </div>
         <div class="res-group rg-jump">
           <div class="rg-head"><i class="fas fa-arrow-up"></i> Jumping</div>
           <div class="sc-row">
-            <div class="sc-metric"><div class="v">60.1cm</div><div class="l">Countermovement jump</div></div>
-            <div class="sc-translate"><strong>Winning the ball in the air.</strong> Aerial duels in midfield, defending set pieces and contesting the second ball. Elite vertical power means he gets to the ball first when it hangs.<br><a class="sc-c8" href="central-midfielder.html#skill-7"><span>In his game</span> Recovery &amp; Heading &rarr;</a></div>
+            <div class="sc-metric"><div class="v">62.5cm</div><div class="l">Abalakov jump</div></div>
+            <div class="sc-translate"><strong>Winning the ball in the air.</strong> The Abalakov is a jump with an arm swing &mdash; the closest test to rising for a header. Aerial duels in midfield, defending set pieces and contesting the second ball: elite vertical power means he gets to the ball first when it hangs.<div class="sc-game"><span class="sc-game-l">In his game</span><a class="sc-c8" href="central-midfielder.html#skill-7">Recovery &amp; Heading &rarr;</a></div></div>
           </div>
           <div class="sc-row">
             <div class="sc-metric"><div class="v">305cm</div><div class="l">Broad jump</div></div>
-            <div class="sc-translate"><strong>Power in the first strides of a carry.</strong> The horizontal drive that throws him three metres from a standing start is the same force that takes him away from a challenge when he picks the ball up and runs at the midfield.<br><a class="sc-c8" href="central-midfielder.html#skill-1"><span>In his game</span> Ball Carrying &rarr;</a></div>
+            <div class="sc-translate"><strong>Take-off power.</strong> Three metres from a standing start is explosive power off two feet &mdash; the spring behind attacking a header, and the drive in his first strides when he has to get back or when he breaks away with the ball.<div class="sc-game"><span class="sc-game-l">In his game</span><a class="sc-c8" href="central-midfielder.html#skill-7">Recovery &amp; Heading &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-1">Ball Carrying &rarr;</a></div></div>
           </div>
         </div>
         <div class="res-group rg-power">
           <div class="rg-head"><i class="fas fa-dumbbell"></i> Power</div>
           <div class="sc-row">
             <div class="sc-metric"><div class="v">3.7&times; BW</div><div class="l">Mid-thigh pull</div></div>
-            <div class="sc-translate"><strong>Strength in the duel.</strong> Peak force at 3.7 times bodyweight is the engine behind holding off a challenge, shielding the ball and winning it back in the tackle.<br><a class="sc-c8" href="central-midfielder.html#skill-6"><span>In his game</span> Tackling &amp; Cover &rarr;</a></div>
+            <div class="sc-translate"><strong>Raw power.</strong> Peak force at 3.7 times bodyweight is what goes into a tackle, into a challenge in the air, and into holding a man off while he carries.<div class="sc-game"><span class="sc-game-l">In his game</span><a class="sc-c8" href="central-midfielder.html#skill-6">Tackling &amp; Cover &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-7">Recovery &amp; Heading &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-1">Ball Carrying &rarr;</a></div></div>
           </div>
           <div class="sc-row">
             <div class="sc-metric"><div class="v">2.95 m/s</div><div class="l">Drop jump RSI</div></div>
-            <div class="sc-translate"><strong>Stop, react, go.</strong> Reactive strength is how quickly force goes back into the ground &mdash; the springiness behind sharp changes of direction when play switches or a pass is played into his zone.<br><a class="sc-c8" href="central-midfielder.html#skill-6"><span>In his game</span> Tackling &amp; Cover &rarr;</a></div>
+            <div class="sc-translate"><strong>Springiness.</strong> The drop jump is a step off a box, then straight back up as high and as fast as possible. RSI measures how high he gets against how little time his feet spend on the ground &mdash; the spring behind sharp first steps and quick turns.<div class="sc-game"><span class="sc-game-l">In his game</span><a class="sc-c8" href="central-midfielder.html#skill-3">Receiving &amp; Turning &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-7">Recovery &amp; Heading &rarr;</a></div></div>
           </div>
           <div class="sc-row">
             <div class="sc-metric"><div class="v">6'2" &middot; 89.9kg</div><div class="l">Frame</div></div>
-            <div class="sc-translate"><strong>Presence in the middle of the park.</strong> Size and mass that make him hard to move off the ball &mdash; and a genuine aerial option at both ends.<br><a class="sc-c8" href="central-midfielder.html#skill-1"><span>In his game</span> Ball Carrying &rarr;</a></div>
+            <div class="sc-translate"><strong>Hard to get the ball off.</strong> Size and mass that make him difficult to shift when he carries, receives or turns &mdash; and a genuine presence in the air and in the tackle.<div class="sc-game"><span class="sc-game-l">In his game</span><a class="sc-c8" href="central-midfielder.html#skill-1">Ball Carrying &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-3">Receiving &amp; Turning &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-7">Recovery &amp; Heading &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-6">Tackling &amp; Cover &rarr;</a></div></div>
           </div>
         </div>
         <div class="res-group rg-core">
           <div class="rg-head"><i class="fas fa-child-reaching"></i> Core</div>
           <div class="sc-row">
             <div class="sc-metric"><div class="v">2:35</div><div class="l">Plank &middot; 2:16 each side</div></div>
-            <div class="sc-translate"><strong>Balance in contact.</strong> Trunk strength keeps him upright when he's challenged from the side or behind &mdash; and lets him stay composed on the ball as he turns out of pressure.<br><a class="sc-c8" href="central-midfielder.html#skill-3"><span>In his game</span> Receiving &amp; Turning &rarr;</a></div>
+            <div class="sc-translate"><strong>Strength through the middle.</strong> Trunk strength is the platform the power comes from &mdash; holding his ground in the tackle, staying up in contact when he carries, and controlling his body in the air.<div class="sc-game"><span class="sc-game-l">In his game</span><a class="sc-c8" href="central-midfielder.html#skill-6">Tackling &amp; Cover &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-7">Recovery &amp; Heading &rarr;</a><a class="sc-c8" href="central-midfielder.html#skill-1">Ball Carrying &rarr;</a></div></div>
           </div>
         </div>
       </div>
