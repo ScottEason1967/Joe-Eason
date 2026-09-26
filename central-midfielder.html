@@ -348,21 +348,37 @@
     }
 
     /* END PRODUCT — the 10 sits below the eight, on its own */
-    .c8-tabs-extra { display: flex; justify-content: center; margin: 4px 0 26px; }
+    /* END PRODUCT — a tall fifth tile running the height of both rows, so it's on
+       screen when the page opens and reads as what the eight produce */
+    .c8-tabs { grid-template-columns: repeat(4, 1fr) 1.12fr; }
     .c8-tab-end {
       position: relative; cursor: pointer; font-family: inherit;
-      display: inline-flex; flex-direction: column; align-items: center; gap: 5px;
-      padding: 14px 30px 13px;
-      background: var(--card); border: 1.5px solid var(--blue);
-      border-radius: 10px; box-shadow: 0 2px 6px rgba(0,32,64,0.06);
-      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+      grid-column: 5; grid-row: 1 / span 2;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; padding: 18px 12px; overflow: hidden; text-align: center; color: #fff;
+      background: linear-gradient(160deg, #0b2350 0%, #0f2a55 60%, #16365f 100%);
+      border: 1.5px solid var(--amber); border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,32,64,0.10);
+      transition: transform 0.15s, box-shadow 0.15s;
     }
-    .c8-tab-end:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,32,64,0.14); }
-    .c8-tab-end .ep-k { font-size: 9px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--text-muted); }
-    .c8-tab-end .ep10 { font-size: 1.5rem; color: var(--blue-deep); }
-    .c8-tab-end.active { background: var(--blue-deep); border-color: var(--blue-deep); }
-    .c8-tab-end.active .ep-k { color: rgba(255,255,255,0.75); }
-    .c8-tab-end.active .ep10 { color: #fff; }
+    .c8-tab-end::before { content: ''; position: absolute; inset: 0; background: url('https://img.youtube.com/vi/8nT0fmOoSeg/maxresdefault.jpg') center/cover; opacity: .16; transition: opacity .2s; }
+    .c8-tab-end > * { position: relative; }
+    .c8-tab-end:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,32,64,0.24); }
+    .c8-tab-end:hover::before { opacity: .26; }
+    .c8-tab-end .ep-k { font-size: 9px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--amber); }
+    .c8-tab-end .ep10 { font-size: 2.05rem; line-height: 1.02; color: #fff; }
+    .c8-tab-end .ep-sub { font-size: 11px; line-height: 1.4; color: rgba(255,255,255,0.8); white-space: nowrap; }
+    .c8-tab-end .ep-go { width: 34px; height: 34px; border-radius: 50%; background: var(--amber); color: var(--blue-deep); display: flex; align-items: center; justify-content: center; font-size: 13px; margin-top: 2px; }
+    .c8-tab-end.active { box-shadow: 0 0 0 3px rgba(255,185,29,0.45), 0 8px 20px rgba(0,32,64,0.25); }
+    @media (min-width: 901px) and (max-width: 1000px) { .c8-tab-end .ep-sub { white-space: normal; text-wrap: balance; } }
+    /* Tablet: the eight stay four across, End Product becomes a full-width bar underneath */
+    @media (max-width: 900px) {
+      .c8-tabs { grid-template-columns: repeat(4, 1fr); }
+      .c8-tab-end { grid-column: 1 / -1; grid-row: auto; flex-direction: row; gap: 16px; padding: 14px 16px; }
+      .c8-tab-end .ep10 { font-size: 1.6rem; }
+      .c8-tab-end .ep10 br { display: none; }
+      .c8-tab-end .ep-sub { max-width: none; }
+    }
     .c8-tab-end.active::after {
       content: ''; position: absolute; bottom: -10px; left: 50%;
       transform: translateX(-50%); width: 0; height: 0;
@@ -463,8 +479,8 @@
     }
     @media (max-width: 560px) {
       .c8-tabs { grid-template-columns: repeat(2, 1fr); }
-      .c8-tab-end { padding: 12px 22px 11px; width: 100%; }
-      .c8-tab-end .ep10 { font-size: 1.3rem; }
+      .c8-tab-end { flex-direction: column; gap: 6px; padding: 14px 16px; }
+      .c8-tab-end .ep10 { font-size: 1.5rem; }
     }
 
     /* CASE FILE — new richer per-skill layout (replacing the old 2-col .skill-header) */
@@ -699,7 +715,7 @@
 
   <!-- SKILL SWITCHER -->
   <div class="c8-switch fi">
-    <div class="c8-tabs" role="tablist" aria-label="The Complete 8: seven filmed competencies plus the intangibles">
+    <div class="c8-tabs" role="tablist" aria-label="The Complete 8: seven filmed competencies, the intangibles, and the end product">
       <button class="c8-tab active" data-tab="1" role="tab" aria-selected="true" type="button">
         <div class="c8-tab-thumb"><img src="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" alt=""><span class="c8-tab-num">01</span></div>
         <div class="c8-tab-title">Ball Carrying</div>
@@ -741,13 +757,12 @@
           <span class="c8-lead-title">The Bit You Can&rsquo;t Coach</span>
         </div>
       </button>
-    </div>
-
-    <!-- END PRODUCT — what the eight produce; the 10 lives inside the word -->
-    <div class="c8-tabs-extra">
+      <!-- END PRODUCT — a tall tile beside the eight: what they all produce (the 10 lives inside the word) -->
       <button class="c8-tab-end" data-tab="end" role="tab" aria-selected="false" type="button">
         <span class="ep-k">What it all produces</span>
-        <span class="ep10">END P<span class="ep10-r">R<span class="ep10-stem" aria-hidden="true">R</span></span><span class="ep10-o">O</span>DUCT</span>
+        <span class="ep10">END<br>P<span class="ep10-r">R<span class="ep10-stem" aria-hidden="true">R</span></span><span class="ep10-o">O</span>DUCT</span>
+        <span class="ep-sub">Chances created &middot; assists &middot; goals</span>
+        <span class="ep-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
       </button>
     </div>
 
