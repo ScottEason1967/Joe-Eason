@@ -66,9 +66,16 @@ a:hover { color: var(--blue-deep); }
 .nav-brand em {
   font-style: normal; color: var(--amber);
 }
+/* Keep "Joe" white on hover — the site-wide link hover colour is the same navy as the bar, so it vanished */
+.nav-brand:hover { color: #fff; }
+/* The Complete 8 mark beside the name: amber 8 with the star in its lower loop (as on the Complete 8 opening card).
+   The small negative top margin stops the taller 8 nudging the name down. */
+.nav-8 { position: relative; display: inline-block; margin: -.18em 0 0 .28em; font-size: 1.6em; line-height: 1; color: var(--amber); }
+.nav-8 .star { position: absolute; left: 50%; top: 76%; transform: translate(-50%, -50%); width: .34em; height: .34em; border-radius: 50%; background: linear-gradient(135deg, #FFB91D, #dfa317); border: 1.5px solid #0f2a55; display: flex; align-items: center; justify-content: center; }
+.nav-8 .star svg { width: .2em; height: .2em; display: block; }
 .nav-links { display: flex; gap: 2px; list-style: none; }
 .nav-links a {
-  display: block; padding: 7px 13px;
+  display: block; padding: 7px 11.5px;
   font-size: 0.75rem; font-weight: 600;
   color: rgba(255,255,255,0.75); text-decoration: none;
   border-radius: 6px; transition: all 0.15s;
