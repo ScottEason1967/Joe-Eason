@@ -63,11 +63,13 @@
     .wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
     .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
     .nav-brand em { font-style: normal; color: var(--amber); }
-    /* The Complete 8 mark beside the name: amber 8 with the star in its lower loop (as on the Complete 8 opening card).
-       The small negative top margin stops the taller 8 nudging the name down. */
-    .nav-8 { position: relative; display: inline-block; margin: -.18em 0 0 .28em; font-size: 1.6em; line-height: 1; color: var(--amber); }
-    .nav-8 .star { position: absolute; left: 50%; top: 76%; transform: translate(-50%, -50%); width: .34em; height: .34em; border-radius: 50%; background: linear-gradient(135deg, #FFB91D, #dfa317); border: 1.5px solid #0f2a55; display: flex; align-items: center; justify-content: center; }
-    .nav-8 .star svg { width: .2em; height: .2em; display: block; }
+    /* The Complete 8 mark beside the name: the blue 8 with the amber star disc from the
+       "Bit You Can't Coach" tile on the Complete 8 page, on the tile's light panel so it shows on the navy bar.
+       Exactly the height of the capitals in JOE EASON. */
+    .nav-8 { box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; width: 17.5px; height: 17.5px; margin-left: 8px; vertical-align: 1.1px; border-radius: 4px; background: linear-gradient(135deg, #eef3f8, #dbe5ee); border: 1px solid var(--amber); }
+    .n8 { position: relative; display: block; font-family: var(--font-display); font-size: 16px; font-weight: 700; line-height: 1; letter-spacing: 0; color: var(--blue); transform: translateY(-0.9px); }
+    .n8-disc { position: absolute; left: 50%; top: 76%; transform: translate(-50%, -50%); width: .38em; height: .38em; border-radius: 50%; background: linear-gradient(135deg, var(--amber), #dfa317); border: 1px solid #fff; display: flex; align-items: center; justify-content: center; color: var(--blue-deep); }
+    .n8-disc i { font-size: .2em; line-height: 1; }
     .nav-links { display: flex; gap: 2px; list-style: none; }
     .nav-links a { display: block; padding: 7px 11.5px; font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.75); text-decoration: none; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.4px; transition: all 0.15s; }
     .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); }
@@ -676,7 +678,7 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="wrap">
-    <a href="index.html" class="nav-brand">Joe <em>Eason</em><span class="nav-8" aria-hidden="true">8<span class="star"><svg viewBox="0 0 24 24" fill="#0b2350"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span></span></a>
+    <a href="index.html" class="nav-brand">Joe <em>Eason</em><span class="nav-8" aria-hidden="true"><span class="n8">8<span class="n8-disc"><i class="fas fa-star"></i></span></span></span></a>
     <button class="nav-ham" id="navHam"><i class="fas fa-bars"></i></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="on">Home</a></li>

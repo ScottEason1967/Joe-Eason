@@ -68,11 +68,13 @@ a:hover { color: var(--blue-deep); }
 }
 /* Keep "Joe" white on hover — the site-wide link hover colour is the same navy as the bar, so it vanished */
 .nav-brand:hover { color: #fff; }
-/* The Complete 8 mark beside the name: amber 8 with the star in its lower loop (as on the Complete 8 opening card).
-   The small negative top margin stops the taller 8 nudging the name down. */
-.nav-8 { position: relative; display: inline-block; margin: -.18em 0 0 .28em; font-size: 1.6em; line-height: 1; color: var(--amber); }
-.nav-8 .star { position: absolute; left: 50%; top: 76%; transform: translate(-50%, -50%); width: .34em; height: .34em; border-radius: 50%; background: linear-gradient(135deg, #FFB91D, #dfa317); border: 1.5px solid #0f2a55; display: flex; align-items: center; justify-content: center; }
-.nav-8 .star svg { width: .2em; height: .2em; display: block; }
+/* The Complete 8 mark beside the name: the blue 8 with the amber star disc from the
+   "Bit You Can't Coach" tile on the Complete 8 page, on the tile's light panel so it shows on the navy bar.
+   Exactly the height of the capitals in JOE EASON. */
+.nav-8 { box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; width: 17.5px; height: 17.5px; margin-left: 8px; vertical-align: 1.1px; border-radius: 4px; background: linear-gradient(135deg, #eef3f8, #dbe5ee); border: 1px solid var(--amber); }
+.n8 { position: relative; display: block; font-family: var(--font-display); font-size: 16px; font-weight: 700; line-height: 1; letter-spacing: 0; color: var(--blue); transform: translateY(-0.9px); }
+.n8-disc { position: absolute; left: 50%; top: 76%; transform: translate(-50%, -50%); width: .38em; height: .38em; border-radius: 50%; background: linear-gradient(135deg, var(--amber), #dfa317); border: 1px solid #fff; display: flex; align-items: center; justify-content: center; color: var(--blue-deep); }
+.n8-disc i { font-size: .2em; line-height: 1; }
 .nav-links { display: flex; gap: 2px; list-style: none; }
 .nav-links a {
   display: block; padding: 7px 11.5px;
