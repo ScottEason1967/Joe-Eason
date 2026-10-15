@@ -682,9 +682,29 @@
     .hub-svg .ringlbl { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 3px; }
     .hub-svg .l6 { fill: #9ccbff; } .hub-svg .l8 { fill: var(--amber); }
     .ten-tag { display:inline-block; margin: 2px 0 4px; padding: 2px 9px; border-radius: 20px; background: var(--amber); color: var(--blue-deep); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
-    .c8-key { display:flex; flex-wrap:wrap; gap:10px 22px; justify-content:center; margin: 6px auto 26px; max-width: 900px; font-size: 13px; color: rgba(255,255,255,.85); }
-    .c8-key b { font-family: var(--font-display); letter-spacing: 1px; }
-    .c8-key i.dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:7px; vertical-align:-1px; font-style:normal; }
+    /* The journey strip above the flower: the 6, the hinge, the 8, then the 8th and the 10 in the middle */
+    .c8-journey { display: grid; grid-template-columns: 1.15fr auto 0.9fr auto 1.15fr auto 1fr; gap: 10px; align-items: stretch; max-width: 1100px; margin: 6px auto 34px; }
+    .cj { position: relative; overflow: hidden; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 16px 16px 14px; }
+    .cj::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 5px; }
+    .cj6::before { background: #5aa9ff; } .cjh::before { background: linear-gradient(90deg, #5aa9ff, #FFB91D); } .cj8::before { background: var(--amber); } .cj10::before { background: #fff; }
+    .cj-t { font-family: var(--font-display); font-size: 1.65rem; font-weight: 700; line-height: 1; text-transform: uppercase; letter-spacing: 0.5px; }
+    .cj6 .cj-t { color: #9ccbff; } .cj8 .cj-t { color: var(--amber); } .cj10 .cj-t { color: #fff; }
+    .cjh .cj-t { background: linear-gradient(90deg, #9ccbff, #FFB91D); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .cj-s { margin-top: 6px; font-size: 10.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+    .cj ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+    .cj li { display: flex; align-items: baseline; gap: 9px; font-size: 13.5px; font-weight: 600; color: #fff; line-height: 1.3; }
+    .cj li b { font-family: var(--font-display); font-size: 14px; font-weight: 700; min-width: 20px; }
+    .cj6 li b { color: #9ccbff; } .cjh li b { color: #d9c27a; } .cj8 li b { color: var(--amber); } .cj10 li b { color: #fff; }
+    .cj-arrow { display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 16px; }
+    @media (max-width: 900px) { .c8-journey { grid-template-columns: 1fr 1fr; } .cj-arrow { display: none; } }
+    @media (max-width: 560px) { .c8-journey { display: none; } }
+    /* Phones: the list itself carries the journey, with a header for each stage */
+    .m-group { display: flex; align-items: center; gap: 9px; margin: 10px 0 0; font-size: 10.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+    .m-group:first-child { margin-top: 0; }
+    .m-group::before { content: ''; width: 20px; height: 5px; border-radius: 3px; flex-shrink: 0; }
+    .m-group.g6::before { background: #5aa9ff; } .m-group.gh::before { background: linear-gradient(90deg, #5aa9ff, #FFB91D); } .m-group.g8::before { background: var(--amber); }
+    .m-group b { font-family: var(--font-display); font-size: 16px; letter-spacing: 0.5px; }
+    .m-group.g6 b { color: #9ccbff; } .m-group.gh b { color: #d9c27a; } .m-group.g8 b { color: var(--amber); }
     .m-tile.g6, .m-tile.gh, .m-tile.g8 { position: relative; }
     .m-tile.g6::before, .m-tile.gh::before, .m-tile.g8::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; z-index: 2; }
     .m-tile.g6::before { background: #5aa9ff; } .m-tile.g8::before { background: var(--amber); } .m-tile.gh::before { background: linear-gradient(#5aa9ff, #FFB91D); }
@@ -776,9 +796,20 @@
       <div class="rule"></div>
       <div class="eyebrow">Video Evidence</div>
       <h2>The Complete 8</h2>
-      <p>Seven competencies on film from 2025/26 at Step 5, plus the intangibles that make the eighth &mdash; and the end product it all adds up to.</p>
+      <p>Seven competencies on film at Step 4 and Step 5, plus the intangibles that make the eighth &mdash; and the end product it all adds up to.</p>
     </div>
-    <div class="c8-key"><span><i class="dot" style="background:#5aa9ff"></i><b>01–03 THE 6</b> &nbsp;Receiving &amp; Turning · Tackling &amp; Cover · Recovery &amp; Heading</span><span><i class="dot" style="background:linear-gradient(90deg,#5aa9ff,#FFB91D)"></i><b>04 THE HINGE</b> &nbsp;Passing &amp; Tempo</span><span><i class="dot" style="background:#FFB91D"></i><b>05–07 THE 8</b> &nbsp;Range &amp; Switches · Technical Quality · Ball Carrying</span><span><b>08 + THE 10</b> &nbsp;The Bit You Can&rsquo;t Coach and End Product, in the middle</span>
+    <div class="c8-journey" aria-label="How The Complete 8 reads: from a 6, through the hinge, to an 8, with the 8th and the 10 in the middle">
+      <div class="cj cj6"><div class="cj-t">The 6</div><div class="cj-s">Holding midfielder &middot; 01&ndash;03</div>
+        <ul><li><b>01</b>Receiving &amp; Turning</li><li><b>02</b>Tackling &amp; Cover</li><li><b>03</b>Range &amp; Switches</li></ul></div>
+      <div class="cj-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+      <div class="cj cjh"><div class="cj-t">The hinge</div><div class="cj-s">From the 6 to the 8 &middot; 04</div>
+        <ul><li><b>04</b>Passing &amp; Tempo</li></ul></div>
+      <div class="cj-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+      <div class="cj cj8"><div class="cj-t">The 8</div><div class="cj-s">Box to box &middot; 05&ndash;07</div>
+        <ul><li><b>05</b>Ball Carrying</li><li><b>06</b>Recovery &amp; Heading</li><li><b>07</b>Technical Quality</li></ul></div>
+      <div class="cj-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+      <div class="cj cj10"><div class="cj-t">08 + The 10</div><div class="cj-s">In the middle</div>
+        <ul><li><b>08</b>The Bit You Can&rsquo;t Coach</li><li><b>10</b>End Product</li></ul></div>
     </div>
 
     <!-- Desktop / tablet: SVG petal hub — 7 video segments concave around centre disc -->
@@ -787,11 +818,11 @@
         <defs>
           <pattern id="pat-p0" patternUnits="userSpaceOnUse" x="220.00" y="1.00" width="360" height="270"><image href="https://img.youtube.com/vi/QVeIEv2-YFg/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
           <pattern id="pat-p1" patternUnits="userSpaceOnUse" x="426.40" y="100.40" width="360" height="270"><image href="https://img.youtube.com/vi/RwaoxySKSFo/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p2" patternUnits="userSpaceOnUse" x="477.38" y="323.75" width="360" height="270"><image href="https://img.youtube.com/vi/xvypi_6BQps/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p2" patternUnits="userSpaceOnUse" x="477.38" y="323.75" width="360" height="270"><image href="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
           <pattern id="pat-p3" patternUnits="userSpaceOnUse" x="334.55" y="502.86" width="360" height="270"><image href="https://img.youtube.com/vi/YSjKQWCiEPw/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p4" patternUnits="userSpaceOnUse" x="105.45" y="502.86" width="360" height="270"><image href="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p5" patternUnits="userSpaceOnUse" x="-37.38" y="323.75" width="360" height="270"><image href="https://img.youtube.com/vi/DMwCNd98Mjw/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p6" patternUnits="userSpaceOnUse" x="13.60" y="100.40" width="360" height="270"><image href="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p4" patternUnits="userSpaceOnUse" x="105.45" y="502.86" width="360" height="270"><image href="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p5" patternUnits="userSpaceOnUse" x="-37.38" y="323.75" width="360" height="270"><image href="https://img.youtube.com/vi/xvypi_6BQps/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p6" patternUnits="userSpaceOnUse" x="13.60" y="100.40" width="360" height="270"><image href="https://img.youtube.com/vi/DMwCNd98Mjw/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
           <linearGradient id="hingeGrad" gradientUnits="userSpaceOnUse" x1="700.4" y1="661.1" x2="420.8" y2="797.5"><stop offset="0%" stop-color="#5aa9ff"/><stop offset="100%" stop-color="#FFB91D"/></linearGradient>
           <radialGradient id="darken" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#001432" stop-opacity="0.15"/><stop offset="100%" stop-color="#001432" stop-opacity="0.85"/></radialGradient>
         </defs>
@@ -811,12 +842,12 @@
             <g transform="translate(642.37 206.72)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
             <text x="562.62" y="270.31" class="petal-title" text-anchor="middle"><tspan x="562.62" dy="0">Tackling</tspan><tspan x="562.62" dy="18">&amp; Cover</tspan></text>
           <text x="562.62" y="246.31" class="petal-num" text-anchor="middle">02</text></a>
-          <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" class="petal" data-vid="xvypi_6BQps" data-title="Recovery &amp; Heading" aria-label="Recovery & Heading — play video">
+          <a href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" rel="noopener" class="petal" data-vid="VIKSKKkh0MU" data-title="Range &amp; Switches" aria-label="Range & Switches — play video">
             <path d="M 545.10 370.86 A 148 148 0 0 1 518.09 489.22 L 703.20 629.07 A 380 380 0 0 0 772.56 325.17 Z" fill="url(#pat-p2)" class="petal-img"/>
             <path d="M 545.10 370.86 A 148 148 0 0 1 518.09 489.22 L 703.20 629.07 A 380 380 0 0 0 772.56 325.17 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 545.10 370.86 A 148 148 0 0 1 518.09 489.22 L 703.20 629.07 A 380 380 0 0 0 772.56 325.17 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(702.23 468.98)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="602.79" y="446.28" class="petal-title" text-anchor="middle"><tspan x="602.79" dy="0">Recovery</tspan><tspan x="602.79" dy="18">&amp; Heading</tspan></text>
+            <text x="602.79" y="446.28" class="petal-title" text-anchor="middle"><tspan x="602.79" dy="0">Range</tspan><tspan x="602.79" dy="18">&amp; Switches</tspan></text>
           <text x="602.79" y="422.28" class="petal-num" text-anchor="middle">03</text></a>
           <a href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" class="petal" data-vid="YSjKQWCiEPw" data-title="Passing &amp; Tempo" aria-label="Passing & Tempo — play video">
             <path d="M 513.26 495.27 A 148 148 0 0 1 403.87 547.95 L 409.95 779.87 A 380 380 0 0 0 690.79 644.62 Z" fill="url(#pat-p3)" class="petal-img"/>
@@ -825,26 +856,26 @@
             <g transform="translate(534.50 679.30)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
             <text x="490.25" y="587.40" class="petal-title" text-anchor="middle"><tspan x="490.25" dy="0">Passing</tspan><tspan x="490.25" dy="18">&amp; Tempo</tspan></text>
           <text x="490.25" y="563.40" class="petal-num" text-anchor="middle">04</text></a>
-          <a href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" rel="noopener" class="petal" data-vid="VIKSKKkh0MU" data-title="Range &amp; Switches" aria-label="Range & Switches — play video">
+          <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" class="petal" data-vid="tidNVF270xU" data-title="Ball Carrying" aria-label="Ball Carrying — play video">
             <path d="M 396.13 547.95 A 148 148 0 0 1 286.74 495.27 L 109.21 644.62 A 380 380 0 0 0 390.05 779.87 Z" fill="url(#pat-p4)" class="petal-img"/>
             <path d="M 396.13 547.95 A 148 148 0 0 1 286.74 495.27 L 109.21 644.62 A 380 380 0 0 0 390.05 779.87 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 396.13 547.95 A 148 148 0 0 1 286.74 495.27 L 109.21 644.62 A 380 380 0 0 0 390.05 779.87 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(265.50 679.30)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="309.75" y="587.40" class="petal-title" text-anchor="middle"><tspan x="309.75" dy="0">Range</tspan><tspan x="309.75" dy="18">&amp; Switches</tspan></text>
+            <text x="309.75" y="587.40" class="petal-title" text-anchor="middle"><tspan x="309.75" dy="0">Ball</tspan><tspan x="309.75" dy="18">Carrying</tspan></text>
           <text x="309.75" y="563.40" class="petal-num" text-anchor="middle">05</text></a>
-          <a href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" class="petal" data-vid="DMwCNd98Mjw" data-title="Technical Quality" aria-label="Technical Quality — play video">
+          <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" class="petal" data-vid="xvypi_6BQps" data-title="Recovery &amp; Heading" aria-label="Recovery & Heading — play video">
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" fill="url(#pat-p5)" class="petal-img"/>
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(97.77 468.98)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="197.21" y="446.28" class="petal-title" text-anchor="middle"><tspan x="197.21" dy="0">Technical</tspan><tspan x="197.21" dy="18">Quality</tspan></text>
+            <text x="197.21" y="446.28" class="petal-title" text-anchor="middle"><tspan x="197.21" dy="0">Recovery</tspan><tspan x="197.21" dy="18">&amp; Heading</tspan></text>
           <text x="197.21" y="422.28" class="petal-num" text-anchor="middle">06</text></a>
-          <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" class="petal" data-vid="tidNVF270xU" data-title="Ball Carrying" aria-label="Ball Carrying — play video">
+          <a href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" class="petal" data-vid="DMwCNd98Mjw" data-title="Technical Quality" aria-label="Technical Quality — play video">
             <path d="M 256.62 363.30 A 148 148 0 0 1 332.32 268.38 L 226.22 62.07 A 380 380 0 0 0 31.87 305.77 Z" fill="url(#pat-p6)" class="petal-img"/>
             <path d="M 256.62 363.30 A 148 148 0 0 1 332.32 268.38 L 226.22 62.07 A 380 380 0 0 0 31.87 305.77 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 256.62 363.30 A 148 148 0 0 1 332.32 268.38 L 226.22 62.07 A 380 380 0 0 0 31.87 305.77 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(157.63 206.72)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="237.38" y="270.31" class="petal-title" text-anchor="middle"><tspan x="237.38" dy="0">Ball</tspan><tspan x="237.38" dy="18">Carrying</tspan></text>
+            <text x="237.38" y="270.31" class="petal-title" text-anchor="middle"><tspan x="237.38" dy="0">Technical</tspan><tspan x="237.38" dy="18">Quality</tspan></text>
           <text x="237.38" y="246.31" class="petal-num" text-anchor="middle">07</text></a>
         </g>
       </svg>
@@ -888,6 +919,7 @@
         <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
       </div>
       <div class="hub-mobile-list">
+        <div class="m-group g6"><b>The 6</b>Holding midfielder &middot; 01&ndash;03</div>
         <a href="https://www.youtube.com/watch?v=QVeIEv2-YFg" target="_blank" rel="noopener" class="m-tile g6" data-vid="QVeIEv2-YFg" data-title="Receiving &amp; Turning">
           <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/QVeIEv2-YFg/hqdefault.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">01</span>Receiving &amp; Turning</h3><p>Back foot, play forward</p></div>
@@ -896,25 +928,27 @@
           <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/RwaoxySKSFo/hqdefault.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">02</span>Tackling &amp; Cover</h3><p>Winning the ball, covering space</p></div>
         </a>
-        <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" class="m-tile g6" data-vid="xvypi_6BQps" data-title="Recovery &amp; Heading">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/xvypi_6BQps/hqdefault.jpg" alt=""></div>
-          <div class="m-tile-body"><h3><span class="m-num">03</span>Recovery &amp; Heading</h3><p>Tracking back, aerial duels</p></div>
+        <a href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" rel="noopener" class="m-tile g6" data-vid="VIKSKKkh0MU" data-title="Range &amp; Switches">
+          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-body"><h3><span class="m-num">03</span>Range &amp; Switches</h3><p>Switching play, crossing, delivery</p></div>
         </a>
+        <div class="m-group gh"><b>The hinge</b>From the 6 to the 8 &middot; 04</div>
         <a href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" class="m-tile gh" data-vid="YSjKQWCiEPw" data-title="Passing &amp; Tempo">
           <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/YSjKQWCiEPw/hqdefault.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">04</span>Passing &amp; Tempo</h3><p>Dictating rhythm, short combos</p></div>
         </a>
-        <a href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" rel="noopener" class="m-tile g8" data-vid="VIKSKKkh0MU" data-title="Range &amp; Switches">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" alt=""></div>
-          <div class="m-tile-body"><h3><span class="m-num">05</span>Range &amp; Switches</h3><p>Switching play, crossing, delivery</p></div>
+        <div class="m-group g8"><b>The 8</b>Box to box &middot; 05&ndash;07</div>
+        <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" class="m-tile g8" data-vid="tidNVF270xU" data-title="Ball Carrying">
+          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-body"><h3><span class="m-num">05</span>Ball Carrying</h3><p>Driving runs, beating pressure</p></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" class="m-tile g8" data-vid="xvypi_6BQps" data-title="Recovery &amp; Heading">
+          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/xvypi_6BQps/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-body"><h3><span class="m-num">06</span>Recovery &amp; Heading</h3><p>Tracking back, aerial duels</p></div>
         </a>
         <a href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" class="m-tile g8" data-vid="DMwCNd98Mjw" data-title="Technical Quality">
           <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/DMwCNd98Mjw/hqdefault.jpg" alt=""></div>
-          <div class="m-tile-body"><h3><span class="m-num">06</span>Technical Quality</h3><p>First touch, composure, execution</p></div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" class="m-tile g8" data-vid="tidNVF270xU" data-title="Ball Carrying">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" alt=""></div>
-          <div class="m-tile-body"><h3><span class="m-num">07</span>Ball Carrying</h3><p>Driving runs, beating pressure</p></div>
+          <div class="m-tile-body"><h3><span class="m-num">07</span>Technical Quality</h3><p>First touch, composure, execution</p></div>
         </a>
       </div>
     </div>
