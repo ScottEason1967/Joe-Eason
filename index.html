@@ -83,7 +83,7 @@
     .hero { margin-bottom: 48px; display: flex; flex-direction: column; gap: 22px; }
     .hero-top { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
     .hero-copy { min-width: 0; }
-    .hero-extra { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.6; margin: 16px 0 0; max-width: 520px; }
+    .hero-extra { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.6; margin: 16px 0 0; max-width: 520px; text-align: justify; }
     /* Highlights film button — same as the futsal homepage, in the football site's amber */
     .hero-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 13px 22px; background: var(--amber); color: var(--blue-deep); border-radius: 10px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; text-decoration: none; box-shadow: 0 8px 22px rgba(255,185,29,0.30); transition: transform 0.15s, box-shadow 0.15s; }
     .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(255,185,29,0.42); }
@@ -92,6 +92,13 @@
     .hero-cta-note { margin-top: 9px; font-size: 12px; color: rgba(255,255,255,0.72); line-height: 1.5; max-width: 400px; }
     /* second button: same shape as the highlights button, outlined so the highlights film stays the main one */
     .hero-cta.hero-cta-2 { display: flex; width: fit-content; margin-top: 14px; background: transparent; color: var(--amber); border: 2px solid var(--amber); box-shadow: none; padding: 11px 20px; }
+    /* 'Explore The Complete 8' — a quiet link (not a third button) that takes people down to the flower */
+    .hero-c8 { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 13px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; color: #fff; text-decoration: none; }
+    .hero-c8 .nav-8 { margin-left: 0; vertical-align: middle; }
+    .hero-c8 .hc8-arrow { color: var(--amber); transition: transform 0.2s; }
+    .hero-c8:hover { color: var(--amber); }
+    .hero-c8:hover .hc8-arrow { transform: translateY(3px); }
+    #c8 { scroll-margin-top: 70px; }
     .hero-cta.hero-cta-2:hover { background: var(--amber); color: var(--blue-deep); box-shadow: 0 8px 22px rgba(255,185,29,0.30); }
     .hero-tiles { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
     .hero-tile { background: #fff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,32,64,0.16); display: flex; align-items: center; }
@@ -146,7 +153,7 @@
     .hero-rule { width: 72px; height: 4px; background: var(--amber); border-radius: 2px; margin-bottom: 18px; }
     .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-bottom: 14px; }
     .hero h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 56px); font-weight: 700; line-height: 1.02; color: #fff; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 16px; }
-    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.9); line-height: 1.65; margin-bottom: 24px; max-width: 500px; }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.9); line-height: 1.65; margin-bottom: 24px; max-width: 500px; text-align: justify; }
     .hero-sub strong { color: #fff; font-weight: 700; }
     .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,32,64,0.12); }
     .hero-stat { padding: 16px 14px; text-align: center; border-right: 1px solid var(--border-lt); }
@@ -762,6 +769,7 @@
         <p class="hero-extra">No academy background &mdash; every level earned in senior men&rsquo;s football, and selected by four different managers along the way.</p>
         <a class="hero-cta" href="https://www.youtube.com/watch?v=dfxKmKbjnKo" target="_blank" rel="noopener" data-vid="dfxKmKbjnKo" data-title="Joe Eason &mdash; highlights film" data-more="central-midfielder.html"><i class="fas fa-play"></i> Watch the highlights film</a>
         <p class="hero-cta-note">Highlights across The Complete 8 &mdash; with the deeper dive, competency by competency, below.</p>
+        <a class="hero-c8" href="#c8"><span class="nav-8" aria-hidden="true"><span class="n8">8<span class="n8-disc"><i class="fas fa-star"></i></span></span></span>Explore The Complete 8 <i class="fas fa-arrow-down hc8-arrow"></i></a>
         <a class="hero-cta hero-cta-2" href="https://www.youtube.com/watch?v=Q0iXkchpsGQ" target="_blank" rel="noopener" data-vid="Q0iXkchpsGQ" data-title="Joe Eason &mdash; 20 minutes v South Shields (Step 2)"><i class="fas fa-play"></i> 20 minutes v South Shields <span>&middot; Step 2</span></a>
       </div>
       <div class="hero-media">
@@ -798,7 +806,7 @@
   </div>
 
   <!-- HUB: VIDEOS + CENTER -->
-  <div class="hub">
+  <div class="hub" id="c8">
     <div class="hub-label">
       <div class="rule"></div>
       <div class="eyebrow">Video Evidence</div>
@@ -1360,6 +1368,10 @@ const EP_VIDEO = '8nT0fmOoSeg';
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(mark);
   else mark();
 })();
+</script>
+<script>
+/* Explore The Complete 8: glide down to the flower */
+document.querySelector('.hero-c8')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('c8').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 </script>
 </body>
 </html>
