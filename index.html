@@ -99,10 +99,19 @@
     .hero-c8:hover { color: var(--amber); }
     .hero-c8:hover .hc8-arrow { transform: translateY(3px); }
     #c8 { scroll-margin-top: 70px; }
-    /* scroll cue: sits on its own, centred, between the stats row and The Complete 8 */
-    .c8-cue { text-align: center; margin: 22px 0 14px; }
-    .c8-cue .hero-c8 { margin-top: 0; padding: 9px 18px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
-    .c8-cue .hero-c8:hover { border-color: var(--amber); }
+    /* two film buttons the same width, stacked; the big 8 beside them takes you down to the flower */
+    .hero-actions { display: flex; align-items: center; gap: 34px; margin-top: 22px; }
+    .hero-btns { display: grid; gap: 14px; }
+    .hero-btns .hero-cta { margin-top: 0; justify-content: center; }
+    .hero-btns .hero-cta.hero-cta-2 { display: inline-flex; width: auto; margin-top: 0; }
+    .hero-8 { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; color: #fff; text-align: center; }
+    .hero-8 .nav-8 { width: 86px; height: 86px; margin: 0; padding-bottom: 6px; border-radius: 18px; border-width: 2px; box-shadow: 0 8px 22px rgba(0,0,0,0.25); transition: transform 0.2s; }
+    .hero-8 .n8 { font-size: 72px; }
+    .hero-8 .h8-txt { font-size: 11.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; line-height: 1.35; }
+    .hero-8 .h8-txt i { color: var(--amber); font-size: 10px; }
+    .hero-8:hover .nav-8 { transform: translateY(-3px); }
+    .hero-8:hover .h8-txt { color: var(--amber); }
+    @media (max-width: 560px) { .hero-actions { flex-direction: column; align-items: stretch; gap: 20px; } .hero-8 { flex-direction: row; justify-content: center; } .hero-8 .h8-txt { text-align: left; } }
     .hero-cta.hero-cta-2:hover { background: var(--amber); color: var(--blue-deep); box-shadow: 0 8px 22px rgba(255,185,29,0.30); }
     .hero-tiles { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
     .hero-tile { background: #fff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,32,64,0.16); display: flex; align-items: center; }
@@ -773,9 +782,13 @@
         </div>
         <p class="hero-sub">18-year-old box-to-box midfielder playing senior men's football. Comfortable across the <strong>6, 8 and 10</strong>. Elite physical profile. Assessed by <strong>nine professional clubs</strong>.</p>
         <p class="hero-extra">No academy background &mdash; every level earned in senior men&rsquo;s football, and selected by four different managers along the way.</p>
-        <a class="hero-cta" href="https://www.youtube.com/watch?v=dfxKmKbjnKo" target="_blank" rel="noopener" data-vid="dfxKmKbjnKo" data-title="Joe Eason &mdash; highlights film" data-more="central-midfielder.html"><i class="fas fa-play"></i> Watch the highlights film</a>
-        <p class="hero-cta-note">Highlights across The Complete 8 &mdash; with the deeper dive, competency by competency, below.</p>
-        <a class="hero-cta hero-cta-2" href="https://www.youtube.com/watch?v=Q0iXkchpsGQ" target="_blank" rel="noopener" data-vid="Q0iXkchpsGQ" data-title="Joe Eason &mdash; 20 minutes v South Shields (Step 2)"><i class="fas fa-play"></i> 20 minutes v South Shields <span>&middot; Step 2</span></a>
+        <div class="hero-actions">
+          <div class="hero-btns">
+          <a class="hero-cta" href="https://www.youtube.com/watch?v=dfxKmKbjnKo" target="_blank" rel="noopener" data-vid="dfxKmKbjnKo" data-title="Joe Eason &mdash; highlights film" data-more="central-midfielder.html"><i class="fas fa-play"></i> Watch the highlights film</a>
+          <a class="hero-cta hero-cta-2" href="https://www.youtube.com/watch?v=Q0iXkchpsGQ" target="_blank" rel="noopener" data-vid="Q0iXkchpsGQ" data-title="Joe Eason &mdash; 20 minutes v South Shields (Step 2)"><i class="fas fa-play"></i> 20 minutes v South Shields <span>&middot; Step 2</span></a>
+          </div>
+          <a class="hero-8" href="#c8" aria-label="Explore The Complete 8"><span class="nav-8" aria-hidden="true"><span class="n8">8<span class="n8-disc"><i class="fas fa-star"></i></span></span></span><span class="h8-txt">Explore<br>The Complete 8 <i class="fas fa-arrow-down"></i></span></a>
+        </div>
       </div>
       <div class="hero-media">
         <div class="hero-photo">
@@ -811,8 +824,6 @@
   </div>
 
   <!-- HUB: VIDEOS + CENTER -->
-  <div class="c8-cue"><a class="hero-c8" href="#c8"><span class="nav-8" aria-hidden="true"><span class="n8">8<span class="n8-disc"><i class="fas fa-star"></i></span></span></span>Explore The Complete 8 <i class="fas fa-arrow-down hc8-arrow"></i></a></div>
-
   <div class="hub" id="c8">
     <div class="hub-label">
       <div class="rule"></div>
@@ -1376,7 +1387,7 @@ const EP_VIDEO = '8nT0fmOoSeg';
 </script>
 <script>
 /* Explore The Complete 8: glide down to the flower */
-document.querySelector('.hero-c8')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('c8').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('c8').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 </script>
 </body>
 </html>
