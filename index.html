@@ -686,6 +686,7 @@
     }
 
     /* The Complete 8 flower runs clockwise as a 6 (01–03, blue), the hinge (04), an 8 (05–07, amber), then the 8th and the 10 in the middle */
+    .hub-svg .petal-sub { font-size: 12.5px; letter-spacing: 0.5px; fill: #fff; opacity: 0.92; }
     .hub-svg .petal-num { font-family: var(--font-display); font-size: 15px; font-weight: 700; fill: var(--amber); letter-spacing: 1px; }
     .hub-svg .ring6 { stroke: #5aa9ff; stroke-width: 5; stroke-linecap: round; }
     .hub-svg .ringH { stroke: url(#hingeGrad); stroke-width: 5; stroke-linecap: round; }
@@ -696,12 +697,13 @@
     .hub-svg .l6 { fill: #9ccbff; } .hub-svg .l8 { fill: var(--amber); }
     .ten-tag { display:inline-block; margin: 2px 0 4px; padding: 2px 9px; border-radius: 20px; background: var(--amber); color: var(--blue-deep); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
     /* The journey strip above the flower: the 6, the hinge, the 8, then the 8th and the 10 in the middle */
-    .c8-journey { display: grid; grid-template-columns: 1.15fr auto 0.9fr auto 1.15fr auto 1fr; gap: 10px; align-items: stretch; max-width: 1100px; margin: 6px auto 34px; }
+    .c8-journey { display: grid; grid-template-columns: 1.15fr auto 1.05fr auto 1.15fr auto 0.95fr; gap: 10px; align-items: stretch; max-width: 1100px; margin: 6px auto 34px; }
     .cj { position: relative; overflow: hidden; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 16px 16px 14px; }
     .cj::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 5px; }
     .cj6::before { background: #5aa9ff; } .cjh::before { background: linear-gradient(90deg, #5aa9ff, #FFB91D); } .cj8::before { background: var(--amber); } .cj10::before { background: #fff; }
     .cj-t { font-family: var(--font-display); font-size: 1.65rem; font-weight: 700; line-height: 1; text-transform: uppercase; letter-spacing: 0.5px; }
     .cj6 .cj-t { color: #9ccbff; } .cj8 .cj-t { color: var(--amber); } .cj10 .cj-t { color: #fff; }
+    .cjh .cj-t { font-size: 1.3rem; white-space: nowrap; line-height: 1.27; }
     .cjh .cj-t { background: linear-gradient(90deg, #9ccbff, #FFB91D); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .cj-s { margin-top: 6px; font-size: 10.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.65); }
     .cj ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
@@ -813,12 +815,12 @@
       <h2>The Complete 8</h2>
       <p>Seven competencies on film at Step 4 and Step 5, plus the intangibles that make the eighth &mdash; and the end product it all adds up to.</p>
     </div>
-    <div class="c8-journey" aria-label="How The Complete 8 reads: from a 6, through the hinge, to an 8, with the 8th and the 10 in the middle">
+    <div class="c8-journey" aria-label="How The Complete 8 reads: from a 6, running the game from the 6 into the 8, to an 8, with the 8th and the 10 in the middle">
       <div class="cj cj6"><div class="cj-t">The 6</div><div class="cj-s">Holding midfielder &middot; 01&ndash;03</div>
         <ul><li><b>01</b>Receiving &amp; Turning</li><li><b>02</b>Blocks, Interceptions &amp; Cover</li><li><b>03</b>Range &amp; Switches</li></ul></div>
       <div class="cj-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
-      <div class="cj cjh"><div class="cj-t">The hinge</div><div class="cj-s">From the 6 to the 8 &middot; 04</div>
-        <ul><li><b>04</b>Passing &amp; Tempo</li></ul></div>
+      <div class="cj cjh"><div class="cj-t">Running the Game</div><div class="cj-s">The 6 into the 8 &middot; 04</div>
+        <ul><li><b>04</b>Keep, Link &amp; Release</li></ul></div>
       <div class="cj-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
       <div class="cj cj8"><div class="cj-t">The 8</div><div class="cj-s">Box to box &middot; 05&ndash;07</div>
         <ul><li><b>05</b>Ball Carrying</li><li><b>06</b>Tackles, Recovery Runs &amp; Headers</li><li><b>07</b>Technical Quality</li></ul></div>
@@ -841,7 +843,7 @@
           <linearGradient id="hingeGrad" gradientUnits="userSpaceOnUse" x1="700.4" y1="661.1" x2="420.8" y2="797.5"><stop offset="0%" stop-color="#5aa9ff"/><stop offset="100%" stop-color="#FFB91D"/></linearGradient>
           <radialGradient id="darken" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#001432" stop-opacity="0.15"/><stop offset="100%" stop-color="#001432" stop-opacity="0.85"/></radialGradient>
         </defs>
-        <g class="ring"><path id="arc6" d="M 244.5 33.6 A 398 398 0 0 1 722.0 633.9" class="ring6" fill="none"/><path id="arcH" d="M 700.4 661.1 A 398 398 0 0 1 420.8 797.5" class="ringH" fill="none"/><path id="arc8" d="M 379.2 797.5 A 398 398 0 0 1 213.2 48.6" class="ring8" fill="none"/><path id="t6" d="M 244.9 16.1 A 414 414 0 0 1 734.9 643.3" class="rt" fill="none"/><path id="t8" d="M 356.7 811.7 A 414 414 0 0 1 205.6 34.5" class="rt" fill="none"/><text class="ringlbl l6"><textPath href="#t6" startOffset="50%" text-anchor="middle">THE 6 · THE HOLDING MIDFIELDER · 01–03</textPath></text><path id="tH" d="M 414.9 827.7 A 428 428 0 0 0 727.9 675.1" class="rt" fill="none"/><text class="ringlbl lH"><textPath href="#tH" startOffset="50%" text-anchor="middle">THE HINGE · 04</textPath></text><text class="ringlbl l8"><textPath href="#t8" startOffset="50%" text-anchor="middle">THE 8 · BOX TO BOX · 05–07</textPath></text></g>
+        <g class="ring"><path id="arc6" d="M 244.5 33.6 A 398 398 0 0 1 722.0 633.9" class="ring6" fill="none"/><path id="arcH" d="M 700.4 661.1 A 398 398 0 0 1 420.8 797.5" class="ringH" fill="none"/><path id="arc8" d="M 379.2 797.5 A 398 398 0 0 1 213.2 48.6" class="ring8" fill="none"/><path id="t6" d="M 244.9 16.1 A 414 414 0 0 1 734.9 643.3" class="rt" fill="none"/><path id="t8" d="M 356.7 811.7 A 414 414 0 0 1 205.6 34.5" class="rt" fill="none"/><text class="ringlbl l6"><textPath href="#t6" startOffset="50%" text-anchor="middle">THE 6 · THE HOLDING MIDFIELDER · 01–03</textPath></text><path id="tH" d="M 414.9 827.7 A 428 428 0 0 0 727.9 675.1" class="rt" fill="none"/><text class="ringlbl lH"><textPath href="#tH" startOffset="50%" text-anchor="middle">6 → 8 · 04</textPath></text><text class="ringlbl l8"><textPath href="#t8" startOffset="50%" text-anchor="middle">THE 8 · BOX TO BOX · 05–07</textPath></text></g>
         <g class="petals">
           <a href="https://www.youtube.com/watch?v=QVeIEv2-YFg" target="_blank" rel="noopener" class="petal g6" data-vid="QVeIEv2-YFg" data-title="Receiving &amp; Turning" aria-label="Receiving & Turning — play video">
             <path d="M 339.30 265.02 A 148 148 0 0 1 460.70 265.02 L 555.86 53.43 A 380 380 0 0 0 244.14 53.43 Z" fill="url(#pat-p0)" class="petal-img"/>
@@ -864,12 +866,12 @@
             <g transform="translate(702.23 468.98)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
             <text x="602.79" y="446.28" class="petal-title" text-anchor="middle"><tspan x="602.79" dy="0">Range</tspan><tspan x="602.79" dy="18">&amp; Switches</tspan></text>
           <text x="602.79" y="422.28" class="petal-num" text-anchor="middle">03</text></a>
-          <a href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" class="petal gh" data-vid="YSjKQWCiEPw" data-title="Passing &amp; Tempo" aria-label="Passing & Tempo — play video">
+          <a href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" class="petal gh" data-vid="YSjKQWCiEPw" data-title="Running the Game: Keep, Link &amp; Release" aria-label="Running the Game: Keep, Link & Release — play video">
             <path d="M 513.26 495.27 A 148 148 0 0 1 403.87 547.95 L 409.95 779.87 A 380 380 0 0 0 690.79 644.62 Z" fill="url(#pat-p3)" class="petal-img"/>
             <path d="M 513.26 495.27 A 148 148 0 0 1 403.87 547.95 L 409.95 779.87 A 380 380 0 0 0 690.79 644.62 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 513.26 495.27 A 148 148 0 0 1 403.87 547.95 L 409.95 779.87 A 380 380 0 0 0 690.79 644.62 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(534.50 679.30)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="490.25" y="587.40" class="petal-title" text-anchor="middle"><tspan x="490.25" dy="0">Passing</tspan><tspan x="490.25" dy="18">&amp; Tempo</tspan></text>
+            <text x="490.25" y="587.40" class="petal-title" text-anchor="middle"><tspan x="490.25" dy="0">Running the Game</tspan><tspan x="490.25" dy="18" class="petal-sub">Keep, Link &amp; Release</tspan></text>
           <text x="490.25" y="563.40" class="petal-num" text-anchor="middle">04</text></a>
           <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" class="petal g8" data-vid="tidNVF270xU" data-title="Ball Carrying" aria-label="Ball Carrying — play video">
             <path d="M 396.13 547.95 A 148 148 0 0 1 286.74 495.27 L 109.21 644.62 A 380 380 0 0 0 390.05 779.87 Z" fill="url(#pat-p4)" class="petal-img"/>
@@ -947,10 +949,10 @@
           <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">03</span>Range &amp; Switches</h3><p>Switching play, crossing, delivery</p></div>
         </a>
-        <div class="m-group gh"><b>The hinge</b>From the 6 to the 8 &middot; 04</div>
-        <a href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" class="m-tile gh" data-vid="YSjKQWCiEPw" data-title="Passing &amp; Tempo">
+        <div class="m-group gh"><b>Running the Game</b>The 6 into the 8 &middot; 04</div>
+        <a href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" class="m-tile gh" data-vid="YSjKQWCiEPw" data-title="Running the Game: Keep, Link &amp; Release">
           <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/YSjKQWCiEPw/hqdefault.jpg" alt=""></div>
-          <div class="m-tile-body"><h3><span class="m-num">04</span>Passing &amp; Tempo</h3><p>Dictating rhythm, short combos</p></div>
+          <div class="m-tile-body"><h3><span class="m-num">04</span>Running the Game: Keep, Link &amp; Release</h3><p>Keeping it, linking play, releasing runners</p></div>
         </a>
         <div class="m-group g8"><b>The 8</b>Box to box &middot; 05&ndash;07</div>
         <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" class="m-tile g8" data-vid="tidNVF270xU" data-title="Ball Carrying">
