@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Short card shown inside each Complete 8 video, between groups of clips.
+     ?g=6|h|8&e=EYEBROW&t=TITLE&i=1&of=4 -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1920px; height:1080px; }
+body { position:relative; font-family:'Oswald','Arial Narrow',sans-serif; overflow:hidden;
+  background:linear-gradient(135deg,#0b2350 0%,#0f2a55 55%,#16365f 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 92px;
+  --c:#5aa9ff; --c2:#5aa9ff; }
+body.g8 { --c:#FFB91D; --c2:#FFB91D; }
+body.gh { --c:#5aa9ff; --c2:#FFB91D; }
+body::before { content:''; position:absolute; top:-40%; right:-12%; width:62%; height:200%;
+  background:radial-gradient(circle closest-side, color-mix(in srgb, var(--c2) 16%, transparent), transparent 100%); }
+body > * { position:relative; z-index:1; }
+.grad { background:linear-gradient(90deg,var(--c),var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.eyebrow { font-weight:600; font-size:34px; letter-spacing:8px; text-transform:uppercase; margin-bottom:30px; }
+.title { color:#fff; font-weight:700; font-size:190px; line-height:1.05; letter-spacing:2px; text-transform:uppercase; text-align:center; white-space:nowrap; }
+.title.long { font-size:150px; }
+.title.xlong { font-size:124px; }
+.rule { width:140px; height:9px; border-radius:5px; margin:40px 0 34px; background:linear-gradient(90deg,var(--c),var(--c2)); }
+.dots { display:flex; gap:16px; }
+.dots i { width:18px; height:18px; border-radius:50%; background:rgba(255,255,255,.18); }
+.dots i.on { background:linear-gradient(90deg,var(--c),var(--c2)); }
+.foot { position:absolute; bottom:64px; left:0; right:0; text-align:center; }
+.foot .jname { color:#fff; font-weight:700; font-size:34px; letter-spacing:2px; }
+.foot .jrole { color:#6f89b4; font-weight:500; font-size:20px; letter-spacing:3px; margin-top:6px; text-transform:uppercase; }
+</style></head>
+<body>
+  <div class="eyebrow grad" id="eyebrow"></div>
+  <div class="title" id="title"></div>
+  <div class="rule"></div>
+  <div class="dots" id="dots"></div>
+  <div class="foot">
+    <div class="jname">JOE EASON</div>
+    <div class="jrole">Central Midfielder &middot; The Complete 8</div>
+  </div>
+<script>
+const q=new URLSearchParams(location.search);
+document.body.classList.add('g'+(q.get('g')||'6'));
+document.getElementById('eyebrow').textContent=q.get('e')||'';
+const t=document.getElementById('title'); t.innerHTML=q.get('t')||''; const L=(q.get('t')||'').replace(/&amp;/g,'&').length; if(L>22) t.classList.add('xlong'); else if(L>16) t.classList.add('long');
+const i=+(q.get('i')||1), of=+(q.get('of')||1), d=document.getElementById('dots');
+for(let k=1;k<=of;k++){const x=document.createElement('i'); if(k===i) x.className='on'; d.appendChild(x);}
+</script>
+</body></html>
