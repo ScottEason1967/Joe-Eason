@@ -20,7 +20,9 @@ body.gh { --c:#5aa9ff; --c2:#FFB91D; }
 .title.long { font-size:96px; }
 .subt { color:#fff; opacity:.9; font-weight:600; font-size:52px; letter-spacing:3px; text-transform:uppercase; margin-top:14px; }
 .bar { width:120px; height:8px; border-radius:4px; margin-top:34px; background:linear-gradient(90deg,var(--c),var(--c2)); }
-.name-row { margin-top:56px; }
+.name-row { margin-top:56px; display:flex; align-items:center; gap:30px; }
+#badges { display:flex; gap:14px; }
+#badges svg { display:block; }
 .jname { color:#fff; font-weight:700; font-size:58px; line-height:1; letter-spacing:1px; }
 .jrole { color:#9db4d6; font-weight:500; font-size:24px; letter-spacing:3px; margin-top:8px; text-transform:uppercase; }
 .right { width:740px; height:1080px; position:relative; overflow:hidden; }
@@ -37,8 +39,9 @@ body.gh { --c:#5aa9ff; --c2:#FFB91D; }
       <div class="bar"></div>
     </div>
     <div class="name-row">
-      <div class="jname">JOE EASON</div>
-      <div class="jrole">Central Midfielder &middot; The Complete 8</div>
+      <div class="ntext"><div class="jname">JOE EASON</div>
+      <div class="jrole">Central Midfielder &middot; The Complete 8</div></div>
+      <div id="badges"></div>
     </div>
   </div>
   <div class="right"><img id="photo" alt=""></div>
@@ -50,5 +53,18 @@ document.getElementById('eyebrow').textContent=q.get('e')||'';
 const t=document.getElementById('title'); t.innerHTML=q.get('t')||''; if((q.get('t')||'').length>22) t.classList.add('long');
 const s=document.getElementById('subt'); if(q.get('s')) s.textContent=q.get('s'); else s.remove();
 const p=document.getElementById('photo'); const im=q.get('img')||''; p.src=im.includes('/')?im:'img/'+im; p.style.objectPosition=q.get('pos')||'center'; if(q.get('zoom')){p.style.transformOrigin=q.get('zo')||(q.get('pos')||'center'); p.style.transform='scale('+q.get('zoom')+')';}
+
+// optional 6 / 8 badges beside the name (?b=6 | 8 | 68), same design as the video rings.
+// Fine-tuning (in badge units): ty = shift the digit down so it sits centrally in the circle;
+// x6 / x8 = shift the star disc sideways so it sits centrally in the digit's bottom loop.
+document.fonts.ready.then(function(){const b=q.get('b'); if(!b) return; const box=document.getElementById('badges');
+ const TY=+(q.get('ty')||0);
+ for(const d of b.split('')){ const C=d==='6'?'#5aa9ff':'#FFB91D', k=+(q.get("bk")||1.25), R=40*k, S=2*(R+14*k);
+  const DY=(d==='6'?6.75:10)+TY, DX=+(q.get('x'+d)||(d==='6'?0.16:0)), DR=10.5, cx=S/2, cy=S/2, sx=cx+DX*k, sy=cy+DY*k;
+  let p=[];for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,t=i%2?DR*0.62*k*0.45:DR*0.62*k;p.push((sx+t*Math.cos(a)).toFixed(2)+','+(sy+t*Math.sin(a)).toFixed(2))}
+  box.insertAdjacentHTML('beforeend',`<svg width="${S}" height="${S}" viewBox="0 0 ${S} ${S}"><defs><filter id="g${d}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${6*k}" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <circle cx="${cx}" cy="${cy}" r="${R+3*k}" fill="rgba(8,22,46,.85)"/><circle cx="${cx}" cy="${cy}" r="${R}" fill="#0b2350" stroke="${C}" stroke-width="${4*k}" filter="url(#g${d})"/>
+  <text x="${cx}" y="${cy+(21+TY)*k}" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="${60*k}" fill="${C}">${d}</text>
+  <circle cx="${sx}" cy="${sy}" r="${DR*k}" fill="${C}" stroke="#fff" stroke-width="${1.3*k}"/><polygon points="${p.join(' ')}" fill="#0b2350"/></svg>`);}});
 </script>
 </body></html>
