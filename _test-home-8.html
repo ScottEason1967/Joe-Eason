@@ -962,6 +962,31 @@
       background: radial-gradient(circle at center, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.74) 35%, rgba(255,255,255,0.32) 75%, rgba(255,255,255,0) 100%); }
     .hub8-ep:hover::before, .hub8-stage.st-ten .hub8-ep::before, .hub8-stage .hub-center:hover::before, .hub8-stage.st-star .hub-center::before { opacity: 0.88; }
 
+    /* ===== the loop centres: a dark navy wash over the photo instead of white ===== */
+    .hub8-top { background: #0b2350; box-shadow: 0 12px 38px rgba(0,8,24,0.45), inset 0 0 0 2px rgba(255,255,255,0.10); }
+    .hub8-stage .hub-center { background: #0b2350; box-shadow: 0 12px 38px rgba(0,8,24,0.45), inset 0 0 0 2px rgba(255,255,255,0.10); }
+    /* the photo shows properly in each loop's centre, darkened only towards the edge, like the petals */
+    .hub8-ep::before, .hub8-stage .hub-center::before { opacity: 1; }
+    .hub8-ep::after, .hub8-stage .hub-center::after {
+      background: radial-gradient(circle at center, rgba(0,20,50,0.30) 0%, rgba(0,20,50,0.38) 45%, rgba(0,20,50,0.62) 80%, rgba(0,20,50,0.85) 100%); }
+    .hub8-ep:hover::before, .hub8-stage.st-ten .hub8-ep::before, .hub8-stage .hub-center:hover::before, .hub8-stage.st-star .hub-center::before { opacity: 1; }
+    .hub8-ep .ep-k { color: #e07a8c; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+    .hub8-ep .ep10 { color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.45); }
+    .hub8-ep .ep10-stem, .hub8-ep .ep10-o { color: #d8405c; }
+    .hub8-ep .ep-sub { color: rgba(255,255,255,0.85); text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+    .hub8-8th .num { color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.45); }
+
+
+    .m-tile-thumb::after { left: 74%; }  /* play button over the photo half of the card, not its title */
+
+    /* white lines round both loops of the 8; the top disc grows to meet its line */
+    .hub8-svg .b8-lines circle { fill: none; stroke: #fff; stroke-width: 4; }
+    .hub8-top { width: 44.364%; }
+
+    /* white lines also round the inner circle of the bottom loop and round every petal */
+    .hub8-stage .hub-center { box-shadow: 0 0 0 3px #fff, 0 12px 38px rgba(0,8,24,0.45); }
+    .hub8-svg .petal-stroke { stroke: #fff; stroke-width: 3.5; }
+
     /* below the hero: calmer, fewer separate bands */
     .page { padding-top: 52px; }
     .proof { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "ph1 ph2" "pb1 pb2"; column-gap: 28px; row-gap: 0; margin-bottom: 52px; }
@@ -1103,6 +1128,7 @@
           <g class="b8 b8-eight" filter="url(#gl8)" fill="#FFB91D"><path d="M180.00 1050.00a440 440 0 1 0 880 0a440 440 0 1 0 -880 0Z M244.00 1050.00a376 376 0 1 1 752 0a376 376 0 1 1 -752 0Z" fill-rule="evenodd"/><path d="M310.00 364.00a310 310 0 1 0 620 0a310 310 0 1 0 -620 0Z M374.00 364.00a246 246 0 1 1 492 0a246 246 0 1 1 -492 0Z" fill-rule="evenodd"/></g>
           <g class="b8 b8-ten" filter="url(#gl8)" fill="#A3233A"><path d="M310.00 364.00a310 310 0 1 0 620 0a310 310 0 1 0 -620 0Z M374.00 364.00a246 246 0 1 1 492 0a246 246 0 1 1 -492 0Z" fill-rule="evenodd"/></g>
           <g class="b8-one" filter="url(#gl1)" fill="#A3233A"><path d="M183.0 54 H247.0 V674 H183.0 Z M183.0 54 L106.2 124.4 L106.2 194.8 L183.0 130.8 Z"/></g>
+          <g class="b8-lines"><circle cx="620" cy="364" r="246"/><circle cx="620" cy="1050" r="376"/></g>
           <g class="flower" transform="translate(235.58 665.58) scale(0.96104)">
           <g class="petals">
           <a href="https://www.youtube.com/watch?v=Pp9yRC6EBa4" target="_blank" rel="noopener" class="petal g6" data-vid="Pp9yRC6EBa4" data-title="Press Resistance: Receiving &amp; Turning" aria-label="Press Resistance: Receiving & Turning — play video">
@@ -1189,33 +1215,33 @@
       <div class="hub-mobile-list">
         <div class="m-group g6"><b>The 6</b>Holding midfielder &middot; 01&ndash;03</div>
         <a href="https://www.youtube.com/watch?v=Pp9yRC6EBa4" target="_blank" rel="noopener" class="m-tile g6" data-vid="Pp9yRC6EBa4" data-title="Press Resistance: Receiving &amp; Turning">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/Pp9yRC6EBa4/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-thumb"><img src="img/card-01.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">01</span>Press Resistance: Receiving &amp; Turning</h3><p>Back foot, play forward</p></div>
         </a>
         <a href="https://www.youtube.com/watch?v=RwaoxySKSFo" target="_blank" rel="noopener" class="m-tile g6" data-vid="RwaoxySKSFo" data-title="Screening the Back Four: Blocks, Cover &amp; Pressing">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/RwaoxySKSFo/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-thumb"><img src="img/card-02.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">02</span>Screening the Back Four: Blocks, Cover &amp; Pressing</h3><p>Reading it, stepping in, screening the back four</p></div>
         </a>
         <a href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" rel="noopener" class="m-tile g6" data-vid="VIKSKKkh0MU" data-title="Range of Passing: Forward Balls, Switches &amp; Crosses">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-thumb"><img src="img/card-03.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">03</span>Range of Passing: Forward Balls, Switches &amp; Crosses</h3><p>Switching play, crossing, delivery</p></div>
         </a>
         <div class="m-group gh"><b>Running the Game</b>The 6 into the 8 &middot; 04</div>
         <a href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" class="m-tile gh" data-vid="YSjKQWCiEPw" data-title="Running the Game: Keep, Link &amp; Release">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/YSjKQWCiEPw/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-thumb"><img src="img/card-04.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">04</span>Running the Game: Keep, Link &amp; Release</h3><p>Keeping it, linking play, releasing runners</p></div>
         </a>
         <div class="m-group g8"><b>The 8</b>Box to box &middot; 05&ndash;07</div>
         <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" class="m-tile g8" data-vid="tidNVF270xU" data-title="Driving the Team Forward: Ball Carrying">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-thumb"><img src="img/card-05.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">05</span>Driving the Team Forward: Ball Carrying</h3><p>Driving runs, beating pressure</p></div>
         </a>
         <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" class="m-tile g8" data-vid="xvypi_6BQps" data-title="Winning the Battles: Tackles, Recovery Runs &amp; Headers">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/xvypi_6BQps/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-thumb"><img src="img/card-06.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">06</span>Winning the Battles: Tackles, Recovery Runs &amp; Headers</h3><p>Going in, getting back, winning in the air</p></div>
         </a>
         <a href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" class="m-tile g8" data-vid="DMwCNd98Mjw" data-title="Technical Quality: First Touch, Volleys &amp; Quick Feet">
-          <div class="m-tile-thumb"><img src="https://img.youtube.com/vi/DMwCNd98Mjw/hqdefault.jpg" alt=""></div>
+          <div class="m-tile-thumb"><img src="img/card-07.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">07</span>Technical Quality: First Touch, Volleys &amp; Quick Feet</h3><p>First touch, composure, execution</p></div>
         </a>
       </div>
