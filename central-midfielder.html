@@ -658,6 +658,36 @@
       .skill-text .skill-num { font-size: 1.8rem; }
       .skill-text h3 { font-size: 1rem; }
     }
+
+    /* ── The Complete 8 colours, matching the homepage and the videos:
+          blue for the 6 (01–03), blue into amber for 04, amber for the 8 (05–07 and the 8th), maroon for the 10 ── */
+    .c8-tab { --gc: #5aa9ff; --gc2: #5aa9ff; --gt: #2f7fd6; }
+    .c8-tab.gh { --gc: #5aa9ff; --gc2: #FFB91D; --gt: #8a7a3a; }
+    .c8-tab.g8 { --gc: #FFB91D; --gc2: #FFB91D; --gt: #a9741a; }
+    .c8-tab::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; z-index: 2; background: linear-gradient(90deg, var(--gc), var(--gc2)); }
+    .c8-tab-num { top: 9px; padding: 1px 6px 0; border-radius: 4px; color: #0b2350; text-shadow: none; background: linear-gradient(90deg, var(--gc), var(--gc2)); }
+    .c8-tab:hover, .c8-tab.active { border-color: transparent;
+      background: linear-gradient(var(--card), var(--card)) padding-box, linear-gradient(90deg, var(--gc), var(--gc2)) border-box; }
+    .c8-tab.active { box-shadow: 0 6px 16px rgba(0,32,64,0.16); }
+    .c8-tab.active::after { border-top-color: var(--gc2); }
+    .c8-tab.active .c8-tab-title { color: var(--blue-deep); background: color-mix(in srgb, var(--gc2) 12%, #fff); }
+    .c8-tab.gh.active .c8-tab-title { background: linear-gradient(90deg, color-mix(in srgb, #5aa9ff 14%, #fff), color-mix(in srgb, #FFB91D 14%, #fff)); }
+    /* End Product tile: the 10 is maroon */
+    .c8-tab-end { border-color: #A3233A; }
+    .c8-tab-end .ep-k { color: #e07a8c; }
+    .c8-tab-end .ep-go { background: #A3233A; color: #fff; }
+    .c8-tab-end.active { box-shadow: 0 0 0 3px rgba(163,35,58,0.5), 0 8px 20px rgba(0,32,64,0.25); }
+    .c8-tab-end.active::after { border-top-color: #A3233A; }
+    /* each panel's big number and eyebrow in its group colour */
+    .c8-panel .case-banner .num { opacity: 1; }
+    .c8-panel.g6 .case-banner .num, .c8-panel.g8 .case-banner .num, .c8-panel.gh .case-banner .num {
+      background: linear-gradient(180deg, var(--n1), var(--n2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .c8-panel.g6 { --n1: #5aa9ff; --n2: #2f7fd6; }
+    .c8-panel.g8 { --n1: #FFB91D; --n2: #e09a00; }
+    .c8-panel.gh .case-banner .num { background: linear-gradient(90deg, #4a9cf5, #f5ad10); -webkit-background-clip: text; background-clip: text; }
+    .c8-panel.g6 .case-banner .role { color: #2f7fd6; }
+    .c8-panel.g8 .case-banner .role { color: #a9741a; }
+    .c8-panel.gh .case-banner .role { background: linear-gradient(90deg, #2f7fd6, #c98a0c); -webkit-background-clip: text; background-clip: text; color: transparent; justify-self: start; width: fit-content; }
   </style>
 </head>
 <body>
@@ -717,31 +747,31 @@
   <!-- SKILL SWITCHER -->
   <div class="c8-switch fi">
     <div class="c8-tabs" role="tablist" aria-label="The Complete 8: seven filmed competencies, the intangibles, and the end product">
-      <button class="c8-tab active" data-tab="3" role="tab" aria-selected="true" type="button">
+      <button class="c8-tab g6 active" data-tab="3" role="tab" aria-selected="true" type="button">
         <div class="c8-tab-thumb"><img src="https://img.youtube.com/vi/Pp9yRC6EBa4/hqdefault.jpg" alt=""><span class="c8-tab-num">01</span></div>
         <div class="c8-tab-title">Press Resistance: Receiving &amp; Turning</div>
       </button>
-      <button class="c8-tab" data-tab="6" role="tab" aria-selected="false" type="button">
+      <button class="c8-tab g6" data-tab="6" role="tab" aria-selected="false" type="button">
         <div class="c8-tab-thumb"><img src="https://img.youtube.com/vi/RwaoxySKSFo/hqdefault.jpg" alt=""><span class="c8-tab-num">02</span></div>
         <div class="c8-tab-title">Screening the Back Four: Blocks, Cover &amp; Pressing</div>
       </button>
-      <button class="c8-tab" data-tab="5" role="tab" aria-selected="false" type="button">
+      <button class="c8-tab g6" data-tab="5" role="tab" aria-selected="false" type="button">
         <div class="c8-tab-thumb"><img src="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" alt=""><span class="c8-tab-num">03</span></div>
         <div class="c8-tab-title">Range of Passing: Forward Balls, Switches &amp; Crosses</div>
       </button>
-      <button class="c8-tab" data-tab="4" role="tab" aria-selected="false" type="button">
+      <button class="c8-tab gh" data-tab="4" role="tab" aria-selected="false" type="button">
         <div class="c8-tab-thumb"><img src="https://img.youtube.com/vi/YSjKQWCiEPw/hqdefault.jpg" alt=""><span class="c8-tab-num">04</span></div>
         <div class="c8-tab-title">Running the Game: Keep, Link &amp; Release</div>
       </button>
-      <button class="c8-tab" data-tab="1" role="tab" aria-selected="false" type="button">
+      <button class="c8-tab g8" data-tab="1" role="tab" aria-selected="false" type="button">
         <div class="c8-tab-thumb"><img src="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" alt=""><span class="c8-tab-num">05</span></div>
         <div class="c8-tab-title">Driving the Team Forward: Ball Carrying</div>
       </button>
-      <button class="c8-tab" data-tab="7" role="tab" aria-selected="false" type="button">
+      <button class="c8-tab g8" data-tab="7" role="tab" aria-selected="false" type="button">
         <div class="c8-tab-thumb"><img src="https://img.youtube.com/vi/xvypi_6BQps/hqdefault.jpg" alt=""><span class="c8-tab-num">06</span></div>
         <div class="c8-tab-title">Winning the Battles: Tackles, Recovery Runs &amp; Headers</div>
       </button>
-      <button class="c8-tab" data-tab="2" role="tab" aria-selected="false" type="button">
+      <button class="c8-tab g8" data-tab="2" role="tab" aria-selected="false" type="button">
         <div class="c8-tab-thumb"><img src="https://img.youtube.com/vi/DMwCNd98Mjw/hqdefault.jpg" alt=""><span class="c8-tab-num">07</span></div>
         <div class="c8-tab-title">Technical Quality: First Touch, Volleys &amp; Quick Feet</div>
       </button>
@@ -770,7 +800,7 @@
     <div class="c8-panels">
 
       <!-- PANEL 1 — BALL CARRYING -->
-      <div class="c8-panel" data-panel="1" role="tabpanel">
+      <div class="c8-panel g8" data-panel="1" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num">05</span>
@@ -829,7 +859,7 @@
       </div>
 
       <!-- PANEL 2 — TECHNICAL QUALITY -->
-      <div class="c8-panel" data-panel="2" role="tabpanel">
+      <div class="c8-panel g8" data-panel="2" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num">07</span>
@@ -877,7 +907,7 @@
       </div>
 
       <!-- PANEL 3 — PRESS RESISTANCE: RECEIVING & TURNING (the 6) -->
-      <div class="c8-panel active" data-panel="3" role="tabpanel">
+      <div class="c8-panel g6 active" data-panel="3" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num">01</span>
@@ -934,7 +964,7 @@
       </div>
 
       <!-- PANEL 4 — RUNNING THE GAME: KEEP, LINK & RELEASE (6 into 8) -->
-      <div class="c8-panel" data-panel="4" role="tabpanel">
+      <div class="c8-panel gh" data-panel="4" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num">04</span>
@@ -982,7 +1012,7 @@
       </div>
 
       <!-- PANEL 5 — RANGE & SWITCHES -->
-      <div class="c8-panel" data-panel="5" role="tabpanel">
+      <div class="c8-panel g6" data-panel="5" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num">03</span>
@@ -1030,7 +1060,7 @@
       </div>
 
       <!-- PANEL 6 — SCREENING THE BACK FOUR: BLOCKS, COVER & PRESSING (the 6) -->
-      <div class="c8-panel" data-panel="6" role="tabpanel">
+      <div class="c8-panel g6" data-panel="6" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num">02</span>
@@ -1106,7 +1136,7 @@
       </div>
 
       <!-- PANEL 7 — TACKLES, RECOVERY RUNS & HEADERS (the 8) -->
-      <div class="c8-panel" data-panel="7" role="tabpanel">
+      <div class="c8-panel g8" data-panel="7" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num">06</span>
@@ -1164,7 +1194,7 @@
       </div>
 
       <!-- PANEL LEADERSHIP — The Bit You Can't Coach -->
-      <div class="c8-panel" data-panel="lead" role="tabpanel">
+      <div class="c8-panel g8th" data-panel="lead" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num" style="color: var(--amber);"><i class="fas fa-star"></i></span>
@@ -1260,12 +1290,12 @@
       </div>
 
       <!-- PANEL — END PRODUCT -->
-      <div class="c8-panel" data-panel="end" role="tabpanel">
+      <div class="c8-panel g10" data-panel="end" role="tabpanel">
         <div class="case">
           <div class="case-banner">
-            <span class="num" style="color: var(--blue-deep);"><i class="fas fa-crosshairs"></i></span>
+            <span class="num" style="color: #A3233A;"><i class="fas fa-crosshairs"></i></span>
             <div class="heads">
-              <span class="role" style="color: var(--blue);">What it all produces</span>
+              <span class="role" style="color: #A3233A;">What it all produces</span>
               <h3>End Product</h3>
             </div>
           </div>

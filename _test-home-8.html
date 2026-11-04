@@ -867,8 +867,7 @@
     .ki-d { font-size: 11px; line-height: 1.3; }
 
     /* a faint still from the intro loop behind the opening screen, like a watermark */
-    .h8::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-      background: url('img/hero-loop-still.jpg') center / cover no-repeat; opacity: 0.16; filter: saturate(0.7); }
+    /* (the faint watermark still was tried here and taken out again: too busy) */
 
     /* key titles: capitals in their group colour, the same treatment as the sublines */
     .ki-t { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; line-height: 1.2; }
@@ -909,6 +908,59 @@
 
     .ki10 b { color: #e07a8c; }  /* the 10 has to read on its own maroon pill */
     .h8-badges .hero-tile.badge .hb-v { font-size: 0.74rem; }
+
+    /* ===== the two loops: END PRODUCT on top, the 8th underneath ===== */
+    .hub8-ep { border: 0; padding: 4% 6% 5%; margin: 0; font: inherit; cursor: pointer; gap: 0.7cqw; color: var(--blue-deep);
+      transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .hub8-ep:hover, .hub8-stage.st-ten .hub8-ep { transform: translate(-50%, -50%) scale(1.03); box-shadow: 0 0 0 0.5cqw rgba(163,35,58,0.35), 0 14px 40px rgba(0,16,40,0.4); }
+    .hub8-ep .ep-k { font-size: clamp(8px, 1.15cqw, 13px); font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #A3233A; }
+    .hub8-ep .ep10 { font-size: clamp(20px, 5.2cqw, 48px); line-height: 1; color: var(--blue-deep); letter-spacing: 0.02em; }
+    .hub8-ep .ep-sub { font-size: clamp(9px, 1.3cqw, 14px); font-weight: 600; color: var(--text-sec); }
+    .hub8-ep .ep-go { width: clamp(26px, 4.4cqw, 44px); height: clamp(26px, 4.4cqw, 44px); border-radius: 50%; margin-top: 0.6cqw;
+      background: #A3233A; color: #fff; display: flex; align-items: center; justify-content: center; font-size: clamp(9px, 1.4cqw, 15px); padding-left: 0.15em;
+      box-shadow: 0 4px 12px rgba(163,35,58,0.4); }
+    .hub8-8th { text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.9cqw; }
+    .hub8-8th .num-wrap { font-size: clamp(40px, 9.5cqw, 92px); pointer-events: none; }
+    .hub8-8th .num { font-family: var(--font-display); font-weight: 700; color: var(--blue); line-height: 1; display: block; }
+    .hub8-8th .hub-star { border-width: max(2px, 0.3cqw); pointer-events: none; }
+    .hub8-stage.st-star .hub8-8th .hub-star { transform: translate(-50%, -50%) scale(1.16); box-shadow: 0 0 0 0.6cqw rgba(255,185,29,0.35), 0 4px 14px rgba(0,32,64,0.45); }
+    .hub8-8th .b8th-pill { position: relative; z-index: 2; font-family: var(--font-display); font-size: clamp(8.5px, 1.45cqw, 15px); font-weight: 700; letter-spacing: 0.5px;
+      text-transform: uppercase; line-height: 1.15; text-align: center; color: var(--blue-deep); background: var(--amber); padding: 0.35em 0.8em 0.3em;
+      border-radius: 0.9em; max-width: 82%; text-wrap: balance; box-shadow: 0 3px 10px rgba(169,116,26,0.35); }
+    .hub8-8th .b8th-pill i { font-size: 0.8em; margin-right: 0.2em; }
+    .hub8-stage.st-star .hub8-8th .b8th-pill { transform: scale(1.05); }
+    .hub8-ep { overflow: hidden; text-decoration: none; }
+    .hub8-ep::before { content: ''; position: absolute; inset: 0; border-radius: 50%; z-index: 0; pointer-events: none;
+      background: url('https://img.youtube.com/vi/8nT0fmOoSeg/maxresdefault.jpg') center / cover no-repeat; opacity: 0.55; transition: opacity 0.2s; }
+    .hub8-ep::after { content: ''; position: absolute; inset: 0; border-radius: 50%; z-index: 1; pointer-events: none;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.45) 75%, rgba(255,255,255,0.05) 100%); }
+    .hub8-ep > * { position: relative; z-index: 2; }
+    .hub8-ep:hover::before, .hub8-stage.st-ten .hub8-ep::before { opacity: 0.7; }
+    .hub-mobile .m-center a.hub-end { text-decoration: none; display: inline-block; }
+    /* Read the analysis now lives in the key */
+    .h8-analysis { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; margin: 0 0 12px; padding: 8px 12px;
+      border: 1px solid rgba(255,185,29,0.55); border-radius: 10px; background: rgba(255,185,29,0.08); color: #fff; text-decoration: none;
+      font-size: 12px; line-height: 1.35; transition: background 0.15s, border-color 0.15s; }
+    .h8-analysis b { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--amber); white-space: nowrap; }
+    .h8-analysis b i { font-size: 0.85em; margin-left: 3px; transition: transform 0.15s; }
+    .h8-analysis:hover { background: rgba(255,185,29,0.16); border-color: var(--amber); }
+    .h8-analysis:hover b i { transform: translateX(3px); }
+
+    /* tighter key so it still fits one laptop screen with the analysis link added */
+    .kg { padding-top: 5px; }
+    .kg-h { margin-bottom: 4px; }
+    .ki { margin-bottom: 4px; padding-top: 5px; padding-bottom: 6px; }
+    .h8-key > p { margin-bottom: 8px; }
+    .h8-analysis { margin-bottom: 8px; padding: 6px 12px; }
+    /* the 8th: a little less 8, a little more label */
+    .hub8-8th .num-wrap { font-size: clamp(32px, 7.4cqw, 76px); }
+    .hub8-8th .b8th-pill { font-size: clamp(8.5px, 1.6cqw, 15px); max-width: 92%; white-space: nowrap; }
+
+    /* the photo behind each loop's centre: a little more of it showing (same treatment top and bottom) */
+    .hub8-ep::before, .hub8-stage .hub-center::before { opacity: 0.72; }
+    .hub8-ep::after, .hub8-stage .hub-center::after {
+      background: radial-gradient(circle at center, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.74) 35%, rgba(255,255,255,0.32) 75%, rgba(255,255,255,0) 100%); }
+    .hub8-ep:hover::before, .hub8-stage.st-ten .hub8-ep::before, .hub8-stage .hub-center:hover::before, .hub8-stage.st-star .hub-center::before { opacity: 0.88; }
 
     /* below the hero: calmer, fewer separate bands */
     .page { padding-top: 52px; }
@@ -1026,13 +1078,13 @@
       <div class="hub8-stage fi" id="hub8">
         <svg class="hub-svg hub8-svg" viewBox="70 20 1100 1504" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Complete 8 video hub">
           <defs>
-          <pattern id="pat-p0" patternUnits="userSpaceOnUse" x="220.00" y="1.00" width="360" height="270"><image href="https://img.youtube.com/vi/Pp9yRC6EBa4/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p1" patternUnits="userSpaceOnUse" x="426.40" y="100.40" width="360" height="270"><image href="https://img.youtube.com/vi/RwaoxySKSFo/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p2" patternUnits="userSpaceOnUse" x="477.38" y="323.75" width="360" height="270"><image href="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p3" patternUnits="userSpaceOnUse" x="334.55" y="502.86" width="360" height="270"><image href="https://img.youtube.com/vi/YSjKQWCiEPw/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p4" patternUnits="userSpaceOnUse" x="105.45" y="502.86" width="360" height="270"><image href="https://img.youtube.com/vi/tidNVF270xU/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p5" patternUnits="userSpaceOnUse" x="-37.38" y="323.75" width="360" height="270"><image href="https://img.youtube.com/vi/xvypi_6BQps/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
-          <pattern id="pat-p6" patternUnits="userSpaceOnUse" x="13.60" y="100.40" width="360" height="270"><image href="https://img.youtube.com/vi/DMwCNd98Mjw/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
+          <pattern id="pat-p0" patternUnits="userSpaceOnUse" x="244.14" y="20.00" width="311.72" height="245.02"><image href="img/petal-01.jpg" x="0.00" y="-29.68" width="311.72" height="461.17" preserveAspectRatio="none"/></pattern>
+          <pattern id="pat-p1" patternUnits="userSpaceOnUse" x="467.68" y="62.07" width="300.45" height="301.24"><image href="img/petal-02.jpg" x="0.00" y="-27.18" width="300.45" height="444.50" preserveAspectRatio="none"/></pattern>
+          <pattern id="pat-p2" patternUnits="userSpaceOnUse" x="518.09" y="325.17" width="261.90" height="303.90"><image href="img/petal-03.jpg" x="0.00" y="-10.79" width="261.90" height="387.47" preserveAspectRatio="none"/></pattern>
+          <pattern id="pat-p3" patternUnits="userSpaceOnUse" x="403.87" y="495.27" width="286.92" height="284.60"><image href="img/petal-04.jpg" x="0.00" y="-48.72" width="286.92" height="424.49" preserveAspectRatio="none"/></pattern>
+          <pattern id="pat-p4" patternUnits="userSpaceOnUse" x="109.21" y="495.27" width="286.92" height="284.60"><image href="img/petal-05.jpg" x="0.00" y="-48.72" width="286.92" height="424.49" preserveAspectRatio="none"/></pattern>
+          <pattern id="pat-p5" patternUnits="userSpaceOnUse" x="20.01" y="325.17" width="261.90" height="303.90"><image href="img/petal-06.jpg" x="0.00" y="-22.41" width="261.90" height="387.47" preserveAspectRatio="none"/></pattern>
+          <pattern id="pat-p6" patternUnits="userSpaceOnUse" x="31.87" y="62.07" width="300.45" height="301.24"><image href="img/petal-07.jpg" x="0.00" y="-36.07" width="300.45" height="444.50" preserveAspectRatio="none"/></pattern>
           <linearGradient id="hingeGrad" gradientUnits="userSpaceOnUse" x1="700.4" y1="661.1" x2="420.8" y2="797.5"><stop offset="0%" stop-color="#5aa9ff"/><stop offset="100%" stop-color="#FFB91D"/></linearGradient>
           <radialGradient id="darken" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#001432" stop-opacity="0.15"/><stop offset="100%" stop-color="#001432" stop-opacity="0.85"/></radialGradient>
           <filter id="gl8" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -1105,25 +1157,18 @@
         </g>
           </g>
         </svg>
-        <div class="hub8-top">
-          <div class="num-wrap">
-            <span class="num">8</span>
-            <a href="central-midfielder.html#leadership" class="hub-star"
-               aria-label="Intangibles — The Bit You Can't Coach"
-               title="Intangibles — The Bit You Can&rsquo;t Coach"><i class="fas fa-star"></i></a>
-          </div>
-          <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
-          <a href="central-midfielder.html#leadership" class="hub8-top-link" aria-label="The Bit You Can't Coach"></a>
-        </div>
-        <div class="hub-center">
-        <div class="lbl">The Complete 8</div>
-        <div class="sub">What makes a good all-round central midfielder?</div>
-        <div class="cta">Read the analysis →</div>
-        <button class="hub-end" type="button" data-endproduct aria-label="End Product — chances created, assists and goals">
+        <!-- top loop = the 0 of the 10: END PRODUCT, opens the reel -->
+        <a class="hub8-top hub8-ep" href="https://www.youtube.com/watch?v=8nT0fmOoSeg" target="_blank" rel="noopener" data-vid="8nT0fmOoSeg" data-title="End Product: Chances Created, Assists &amp; Goals" data-more="central-midfielder.html#end-product" aria-label="End Product — play the reel">
+          <span class="ep-k">What the eight produce</span>
           <span class="ep10">END P<span class="ep10-r">R<span class="ep10-stem" aria-hidden="true">R</span></span><span class="ep10-o">O</span>DUCT</span>
-        </button>
-        <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
-      </div>
+          <span class="ep-sub">Chances created &middot; assists &middot; goals</span>
+          <span class="ep-go" aria-hidden="true"><i class="fas fa-play"></i></span>
+        </a>
+        <!-- bottom loop = the 8th: the 8 with the star, The Bit You Can't Coach -->
+        <a class="hub-center hub8-8th" href="central-midfielder.html#leadership" aria-label="Intangibles — The Bit You Can't Coach">
+          <span class="num-wrap"><span class="num">8</span><span class="hub-star"><i class="fas fa-star"></i></span></span>
+          <span class="b8th-pill"><i class="fas fa-star"></i> The Bit You<br>Can&rsquo;t Coach</span>
+        </a>
       </div>
       <div class="hub-mobile">
       <div class="m-center">
@@ -1136,9 +1181,9 @@
         <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
         <div class="lbl">The Complete 8</div>
         <div class="cta">Read the analysis →</div>
-        <button class="hub-end" type="button" data-endproduct aria-label="End Product — chances created, assists and goals">
+        <a class="hub-end" href="https://www.youtube.com/watch?v=8nT0fmOoSeg" target="_blank" rel="noopener" data-vid="8nT0fmOoSeg" data-title="End Product: Chances Created, Assists &amp; Goals" data-more="central-midfielder.html#end-product" aria-label="End Product — play the reel">
           <span class="ep10">END P<span class="ep10-r">R<span class="ep10-stem" aria-hidden="true">R</span></span><span class="ep10-o">O</span>DUCT</span>
-        </button>
+        </a>
         <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
       </div>
       <div class="hub-mobile-list">
@@ -1181,10 +1226,11 @@
         <div class="hero-eyebrow">Video evidence</div>
         <h2>The Complete 8</h2>
         <p>Seven competencies on film at Step 4 and Step 5, plus the intangibles that make the eighth &mdash; and the end product it all adds up to.</p>
+        <a class="h8-analysis" href="central-midfielder.html"><span>What makes a good all-round central midfielder?</span><b>Read the analysis <i class="fas fa-arrow-right"></i></b></a>
         <div class="kg kg6"><div class="kg-h"><span class="kg-t">The 6</span><span class="kg-s">Holding midfielder &middot; 01&ndash;03</span></div><a class="ki" data-k="0" href="https://www.youtube.com/watch?v=Pp9yRC6EBa4" target="_blank" rel="noopener" data-vid="Pp9yRC6EBa4" data-title="Press Resistance: Receiving &amp; Turning"><b>01</b><span class="ki-t">Press Resistance</span><span class="ki-s">Receiving &amp; Turning</span><span class="ki-d">Back foot, play forward</span></a><a class="ki" data-k="1" href="https://www.youtube.com/watch?v=RwaoxySKSFo" target="_blank" rel="noopener" data-vid="RwaoxySKSFo" data-title="Screening the Back Four: Blocks, Cover &amp; Pressing"><b>02</b><span class="ki-t">Screening the Back Four</span><span class="ki-s">Blocks, Cover &amp; Pressing</span><span class="ki-d">Reading it, stepping in, screening the back four</span></a><a class="ki" data-k="2" href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" rel="noopener" data-vid="VIKSKKkh0MU" data-title="Range of Passing: Forward Balls, Switches &amp; Crosses"><b>03</b><span class="ki-t">Range of Passing</span><span class="ki-s">Forward Balls, Switches &amp; Crosses</span><span class="ki-d">Switching play, crossing, delivery</span></a></div>
         <div class="kg kgh"><div class="kg-h"><span class="kg-t">Running the Game</span><span class="kg-s">The 6 into the 8 &middot; 04</span></div><a class="ki" data-k="3" href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" data-vid="YSjKQWCiEPw" data-title="Running the Game: Keep, Link &amp; Release"><b>04</b><span class="ki-t">Running the Game</span><span class="ki-s">Keep, Link &amp; Release</span><span class="ki-d">Keeping it, linking play, releasing runners</span></a></div>
         <div class="kg kg8"><div class="kg-h"><span class="kg-t">The 8</span><span class="kg-s">Box to box &middot; 05&ndash;07</span></div><a class="ki" data-k="4" href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" data-vid="tidNVF270xU" data-title="Driving the Team Forward: Ball Carrying"><b>05</b><span class="ki-t">Driving the Team Forward</span><span class="ki-s">Ball Carrying</span><span class="ki-d">Driving runs, beating pressure</span></a><a class="ki" data-k="5" href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" data-vid="xvypi_6BQps" data-title="Winning the Battles: Tackles, Recovery Runs &amp; Headers"><b>06</b><span class="ki-t">Winning the Battles</span><span class="ki-s">Tackles, Recovery Runs &amp; Headers</span><span class="ki-d">Going in, getting back, winning in the air</span></a><a class="ki" data-k="6" href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" data-vid="DMwCNd98Mjw" data-title="Technical Quality: First Touch, Volleys &amp; Quick Feet"><b>07</b><span class="ki-t">Technical Quality</span><span class="ki-s">First Touch, Volleys &amp; Quick Feet</span><span class="ki-d">First touch, composure, execution</span></a></div>
-        <div class="kg kg10"><div class="kg-h"><span class="kg-t">08 + The 10</span><span class="kg-s">In the middle</span></div><a class="ki ki8th" data-k="8th" href="central-midfielder.html#leadership"><b>08</b><span class="ki-t">The Bit You Can&rsquo;t Coach</span><span class="ki-s">The Intangibles</span><span class="ki-d">Leadership and on-field personality</span></a><button class="ki ki10" data-k="10" type="button" data-endproduct><b>10</b><span class="ki-t">End Product</span><span class="ki-s">Chances Created, Assists &amp; Goals</span><span class="ki-d">From senior men&rsquo;s football at Step 5 and Step 4</span></button></div>
+        <div class="kg kg10"><div class="kg-h"><span class="kg-t">08 + The 10</span><span class="kg-s">In the middle</span></div><a class="ki ki8th" data-k="8th" href="central-midfielder.html#leadership"><b>08</b><span class="ki-t">The Bit You Can&rsquo;t Coach</span><span class="ki-s">The Intangibles</span><span class="ki-d">Leadership and on-field personality</span></a><a class="ki ki10" data-k="10" href="https://www.youtube.com/watch?v=8nT0fmOoSeg" target="_blank" rel="noopener" data-vid="8nT0fmOoSeg" data-title="End Product: Chances Created, Assists &amp; Goals" data-more="central-midfielder.html#end-product"><b>10</b><span class="ki-t">End Product</span><span class="ki-s">Chances Created, Assists &amp; Goals</span><span class="ki-d">From senior men&rsquo;s football at Step 5 and Step 4</span></a></div>
       </div>
   </div>
 </section>
@@ -1625,8 +1671,8 @@ document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDef
     var k = el.dataset.k;
     bind(el, k === '10' ? 'st-ten' : k === '8th' ? 'st-star' : groupOf(petals[+k]), k);
   });
-  st.querySelectorAll('.hub-end').forEach(function (el) { bind(el, 'st-ten', '10'); });
-  var top = st.querySelector('.hub8-top'); if (top) bind(top, 'st-star', '8th');
+  st.querySelectorAll('.hub8-ep').forEach(function (el) { bind(el, 'st-ten', '10'); });
+  var e8 = st.querySelector('.hub8-8th'); if (e8) bind(e8, 'st-star', '8th');
 })();
 </script>
 </body>
