@@ -737,7 +737,225 @@
     .m-tile.g6::before, .m-tile.gh::before, .m-tile.g8::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; z-index: 2; }
     .m-tile.g6::before { background: #5aa9ff; } .m-tile.g8::before { background: var(--amber); } .m-tile.gh::before { background: linear-gradient(#5aa9ff, #FFB91D); }
     .m-num { font-family: var(--font-display); color: var(--amber-deep); margin-right: 6px; letter-spacing: .5px; }
-  </style>
+  
+    /* ================= THE HOMEPAGE, BUILT AROUND THE 8 ================= */
+    .h8 { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(180deg, #07306c 0%, #03224f 100%); border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .h8-grid { max-width: 1640px; margin: 0 auto; padding: 20px 32px 26px;
+      display: grid; grid-template-columns: minmax(290px, 1fr) auto minmax(290px, 1fr); grid-template-areas: "id hub key";
+      column-gap: clamp(24px, 3vw, 56px); align-items: center; min-height: calc(100vh - 56px); }
+    .h8-id { grid-area: id; position: relative; z-index: 6; max-width: 400px; justify-self: end; }
+    .h8-centre { grid-area: hub; align-self: start; }  /* the whole 8 is always on screen when the page opens */
+    .h8-key { grid-area: key; max-width: 380px; justify-self: start; }
+    .h8 .hero-eyebrow { margin-bottom: 12px; font-size: 10.5px; letter-spacing: 1.8px; text-wrap: balance; }
+    .h8 h1 { font-family: var(--font-display); font-size: clamp(40px, 3.6vw, 58px); font-weight: 700; line-height: 1.02; color: #fff; text-transform: uppercase; letter-spacing: -1px; }
+    .h8 .h1-row { margin-bottom: 18px; flex-wrap: nowrap; }
+    .h8 .hero-sub { font-size: 15px; line-height: 1.6; margin-bottom: 0; text-align: left; }
+    .h8 .hero-extra { font-size: 13.5px; margin-top: 12px; text-align: left; }
+    .h8-facts { display: flex; margin: 20px 0 22px; border-top: 1px solid rgba(255,255,255,0.16); border-bottom: 1px solid rgba(255,255,255,0.16); }
+    .h8-facts .st { flex: 1; text-align: center; padding: 11px 4px; }
+    .h8-facts .st + .st { border-left: 1px solid rgba(255,255,255,0.16); }
+    .h8-facts strong { display: block; font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; color: #fff; line-height: 1; }
+    .h8-facts small { display: block; margin-top: 5px; font-size: 0.56rem; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+    .h8 .hero-btns { gap: 12px; }
+    .h8 .hero-btns .hero-cta { white-space: nowrap; font-size: clamp(11px, 0.9vw, 12.5px); letter-spacing: 0.4px; padding-left: 14px; padding-right: 14px; }
+    .h8-badges { display: flex; gap: 10px; margin-top: 22px; }
+    .h8-badges .hero-tile.badge { flex: 1 1 0; min-width: 0; justify-content: flex-start; padding: 10px 12px; gap: 10px; }
+    .h8-badges .hero-tile.badge img { width: 40px; height: 32px; }
+    .h8-badges .hero-tile.badge:not(.efb) img { width: 28px; }
+    .h8-badges .hero-tile.badge .hb-v { font-size: 0.8rem; }
+
+    /* the key: the same groups as the 8, and each line lights the 8 up like its petal */
+    .h8-key h2 { font-family: var(--font-display); font-size: 30px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; margin-bottom: 8px; }
+    .h8-key > p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; margin-bottom: 12px; }
+    .kg { padding: 7px 0 5px; border-top: 1px solid rgba(255,255,255,0.12); }
+    .kg-h { display: flex; align-items: baseline; gap: 10px; margin-bottom: 3px; }
+    .kg-t { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; }
+    .kg-s { font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+    .kg6 .kg-t { color: #9ccbff; } .kg8 .kg-t { color: var(--amber); } .kg10 .kg-t { color: #fff; }
+    .kgh .kg-t { background: linear-gradient(90deg, #9ccbff, #FFB91D); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .ki { display: grid; grid-template-columns: 26px 1fr; column-gap: 8px; align-items: baseline; width: 100%; padding: 5px 8px 5px 6px; margin: 0 -6px;
+      border-radius: 7px; text-decoration: none; color: #fff; background: none; border: 0; font: inherit; text-align: left; cursor: pointer; transition: background 0.15s; }
+    .ki b { grid-row: span 3; font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
+    .ki-t { font-size: 13.5px; font-weight: 800; line-height: 1.25; }
+    .ki-s { font-family: var(--font-display); font-size: 12.5px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; line-height: 1.3; }
+    .ki-d { font-size: 11.5px; color: rgba(255,255,255,0.66); line-height: 1.35; }
+    .kg6 .ki-s { color: #9ccbff; } .kg8 .ki-s { color: #FFB91D; } .ki8th .ki-s { color: #FFB91D; } .ki10 .ki-s { color: #e07a8c; }
+    .kgh .ki-s { background: linear-gradient(90deg, #9ccbff, #FFB91D); -webkit-background-clip: text; background-clip: text; color: transparent; justify-self: start; }
+    .kg6 .ki b { color: #5aa9ff; } .kg8 .ki b { color: #FFB91D; }
+    .kgh .ki b { background: linear-gradient(90deg, #5aa9ff 25%, #FFB91D 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .ki8th b { color: #FFB91D; } .ki10 b { color: #A3233A; }
+    .ki:hover, .ki.on, .ki:focus-visible { background: rgba(255,255,255,0.10); }
+    .ki:hover .ki-t, .ki.on .ki-t { color: var(--amber); }
+
+    /* the 8 itself */
+    .hub8-stage { position: relative; margin: 0 auto; container-type: inline-size; aspect-ratio: 1100 / 1504;
+      width: max(480px, min(860px, calc((100vh - 100px) * 0.7314), calc(100vw - 760px))); }
+    .hub8-svg { position: absolute; inset: 0; }
+    .hub8-svg .b8-edge circle { fill: none; stroke: rgba(255,255,255,0.24); stroke-width: 2; }
+    .hub8-svg .b8 { opacity: 0; transition: opacity 0.35s ease; }
+    .hub8-stage.st-six .b8-six, .hub8-stage.st-hinge .b8-hinge, .hub8-stage.st-eight .b8-eight,
+    .hub8-stage.st-star .b8-eight, .hub8-stage.st-ten .b8-ten { opacity: 1; }
+    .hub8-svg .b8-one { opacity: 0; transform: translateX(46px); transition: opacity 0.35s ease, transform 0.35s ease; }
+    .hub8-stage.st-ten .b8-one { opacity: 1; transform: none; }
+    .hub8-svg .petal.hl .petal-shade { opacity: 0.30; }
+    .hub8-svg .petal.hl .petal-stroke { stroke: var(--amber); stroke-width: 3; }
+    .hub8-svg .petal.g6.hl .petal-stroke { stroke: #5aa9ff; }
+    .hub8-svg .petal.gh.hl .petal-stroke { stroke: url(#hingeGrad); }
+    .hub8-svg .petal.hl .petal-play { transform: scale(1.12); }
+    .hub8-svg .petal.g6 .petal-num { fill: #5aa9ff; }
+    .hub8-svg .petal.gh .petal-num { fill: url(#numBlend); }
+    .hub8-svg .petal.g8 .petal-num { fill: #FFB91D; }
+    .hub8-svg .petal-num { paint-order: stroke; stroke: rgba(0,20,50,0.65); stroke-width: 3; stroke-linejoin: round; }
+    /* petal writing: big number + headline, unless the 8 is really large */
+    .hub8-svg .pt-full { display: none; }
+    .hub8-svg .pt-t { font-family: var(--font-display); font-size: 22.5px; font-weight: 700; fill: #fff; text-transform: uppercase; letter-spacing: 0.5px;
+      paint-order: stroke; stroke: rgba(0,20,50,0.72); stroke-width: 3.5; stroke-linejoin: round; pointer-events: none; }
+    .hub8-svg .pt-n { font-size: 19px; }
+    @container (min-width: 840px) { .hub8-svg .pt-full { display: inline; } .hub8-svg .pt-big { display: none; } }
+    .hub8-top { position: absolute; left: 50%; top: 22.872%; width: 41.818%;
+      aspect-ratio: 1 / 1; transform: translate(-50%, -50%); border-radius: 50%; z-index: 5;
+      background: radial-gradient(62% 62% at 50% 42%, #fff 0%, #dbe5f0 100%); box-shadow: 0 12px 38px rgba(0,16,40,0.35);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .hub8-top-link { position: absolute; inset: 0; border-radius: 50%; z-index: 3; }
+    .hub8-top .num-wrap { font-size: 18.18cqw; margin-top: 4%; }
+    .hub8-top .num { font-family: var(--font-display); font-weight: 700; color: var(--blue); line-height: 1; }
+    .hub8-top .hub-star { border-width: max(2px, 0.36cqw); }
+    .hub8-stage.st-star .hub8-top .hub-star { transform: translate(-50%, -50%) scale(1.16); box-shadow: 0 0 0 0.6cqw rgba(255,185,29,0.35), 0 4px 14px rgba(0,32,64,0.45); }
+    .hub8-top .cta-star { font-size: clamp(10px, 1.4cqw, 15px); margin: 5% 0 0; }
+    .hub8-top .cta-star i { font-size: 0.85em; }
+    .hub8-stage.st-star .hub8-top .cta-star { text-decoration: underline; }
+    .hub8-stage .hub-center { top: 68.484%; width: 24.463%; padding: 4%; }
+    .hub8-stage .hub-center .lbl { font-size: clamp(8.5px, 1.05cqw, 12px); margin-bottom: 0.5cqw; }
+    .hub8-stage .hub-center .sub { font-size: clamp(8.5px, 1.1cqw, 12.5px); }
+    .hub8-stage .hub-center .cta { font-size: clamp(8.5px, 1.05cqw, 12px); margin-top: 0.7cqw; }
+    .hub8-stage .hub-center .hub-end { margin-top: 1cqw; padding: 0.5cqw 1.1cqw 0.42cqw; }
+    .hub8-stage .hub-center .hub-end .ep10 { font-size: clamp(11px, 1.55cqw, 17px); }
+    /* small 8 (short laptop screens): drop the question line so the disc text fits, as the live site does on small screens */
+    @container (max-width: 620px) { .hub-center .sub { display: none; } .hub8-stage .hub-center .lbl { font-size: 7.5px; letter-spacing: 0.6px; white-space: nowrap; } .hub8-stage .hub-center .cta { font-size: 8px; white-space: nowrap; } }
+    /* the 10 is maroon: the R stem and the O inside END PRODUCT */
+    .ep10-stem, .ep10-o { color: #A3233A; }
+
+    /* the intro loop, as on the live homepage: a muted 16:9 video that plays on its own */
+    .h8-loop { position: relative; margin: 0 0 18px; }
+    .h8-loop .loop-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .h8-loop .loop-note { position: absolute; left: 10px; bottom: 9px; font-size: 10.5px; font-weight: 700; color: #fff; background: rgba(0,16,40,0.78); padding: 4px 8px; border-radius: 6px; }
+
+    /* keep both side columns within one screen now the loop and the fuller key are back in */
+    .h8 .hero-rule { margin-bottom: 14px; }
+    .h8 .hero-eyebrow { margin-bottom: 10px; }
+    .h8 h1 { font-size: clamp(38px, 3.3vw, 56px); }
+    .h8 .h1-row { margin-bottom: 14px; }
+    .h8 .h1-row .joe-chip, .h8 .h1-row .joe-chip > img { width: 52px; height: 52px; }
+    .h8-loop { margin-bottom: 14px; }
+    .h8 .hero-sub { font-size: 14.5px; line-height: 1.55; }
+    .h8 .hero-extra { font-size: 13px; line-height: 1.55; margin-top: 9px; }
+    .h8-facts { margin: 15px 0 16px; }
+    .h8-facts .st { padding: 9px 4px; }
+    .h8 .hero-btns { gap: 10px; }
+    .h8 .hero-btns .hero-cta { padding-top: 11px; padding-bottom: 11px; }
+    .h8 .hero-btns .hero-cta.hero-cta-2 { padding-top: 9px; padding-bottom: 9px; }
+    .h8-badges { margin-top: 14px; }
+    .h8-badges .hero-tile.badge { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; padding: 8px 10px; }
+    .h8-key h2 { font-size: 27px; margin-bottom: 6px; }
+    .h8-key > p { font-size: 12.5px; line-height: 1.45; margin-bottom: 9px; }
+    .kg { padding: 6px 0 3px; }
+    .kg-h { margin-bottom: 1px; }
+    .ki { padding-top: 3px; padding-bottom: 3px; }
+    .ki-t { font-size: 13px; line-height: 1.22; }
+    .ki-s { font-size: 12px; line-height: 1.25; }
+    .ki-d { font-size: 11px; line-height: 1.3; }
+
+    /* a faint still from the intro loop behind the opening screen, like a watermark */
+    .h8::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: url('img/hero-loop-still.jpg') center / cover no-repeat; opacity: 0.16; filter: saturate(0.7); }
+
+    /* key titles: capitals in their group colour, the same treatment as the sublines */
+    .ki-t { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; line-height: 1.2; }
+    .kg6 .ki-t { color: #9ccbff; } .kg8 .ki-t, .ki8th .ki-t { color: #FFB91D; } .ki10 .ki-t { color: #e07a8c; }
+    .kgh .ki-t { background: linear-gradient(90deg, #9ccbff, #FFB91D); -webkit-background-clip: text; background-clip: text; color: transparent; justify-self: start; }
+    .ki-s { opacity: 0.85; }
+    .ki:hover .ki-t, .ki.on .ki-t { color: inherit; }
+    .kg6 .ki:hover .ki-t, .kg6 .ki.on .ki-t { color: #9ccbff; } .kg8 .ki:hover .ki-t, .kg8 .ki.on .ki-t, .ki8th:hover .ki-t, .ki8th.on .ki-t { color: #FFB91D; } .ki10:hover .ki-t, .ki10.on .ki-t { color: #e07a8c; }
+    .kgh .ki:hover .ki-t, .kgh .ki.on .ki-t { color: transparent; }
+    .ki:hover, .ki.on, .ki:focus-visible { background: rgba(255,255,255,0.12); }
+
+    /* THE BIT YOU CAN'T COACH in the top loop: capitals, bigger, an amber button so it stands out */
+    .hub8-top .cta-star { font-family: var(--font-display); font-size: clamp(9.5px, 1.85cqw, 18px); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
+      color: var(--blue-deep); background: var(--amber); padding: 0.4em 0.9em 0.36em; border-radius: 999px; margin: 6% 0 0; gap: 0.45em;
+      text-shadow: none; box-shadow: 0 4px 12px rgba(169,116,26,0.35); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .hub8-top .cta-star i { font-size: 0.8em; }
+    .hub8-top .num-wrap { margin-top: 0; }
+    .hub8-top { padding-bottom: 4%; }
+    .hub8-top .cta-star:hover, .hub8-stage.st-star .hub8-top .cta-star { text-decoration: none; transform: scale(1.05); box-shadow: 0 6px 16px rgba(169,116,26,0.5); }
+
+    /* key v2: one pill per film, tinted in its group colour; title and subline share a line */
+    .h8-grid { grid-template-columns: minmax(280px, 0.92fr) auto minmax(330px, 1.08fr); }
+    .h8-key { max-width: 430px; }
+    .kg { border-top: 0; padding: 7px 0 0; }
+    .kg-h { margin-bottom: 5px; }
+    .ki { --c: 90,169,255; grid-template-columns: 21px auto 1fr; column-gap: 7px; row-gap: 1px; margin: 0 0 6px; padding: 6px 7px 7px 9px;
+      border-radius: 12px; border: 1px solid rgba(var(--c), 0.38);
+      background: linear-gradient(90deg, rgba(var(--c), 0.26) 0%, rgba(var(--c), 0.07) 100%); transition: background 0.15s, border-color 0.15s; }
+    .kg8 .ki, .ki8th { --c: 255,185,29; }
+    .ki10 { --c: 224,122,140; }
+    .kgh .ki { border-color: rgba(176,178,142,0.45); background: linear-gradient(90deg, rgba(90,169,255,0.26) 0%, rgba(255,185,29,0.20) 100%); }
+    .ki b { grid-row: span 2; }
+    .ki-t { grid-column: 2; white-space: nowrap; font-size: 14px; letter-spacing: 0.5px; }
+    .ki-s { grid-column: 3; font-size: 11px; letter-spacing: 0.4px; }
+    .ki-d { grid-column: 2 / 4; }
+    .ki:hover, .ki.on, .ki:focus-visible { border-color: rgba(var(--c), 0.9); background: linear-gradient(90deg, rgba(var(--c), 0.42) 0%, rgba(var(--c), 0.14) 100%); }
+    .kgh .ki:hover, .kgh .ki.on, .kgh .ki:focus-visible { border-color: rgba(220,200,140,0.9); background: linear-gradient(90deg, rgba(90,169,255,0.42) 0%, rgba(255,185,29,0.34) 100%); }
+
+    .ki10 b { color: #e07a8c; }  /* the 10 has to read on its own maroon pill */
+    .h8-badges .hero-tile.badge .hb-v { font-size: 0.74rem; }
+
+    /* below the hero: calmer, fewer separate bands */
+    .page { padding-top: 52px; }
+    .proof { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "ph1 ph2" "pb1 pb2"; column-gap: 28px; row-gap: 0; margin-bottom: 52px; }
+    .ph1 { grid-area: ph1; } .ph2 { grid-area: ph2; } .pb1 { grid-area: pb1; } .pb2 { grid-area: pb2; }
+    .proof .rule { width: 72px; height: 4px; background: var(--amber); border-radius: 2px; margin-bottom: 16px; }
+    .proof .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-bottom: 8px; }
+    .proof-h-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .proof h2 { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+    .proof .stats-link { white-space: nowrap; }
+    .pb1 { display: flex; }
+    .pb1 .stats-grid { flex: 1; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; margin-bottom: 0; }
+    .pb1 .stat-card { display: flex; flex-direction: column; justify-content: center; }
+    .pb2.impact-card { display: grid; grid-template-columns: 0.8fr 1fr; grid-template-rows: auto 1fr; gap: 12px 20px; padding: 16px; align-items: start; }
+    .pb2 .impact-photo { grid-row: 1 / span 2; align-self: stretch; min-height: 0; height: 100%; }
+    .pb2 .impact-nums { display: flex; align-items: flex-end; justify-content: center; gap: 18px; padding-top: 4px; }
+    .pb2 .impact-bars { gap: 10px; padding: 0; }
+    .pb2 .impact-bar { width: 52px; padding-bottom: 8px; }
+    .pb2 .bar-good { height: 40px; } .pb2 .bar-bad { height: 120px; }
+    .pb2 .bar-val { font-size: 1.05rem; }
+    .pb2 .bar-lbl { font-size: 9px; margin-top: 6px; }
+    .pb2 .impact-big { margin: 0 0 4px; }
+    .pb2 .impact-big-num { font-size: 3.2rem; }
+    .pb2 .impact-big-label { font-size: 9.5px; letter-spacing: 1.2px; }
+    .pb2 .impact-text p { font-size: 12.5px; line-height: 1.55; }
+    .explore-grid { grid-template-columns: repeat(6, 1fr); }
+    .explore-body { padding: 12px 13px 14px; }
+
+    /* narrower screens: name, then the 8, then the key */
+    @media (max-width: 1199px) {
+      .h8-grid { grid-template-columns: 1fr; grid-template-areas: "id" "hub" "key"; row-gap: 34px; min-height: 0; padding: 36px 28px 40px; }
+      .h8-id, .h8-key { justify-self: center; max-width: 680px; width: 100%; }
+      .hub8-stage { width: min(100%, 680px); }
+      .h8-key { max-width: 680px; }
+      .h8-key .kg { display: block; }
+      .explore-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) { .proof { grid-template-columns: 1fr; grid-template-areas: "ph1" "pb1" "ph2" "pb2"; } .pb1 { margin-bottom: 34px; } }
+    @media (max-width: 560px) {
+      .hub8-stage, .h8-key { display: none; }
+      .h8-grid { padding: 26px 18px 30px; row-gap: 24px; }
+      .h8-badges { flex-direction: row; }
+      .pb1 .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .pb2.impact-card { grid-template-columns: 1fr; } .pb2 .impact-photo { grid-row: auto; height: 200px; }
+      .explore-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+</style>
 </head>
 <body>
 
@@ -761,15 +979,13 @@
   </div>
 </nav>
 
-<div class="page">
-
-  <!-- HERO -->
-  <div class="hero fi">
-    <div class="hero-top">
-      <div class="hero-copy">
-        <div class="hero-rule"></div>
-        <div class="hero-eyebrow">Central Midfielder · Ashington AFC · Step 4</div>
-        <div class="h1-row">
+<!-- HERO: the 8, front and centre -->
+<section class="h8" id="c8">
+  <div class="h8-grid">
+    <div class="h8-id fi">
+      <div class="hero-rule"></div>
+      <div class="hero-eyebrow">Central Midfielder · Ashington AFC · Step 4</div>
+      <div class="h1-row">
           <h1>Joe Eason</h1>
           <span class="joe-chip" tabindex="0" role="button" aria-label="A word from Joe Eason">
             <span class="joe-chip-mono">JE</span>
@@ -780,75 +996,31 @@
             </span>
           </span>
         </div>
-        <p class="hero-sub">18-year-old box-to-box midfielder playing senior men's football. Comfortable across the <strong>6, 8 and 10</strong>. Elite physical profile. Assessed by <strong>nine professional clubs</strong>.</p>
-        <p class="hero-extra">No academy background &mdash; every level earned in senior men&rsquo;s football, and selected by four different managers along the way.</p>
-        <div class="hero-actions">
-          <div class="hero-btns">
-          <a class="hero-cta" href="https://www.youtube.com/watch?v=dfxKmKbjnKo" target="_blank" rel="noopener" data-vid="dfxKmKbjnKo" data-title="Joe Eason &mdash; highlights film" data-more="central-midfielder.html"><i class="fas fa-play"></i> Watch the highlights film</a>
-          <a class="hero-cta hero-cta-2" href="https://www.youtube.com/watch?v=Q0iXkchpsGQ" target="_blank" rel="noopener" data-vid="Q0iXkchpsGQ" data-title="Joe Eason &mdash; 20 minutes v South Shields (Step 2)"><i class="fas fa-play"></i> 20 minutes v South Shields <span>&middot; Step 2</span></a>
-          </div>
-          <a class="hero-8" href="#c8" aria-label="Explore The Complete 8"><span class="nav-8" aria-hidden="true"><span class="n8">8<span class="n8-disc"><i class="fas fa-star"></i></span></span></span><span class="h8-txt">Explore<br>The Complete 8 <i class="fas fa-arrow-down"></i></span></a>
-        </div>
-      </div>
-      <div class="hero-media">
-        <div class="hero-photo">
-          <iframe class="hero-reel"
+      <div class="hero-photo h8-loop"><iframe class="hero-reel"
                   src="https://www.youtube-nocookie.com/embed/dzkiCMYU0IU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=dzkiCMYU0IU&amp;controls=0&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0"
                   title="Joe Eason &mdash; introductory loop"
                   loading="eager"
                   allow="autoplay; encrypted-media"
-                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-      </div>
-    </div>
-    <div class="hero-tiles">
-      <div class="hero-tile stats">
-        <span class="st"><strong>18</strong><small>Age</small></span>
-        <span class="st"><strong>6'2"</strong><small>Height</small></span>
-        <span class="st"><strong>85kg</strong><small>Weight</small></span>
-        <span class="st"><strong>CM</strong><small>Position</small></span>
-        <span class="st-div" aria-hidden="true"></span>
-        <span class="st sp"><strong>34 km/h</strong><small><i class="fas fa-gauge-high"></i> Top Speed</small></span>
-        <span class="st jp"><strong>305cm</strong><small><i class="fas fa-arrow-up"></i> Broad Jump</small></span>
-        <span class="st pw"><strong>3.7&times;</strong><small><i class="fas fa-dumbbell"></i> Mid-Thigh Pull</small></span>
-      </div>
-      <div class="hero-tile badge">
+                  referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      <p class="hero-sub">18-year-old box-to-box midfielder playing senior men's football. Comfortable across the <strong>6, 8 and 10</strong>. Elite physical profile. Assessed by <strong>nine professional clubs</strong>.</p>
+      <p class="hero-extra">No academy background &mdash; every level earned in senior men&rsquo;s football, and selected by four different managers along the way.</p>
+      <div class="h8-facts"><span class="st"><strong>18</strong><small>Age</small></span><span class="st"><strong>6'2"</strong><small>Height</small></span><span class="st"><strong>85kg</strong><small>Weight</small></span><span class="st"><strong>CM</strong><small>Position</small></span></div>
+      <div class="hero-btns">
+          <a class="hero-cta" href="https://www.youtube.com/watch?v=dfxKmKbjnKo" target="_blank" rel="noopener" data-vid="dfxKmKbjnKo" data-title="Joe Eason &mdash; highlights film" data-more="central-midfielder.html"><i class="fas fa-play"></i> Watch the highlights film</a>
+          <a class="hero-cta hero-cta-2" href="https://www.youtube.com/watch?v=Q0iXkchpsGQ" target="_blank" rel="noopener" data-vid="Q0iXkchpsGQ" data-title="Joe Eason &mdash; 20 minutes v South Shields (Step 2)"><i class="fas fa-play"></i> 20 minutes v South Shields <span>&middot; Step 2</span></a>
+          </div>
+      <div class="h8-badges"><div class="hero-tile badge">
         <img src="img/crest-ashington.png" alt="Ashington AFC">
         <span class="hb-txt"><span class="hb-k">Club &middot; Step 4</span><span class="hb-v">Ashington AFC</span></span>
-      </div>
-      <div class="hero-tile badge efb">
+      </div><div class="hero-tile badge efb">
         <img src="img/ENG_FUTSAL_HORIZONTAL_RED-e1668661165486-768x362.webp" alt="England Futsal">
         <span class="hb-txt"><span class="hb-k">Pathway</span><span class="hb-v">England Futsal Men&rsquo;s U23</span></span>
-      </div>
+      </div></div>
     </div>
-  </div>
-
-  <!-- HUB: VIDEOS + CENTER -->
-  <div class="hub" id="c8">
-    <div class="hub-label">
-      <div class="rule"></div>
-      <div class="eyebrow">Video Evidence</div>
-      <h2>The Complete 8</h2>
-      <p>Seven competencies on film at Step 4 and Step 5, plus the intangibles that make the eighth &mdash; and the end product it all adds up to.</p>
-    </div>
-    <div class="c8-journey" aria-label="How The Complete 8 reads: from a 6, running the game from the 6 into the 8, to an 8, with the 8th and the 10 in the middle">
-      <div class="cj cj6"><div class="cj-t">The 6</div><div class="cj-s">Holding midfielder &middot; 01&ndash;03</div>
-        <ul><li><b>01</b>Press Resistance: Receiving &amp; Turning</li><li><b>02</b>Screening the Back Four: Blocks, Cover &amp; Pressing</li><li><b>03</b>Range of Passing: Forward Balls, Switches &amp; Crosses</li></ul></div>
-      <div class="cj-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
-      <div class="cj cjh"><div class="cj-t">Running the Game</div><div class="cj-s">The 6 into the 8 &middot; 04</div>
-        <ul><li><b>04</b>Keep, Link &amp; Release</li></ul></div>
-      <div class="cj-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
-      <div class="cj cj8"><div class="cj-t">The 8</div><div class="cj-s">Box to box &middot; 05&ndash;07</div>
-        <ul><li><b>05</b>Driving the Team Forward: Ball Carrying</li><li><b>06</b>Winning the Battles: Tackles, Recovery Runs &amp; Headers</li><li><b>07</b>Technical Quality: First Touch, Volleys &amp; Quick Feet</li></ul></div>
-      <div class="cj-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
-      <div class="cj cj10"><div class="cj-t">08 + The 10</div><div class="cj-s">In the middle</div>
-        <ul><li><b>08</b>The Bit You Can&rsquo;t Coach</li><li><b>10</b>End Product</li></ul></div>
-    </div>
-
-    <!-- Desktop / tablet: SVG petal hub — 7 video segments concave around centre disc -->
-    <div class="hub-stage fi">
-      <svg class="hub-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Complete 8 video hub">
-        <defs>
+    <div class="h8-centre">
+      <div class="hub8-stage fi" id="hub8">
+        <svg class="hub-svg hub8-svg" viewBox="70 20 1100 1504" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Complete 8 video hub">
+          <defs>
           <pattern id="pat-p0" patternUnits="userSpaceOnUse" x="220.00" y="1.00" width="360" height="270"><image href="https://img.youtube.com/vi/Pp9yRC6EBa4/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
           <pattern id="pat-p1" patternUnits="userSpaceOnUse" x="426.40" y="100.40" width="360" height="270"><image href="https://img.youtube.com/vi/RwaoxySKSFo/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
           <pattern id="pat-p2" patternUnits="userSpaceOnUse" x="477.38" y="323.75" width="360" height="270"><image href="https://img.youtube.com/vi/VIKSKKkh0MU/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
@@ -858,70 +1030,87 @@
           <pattern id="pat-p6" patternUnits="userSpaceOnUse" x="13.60" y="100.40" width="360" height="270"><image href="https://img.youtube.com/vi/DMwCNd98Mjw/hqdefault.jpg" x="0" y="0" width="360" height="270" preserveAspectRatio="xMidYMid slice"/></pattern>
           <linearGradient id="hingeGrad" gradientUnits="userSpaceOnUse" x1="700.4" y1="661.1" x2="420.8" y2="797.5"><stop offset="0%" stop-color="#5aa9ff"/><stop offset="100%" stop-color="#FFB91D"/></linearGradient>
           <radialGradient id="darken" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#001432" stop-opacity="0.15"/><stop offset="100%" stop-color="#001432" stop-opacity="0.85"/></radialGradient>
-        </defs>
-        <g class="ring"><path id="arc6" d="M 244.5 33.6 A 398 398 0 0 1 722.0 633.9" class="ring6" fill="none"/><path id="arcH" d="M 700.4 661.1 A 398 398 0 0 1 420.8 797.5" class="ringH" fill="none"/><path id="arc8" d="M 379.2 797.5 A 398 398 0 0 1 213.2 48.6" class="ring8" fill="none"/><path id="t6" d="M 244.9 16.1 A 414 414 0 0 1 734.9 643.3" class="rt" fill="none"/><path id="t8" d="M 356.7 811.7 A 414 414 0 0 1 205.6 34.5" class="rt" fill="none"/><text class="ringlbl l6"><textPath href="#t6" startOffset="50%" text-anchor="middle">THE 6 · THE HOLDING MIDFIELDER · 01–03</textPath></text><path id="tH" d="M 414.9 827.7 A 428 428 0 0 0 727.9 675.1" class="rt" fill="none"/><text class="ringlbl lH"><textPath href="#tH" startOffset="50%" text-anchor="middle">6 → 8 · 04</textPath></text><text class="ringlbl l8"><textPath href="#t8" startOffset="50%" text-anchor="middle">THE 8 · BOX TO BOX · 05–07</textPath></text></g>
-        <g class="petals">
+          <filter id="gl8" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gl1" x="-60%" y="-20%" width="220%" height="140%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="hg8" gradientUnits="userSpaceOnUse" x1="180" y1="0" x2="1060" y2="0"><stop offset="0.15" stop-color="#5aa9ff"/><stop offset="0.85" stop-color="#FFB91D"/></linearGradient>
+            <linearGradient id="numBlend" x1="0" y1="0" x2="1" y2="0"><stop offset="0.2" stop-color="#5aa9ff"/><stop offset="0.8" stop-color="#FFB91D"/></linearGradient>
+            <clipPath id="b8six"><path d="M620 364 L-1343.8 -15.0 L-1334.5 -60.1 L-1324.3 -104.9 L-1313.0 -149.5 L-1300.6 -193.8 L-1287.3 -237.9 L-1272.9 -281.6 L-1257.6 -324.9 L-1241.3 -367.9 L-1223.9 -410.6 L-1205.6 -452.8 L-1186.4 -494.5 L-1166.1 -535.9 L-1145.0 -576.7 L-1122.9 -617.0 L-1099.8 -656.9 L-1075.9 -696.2 L-1051.1 -734.9 L-1025.3 -773.0 L-998.8 -810.6 L-971.3 -847.5 L-943.0 -883.8 L-913.9 -919.4 L-884.0 -954.3 L-853.3 -988.6 L-821.8 -1022.1 L-789.5 -1054.9 L-756.5 -1086.9 L-722.8 -1118.2 L-688.3 -1148.7 L-653.2 -1178.4 L-617.4 -1207.3 L-580.9 -1235.3 L-543.8 -1262.5 L-506.1 -1288.9 L-467.8 -1314.3 L-428.9 -1338.9 L-389.4 -1362.6 L-349.5 -1385.3 L-309.0 -1407.2 L-268.0 -1428.1 L-226.5 -1448.0 L-184.6 -1467.0 L-142.3 -1485.0 L-99.6 -1502.1 L-56.5 -1518.1 L-13.0 -1533.2 L30.8 -1547.2 L74.9 -1560.3 L119.3 -1572.3 L164.0 -1583.3 L208.9 -1593.3 L254.0 -1602.2 L299.4 -1610.1 L344.8 -1617.0 L390.5 -1622.8 L436.2 -1627.5 L482.1 -1631.2 L528.0 -1633.9 L574.0 -1635.5 L620.0 -1636.0Z"/></clipPath>
+            <!-- outline the outside of the 8 only: each loop's edge is hidden where it runs inside the other loop -->
+            <mask id="mHideBot" maskUnits="userSpaceOnUse" x="0" y="0" width="1240" height="1560"><rect width="1240" height="1560" fill="#fff"/><circle cx="620" cy="1050" r="440" fill="#000"/></mask>
+            <mask id="mHideTop" maskUnits="userSpaceOnUse" x="0" y="0" width="1240" height="1560"><rect width="1240" height="1560" fill="#fff"/><circle cx="620" cy="364" r="310" fill="#000"/></mask>
+          </defs>
+          <g class="b8-rest" fill="#17478f"><path d="M180.00 1050.00a440 440 0 1 0 880 0a440 440 0 1 0 -880 0Z M244.00 1050.00a376 376 0 1 1 752 0a376 376 0 1 1 -752 0Z" fill-rule="evenodd"/><path d="M310.00 364.00a310 310 0 1 0 620 0a310 310 0 1 0 -620 0Z M374.00 364.00a246 246 0 1 1 492 0a246 246 0 1 1 -492 0Z" fill-rule="evenodd"/></g>
+          <g class="b8-edge"><circle cx="620" cy="364" r="310" mask="url(#mHideBot)"/><circle cx="620" cy="1050" r="440" mask="url(#mHideTop)"/></g>
+          <g class="b8 b8-six" filter="url(#gl8)" fill="#5aa9ff"><path d="M187.97 966.62 L315.62 305.25 L378.46 317.38 L250.81 978.75 Z"/><path d="M294.12 754.36 L322.55 607.08 Q294.12 754.36 411.72 662.42 A440 440 0 0 0 294.12 754.36 Z"/><path d="M180.00 1050.00a440 440 0 1 0 880 0a440 440 0 1 0 -880 0Z M244.00 1050.00a376 376 0 1 1 752 0a376 376 0 1 1 -752 0Z" fill-rule="evenodd"/><path d="M310.00 364.00a310 310 0 1 0 620 0a310 310 0 1 0 -620 0Z M374.00 364.00a246 246 0 1 1 492 0a246 246 0 1 1 -492 0Z" fill-rule="evenodd" clip-path="url(#b8six)"/></g>
+          <g class="b8 b8-hinge" filter="url(#gl8)" fill="url(#hg8)"><path d="M187.97 966.62 L315.62 305.25 L378.46 317.38 L250.81 978.75 Z"/><path d="M294.12 754.36 L322.55 607.08 Q294.12 754.36 411.72 662.42 A440 440 0 0 0 294.12 754.36 Z"/><path d="M180.00 1050.00a440 440 0 1 0 880 0a440 440 0 1 0 -880 0Z M244.00 1050.00a376 376 0 1 1 752 0a376 376 0 1 1 -752 0Z" fill-rule="evenodd"/><path d="M310.00 364.00a310 310 0 1 0 620 0a310 310 0 1 0 -620 0Z M374.00 364.00a246 246 0 1 1 492 0a246 246 0 1 1 -492 0Z" fill-rule="evenodd"/></g>
+          <g class="b8 b8-eight" filter="url(#gl8)" fill="#FFB91D"><path d="M180.00 1050.00a440 440 0 1 0 880 0a440 440 0 1 0 -880 0Z M244.00 1050.00a376 376 0 1 1 752 0a376 376 0 1 1 -752 0Z" fill-rule="evenodd"/><path d="M310.00 364.00a310 310 0 1 0 620 0a310 310 0 1 0 -620 0Z M374.00 364.00a246 246 0 1 1 492 0a246 246 0 1 1 -492 0Z" fill-rule="evenodd"/></g>
+          <g class="b8 b8-ten" filter="url(#gl8)" fill="#A3233A"><path d="M310.00 364.00a310 310 0 1 0 620 0a310 310 0 1 0 -620 0Z M374.00 364.00a246 246 0 1 1 492 0a246 246 0 1 1 -492 0Z" fill-rule="evenodd"/></g>
+          <g class="b8-one" filter="url(#gl1)" fill="#A3233A"><path d="M183.0 54 H247.0 V674 H183.0 Z M183.0 54 L106.2 124.4 L106.2 194.8 L183.0 130.8 Z"/></g>
+          <g class="flower" transform="translate(235.58 665.58) scale(0.96104)">
+          <g class="petals">
           <a href="https://www.youtube.com/watch?v=Pp9yRC6EBa4" target="_blank" rel="noopener" class="petal g6" data-vid="Pp9yRC6EBa4" data-title="Press Resistance: Receiving &amp; Turning" aria-label="Press Resistance: Receiving & Turning — play video">
             <path d="M 339.30 265.02 A 148 148 0 0 1 460.70 265.02 L 555.86 53.43 A 380 380 0 0 0 244.14 53.43 Z" fill="url(#pat-p0)" class="petal-img"/>
             <path d="M 339.30 265.02 A 148 148 0 0 1 460.70 265.02 L 555.86 53.43 A 380 380 0 0 0 244.14 53.43 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 339.30 265.02 A 148 148 0 0 1 460.70 265.02 L 555.86 53.43 A 380 380 0 0 0 244.14 53.43 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(400.00 90.00)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="400.00" y="192.00" class="petal-title" text-anchor="middle"><tspan x="400.00" dy="0">Press Resistance</tspan><tspan x="400.00" dy="18" class="petal-sub">Receiving &amp; Turning</tspan></text>
-          <text x="400.00" y="168.00" class="petal-num" text-anchor="middle">01</text></a>
+            <g class="pt-full"><text x="400.00" y="192.00" class="petal-title" text-anchor="middle"><tspan x="400.00" dy="0">Press Resistance</tspan><tspan x="400.00" dy="18" class="petal-sub">Receiving &amp; Turning</tspan></text>
+          <text x="400.00" y="168.00" class="petal-num" text-anchor="middle">01</text></g><g class="pt-big"><text x="400.00" y="163.50" class="petal-num pt-n" text-anchor="middle">01</text><text x="400.00" y="190.50" class="pt-t" text-anchor="middle"><tspan x="400.00" dy="0">Press</tspan><tspan x="400.00" dy="25">Resistance</tspan></text></g></a>
           <a href="https://www.youtube.com/watch?v=RwaoxySKSFo" target="_blank" rel="noopener" class="petal g6" data-vid="RwaoxySKSFo" data-title="Screening the Back Four: Blocks, Cover &amp; Pressing" aria-label="Screening the Back Four: Blocks, Cover & Pressing — play video">
             <path d="M 467.68 268.38 A 148 148 0 0 1 543.38 363.30 L 768.13 305.77 A 380 380 0 0 0 573.78 62.07 Z" fill="url(#pat-p1)" class="petal-img"/>
             <path d="M 467.68 268.38 A 148 148 0 0 1 543.38 363.30 L 768.13 305.77 A 380 380 0 0 0 573.78 62.07 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 467.68 268.38 A 148 148 0 0 1 543.38 363.30 L 768.13 305.77 A 380 380 0 0 0 573.78 62.07 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(642.37 206.72)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="566.62" y="242.31" class="petal-title" text-anchor="middle"><tspan x="566.62" dy="0">Screening the</tspan><tspan x="566.62" dy="18">Back Four</tspan><tspan x="566.62" dy="18" class="petal-sub">Blocks, Cover</tspan><tspan x="566.62" dy="16" class="petal-sub">&amp; Pressing</tspan></text>
-          <text x="566.62" y="218.31" class="petal-num" text-anchor="middle">02</text></a>
+            <g class="pt-full"><text x="566.62" y="242.31" class="petal-title" text-anchor="middle"><tspan x="566.62" dy="0">Screening the</tspan><tspan x="566.62" dy="18">Back Four</tspan><tspan x="566.62" dy="18" class="petal-sub">Blocks, Cover</tspan><tspan x="566.62" dy="16" class="petal-sub">&amp; Pressing</tspan></text>
+          <text x="566.62" y="218.31" class="petal-num" text-anchor="middle">02</text></g><g class="pt-big"><text x="566.62" y="230.81" class="petal-num pt-n" text-anchor="middle">02</text><text x="566.62" y="257.81" class="pt-t" text-anchor="middle"><tspan x="566.62" dy="0">Screening the</tspan><tspan x="566.62" dy="25">Back Four</tspan></text></g></a>
           <a href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" rel="noopener" class="petal g6" data-vid="VIKSKKkh0MU" data-title="Range of Passing: Forward Balls, Switches &amp; Crosses" aria-label="Range of Passing: Forward Balls, Switches & Crosses — play video">
             <path d="M 545.10 370.86 A 148 148 0 0 1 518.09 489.22 L 703.20 629.07 A 380 380 0 0 0 772.56 325.17 Z" fill="url(#pat-p2)" class="petal-img"/>
             <path d="M 545.10 370.86 A 148 148 0 0 1 518.09 489.22 L 703.20 629.07 A 380 380 0 0 0 772.56 325.17 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 545.10 370.86 A 148 148 0 0 1 518.09 489.22 L 703.20 629.07 A 380 380 0 0 0 772.56 325.17 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(702.23 468.98)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="602.79" y="428.28" class="petal-title" text-anchor="middle"><tspan x="602.79" dy="0">Range of</tspan><tspan x="602.79" dy="18">Passing</tspan><tspan x="602.79" dy="18" class="petal-sub">Forward Balls,</tspan><tspan x="602.79" dy="16" class="petal-sub">Switches &amp; Crosses</tspan></text>
-          <text x="602.79" y="404.28" class="petal-num" text-anchor="middle">03</text></a>
+            <g class="pt-full"><text x="602.79" y="428.28" class="petal-title" text-anchor="middle"><tspan x="602.79" dy="0">Range of</tspan><tspan x="602.79" dy="18">Passing</tspan><tspan x="602.79" dy="18" class="petal-sub">Forward Balls,</tspan><tspan x="602.79" dy="16" class="petal-sub">Switches &amp; Crosses</tspan></text>
+          <text x="602.79" y="404.28" class="petal-num" text-anchor="middle">03</text></g><g class="pt-big"><text x="602.79" y="416.78" class="petal-num pt-n" text-anchor="middle">03</text><text x="602.79" y="443.78" class="pt-t" text-anchor="middle"><tspan x="602.79" dy="0">Range of</tspan><tspan x="602.79" dy="25">Passing</tspan></text></g></a>
           <a href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" class="petal gh" data-vid="YSjKQWCiEPw" data-title="Running the Game: Keep, Link &amp; Release" aria-label="Running the Game: Keep, Link & Release — play video">
             <path d="M 513.26 495.27 A 148 148 0 0 1 403.87 547.95 L 409.95 779.87 A 380 380 0 0 0 690.79 644.62 Z" fill="url(#pat-p3)" class="petal-img"/>
             <path d="M 513.26 495.27 A 148 148 0 0 1 403.87 547.95 L 409.95 779.87 A 380 380 0 0 0 690.79 644.62 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 513.26 495.27 A 148 148 0 0 1 403.87 547.95 L 409.95 779.87 A 380 380 0 0 0 690.79 644.62 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(534.50 679.30)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="490.25" y="587.40" class="petal-title" text-anchor="middle"><tspan x="490.25" dy="0">Running the Game</tspan><tspan x="490.25" dy="18" class="petal-sub">Keep, Link &amp; Release</tspan></text>
-          <text x="490.25" y="563.40" class="petal-num" text-anchor="middle">04</text></a>
+            <g class="pt-full"><text x="490.25" y="587.40" class="petal-title" text-anchor="middle"><tspan x="490.25" dy="0">Running the Game</tspan><tspan x="490.25" dy="18" class="petal-sub">Keep, Link &amp; Release</tspan></text>
+          <text x="490.25" y="563.40" class="petal-num" text-anchor="middle">04</text></g><g class="pt-big"><text x="490.25" y="558.90" class="petal-num pt-n" text-anchor="middle">04</text><text x="490.25" y="585.90" class="pt-t" text-anchor="middle"><tspan x="490.25" dy="0">Running</tspan><tspan x="490.25" dy="25">the Game</tspan></text></g></a>
           <a href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" class="petal g8" data-vid="tidNVF270xU" data-title="Driving the Team Forward: Ball Carrying" aria-label="Driving the Team Forward: Ball Carrying — play video">
             <path d="M 396.13 547.95 A 148 148 0 0 1 286.74 495.27 L 109.21 644.62 A 380 380 0 0 0 390.05 779.87 Z" fill="url(#pat-p4)" class="petal-img"/>
             <path d="M 396.13 547.95 A 148 148 0 0 1 286.74 495.27 L 109.21 644.62 A 380 380 0 0 0 390.05 779.87 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 396.13 547.95 A 148 148 0 0 1 286.74 495.27 L 109.21 644.62 A 380 380 0 0 0 390.05 779.87 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(265.50 679.30)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="309.75" y="578.40" class="petal-title" text-anchor="middle"><tspan x="309.75" dy="0">Driving the</tspan><tspan x="309.75" dy="18">Team Forward</tspan><tspan x="309.75" dy="18" class="petal-sub">Ball Carrying</tspan></text>
-          <text x="309.75" y="554.40" class="petal-num" text-anchor="middle">05</text></a>
+            <g class="pt-full"><text x="309.75" y="578.40" class="petal-title" text-anchor="middle"><tspan x="309.75" dy="0">Driving the</tspan><tspan x="309.75" dy="18">Team Forward</tspan><tspan x="309.75" dy="18" class="petal-sub">Ball Carrying</tspan></text>
+          <text x="309.75" y="554.40" class="petal-num" text-anchor="middle">05</text></g><g class="pt-big"><text x="309.75" y="558.90" class="petal-num pt-n" text-anchor="middle">05</text><text x="309.75" y="585.90" class="pt-t" text-anchor="middle"><tspan x="309.75" dy="0">Driving the</tspan><tspan x="309.75" dy="25">Team Forward</tspan></text></g></a>
           <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" class="petal g8" data-vid="xvypi_6BQps" data-title="Winning the Battles: Tackles, Recovery Runs &amp; Headers" aria-label="Winning the Battles: Tackles, Recovery Runs & Headers — play video">
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" fill="url(#pat-p5)" class="petal-img"/>
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(97.77 468.98)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="197.21" y="428.28" class="petal-title" text-anchor="middle"><tspan x="197.21" dy="0">Winning</tspan><tspan x="197.21" dy="18">the Battles</tspan><tspan x="197.21" dy="18" class="petal-sub">Tackles, Recovery</tspan><tspan x="197.21" dy="16" class="petal-sub">Runs &amp; Headers</tspan></text>
-          <text x="197.21" y="404.28" class="petal-num" text-anchor="middle">06</text></a>
+            <g class="pt-full"><text x="197.21" y="428.28" class="petal-title" text-anchor="middle"><tspan x="197.21" dy="0">Winning</tspan><tspan x="197.21" dy="18">the Battles</tspan><tspan x="197.21" dy="18" class="petal-sub">Tackles, Recovery</tspan><tspan x="197.21" dy="16" class="petal-sub">Runs &amp; Headers</tspan></text>
+          <text x="197.21" y="404.28" class="petal-num" text-anchor="middle">06</text></g><g class="pt-big"><text x="197.21" y="416.78" class="petal-num pt-n" text-anchor="middle">06</text><text x="197.21" y="443.78" class="pt-t" text-anchor="middle"><tspan x="197.21" dy="0">Winning</tspan><tspan x="197.21" dy="25">the Battles</tspan></text></g></a>
           <a href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" class="petal g8" data-vid="DMwCNd98Mjw" data-title="Technical Quality: First Touch, Volleys &amp; Quick Feet" aria-label="Technical Quality: First Touch, Volleys & Quick Feet — play video">
             <path d="M 256.62 363.30 A 148 148 0 0 1 332.32 268.38 L 226.22 62.07 A 380 380 0 0 0 31.87 305.77 Z" fill="url(#pat-p6)" class="petal-img"/>
             <path d="M 256.62 363.30 A 148 148 0 0 1 332.32 268.38 L 226.22 62.07 A 380 380 0 0 0 31.87 305.77 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 256.62 363.30 A 148 148 0 0 1 332.32 268.38 L 226.22 62.07 A 380 380 0 0 0 31.87 305.77 Z" class="petal-stroke" fill="none"/>
             <g transform="translate(157.63 206.72)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
-            <text x="225.38" y="245.31" class="petal-title" text-anchor="middle"><tspan x="225.38" dy="0">Technical</tspan><tspan x="225.38" dy="18">Quality</tspan><tspan x="225.38" dy="18" class="petal-sub">First Touch, Volleys</tspan><tspan x="225.38" dy="16" class="petal-sub">&amp; Quick Feet</tspan></text>
-          <text x="225.38" y="221.31" class="petal-num" text-anchor="middle">07</text></a>
+            <g class="pt-full"><text x="225.38" y="245.31" class="petal-title" text-anchor="middle"><tspan x="225.38" dy="0">Technical</tspan><tspan x="225.38" dy="18">Quality</tspan><tspan x="225.38" dy="18" class="petal-sub">First Touch, Volleys</tspan><tspan x="225.38" dy="16" class="petal-sub">&amp; Quick Feet</tspan></text>
+          <text x="225.38" y="221.31" class="petal-num" text-anchor="middle">07</text></g><g class="pt-big"><text x="225.38" y="233.81" class="petal-num pt-n" text-anchor="middle">07</text><text x="225.38" y="260.81" class="pt-t" text-anchor="middle"><tspan x="225.38" dy="0">Technical</tspan><tspan x="225.38" dy="25">Quality</tspan></text></g></a>
         </g>
-      </svg>
-
-      <!-- Centre disc — clickable, sits above SVG -->
-      <div class="hub-center">
-        <div class="num-wrap">
-          <span class="num">8</span>
-          <a href="central-midfielder.html#leadership" class="hub-star"
-             aria-label="Intangibles — The Bit You Can't Coach"
-             title="Intangibles — The Bit You Can&rsquo;t Coach"><i class="fas fa-star"></i></a>
+          </g>
+        </svg>
+        <div class="hub8-top">
+          <div class="num-wrap">
+            <span class="num">8</span>
+            <a href="central-midfielder.html#leadership" class="hub-star"
+               aria-label="Intangibles — The Bit You Can't Coach"
+               title="Intangibles — The Bit You Can&rsquo;t Coach"><i class="fas fa-star"></i></a>
+          </div>
+          <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
+          <a href="central-midfielder.html#leadership" class="hub8-top-link" aria-label="The Bit You Can't Coach"></a>
         </div>
-        <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
+        <div class="hub-center">
         <div class="lbl">The Complete 8</div>
         <div class="sub">What makes a good all-round central midfielder?</div>
         <div class="cta">Read the analysis →</div>
@@ -930,10 +1119,8 @@
         </button>
         <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
       </div>
-    </div>
-
-    <!-- Mobile fallback — stacked tile list -->
-    <div class="hub-mobile">
+      </div>
+      <div class="hub-mobile">
       <div class="m-center">
         <div class="num-wrap">
           <span class="num">8</span>
@@ -983,15 +1170,35 @@
         </a>
       </div>
     </div>
-
+    </div>
+    <div class="h8-key fi">
+        <div class="hero-rule"></div>
+        <div class="hero-eyebrow">Video evidence</div>
+        <h2>The Complete 8</h2>
+        <p>Seven competencies on film at Step 4 and Step 5, plus the intangibles that make the eighth &mdash; and the end product it all adds up to.</p>
+        <div class="kg kg6"><div class="kg-h"><span class="kg-t">The 6</span><span class="kg-s">Holding midfielder &middot; 01&ndash;03</span></div><a class="ki" data-k="0" href="https://www.youtube.com/watch?v=Pp9yRC6EBa4" target="_blank" rel="noopener" data-vid="Pp9yRC6EBa4" data-title="Press Resistance: Receiving &amp; Turning"><b>01</b><span class="ki-t">Press Resistance</span><span class="ki-s">Receiving &amp; Turning</span><span class="ki-d">Back foot, play forward</span></a><a class="ki" data-k="1" href="https://www.youtube.com/watch?v=RwaoxySKSFo" target="_blank" rel="noopener" data-vid="RwaoxySKSFo" data-title="Screening the Back Four: Blocks, Cover &amp; Pressing"><b>02</b><span class="ki-t">Screening the Back Four</span><span class="ki-s">Blocks, Cover &amp; Pressing</span><span class="ki-d">Reading it, stepping in, screening the back four</span></a><a class="ki" data-k="2" href="https://www.youtube.com/watch?v=VIKSKKkh0MU" target="_blank" rel="noopener" data-vid="VIKSKKkh0MU" data-title="Range of Passing: Forward Balls, Switches &amp; Crosses"><b>03</b><span class="ki-t">Range of Passing</span><span class="ki-s">Forward Balls, Switches &amp; Crosses</span><span class="ki-d">Switching play, crossing, delivery</span></a></div>
+        <div class="kg kgh"><div class="kg-h"><span class="kg-t">Running the Game</span><span class="kg-s">The 6 into the 8 &middot; 04</span></div><a class="ki" data-k="3" href="https://www.youtube.com/watch?v=YSjKQWCiEPw" target="_blank" rel="noopener" data-vid="YSjKQWCiEPw" data-title="Running the Game: Keep, Link &amp; Release"><b>04</b><span class="ki-t">Running the Game</span><span class="ki-s">Keep, Link &amp; Release</span><span class="ki-d">Keeping it, linking play, releasing runners</span></a></div>
+        <div class="kg kg8"><div class="kg-h"><span class="kg-t">The 8</span><span class="kg-s">Box to box &middot; 05&ndash;07</span></div><a class="ki" data-k="4" href="https://www.youtube.com/watch?v=tidNVF270xU" target="_blank" rel="noopener" data-vid="tidNVF270xU" data-title="Driving the Team Forward: Ball Carrying"><b>05</b><span class="ki-t">Driving the Team Forward</span><span class="ki-s">Ball Carrying</span><span class="ki-d">Driving runs, beating pressure</span></a><a class="ki" data-k="5" href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" data-vid="xvypi_6BQps" data-title="Winning the Battles: Tackles, Recovery Runs &amp; Headers"><b>06</b><span class="ki-t">Winning the Battles</span><span class="ki-s">Tackles, Recovery Runs &amp; Headers</span><span class="ki-d">Going in, getting back, winning in the air</span></a><a class="ki" data-k="6" href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" data-vid="DMwCNd98Mjw" data-title="Technical Quality: First Touch, Volleys &amp; Quick Feet"><b>07</b><span class="ki-t">Technical Quality</span><span class="ki-s">First Touch, Volleys &amp; Quick Feet</span><span class="ki-d">First touch, composure, execution</span></a></div>
+        <div class="kg kg10"><div class="kg-h"><span class="kg-t">08 + The 10</span><span class="kg-s">In the middle</span></div><a class="ki ki8th" data-k="8th" href="central-midfielder.html#leadership"><b>08</b><span class="ki-t">The Bit You Can&rsquo;t Coach</span><span class="ki-s">The Intangibles</span><span class="ki-d">Leadership and on-field personality</span></a><button class="ki ki10" data-k="10" type="button" data-endproduct><b>10</b><span class="ki-t">End Product</span><span class="ki-s">Chances Created, Assists &amp; Goals</span><span class="ki-d">From senior men&rsquo;s football at Step 5 and Step 4</span></button></div>
+      </div>
   </div>
+</section>
 
-  <!-- PHYSICAL HIGHLIGHTS -->
-  <div class="stats-section fi">
-    <div class="rule"></div>
-    <div class="eyebrow">Verified by PROformance</div>
-    <h2>Physical Attributes</h2>
-    <div class="stats-grid">
+<div class="page">
+
+  <!-- PROOF: the physical numbers and the defensive impact, side by side -->
+  <div class="proof fi" id="proof">
+    <div class="proof-h ph1">
+      <div class="rule"></div>
+      <div class="eyebrow">Verified by PROformance</div>
+      <div class="proof-h-row"><h2>Physical Attributes</h2><a href="athletic-profile.html" class="stats-link">Full athletic profile <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+    <div class="proof-h ph2">
+      <div class="rule"></div>
+      <div class="eyebrow">Marske United &middot; 2025/26</div>
+      <div class="proof-h-row"><h2>Defensive Impact</h2></div>
+    </div>
+    <div class="pb1"><div class="stats-grid">
       <div class="stat-card sc-sp">
         <div class="s-label"><i class="fas fa-bolt"></i> 5m Sprint</div>
         <div class="s-val">0.91s</div>
@@ -1022,16 +1229,10 @@
         <div class="s-val">3.7×</div>
         <div class="s-detail"><span class="badge badge-elite">Elite</span></div>
       </div>
-    </div>
-    <a href="athletic-profile.html" class="stats-link">Full athletic profile <i class="fas fa-arrow-right"></i></a>
-  </div>
-
-  <!-- DEFENSIVE IMPACT -->
-  <div class="impact-section fi">
-    <div class="impact-card">
+    </div></div>
+    <div class="pb2 impact-card">
       <div class="impact-photo"><img src="img/photo-cb-hero.jpg" alt="Joe Eason defending for Marske United"></div>
-      <div>
-        <div class="impact-bars">
+      <div class="impact-nums"><div class="impact-bars">
           <div class="impact-col">
             <div class="impact-bar bar-good"><span class="bar-val">0.91</span></div>
             <div class="bar-lbl">With Joe</div>
@@ -1040,16 +1241,11 @@
             <div class="impact-bar bar-bad"><span class="bar-val">2.74</span></div>
             <div class="bar-lbl">Without</div>
           </div>
-        </div>
-        <div class="impact-big">
+        </div><div class="impact-big">
           <div class="impact-big-num">3x</div>
           <div class="impact-big-label">Fewer goals conceded</div>
-        </div>
-      </div>
-      <div class="impact-text">
-        <h3>Defensive Impact</h3>
-        <p>At Marske United in 2025/26, opposition sides scored <strong>0.91 goals per 90 minutes</strong> with Joe on the pitch, compared to <strong>2.74 without</strong>. The pattern held consistently across the full season — positioning, communication and willingness to cover, applied for 90 minutes from minute one.</p>
-      </div>
+        </div></div>
+      <div class="impact-text"><p>At Marske United in 2025/26, opposition sides scored <strong>0.91 goals per 90 minutes</strong> with Joe on the pitch, compared to <strong>2.74 without</strong>. The pattern held consistently across the full season — positioning, communication and willingness to cover, applied for 90 minutes from minute one.</p></div>
     </div>
   </div>
 
@@ -1388,6 +1584,44 @@ const EP_VIDEO = '8nT0fmOoSeg';
 <script>
 /* Explore The Complete 8: glide down to the flower */
 document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('c8').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+</script>
+
+<script>
+/* Opened straight from the computer, YouTube refuses to play embeds (error 153), so show the loop's
+   own thumbnail in its place there. Online, the real loop plays exactly as on the live homepage. */
+(function () {
+  if (location.protocol !== 'file:') return;
+  var box = document.querySelector('.h8-loop'); if (!box) return;
+  var f = box.querySelector('iframe'); if (f) f.remove();
+  box.insertAdjacentHTML('beforeend', '<img class="loop-poster" src="https://img.youtube.com/vi/dzkiCMYU0IU/hqdefault.jpg" alt=""><span class="loop-note">The loop plays here once the page is online</span>');
+})();
+/* The 8 lights up as a 6, the blend, an 8 or the 10 — from the petals, the key, or the top loop */
+(function () {
+  var st = document.getElementById('hub8'); if (!st) return;
+  var STATES = ['st-six', 'st-hinge', 'st-eight', 'st-ten', 'st-star'];
+  var petals = Array.prototype.slice.call(st.querySelectorAll('.petal'));
+  var keys = Array.prototype.slice.call(document.querySelectorAll('.h8-key [data-k]'));
+  var groupOf = function (p) { return p.classList.contains('g6') ? 'st-six' : p.classList.contains('gh') ? 'st-hinge' : 'st-eight'; };
+  function set(cls, k) {
+    STATES.forEach(function (s) { st.classList.toggle(s, s === cls); });
+    petals.forEach(function (p, i) { p.classList.toggle('hl', String(i) === k); });
+    keys.forEach(function (el) { el.classList.toggle('on', el.dataset.k === k); });
+  }
+  function clear() { set(null, null); }
+  function bind(el, cls, k) {
+    el.addEventListener('mouseenter', function () { set(cls, k); });
+    el.addEventListener('mouseleave', clear);
+    el.addEventListener('focusin', function () { set(cls, k); });
+    el.addEventListener('focusout', clear);
+  }
+  petals.forEach(function (p, i) { bind(p, groupOf(p), String(i)); });
+  keys.forEach(function (el) {
+    var k = el.dataset.k;
+    bind(el, k === '10' ? 'st-ten' : k === '8th' ? 'st-star' : groupOf(petals[+k]), k);
+  });
+  st.querySelectorAll('.hub-end').forEach(function (el) { bind(el, 'st-ten', '10'); });
+  var top = st.querySelector('.hub8-top'); if (top) bind(top, 'st-star', '8th');
+})();
 </script>
 </body>
 </html>
