@@ -987,6 +987,23 @@
     .hub8-stage .hub-center { box-shadow: 0 0 0 3px #fff, 0 12px 38px rgba(0,8,24,0.45); }
     .hub8-svg .petal-stroke { stroke: #fff; stroke-width: 3.5; }
 
+    .hub-mobile .m-num { display: none; }  /* phone list: the number is already on each film's card */
+
+    /* phone: Read the analysis box, and the 8th + End Product as tiles at the end */
+    .hub-mobile .m-analysis { gap: 4px; padding: 14px 16px; }
+    .hub-mobile .m-analysis .sub { font-size: 12.5px; color: var(--text-sec); line-height: 1.4; }
+    .hub-mobile .m-analysis .cta { font-size: 12px; margin-top: 2px; }
+    .m-group.g10::before { background: linear-gradient(90deg, var(--amber), #A3233A); }
+    .m-group.g10 b { color: #fff; }
+    .m-tile.g8th, .m-tile.g10 { position: relative; }
+    .m-tile.g8th::before, .m-tile.g10::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; z-index: 2; }
+    .m-tile.g8th::before { background: var(--amber); } .m-tile.g10::before { background: #A3233A; }
+    .m-tile-thumb.m-8th { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #eef3f8, #dbe5ee); }
+    .m-tile-thumb.m-8th::after { display: none; }
+    .m-tile-thumb.m-8th .num-wrap { font-size: 50px; position: relative; display: inline-block; }
+    .m-tile-thumb.m-8th .num { font-family: var(--font-display); font-weight: 700; color: var(--blue); line-height: 1; display: block; }
+    .m-tile-thumb.m-8th .hub-star { pointer-events: none; border-width: 1.5px; }
+
     /* below the hero: calmer, fewer separate bands */
     .page { padding-top: 52px; }
     .proof { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "ph1 ph2" "pb1 pb2"; column-gap: 28px; row-gap: 0; margin-bottom: 52px; }
@@ -1029,7 +1046,7 @@
       .h8-grid { padding: 26px 18px 30px; row-gap: 24px; }
       .h8-badges { flex-direction: row; }
       .pb1 .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .pb2.impact-card { grid-template-columns: 1fr; } .pb2 .impact-photo { grid-row: auto; height: 200px; }
+      .pb2.impact-card { grid-template-columns: 1fr; } .pb2 .impact-photo { grid-row: auto; height: auto; aspect-ratio: 786 / 925; }  /* phone: the whole photo, so Joe's head isn't cut off */
       .explore-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -1197,21 +1214,11 @@
         </a>
       </div>
       <div class="hub-mobile">
-      <div class="m-center">
-        <div class="num-wrap">
-          <span class="num">8</span>
-          <a href="central-midfielder.html#leadership" class="hub-star"
-             aria-label="Intangibles — The Bit You Can't Coach"
-             title="Intangibles — The Bit You Can&rsquo;t Coach"><i class="fas fa-star"></i></a>
-        </div>
-        <a href="central-midfielder.html#leadership" class="cta-star"><i class="fas fa-star"></i> The Bit You Can&rsquo;t Coach →</a>
-        <div class="lbl">The Complete 8</div>
-        <div class="cta">Read the analysis →</div>
-        <a class="hub-end" href="https://www.youtube.com/watch?v=8nT0fmOoSeg" target="_blank" rel="noopener" data-vid="8nT0fmOoSeg" data-title="End Product: Chances Created, Assists &amp; Goals" data-more="central-midfielder.html#end-product" aria-label="End Product — play the reel">
-          <span class="ep10">END P<span class="ep10-r">R<span class="ep10-stem" aria-hidden="true">R</span></span><span class="ep10-o">O</span>DUCT</span>
-        </a>
-        <a href="central-midfielder.html" class="hub-center-link" aria-label="The Complete 8 — read the analysis"></a>
-      </div>
+      <a class="m-center m-analysis" href="central-midfielder.html">
+        <span class="lbl">The Complete 8</span>
+        <span class="sub">What makes a good all-round central midfielder?</span>
+        <span class="cta">Read the analysis &rarr;</span>
+      </a>
       <div class="hub-mobile-list">
         <div class="m-group g6"><b>The 6</b>Holding midfielder &middot; 01&ndash;03</div>
         <a href="https://www.youtube.com/watch?v=Pp9yRC6EBa4" target="_blank" rel="noopener" class="m-tile g6" data-vid="Pp9yRC6EBa4" data-title="Press Resistance: Receiving &amp; Turning">
@@ -1243,6 +1250,15 @@
         <a href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" class="m-tile g8" data-vid="DMwCNd98Mjw" data-title="Technical Quality: First Touch, Volleys &amp; Quick Feet">
           <div class="m-tile-thumb"><img src="img/card-07.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">07</span>Technical Quality: First Touch, Volleys &amp; Quick Feet</h3><p>First touch, composure, execution</p></div>
+        </a>
+        <div class="m-group g10"><b>08 + The 10</b>In the middle</div>
+        <a href="central-midfielder.html#leadership" class="m-tile g8th">
+          <div class="m-tile-thumb m-8th"><span class="num-wrap"><span class="num">8</span><span class="hub-star"><i class="fas fa-star"></i></span></span></div>
+          <div class="m-tile-body"><h3>The Bit You Can&rsquo;t Coach: The Intangibles</h3><p>Leadership and on-field personality</p></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=8nT0fmOoSeg" target="_blank" rel="noopener" class="m-tile g10" data-vid="8nT0fmOoSeg" data-title="End Product: Chances Created, Assists &amp; Goals" data-more="central-midfielder.html#end-product">
+          <div class="m-tile-thumb"><img src="img/card-end-product.jpg" alt=""></div>
+          <div class="m-tile-body"><h3>End Product: Chances Created, Assists &amp; Goals</h3><p>From senior men&rsquo;s football at Step 5 and Step 4</p></div>
         </a>
       </div>
     </div>
