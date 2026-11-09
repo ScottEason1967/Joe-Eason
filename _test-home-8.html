@@ -931,7 +931,7 @@
     .hub8-stage.st-star .hub8-8th .b8th-pill { transform: scale(1.05); }
     .hub8-ep { overflow: hidden; text-decoration: none; }
     .hub8-ep::before { content: ''; position: absolute; inset: 0; border-radius: 50%; z-index: 0; pointer-events: none;
-      background: url('https://img.youtube.com/vi/8nT0fmOoSeg/maxresdefault.jpg') center / cover no-repeat; opacity: 0.55; transition: opacity 0.2s; }
+      background: url('img/ep-loop.jpg') center / cover no-repeat; opacity: 0.55;  /* 9 Nov 2026: local photo (Joe celebrating) - the YouTube thumbnail now has text on it */ transition: opacity 0.2s; }
     .hub8-ep::after { content: ''; position: absolute; inset: 0; border-radius: 50%; z-index: 1; pointer-events: none;
       background: radial-gradient(circle at center, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.45) 75%, rgba(255,255,255,0.05) 100%); }
     .hub8-ep > * { position: relative; z-index: 2; }
@@ -1687,7 +1687,7 @@ document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDef
   if (location.protocol !== 'file:') return;
   var box = document.querySelector('.h8-loop'); if (!box) return;
   var f = box.querySelector('iframe'); if (f) f.remove();
-  box.insertAdjacentHTML('beforeend', '<img class="loop-poster" src="https://img.youtube.com/vi/dzkiCMYU0IU/hqdefault.jpg" alt=""><span class="loop-note">The loop plays here once the page is online</span>');
+  box.insertAdjacentHTML('beforeend', '<img class="loop-poster" src="img/hero-loop-still.jpg" alt=""><span class="loop-note">The loop plays here once the page is online</span>');
 })();
 /* The 8 lights up as a 6, the blend, an 8 or the 10 — from the petals, the key, or the top loop */
 (function () {
