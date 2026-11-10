@@ -141,6 +141,10 @@
     @media (max-width: 960px) { .futsal-videos.six { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .futsal-videos.six { grid-template-columns: 1fr; } }
     .futsal-videos.six .futsal-video-card-body { padding: 16px 18px; }
+    /* the card itself carries the title and name, so keep its text clear: play button over the photo, no 'Watch video' label */
+    .futsal-videos.six .vid-label { display: none; }
+    .futsal-videos.six .play-btn { left: 81%; width: 52px; height: 52px; }
+    .futsal-videos.six .skill-video img { opacity: 1; }
 
     /* Why it fits — text + profile photo */
     .why-grid { display: grid; grid-template-columns: 1fr 300px; gap: 28px; align-items: start; margin-top: 4px; }
@@ -435,7 +439,7 @@
     <div class="futsal-videos six">
       <div class="futsal-video-card">
         <a href="https://www.youtube.com/watch?v=0rCUMXnwlGE" target="_blank" rel="noopener" class="skill-video" data-vid="0rCUMXnwlGE" id="vid-futsal-01">
-          <img src="img/futsal-tile-technical-excellence.jpg" alt="01 · Technical Excellence — Joe Eason, pivot" style="object-position:50% 60%">
+          <img src="img/futsal-card-01-technical-excellence.jpg" alt="01 · Technical Excellence — Joe Eason, pivot">
           <div class="play-btn"><i class="fas fa-play"></i></div>
           <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
         </a>
@@ -447,7 +451,7 @@
       </div>
       <div class="futsal-video-card">
         <a href="https://www.youtube.com/watch?v=iP1Az8voL2I" target="_blank" rel="noopener" class="skill-video" data-vid="iP1Az8voL2I" id="vid-futsal-02">
-          <img src="img/futsal-tile-game-sense.jpg" alt="02 · Game Sense — Joe Eason, pivot" style="object-position:50% 15%">
+          <img src="img/futsal-card-02-game-sense.jpg" alt="02 · Game Sense — Joe Eason, pivot">
           <div class="play-btn"><i class="fas fa-play"></i></div>
           <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
         </a>
@@ -459,7 +463,7 @@
       </div>
       <div class="futsal-video-card">
         <a href="https://www.youtube.com/watch?v=5Jff7Dusd9s" target="_blank" rel="noopener" class="skill-video" data-vid="5Jff7Dusd9s" id="vid-futsal-03">
-          <img src="img/futsal-tile-athletic-dominance.jpg" alt="03 · Athletic Dominance — Joe Eason, pivot" style="object-position:50% 15%">
+          <img src="img/futsal-card-03-athletic-dominance.jpg" alt="03 · Athletic Dominance — Joe Eason, pivot">
           <div class="play-btn"><i class="fas fa-play"></i></div>
           <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
         </a>
@@ -471,7 +475,7 @@
       </div>
       <div class="futsal-video-card">
         <a href="https://www.youtube.com/watch?v=9-SwxMIFYE8" target="_blank" rel="noopener" class="skill-video" data-vid="9-SwxMIFYE8" id="vid-futsal-04">
-          <img src="img/futsal-tile-constant-threat.jpg" alt="04 · Constant Threat — Joe Eason, pivot" style="object-position:50% 15%">
+          <img src="img/futsal-card-04-constant-threat.jpg" alt="04 · Constant Threat — Joe Eason, pivot">
           <div class="play-btn"><i class="fas fa-play"></i></div>
           <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
         </a>
@@ -483,7 +487,7 @@
       </div>
       <div class="futsal-video-card">
         <a href="https://www.youtube.com/watch?v=x3MjMtS9fmA" target="_blank" rel="noopener" class="skill-video" data-vid="x3MjMtS9fmA" id="vid-futsal-05">
-          <img src="img/futsal-tile-retains-under-pressure.jpg" alt="05 · Retains Under Pressure — Joe Eason, pivot" style="object-position:50% 70%">
+          <img src="img/futsal-card-05-retains-under-pressure.jpg" alt="05 · Retains Under Pressure — Joe Eason, pivot">
           <div class="play-btn"><i class="fas fa-play"></i></div>
           <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
         </a>
@@ -495,7 +499,7 @@
       </div>
       <div class="futsal-video-card">
         <a href="https://www.youtube.com/watch?v=zlSBD5FL7J4" target="_blank" rel="noopener" class="skill-video" data-vid="zlSBD5FL7J4" id="vid-futsal-06">
-          <img src="img/futsal-tile-first-line-press.jpg" alt="06 · First-Line Press — Joe Eason, pivot" style="object-position:50% 30%">
+          <img src="img/futsal-card-06-first-line-press.jpg" alt="06 · First-Line Press — Joe Eason, pivot">
           <div class="play-btn"><i class="fas fa-play"></i></div>
           <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
         </a>
