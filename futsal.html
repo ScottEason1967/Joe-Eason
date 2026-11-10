@@ -87,6 +87,61 @@
       line-height: 1.5; margin: 0;
     }
 
+    /* Pride DNA house (same design as joeeasonfutsal.com) */
+    .dna-stage { background: linear-gradient(160deg, #0b2350, #0f2a55 60%, #16365f); border-radius: 14px; padding: 26px 24px 28px; margin-top: 22px; }
+    .dna-house { max-width: 640px; margin: 0 auto; }
+    .dna-gable { display: block; width: 100%; height: 46px; }
+    .dna-gable svg { display: block; width: 100%; height: 100%; }
+    .dna-tile { position: relative; display: flex; overflow: hidden; text-decoration: none; background: #082047; border: 1.5px solid rgba(255,255,255,0.16); transition: border-color 0.16s ease, transform 0.16s ease; }
+    .dna-tile:hover { border-color: #fff; transform: translateY(-2px); }
+    .dna-tile .thumb { position: absolute; inset: 0; background-size: cover; background-position: center 26%; opacity: 0.5; z-index: 0; transition: opacity 0.2s ease; }
+    .dna-tile:hover .thumb { opacity: 0.68; }
+    .dna-tile .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,17,44,0.94), rgba(4,17,44,0.6) 60%, rgba(4,17,44,0.42)); z-index: 1; }
+    .dna-tile .row { position: relative; z-index: 2; flex: 1; display: flex; align-items: center; gap: 14px; padding: 15px 19px; }
+    .dna-tile .ico { width: 44px; height: 44px; border-radius: 11px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--amber); flex-shrink: 0; }
+    .dna-tile .txt { flex: 1; min-width: 0; }
+    .dna-tile .role { display: block; font-size: 9px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--amber); margin-bottom: 3px; }
+    .dna-tile .name { display: block; font-family: var(--font-display); font-size: 1.18rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; line-height: 1.04; color: #fff; }
+    .dna-tile .strap { display: block; font-size: 11.5px; color: rgba(255,255,255,0.82); margin-top: 4px; line-height: 1.35; }
+    .dna-tile .go, .prole .go { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(255,185,29,0.7); color: var(--amber); display: flex; align-items: center; justify-content: center; font-size: 12px; }
+    .dna-roof { background: linear-gradient(90deg, #3d0f19, #591320); }
+    .dna-roof .ico { background: rgba(255,185,29,0.18); }
+    .dna-walls { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 6px 0; }
+    .dna-foundation .shade { background: linear-gradient(90deg, rgba(3,13,36,0.95), rgba(3,13,36,0.66) 60%, rgba(3,13,36,0.5)); }
+    .pivot-band { max-width: 640px; margin: 22px auto 0; }
+    .pivot-band .pb-head { display: flex; align-items: center; gap: 11px; margin-bottom: 12px; }
+    .pivot-band .pb-head .bar { width: 4px; height: 34px; background: #5aa9e6; border-radius: 2px; flex-shrink: 0; }
+    .pivot-band .pb-head .k { display: block; font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: #8cc4ec; }
+    .pivot-band .pb-head .t { display: block; font-family: var(--font-display); font-size: 1.18rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.4px; line-height: 1.05; margin-top: 2px; }
+    .pivot-roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .prole { position: relative; display: block; overflow: hidden; text-decoration: none; background: #082047; border: 1.5px solid rgba(90,169,230,0.4); min-height: 152px; transition: border-color 0.16s ease, transform 0.16s ease; }
+    .prole:hover { border-color: #fff; transform: translateY(-2px); }
+    .prole .thumb { position: absolute; inset: 0; background-size: cover; background-position: center 28%; opacity: 0.42; z-index: 0; transition: opacity 0.2s ease; }
+    .prole:hover .thumb { opacity: 0.6; }
+    .prole .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4,17,44,0.62), rgba(4,17,44,0.93)); z-index: 1; }
+    .prole .in { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; min-height: 152px; padding: 14px 15px; }
+    .prole .ico { width: 38px; height: 38px; border-radius: 10px; background: rgba(90,169,230,0.16); display: flex; align-items: center; justify-content: center; font-size: 16px; color: #8cc4ec; margin-bottom: auto; }
+    .prole .name { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: #fff; line-height: 1.08; margin-top: 10px; }
+    .prole .strap { display: block; font-size: 10.5px; color: rgba(255,255,255,0.8); margin-top: 4px; line-height: 1.35; }
+    .prole .go { position: absolute; top: 13px; right: 13px; z-index: 3; }
+    .dna-note { text-align: center; font-size: 11.5px; color: rgba(255,255,255,0.7); margin-top: 16px; }
+    .dna-note a { color: var(--amber); font-weight: 700; text-decoration: none; }
+    @media (max-width: 760px) { .dna-walls, .pivot-roles { grid-template-columns: 1fr; } .prole, .prole .in { min-height: 108px; } .dna-stage { padding: 18px 12px 20px; } }
+
+    /* Complete 8 -> Pride DNA map */
+    .map8 { display: grid; grid-template-columns: 1fr; gap: 6px; margin: 4px 0 18px; max-width: 760px; }
+    .map8 .m { display: grid; grid-template-columns: 1fr 22px 1fr; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 8px; background: rgba(0,94,184,0.05); border: 1px solid var(--border-lt); }
+    .map8 .f { font-size: 0.84rem; font-weight: 700; color: var(--blue-deep); }
+    .map8 .f small, .map8 .t small { display: block; font-size: 9.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1px; }
+    .map8 .a { color: var(--amber-deep); text-align: center; font-size: 12px; }
+    .map8 .t { font-size: 0.84rem; font-weight: 700; color: #8B0A1B; }
+
+    /* Six competency videos */
+    .futsal-videos.six { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 960px) { .futsal-videos.six { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .futsal-videos.six { grid-template-columns: 1fr; } }
+    .futsal-videos.six .futsal-video-card-body { padding: 16px 18px; }
+
     /* Why it fits — text + profile photo */
     .why-grid { display: grid; grid-template-columns: 1fr 300px; gap: 28px; align-items: start; margin-top: 4px; }
     .why-photo { border-radius: 14px; overflow: hidden; border: 1px solid var(--border-lt); box-shadow: 0 6px 20px rgba(0,32,64,0.16); aspect-ratio: 3 / 4; }
@@ -295,47 +350,70 @@
     </div>
   </div>
 
-  <!-- THE PIVOT ROLE -->
+  <!-- THE PIVOT ROLE: England Futsal's Pride DNA (same house as joeeasonfutsal.com) -->
   <div class="panel featured fi">
-    <div class="panel-eyebrow">The Role</div>
-    <h2>What the pivot has to do</h2>
-    <p>The pivot is futsal's central reference point — the most advanced player on the court, working with their back to goal. <strong>In possession</strong>, the job is to hold off the defending pivot, link play with the rotating midfielders behind, finish in tight spaces, and rotate intelligently when the shape needs to change. <strong>Out of possession</strong>, the pivot is the team's first line of defence: closing passing lanes from the front so the back three keep their structure intact. There's nowhere to hide on either side of the ball.</p>
-    <div class="demands">
-      <div class="demand">
-        <h4>Physical Strength</h4>
-        <p>Win the shoulder battle to receive cleanly, hold contact while you scan, roll the defender when the moment opens.</p>
+    <div class="panel-eyebrow">England Futsal &middot; The Pride DNA</div>
+    <h2>What England Futsal asks of a pivot</h2>
+    <p>England Futsal builds every player on the <strong>Pride DNA</strong> &mdash; four pillars in one house: <strong>Emotional Intelligence</strong> at the roof, <strong>Game Sense</strong> and <strong>Technical Excellence</strong> as the walls, <strong>Athletic Dominance</strong> as the foundation. It then sets <strong>role-specific attributes</strong> for the pivot: a constant threat, retaining the ball under pressure, and leading the press from the front.</p>
+    <div class="dna-stage">
+      <div class="dna-house">
+        <div class="dna-gable" aria-hidden="true"><svg viewBox="0 0 640 50" preserveAspectRatio="none"><polygon points="320,3 637,47 3,47" fill="#4a111c" stroke="#CE1126" stroke-width="3"/></svg></div>
+        <a href="https://joeeasonfutsal.com/pivot.html#coach" target="_blank" rel="noopener" class="dna-tile dna-roof" aria-label="Emotional Intelligence">
+          <span class="row"><span class="ico"><i class="fas fa-brain"></i></span><span class="txt"><span class="role">Pride DNA &middot; Roof</span><span class="name">Emotional Intelligence</span><span class="strap">Psychologically robust &amp; emotionally intelligent within the Pride environment.</span></span><span class="go"><i class="fas fa-arrow-right"></i></span></span>
+        </a>
+        <div class="dna-walls">
+          <a href="https://joeeasonfutsal.com/pivot.html#p5" target="_blank" rel="noopener" class="dna-tile" aria-label="Game Sense">
+            <span class="thumb" style="background-image:url('img/futsal-tile-game-sense.jpg');background-position:50% 15%"></span><span class="shade"></span>
+            <span class="row"><span class="ico"><i class="fas fa-eye"></i></span><span class="txt"><span class="role">Pride DNA &middot; Wall</span><span class="name">Game Sense</span><span class="strap">Understand space &amp; time.</span></span><span class="go"><i class="fas fa-arrow-right"></i></span></span>
+          </a>
+          <a href="https://joeeasonfutsal.com/pivot.html#p6" target="_blank" rel="noopener" class="dna-tile" aria-label="Technical Excellence">
+            <span class="thumb" style="background-image:url('img/futsal-tile-technical-excellence.jpg');background-position:50% 60%"></span><span class="shade"></span>
+            <span class="row"><span class="ico"><i class="fas fa-star"></i></span><span class="txt"><span class="role">Pride DNA &middot; Wall</span><span class="name">Technical Excellence</span><span class="strap">Skilfully adaptable under pressure.</span></span><span class="go"><i class="fas fa-arrow-right"></i></span></span>
+          </a>
+        </div>
+        <a href="https://joeeasonfutsal.com/pivot.html#p1" target="_blank" rel="noopener" class="dna-tile dna-foundation" aria-label="Athletic Dominance">
+          <span class="thumb" style="background-image:url('img/futsal-tile-athletic-dominance.jpg');background-position:50% 15%"></span><span class="shade"></span>
+          <span class="row"><span class="ico"><i class="fas fa-dumbbell"></i></span><span class="txt"><span class="role">Pride DNA &middot; Foundation</span><span class="name">Athletic Dominance</span><span class="strap">Efficient and effective mover.</span></span><span class="go"><i class="fas fa-arrow-right"></i></span></span>
+        </a>
       </div>
-      <div class="demand">
-        <h4>Back-Foot Composure</h4>
-        <p>Receive on the half-turn under pressure. Decide in one touch whether to set, drive or shoot.</p>
+      <div class="pivot-band">
+        <div class="pb-head"><span class="bar"></span><span><span class="k">Pride DNA &middot; Role-Specific Attributes</span><span class="t">The Pivot</span></span></div>
+        <div class="pivot-roles">
+          <a href="https://joeeasonfutsal.com/pivot.html#p2" target="_blank" rel="noopener" class="prole" aria-label="Constant Threat">
+            <span class="thumb" style="background-image:url('img/futsal-tile-constant-threat.jpg');background-position:50% 15%"></span><span class="shade"></span><span class="go"><i class="fas fa-arrow-right"></i></span>
+            <span class="in"><span class="ico"><i class="fas fa-bullseye"></i></span><span class="name">Constant Threat</span><span class="strap">Receiving, turning &amp; shooting in the final third.</span></span>
+          </a>
+          <a href="https://joeeasonfutsal.com/pivot.html#p3" target="_blank" rel="noopener" class="prole" aria-label="Retains Under Pressure">
+            <span class="thumb" style="background-image:url('img/futsal-tile-retains-under-pressure.jpg');background-position:50% 70%"></span><span class="shade"></span><span class="go"><i class="fas fa-arrow-right"></i></span>
+            <span class="in"><span class="ico"><i class="fas fa-shield-halved"></i></span><span class="name">Retains Under Pressure</span><span class="strap">Effectively retains possession under pressure.</span></span>
+          </a>
+          <a href="https://joeeasonfutsal.com/pivot.html#p4" target="_blank" rel="noopener" class="prole" aria-label="First-Line Press">
+            <span class="thumb" style="background-image:url('img/futsal-tile-first-line-press.jpg');background-position:50% 30%"></span><span class="shade"></span><span class="go"><i class="fas fa-arrow-right"></i></span>
+            <span class="in"><span class="ico"><i class="fas fa-bolt"></i></span><span class="name">First-Line Press</span><span class="strap">Athleticism &amp; understanding to press effectively at the first line.</span></span>
+          </a>
+        </div>
       </div>
-      <div class="demand">
-        <h4>Two-Footed Technique</h4>
-        <p>Finishing chances arrive on either side at speed. Bringing the wrong foot loses the moment.</p>
-      </div>
-      <div class="demand">
-        <h4>Positional Rotation</h4>
-        <p>Read when to drop, when to spin, when to vacate space so a rotating midfielder can attack it.</p>
-      </div>
-      <div class="demand">
-        <h4>First Line of Defence</h4>
-        <p>Close passing lanes from the front. Force play wide. Make the opposition build through the longer route.</p>
-      </div>
-      <div class="demand">
-        <h4>Stamina + Repetition</h4>
-        <p>Forty minutes of constant contact and high-tempo work, in and out of possession. The pivot job doesn't pause.</p>
-      </div>
+      <div class="dna-note">Each pillar opens Joe&rsquo;s full evidence on <a href="https://joeeasonfutsal.com/pivot.html" target="_blank" rel="noopener">joeeasonfutsal.com</a></div>
     </div>
   </div>
 
   <!-- JOE IN THE ROLE -->
   <div class="panel fi">
     <div class="panel-eyebrow">Why It Fits Joe</div>
-    <h2>The skills already verified in football carry straight over</h2>
+    <h2>The Complete 8, on a smaller court</h2>
     <div class="why-grid">
       <div class="why-text">
         <p>At <strong>6'2" and 85kg with an IMTP of 3.7× bodyweight</strong>, Joe wins the physical duels that decide futsal pivot play. The shielding, the back-foot receiving, the strength to roll a defender — all flagged in scout reports from his eleven-a-side game — are exactly what the role needs. The difference is the space and the time: futsal compresses both, so the margins are tighter and the contact harder.</p>
-        <p>The defensive side of the pivot role lands particularly well. He plays as a <strong>defensive midfielder</strong> in eleven-a-side: screening, closing passing lanes, reading what the opposition wants to do before they do it. Those exact instincts make him a natural fit as the team's furthest-forward defender — applying the same screening intelligence from a different starting position.</p>
+        <p>In eleven-a-side, Joe&rsquo;s game is built as <a href="central-midfielder.html" style="color:var(--blue);font-weight:700;">The Complete 8</a> &mdash; the 6 into the 8, the bit you can&rsquo;t coach, and the end product of the 10. The Pride DNA asks for the same player on a smaller court:</p>
+        <div class="map8">
+          <div class="m"><span class="f"><small>Complete 8 &middot; 01</small>Press Resistance</span><span class="a"><i class="fas fa-arrow-right"></i></span><span class="t"><small>Pivot</small>Retains Under Pressure</span></div>
+          <div class="m"><span class="f"><small>Complete 8 &middot; the 10</small>End Product</span><span class="a"><i class="fas fa-arrow-right"></i></span><span class="t"><small>Pivot</small>Constant Threat</span></div>
+          <div class="m"><span class="f"><small>Complete 8 &middot; 06</small>Winning the Battles</span><span class="a"><i class="fas fa-arrow-right"></i></span><span class="t"><small>Pivot</small>First-Line Press</span></div>
+          <div class="m"><span class="f"><small>Complete 8 &middot; 04</small>Running the Game</span><span class="a"><i class="fas fa-arrow-right"></i></span><span class="t"><small>Pride DNA</small>Game Sense</span></div>
+          <div class="m"><span class="f"><small>Complete 8 &middot; 07</small>Technical Quality</span><span class="a"><i class="fas fa-arrow-right"></i></span><span class="t"><small>Pride DNA</small>Technical Excellence</span></div>
+          <div class="m"><span class="f"><small>Complete 8 &middot; 08</small>The Bit You Can&rsquo;t Coach</span><span class="a"><i class="fas fa-arrow-right"></i></span><span class="t"><small>Pride DNA</small>Emotional Intelligence</span></div>
+          <div class="m"><span class="f"><small>Physical profile</small>Tested speed, power &amp; jump</span><span class="a"><i class="fas fa-arrow-right"></i></span><span class="t"><small>Pride DNA</small>Athletic Dominance</span></div>
+        </div>
         <p>What scouts have said about his football game maps directly onto his futsal:</p>
         <p style="font-style: italic; color: var(--text-sec); border-left: 3px solid var(--green); padding-left: 14px;">
           "Receive on back foot well, hold off man, head up to know where to play early or utilises his strength to roll man and play forward."<br>
@@ -349,26 +427,85 @@
     </div>
   </div>
 
-  <!-- VIDEOS -->
+  <!-- VIDEOS: the six Pivot competency videos (same order as the YouTube playlist) -->
   <div class="panel fi" style="padding: 28px 32px;">
     <div class="panel-eyebrow">Video Evidence</div>
-    <h2>The Making of a Pivot &middot; 7 min</h2>
-    <p>One short film covering Joe at pivot. The full competency-by-competency breakdown and the rest of the footage live on <a href="https://joeeasonfutsal.com" target="_blank" rel="noopener" style="color: var(--blue); font-weight: 700;">joeeasonfutsal.com</a>.</p>
-    <div class="futsal-videos" style="grid-template-columns: 1fr;">
+    <h2>The Pivot &middot; six competency videos</h2>
+    <p>One short video for each part of the Pride DNA that can be filmed, in the same order as the playlist on YouTube. The full competency-by-competency analysis lives on <a href="https://joeeasonfutsal.com" target="_blank" rel="noopener" style="color: var(--blue); font-weight: 700;">joeeasonfutsal.com</a>.</p>
+    <div class="futsal-videos six">
       <div class="futsal-video-card">
-        <a href="https://www.youtube.com/watch?v=pAU2eoXO0ZA" target="_blank" rel="noopener" class="skill-video" data-vid="pAU2eoXO0ZA" id="vid-futsal-1">
-          <img src="img/poster-making-of-a-pivot.jpg" alt="The Making of a Pivot — 7 minute highlights film">
+        <a href="https://www.youtube.com/watch?v=0rCUMXnwlGE" target="_blank" rel="noopener" class="skill-video" data-vid="0rCUMXnwlGE" id="vid-futsal-01">
+          <img src="img/futsal-tile-technical-excellence.jpg" alt="01 · Technical Excellence — Joe Eason, pivot" style="object-position:50% 60%">
           <div class="play-btn"><i class="fas fa-play"></i></div>
           <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
         </a>
         <div class="futsal-video-card-body">
-          <div class="vc-eyebrow">Highlights film &middot; 7 min</div>
-          <h3>The Making of a Pivot</h3>
-          <p>Joe at pivot in senior men's futsal — receiving under pressure, holding play, finishing in tight space and leading the first line of the press.</p>
+          <div class="vc-eyebrow">01 &middot; Pride DNA &middot; Wall</div>
+          <h3>Technical Excellence</h3>
+          <p>Skilfully adaptable under pressure.</p>
+        </div>
+      </div>
+      <div class="futsal-video-card">
+        <a href="https://www.youtube.com/watch?v=iP1Az8voL2I" target="_blank" rel="noopener" class="skill-video" data-vid="iP1Az8voL2I" id="vid-futsal-02">
+          <img src="img/futsal-tile-game-sense.jpg" alt="02 · Game Sense — Joe Eason, pivot" style="object-position:50% 15%">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+        </a>
+        <div class="futsal-video-card-body">
+          <div class="vc-eyebrow">02 &middot; Pride DNA &middot; Wall</div>
+          <h3>Game Sense</h3>
+          <p>Understand space &amp; time.</p>
+        </div>
+      </div>
+      <div class="futsal-video-card">
+        <a href="https://www.youtube.com/watch?v=5Jff7Dusd9s" target="_blank" rel="noopener" class="skill-video" data-vid="5Jff7Dusd9s" id="vid-futsal-03">
+          <img src="img/futsal-tile-athletic-dominance.jpg" alt="03 · Athletic Dominance — Joe Eason, pivot" style="object-position:50% 15%">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+        </a>
+        <div class="futsal-video-card-body">
+          <div class="vc-eyebrow">03 &middot; Pride DNA &middot; Foundation</div>
+          <h3>Athletic Dominance</h3>
+          <p>Efficient and effective mover.</p>
+        </div>
+      </div>
+      <div class="futsal-video-card">
+        <a href="https://www.youtube.com/watch?v=9-SwxMIFYE8" target="_blank" rel="noopener" class="skill-video" data-vid="9-SwxMIFYE8" id="vid-futsal-04">
+          <img src="img/futsal-tile-constant-threat.jpg" alt="04 · Constant Threat — Joe Eason, pivot" style="object-position:50% 15%">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+        </a>
+        <div class="futsal-video-card-body">
+          <div class="vc-eyebrow">04 &middot; Pivot &middot; Role-specific</div>
+          <h3>Constant Threat</h3>
+          <p>Receiving, turning &amp; shooting in the final third.</p>
+        </div>
+      </div>
+      <div class="futsal-video-card">
+        <a href="https://www.youtube.com/watch?v=x3MjMtS9fmA" target="_blank" rel="noopener" class="skill-video" data-vid="x3MjMtS9fmA" id="vid-futsal-05">
+          <img src="img/futsal-tile-retains-under-pressure.jpg" alt="05 · Retains Under Pressure — Joe Eason, pivot" style="object-position:50% 70%">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+        </a>
+        <div class="futsal-video-card-body">
+          <div class="vc-eyebrow">05 &middot; Pivot &middot; Role-specific</div>
+          <h3>Retains Under Pressure</h3>
+          <p>Effectively retains possession under pressure.</p>
+        </div>
+      </div>
+      <div class="futsal-video-card">
+        <a href="https://www.youtube.com/watch?v=zlSBD5FL7J4" target="_blank" rel="noopener" class="skill-video" data-vid="zlSBD5FL7J4" id="vid-futsal-06">
+          <img src="img/futsal-tile-first-line-press.jpg" alt="06 · First-Line Press — Joe Eason, pivot" style="object-position:50% 30%">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <div class="vid-label"><i class="fas fa-play" style="font-size:8px;margin-right:4px;"></i> Watch Video</div>
+        </a>
+        <div class="futsal-video-card-body">
+          <div class="vc-eyebrow">06 &middot; Pivot &middot; Role-specific</div>
+          <h3>First-Line Press</h3>
+          <p>Athleticism &amp; understanding to press effectively at the first line.</p>
         </div>
       </div>
     </div>
-
   </div>
 
 </div><!-- /wrap -->
