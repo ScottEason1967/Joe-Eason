@@ -422,7 +422,45 @@
     .m5-card p { font-size: 13.5px; line-height: 1.5; color: var(--text-sec); margin-top: 6px; }
     .m5-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; background: var(--blue-deep); color: #fff; font-weight: 800; font-size: 14px; border-radius: 10px; padding: 11px 18px; text-decoration: none; }
     .m5-btn:hover { color: #fff; }
+    #m5five .m5seg .m5ol { pointer-events: none; }   /* only the photo strip itself is clickable, not the space around or inside the 5 */
+    #m5five .m5core { pointer-events: auto; cursor: pointer; outline: none; }
+    #m5five .m5core circle { transition: stroke .2s, fill .2s; }
+    #m5five .m5core:hover circle, #m5five .m5core:focus-visible circle { stroke: #FFB91D; stroke-width: 5; fill: #0e2a5e; }
+    #m5five .m5c4 { font-size: 12.5px; letter-spacing: 2.5px; fill: #FFB91D; }
+    .m5pop { position: fixed; inset: 0; z-index: 200; display: none; background: rgba(0,16,40,0.74); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 22px; }
+    .m5pop.open { display: flex; }
+    .m5pop-box { position: relative; width: min(680px, 100%); max-height: 90vh; background: var(--card); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 70px rgba(0,16,40,0.5); border-top: 5px solid var(--amber); }
+    .m5pop-close { position: absolute; top: 10px; right: 12px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; border: 0; cursor: pointer; background: rgba(0,32,64,0.10); color: var(--text); font-size: 22px; line-height: 1; }
+    .m5pop-close:hover { background: rgba(0,32,64,0.20); }
+    .m5pop-scroll { max-height: 90vh; overflow-y: auto; padding: 26px 30px 28px; }
+    .m5pop-eyebrow { font-size: 10.5px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+    .m5pop h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; line-height: 1.15; text-transform: uppercase; color: var(--blue-deep); margin: 6px 40px 16px 0; }
+    .m5pop h3 b { color: #c8900a; }
+    .m5pop-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .m5pop-chart { background: #f7f9fb; border: 1px solid var(--border-lt); border-radius: 12px; padding: 14px 14px 12px; text-align: center; display: flex; flex-direction: column; }
+    .m5pop-club { font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--blue-deep); margin-bottom: 10px; }
+    .m5pop-bars { display: flex; gap: 22px; align-items: flex-end; justify-content: center; height: 184px; margin-top: auto; }
+    .m5pop-bar { width: 78px; border-radius: 8px 8px 0 0; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 7px; }
+    .m5pop-bar.g { background: linear-gradient(to top, var(--blue), #60a5fa); } .m5pop-bar.b { background: linear-gradient(to top, #b8bcc0, #8a8f95); }
+    .m5pop-bar span { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .m5pop-lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 7px; font-weight: 700; }
+    .m5pop-diff { margin-top: 10px; font-size: 12px; color: var(--text-sec); } .m5pop-diff b { font-family: var(--font-display); font-size: 1.05rem; color: var(--blue-deep); margin-right: 5px; }
+    .m5pop-axis { text-align: center; font-size: 9.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); margin: 9px 0 14px; }
+    .m5pop-scroll > p { font-size: 13.5px; line-height: 1.65; color: var(--text-sec); margin-top: 9px; } .m5pop-scroll > p strong { color: var(--blue-deep); }
+    .m5pop-go { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; background: var(--blue-deep); color: #fff; font-weight: 800; font-size: 13.5px; border-radius: 9px; padding: 10px 16px; text-decoration: none; }
+    .m5pop-go:hover { color: #fff; background: var(--blue); }
+    @media (max-width: 560px) { .m5pop { padding: 12px; } .m5pop-scroll { padding: 22px 18px 24px; } .m5pop h3 { font-size: 1.35rem; } .m5pop-charts { gap: 8px; } .m5pop-chart { padding: 12px 8px 10px; } .m5pop-bar { width: 52px; } .m5pop-bars { gap: 12px; } }
     .cb-switch { margin-top: 30px; }
+    .case-next { display: flex; justify-content: flex-end; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border-lt); }
+    .case-next-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--blue-deep); text-decoration: none; padding: 9px 14px; border: 1.5px solid var(--border-lt); border-radius: 9px; background: #fff; transition: border-color .15s, transform .15s, box-shadow .15s; }
+    .case-next-link strong { font-weight: 800; }
+    .case-next-link:hover { color: var(--blue-deep); border-color: var(--amber); transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,32,64,.10); }
+    /* no videos yet: the "footage compiling" note is a slim strip, so the stats and quotes sit just under the heading when a section opens */
+    .case .cb-video-slot { aspect-ratio: auto; max-width: none; justify-content: flex-start; margin: 0 0 20px; padding: 11px 16px; text-align: left; }
+    .case .cb-video-slot > div { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; }
+    .case .cb-video-slot i { font-size: 1.05rem; margin-bottom: 0; display: inline-block; }
+    .case .cb-video-slot span { display: inline; margin-bottom: 0; }
+    .case .cb-video-slot small { display: inline; }
     @media (max-width: 1199px) {
       .h5-grid { grid-template-columns: 1fr; grid-template-areas: "id" "hub" "key"; row-gap: 34px; min-height: 0; padding: 36px 28px 40px; }
       .h5-id, .h5-key { justify-self: center; max-width: 680px; width: 100%; }
@@ -495,7 +533,7 @@
 <path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5p" stroke="url(#m5ph4)"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5sh"/>
 <g class="m5ol"><rect x="0" y="0" width="900" height="1000" mask="url(#m5mRing)"/><polygon points="366.9,605.4 726.9,1034.4 343.0,1222.3 -161.4,922.2 366.9,605.4" mask="url(#m5mFull)"/></g>
 <text class="m5sn" x="359.5" y="825.6" text-anchor="middle">05</text><text class="m5st" x="359.5" y="851.6" text-anchor="middle"><tspan x="359.5" dy="0">Winning</tspan><tspan x="359.5" dy="25">the Duel</tspan></text></g>
-<g class="m5core"><circle cx="370.0" cy="602.8" r="146"/><text class="m5c3" x="370.0" y="546.8" text-anchor="middle">WITH JOE</text><text class="m5c1" x="370.0" y="624.8" text-anchor="middle">3&#215;</text><text class="m5c2" x="370.0" y="658.8" text-anchor="middle">FEWER GOALS</text><text class="m5c2" x="370.0" y="679.8" text-anchor="middle">CONCEDED</text></g></svg></div>
+<g class="m5core" id="m5core" tabindex="0" role="button" aria-label="3 times fewer goals conceded with Joe on the pitch. See the numbers"><circle cx="370.0" cy="602.8" r="146"/><text class="m5c3" x="370.0" y="546.8" text-anchor="middle">WITH JOE</text><text class="m5c1" x="370.0" y="624.8" text-anchor="middle">3&#215;</text><text class="m5c2" x="370.0" y="658.8" text-anchor="middle">FEWER GOALS</text><text class="m5c2" x="370.0" y="679.8" text-anchor="middle">CONCEDED</text><text class="m5c4" x="370.0" y="712.8" text-anchor="middle">SEE THE NUMBERS &#8250;</text></g></svg></div>
       <div class="m5-card g6" id="m5card" aria-live="polite">
         <div class="m5-cn" id="m5cn">01 &middot; On the ball</div>
         <h3 id="m5ct">Playing Out</h3>
@@ -515,33 +553,43 @@
   </div>
 </section>
 
+<!-- Pop-up: the numbers behind "3x fewer goals conceded" (opens from the middle of the 5) -->
+<div class="m5pop" id="m5pop" role="dialog" aria-modal="true" aria-labelledby="m5popTitle" aria-hidden="true">
+  <div class="m5pop-box">
+    <button class="m5pop-close" id="m5popClose" type="button" aria-label="Close">&times;</button>
+    <div class="m5pop-scroll">
+      <span class="m5pop-eyebrow">Defensive impact</span>
+      <h3 id="m5popTitle"><b>3&times;</b> fewer goals conceded with Joe on the pitch</h3>
+      <div class="m5pop-charts">
+        <div class="m5pop-chart">
+          <div class="m5pop-club">Marske United &middot; 2025/26</div>
+          <div class="m5pop-bars">
+            <div class="m5pop-col"><div class="m5pop-bar g" style="height:33px"><span>0.91</span></div><div class="m5pop-lbl">With Joe</div></div>
+            <div class="m5pop-col"><div class="m5pop-bar b" style="height:99px"><span>2.74</span></div><div class="m5pop-lbl">Without</div></div>
+          </div>
+          <div class="m5pop-diff"><b>3&times; fewer</b> &minus;67% across the full season</div>
+        </div>
+        <div class="m5pop-chart">
+          <div class="m5pop-club">Northallerton Town &middot; 2026/27</div>
+          <div class="m5pop-bars">
+            <div class="m5pop-col"><div class="m5pop-bar g" style="height:71px"><span>1.96</span></div><div class="m5pop-lbl">With Joe</div></div>
+            <div class="m5pop-col"><div class="m5pop-bar b" style="height:153px"><span>4.24</span></div><div class="m5pop-lbl">Without</div></div>
+          </div>
+          <div class="m5pop-diff"><b>2.2&times; fewer</b> &minus;54% over four games, playing at the back</div>
+        </div>
+      </div>
+      <div class="m5pop-axis">Goals conceded per 90 minutes</div>
+      <p>At Marske United in 2025/26, opposition sides scored <strong>0.91 goals per 90 minutes</strong> with Joe on the pitch, compared to <strong>2.74 without</strong>. The pattern held consistently across the full season — positioning, communication and willingness to cover, applied for 90 minutes from minute one.</p>
+      <p>The same pattern followed him to <strong>Northallerton Town in 2026/27</strong>, where he played at the back rather than in midfield: <strong>1.96 goals conceded per 90 with Joe on the pitch against 4.24 without</strong>, over four games. A small sample on its own, but it repeats the Marske pattern at a second club and in a different position.</p>
+      <a class="m5pop-go" id="m5popGo" href="#cb-switch">See 04 Defending the Space <i class="fas fa-arrow-down"></i></a>
+    </div>
+  </div>
+</div>
+
 <div class="wrap">
 
   <!-- SKILL SWITCHER -->
   <div class="cb-switch fi" id="cb-switch">
-    <div class="cb-tabs" role="tablist" aria-label="The five competencies of a modern centre-back">
-      <button class="cb-tab active" data-tab="1" role="tab" aria-selected="true" type="button">
-        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">01</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Playing Out</div>
-      </button>
-      <button class="cb-tab" data-tab="2" role="tab" aria-selected="false" type="button">
-        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">02</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Breaking Lines</div>
-      </button>
-      <button class="cb-tab" data-tab="3" role="tab" aria-selected="false" type="button">
-        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">03</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Driving Out</div>
-      </button>
-      <button class="cb-tab" data-tab="4" role="tab" aria-selected="false" type="button">
-        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">04</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Defending the Space</div>
-      </button>
-      <button class="cb-tab" data-tab="5" role="tab" aria-selected="false" type="button">
-        <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">05</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Winning the Duel</div>
-      </button>
-    </div>
-
     <div class="cb-panels">
 
       <!-- PANEL 1 — PLAYING OUT -->
@@ -562,12 +610,6 @@
               <small>Receiving and building from the back — to be added</small>
             </div>
           </div>
-          <div class="case-stats">
-            <div class="case-stat"><div class="v">Both</div><div class="l">Two-footed</div></div>
-            <div class="case-stat"><div class="v">Long</div><div class="l">Passing Range</div><span class="b">Verified</span></div>
-            <div class="case-stat"><div class="v">Composed</div><div class="l">Receiving Under Pressure</div></div>
-          </div>
-          
           <div class="case-evidence">
             <div class="case-quote">
               <span class="qkind">Scout report</span>
@@ -586,10 +628,17 @@
               </div>
             </div>
           </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">Both</div><div class="l">Two-footed</div></div>
+            <div class="case-stat"><div class="v">Long</div><div class="l">Passing Range</div><span class="b">Verified</span></div>
+            <div class="case-stat"><div class="v">Composed</div><div class="l">Receiving Under Pressure</div></div>
+          </div>
+          
           <div class="case-analysis">
             <p>The passing evidence for Joe already exists on this site, gathered from his midfield performances. Two-footed, verified for weight and range, comfortable receiving on the back foot with a defender close. All of that is exactly what a pressing striker asks a CB to demonstrate — and it is the part of a CB's game that decides which level a player ends up at.</p>
             <p>This is the section that will grow fastest as CB-specific footage is added, because the evidence base from midfield is already deep.</p>
           </div>
+          <div class="case-next"><a class="case-next-link" href="#cb-switch" data-go="2">Next: <strong>02 Breaking Lines</strong> <i class="fas fa-arrow-right"></i></a></div>
         </div>
       </div>
 
@@ -611,8 +660,6 @@
               <small>Forward passes and switches from centre-back — to be added</small>
             </div>
           </div>
-          
-          
           <div class="case-evidence">
             <div class="case-quote">
               <span class="qkind">Scout report</span>
@@ -631,9 +678,12 @@
               </div>
             </div>
           </div>
+          
+          
           <div class="case-analysis">
             <p>This is where Joe's range really shows. He switches the play accurately over 40-50 yards, fizzes balls through the lines into feet and runners, and delivers quality from wide and deep positions. The ability to see a forward pass and execute it with the right weight is what multiple scouts have flagged as his standout quality.</p>
           </div>
+          <div class="case-next"><a class="case-next-link" href="#cb-switch" data-go="3">Next: <strong>03 Driving Out</strong> <i class="fas fa-arrow-right"></i></a></div>
         </div>
       </div>
 
@@ -655,16 +705,6 @@
               <small>Carrying the ball out of defence and into midfield — to be added</small>
             </div>
           </div>
-          <div class="case-stats">
-            <div class="case-stat sc-sp"><div class="v">34 km/h</div><div class="l"><i class="fas fa-gauge-high"></i> Top Speed</div><span class="b">Elite</span></div>
-            <div class="case-stat sc-sp"><div class="v">0.91s</div><div class="l"><i class="fas fa-bolt"></i> 5m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat sc-jp"><div class="v">305cm</div><div class="l"><i class="fas fa-arrow-up"></i> Broad Jump</div><span class="b">Elite</span></div>
-            <div class="case-stat sc-nu"><div class="v">6'2" / 85kg</div><div class="l">Physical Frame</div></div>
-          </div>
-          <div class="phys-links">
-            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
-            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
-          </div>
           <div class="case-evidence">
             <div class="case-quote">
               <span class="qkind">Scout report</span>
@@ -683,10 +723,21 @@
               </div>
             </div>
           </div>
+          <div class="case-stats">
+            <div class="case-stat sc-sp"><div class="v">34 km/h</div><div class="l"><i class="fas fa-gauge-high"></i> Top Speed</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-sp"><div class="v">0.91s</div><div class="l"><i class="fas fa-bolt"></i> 5m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-jp"><div class="v">305cm</div><div class="l"><i class="fas fa-arrow-up"></i> Broad Jump</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-nu"><div class="v">6'2" / 85kg</div><div class="l">Physical Frame</div></div>
+          </div>
+          <div class="phys-links">
+            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
+            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
+          </div>
           <div class="case-analysis">
             <p>Joe carries with purpose. He doesn't dribble for the sake of it — he drives forward to break lines, commit defenders and create advantages for the players around him. At 6'2" and 85kg with a verified top speed of 34 km/h, defenders can't bump him off the ball or run him down.</p>
             <p>Watch how he picks his moments. He recognises when a carry is more effective than a pass, and he has the physical tools to execute it against senior men.</p>
           </div>
+          <div class="case-next"><a class="case-next-link" href="#cb-switch" data-go="4">Next: <strong>04 Defending the Space</strong> <i class="fas fa-arrow-right"></i></a></div>
         </div>
       </div>
 
@@ -708,26 +759,6 @@
               <span>Defending-the-space footage compiling</span>
               <small>Cover, recovery runs and interceptions — to be added</small>
             </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat feat"><div class="v">0.91</div><div class="l">Goals conceded per 90 with Joe</div></div>
-            <div class="case-stat"><div class="v">2.74</div><div class="l">Without Joe</div></div>
-            <div class="case-stat"><div class="v">−67%</div><div class="l">Difference</div><span class="b">Marske 25/26</span></div>
-          </div>
-          <div class="case-stats" style="margin-top:-14px">
-            <div class="case-stat feat"><div class="v">1.96</div><div class="l">Goals conceded per 90 with Joe</div></div>
-            <div class="case-stat"><div class="v">4.24</div><div class="l">Without Joe</div></div>
-            <div class="case-stat"><div class="v">−54%</div><div class="l">Difference</div><span class="b">Northallerton 26/27</span></div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">1.62s</div><div class="l">10m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">3.89s</div><div class="l">30m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat feat"><div class="v">34 km/h</div><div class="l">Top Speed</div></div>
-          </div>
-          <div class="phys-links">
-            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
-            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
           </div>
           <div class="case-evidence">
             <div class="case-quote">
@@ -755,6 +786,26 @@
               </div>
             </div>
           </div>
+          <div class="case-stats">
+            <div class="case-stat feat"><div class="v">0.91</div><div class="l">Goals conceded per 90 with Joe</div></div>
+            <div class="case-stat"><div class="v">2.74</div><div class="l">Without Joe</div></div>
+            <div class="case-stat"><div class="v">−67%</div><div class="l">Difference</div><span class="b">Marske 25/26</span></div>
+          </div>
+          <div class="case-stats" style="margin-top:-14px">
+            <div class="case-stat feat"><div class="v">1.96</div><div class="l">Goals conceded per 90 with Joe</div></div>
+            <div class="case-stat"><div class="v">4.24</div><div class="l">Without Joe</div></div>
+            <div class="case-stat"><div class="v">−54%</div><div class="l">Difference</div><span class="b">Northallerton 26/27</span></div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">1.62s</div><div class="l">10m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">3.89s</div><div class="l">30m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat feat"><div class="v">34 km/h</div><div class="l">Top Speed</div></div>
+          </div>
+          <div class="phys-links">
+            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
+            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
+          </div>
           <div class="case-analysis">
             <p>The <strong>0.91 vs 2.74 goals-per-90 pattern</strong> at Marske United across 2025/26 is a defensive impact number — it does not care whether Joe is nominally playing midfield or the back line. The intelligence that reduces goals against from a midfield position transfers directly to CB, and typically becomes even more valuable there where the whole back line takes its cue from the CB's positioning.</p>
             <p>The same pattern followed him to <strong>Northallerton Town in 2026/27</strong>, where he played at the back rather than in midfield: <strong>1.96 goals conceded per 90 with Joe on the pitch against 4.24 without</strong>, over four games. A small sample on its own, but it repeats the Marske pattern at a second club and in a different position.</p>
@@ -762,6 +813,7 @@
             <p>Joe's <strong>34 km/h top speed</strong> is verified across three independent platforms: PROformance instrumented testing, STATSports GPS in match conditions, and PlayerMaker boot-strap data. That speed is not lab-only — it shows up when he is chasing a ball or a runner in a game.</p>
             <p>The 5m sprint at 0.91s matters more than the top-end for a CB. It is the burst that turns a lost yard into a recovered one when an attacker gets on the shoulder. Both numbers give a coach freedom to play a higher line.</p>
           </div>
+          <div class="case-next"><a class="case-next-link" href="#cb-switch" data-go="5">Next: <strong>05 Winning the Duel</strong> <i class="fas fa-arrow-right"></i></a></div>
         </div>
       </div>
 
@@ -784,19 +836,6 @@
               <small>Front-foot defending, tackles and headers — headed goal from a corner + attacking header hitting the bar</small>
             </div>
           </div>
-          <div class="case-stats">
-            <div class="case-stat"><div class="v">6'2" / 85kg</div><div class="l">Physical Frame</div></div>
-            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Burst</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
-          </div>
-          <div class="case-stats" style="margin-top:-14px">
-            <div class="case-stat sc-jp"><div class="v">60.1cm</div><div class="l"><i class="fas fa-arrow-up"></i> CMJ</div><span class="b">Elite</span></div>
-            <div class="case-stat sc-jp"><div class="v">62.5cm</div><div class="l"><i class="fas fa-arrow-up"></i> Abalakov Jump</div><span class="b">Elite</span></div>
-          </div>
-          <div class="phys-links">
-            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
-            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
-          </div>
           <div class="case-evidence">
             <div class="case-quote">
               <span class="qkind">Scout report</span>
@@ -815,12 +854,26 @@
               </div>
             </div>
           </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">6'2" / 85kg</div><div class="l">Physical Frame</div></div>
+            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Burst</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
+          </div>
+          <div class="case-stats" style="margin-top:-14px">
+            <div class="case-stat sc-jp"><div class="v">60.1cm</div><div class="l"><i class="fas fa-arrow-up"></i> CMJ</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-jp"><div class="v">62.5cm</div><div class="l"><i class="fas fa-arrow-up"></i> Abalakov Jump</div><span class="b">Elite</span></div>
+          </div>
+          <div class="phys-links">
+            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
+            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
+          </div>
           <div class="case-analysis">
             <p>Joe defends on the front foot because he has the physical tools to make that decision safely — the 5m burst to close space, the frame to hold his line in a duel, and the strength to win a shoulder-to-shoulder. He does not need to sit off.</p>
             <p>The verified <strong>broad jump of 305cm</strong> is a proxy for lateral power — the same trait that shows up in a defensive slide tackle or a hold-off against a striker's roll.</p>
             <p>Joe wins his headers because he combines the physical base (6'2", genuinely explosive vertical) with the timing to attack the ball at its highest point rather than react to it. The verified <strong>60.1cm countermovement jump</strong> and <strong>62.5cm Abalakov jump</strong> place him firmly in the elite range for his age group.</p>
             <p>That physical base translates into two jobs: dominating defensive set pieces at Step 4 and higher, and being a genuine attacking threat from corners. Both boxes.</p>
           </div>
+          <div class="case-next"><a class="case-next-link" href="#m5" data-top="1"><i class="fas fa-arrow-up"></i> Back to the 5</a></div>
         </div>
       </div>
 
@@ -937,6 +990,24 @@ document.querySelectorAll('.cb-tab').forEach(btn => {
     e.addEventListener('click', function (ev) { ev.preventDefault(); sel(k); go(k); });
   });
   goBtn.addEventListener('click', function (ev) { ev.preventDefault(); go(cur); });
+  /* the middle of the 5 opens the pop-up with the numbers behind "3x fewer goals conceded" */
+  var pop = document.getElementById('m5pop'), core = document.getElementById('m5core');
+  function popOpen() { pop.classList.add('open'); pop.setAttribute('aria-hidden', 'false'); document.getElementById('m5popClose').focus(); }
+  function popClose() { pop.classList.remove('open'); pop.setAttribute('aria-hidden', 'true'); }
+  core.addEventListener('click', popOpen);
+  core.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); popOpen(); } });
+  document.getElementById('m5popClose').addEventListener('click', popClose);
+  pop.addEventListener('click', function (ev) { if (ev.target === pop) popClose(); });
+  document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && pop.classList.contains('open')) popClose(); });
+  document.getElementById('m5popGo').addEventListener('click', function (ev) { ev.preventDefault(); popClose(); sel(3); go(3); });
+  /* the link at the foot of each section: on to the next one, or back up to the 5 after the last */
+  Array.prototype.slice.call(document.querySelectorAll('.case-next-link')).forEach(function (a) {
+    a.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      if (a.dataset.go) { var k = +a.dataset.go - 1; sel(k); go(k); }
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
   sel(0);
 })();
 </script>
