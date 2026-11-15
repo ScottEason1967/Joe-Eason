@@ -1028,6 +1028,8 @@
     .pb2 .impact-big-num { font-size: 3.2rem; }
     .pb2 .impact-big-label { font-size: 9.5px; letter-spacing: 1.2px; }
     .pb2 .impact-text p { font-size: 12.5px; line-height: 1.55; }
+    .pb2 .imp-also { grid-column: 1 / -1; font-size: 12px; line-height: 1.5; color: var(--text-sec); background: #f3f6fb; border-left: 3px solid var(--amber); border-radius: 8px; padding: 8px 12px; }
+    .pb2 .imp-also strong { color: var(--text); }
     .explore-grid { grid-template-columns: repeat(6, 1fr); }
     .explore-body { padding: 12px 13px 14px; }
 
@@ -1054,6 +1056,28 @@
     .t8-bar { position: fixed; left: 14px; bottom: 14px; z-index: 300; background: rgba(0,16,40,0.92); color: #fff; font-size: 12px;
       padding: 7px 11px; border-radius: 9px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
     .t8-bar b { color: var(--amber); letter-spacing: 1px; margin-right: 6px; }
+
+    /* TEST: the 8 on phones */
+    .m8card { display: none; }
+    @media (max-width: 560px) {
+      .hub8-stage { display: block; width: 100%; }
+      .hub8-svg .pt-t, .hub8-svg .petal-play { display: none; }
+      .hub8-svg .pt-n { font-size: 46px; paint-order: stroke; stroke: rgba(6,18,44,0.8); stroke-width: 7px; stroke-linejoin: round; transition: transform 0.2s ease; }
+      .hub8-svg .petal .petal-shade { opacity: 0.62; }
+      .hub8-svg .petal.hl .petal-shade { opacity: 0; }
+      .hub8-svg .petal.hl .petal-stroke { stroke-width: 10; }
+      .hub8-stage .b8th-pill, .hub8-stage .ep-k, .hub8-stage .ep-sub { display: none; }
+      .hub-mobile-list { display: none; }
+      .m8hint { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.65); margin: 2px 0 10px; }
+      .m8card { display: block; background: #fff; color: #0b2350; border-radius: 14px; padding: 14px 16px 16px; border-left: 6px solid #5aa9ff; box-shadow: 0 10px 28px rgba(0,10,30,0.35); margin-bottom: 18px; }
+      .m8card.gh { border-image: linear-gradient(180deg, #5aa9ff, #FFB91D) 1; border-radius: 0 14px 14px 0; } .m8card.g8, .m8card.k8th { border-left-color: #FFB91D; } .m8card.k10 { border-left-color: #A3233A; }
+      .m8card .m8n { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: #005EB8; }
+      .m8card.g8 .m8n, .m8card.k8th .m8n { color: #a9741a; } .m8card.k10 .m8n { color: #A3233A; }
+      .m8card h3 { font-family: var(--font-display); font-weight: 700; font-size: 24px; line-height: 1.1; text-transform: uppercase; margin-top: 2px; }
+      .m8card .m8s { font-weight: 700; font-size: 13px; color: #4C6272; margin-top: 3px; }
+      .m8card .m8d { font-size: 13.5px; line-height: 1.5; color: #33475b; margin-top: 6px; }
+      .m8card .m8btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; background: #0b2350; color: #fff; font-weight: 800; font-size: 14px; border-radius: 10px; padding: 11px 18px; text-decoration: none; }
+    }
 </style>
 </head>
 <body>
@@ -1183,7 +1207,7 @@
             <g transform="translate(265.50 679.30)"><g class="petal-play"><circle r="24" fill="rgba(0,48,135,0.95)" stroke="#fff" stroke-width="2"/><polygon points="-7,-10 -7,10 10,0" fill="#fff"/></g></g>
             <g class="pt-full"><text x="309.75" y="578.40" class="petal-title" text-anchor="middle"><tspan x="309.75" dy="0">Driving the</tspan><tspan x="309.75" dy="18">Team Forward</tspan><tspan x="309.75" dy="18" class="petal-sub">Ball Carrying</tspan></text>
           <text x="309.75" y="554.40" class="petal-num" text-anchor="middle">05</text></g><g class="pt-big"><text x="309.75" y="558.90" class="petal-num pt-n" text-anchor="middle">05</text><text x="309.75" y="585.90" class="pt-t" text-anchor="middle"><tspan x="309.75" dy="0">Driving the</tspan><tspan x="309.75" dy="25">Team Forward</tspan></text></g></a>
-          <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" class="petal g8" data-vid="xvypi_6BQps" data-title="Winning the Battles: Pressing, Tackling, Recovery Runs &amp; Heading" aria-label="Winning the Battles: Pressing, Tackling, Recovery Runs & Heading — play video">
+          <a href="https://www.youtube.com/watch?v=i4wLz3F-NJ4" target="_blank" rel="noopener" class="petal g8" data-vid="i4wLz3F-NJ4" data-title="Winning the Battles: Pressing, Tackling, Recovery Runs &amp; Heading" aria-label="Winning the Battles: Pressing, Tackling, Recovery Runs & Heading — play video">
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" fill="url(#pat-p5)" class="petal-img"/>
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" fill="url(#darken)" class="petal-shade"/>
             <path d="M 281.91 489.22 A 148 148 0 0 1 254.90 370.86 L 27.44 325.17 A 380 380 0 0 0 96.80 629.07 Z" class="petal-stroke" fill="none"/>
@@ -1212,6 +1236,12 @@
           <span class="num-wrap"><span class="num">8</span><span class="hub-star"><i class="fas fa-star"></i></span></span>
           <span class="b8th-pill"><i class="fas fa-star"></i> The Bit You<br>Can&rsquo;t Coach</span>
         </a>
+      </div>
+      <div class="m8hint m8card-hint" style="display:none"></div>
+      <div class="m8card" id="m8card" aria-live="polite">
+        <div class="m8n" id="m8n"></div><h3 id="m8t"></h3><div class="m8s" id="m8s"></div><div class="m8d" id="m8d"></div>
+        <a class="m8btn" id="m8play" href="#" target="_blank" rel="noopener" data-vid="" data-title=""><i class="fas fa-play"></i> Play video</a>
+        <a class="m8btn" id="m8go" href="#" style="display:none">Read more &rarr;</a>
       </div>
       <div class="hub-mobile">
       <a class="m-center m-analysis" href="central-midfielder.html">
@@ -1243,7 +1273,7 @@
           <div class="m-tile-thumb"><img src="img/card-05.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">05</span>Driving the Team Forward: Ball Carrying</h3><p>Driving runs, beating pressure</p></div>
         </a>
-        <a href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" class="m-tile g8" data-vid="xvypi_6BQps" data-title="Winning the Battles: Pressing, Tackling, Recovery Runs &amp; Heading">
+        <a href="https://www.youtube.com/watch?v=i4wLz3F-NJ4" target="_blank" rel="noopener" class="m-tile g8" data-vid="i4wLz3F-NJ4" data-title="Winning the Battles: Pressing, Tackling, Recovery Runs &amp; Heading">
           <div class="m-tile-thumb"><img src="img/card-06.jpg" alt=""></div>
           <div class="m-tile-body"><h3><span class="m-num">06</span>Winning the Battles: Pressing, Tackling, Recovery Runs &amp; Heading</h3><p>Going in, getting back, winning in the air</p></div>
         </a>
@@ -1271,7 +1301,7 @@
         <a class="h8-analysis" href="central-midfielder.html"><span>What makes a good all-round central midfielder?</span><b>Read the analysis <i class="fas fa-arrow-right"></i></b></a>
         <div class="kg kg6"><div class="kg-h"><span class="kg-t">The 6</span><span class="kg-s">Holding midfielder &middot; 01&ndash;03</span></div><a class="ki" data-k="0" href="https://www.youtube.com/watch?v=nmPGCvV8c5w" target="_blank" rel="noopener" data-vid="nmPGCvV8c5w" data-title="Press Resistance: Receiving &amp; Turning"><b>01</b><span class="ki-t">Press Resistance</span><span class="ki-s">Receiving &amp; Turning</span><span class="ki-d">Back foot, play forward</span></a><a class="ki" data-k="1" href="https://www.youtube.com/watch?v=RQgMkaj3DGI" target="_blank" rel="noopener" data-vid="RQgMkaj3DGI" data-title="Screening the Back Four: Blocks, Cover &amp; Interceptions"><b>02</b><span class="ki-t">Screening the Back Four</span><span class="ki-s">Blocks, Cover &amp; Interceptions</span><span class="ki-d">Reading it, stepping in, screening the back four</span></a><a class="ki" data-k="2" href="https://www.youtube.com/watch?v=DRo2E2lNBT0" target="_blank" rel="noopener" data-vid="DRo2E2lNBT0" data-title="Range of Passing: Forward Balls, Switches &amp; Crosses"><b>03</b><span class="ki-t">Range of Passing</span><span class="ki-s">Forward Balls, Switches &amp; Crosses</span><span class="ki-d">Switching play, crossing, delivery</span></a></div>
         <div class="kg kgh"><div class="kg-h"><span class="kg-t">Running the Game</span><span class="kg-s">The 6 into the 8 &middot; 04</span></div><a class="ki" data-k="3" href="https://www.youtube.com/watch?v=Oh14U_1x-bk" target="_blank" rel="noopener" data-vid="Oh14U_1x-bk" data-title="Running the Game: Controlling the Tempo &amp; Breaking Lines"><b>04</b><span class="ki-t">Running the Game</span><span class="ki-s">Controlling the Tempo &amp; Breaking Lines</span><span class="ki-d">Playing through, always available, setting the pace</span></a></div>
-        <div class="kg kg8"><div class="kg-h"><span class="kg-t">The 8</span><span class="kg-s">Box to box &middot; 05&ndash;07</span></div><a class="ki" data-k="4" href="https://www.youtube.com/watch?v=B1waNOyC7ts" target="_blank" rel="noopener" data-vid="B1waNOyC7ts" data-title="Driving the Team Forward: Ball Carrying"><b>05</b><span class="ki-t">Driving the Team Forward</span><span class="ki-s">Ball Carrying</span><span class="ki-d">Driving runs, beating pressure</span></a><a class="ki" data-k="5" href="https://www.youtube.com/watch?v=xvypi_6BQps" target="_blank" rel="noopener" data-vid="xvypi_6BQps" data-title="Winning the Battles: Pressing, Tackling, Recovery Runs &amp; Heading"><b>06</b><span class="ki-t">Winning the Battles</span><span class="ki-s">Pressing, Tackling, Recovery Runs &amp; Heading</span><span class="ki-d">Going in, getting back, winning in the air</span></a><a class="ki" data-k="6" href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" data-vid="DMwCNd98Mjw" data-title="Technical Quality: First Touch, Volleys &amp; Quick Feet"><b>07</b><span class="ki-t">Technical Quality</span><span class="ki-s">First Touch, Volleys &amp; Quick Feet</span><span class="ki-d">First touch, composure, execution</span></a></div>
+        <div class="kg kg8"><div class="kg-h"><span class="kg-t">The 8</span><span class="kg-s">Box to box &middot; 05&ndash;07</span></div><a class="ki" data-k="4" href="https://www.youtube.com/watch?v=B1waNOyC7ts" target="_blank" rel="noopener" data-vid="B1waNOyC7ts" data-title="Driving the Team Forward: Ball Carrying"><b>05</b><span class="ki-t">Driving the Team Forward</span><span class="ki-s">Ball Carrying</span><span class="ki-d">Driving runs, beating pressure</span></a><a class="ki" data-k="5" href="https://www.youtube.com/watch?v=i4wLz3F-NJ4" target="_blank" rel="noopener" data-vid="i4wLz3F-NJ4" data-title="Winning the Battles: Pressing, Tackling, Recovery Runs &amp; Heading"><b>06</b><span class="ki-t">Winning the Battles</span><span class="ki-s">Pressing, Tackling, Recovery Runs &amp; Heading</span><span class="ki-d">Going in, getting back, winning in the air</span></a><a class="ki" data-k="6" href="https://www.youtube.com/watch?v=DMwCNd98Mjw" target="_blank" rel="noopener" data-vid="DMwCNd98Mjw" data-title="Technical Quality: First Touch, Volleys &amp; Quick Feet"><b>07</b><span class="ki-t">Technical Quality</span><span class="ki-s">First Touch, Volleys &amp; Quick Feet</span><span class="ki-d">First touch, composure, execution</span></a></div>
         <div class="kg kg10"><div class="kg-h"><span class="kg-t">08 + The 10</span><span class="kg-s">In the middle</span></div><a class="ki ki8th" data-k="8th" href="central-midfielder.html#leadership"><b>08</b><span class="ki-t">The Bit You Can&rsquo;t Coach</span><span class="ki-s">The Intangibles</span><span class="ki-d">Leadership and on-field personality</span></a><a class="ki ki10" data-k="10" href="https://www.youtube.com/watch?v=8nT0fmOoSeg" target="_blank" rel="noopener" data-vid="8nT0fmOoSeg" data-title="End Product: Chances Created, Assists &amp; Goals" data-more="central-midfielder.html#end-product"><b>10</b><span class="ki-t">End Product</span><span class="ki-s">Chances Created, Assists &amp; Goals</span><span class="ki-d">From senior men&rsquo;s football at Step 5 and Step 4</span></a></div>
       </div>
   </div>
@@ -1339,6 +1369,7 @@
           <div class="impact-big-label">Fewer goals conceded</div>
         </div></div>
       <div class="impact-text"><p>At Marske United in 2025/26, opposition sides scored <strong>0.91 goals per 90 minutes</strong> with Joe on the pitch, compared to <strong>2.74 without</strong>. The pattern held consistently across the full season — positioning, communication and willingness to cover, applied for 90 minutes from minute one.</p></div>
+      <div class="imp-also"><strong>The same pattern at Northallerton Town, 2026/27:</strong> 1.96 goals conceded per 90 with Joe on the pitch, 4.24 without, over four games playing at the back rather than in midfield.</div>
     </div>
   </div>
 
@@ -1715,6 +1746,51 @@ document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDef
   });
   st.querySelectorAll('.hub8-ep').forEach(function (el) { bind(el, 'st-ten', '10'); });
   var e8 = st.querySelector('.hub8-8th'); if (e8) bind(e8, 'st-star', '8th');
+})();
+</script>
+<script>
+/* TEST: on phones the 8 is tap-to-select. First tap picks a petal (or the top loop / the star) and fills the card; Play is on the card. */
+(function () {
+  var st = document.getElementById('hub8'), card = document.getElementById('m8card'); if (!st || !card) return;
+  var mq = window.matchMedia('(max-width: 560px)');
+  var STATES = ['st-six', 'st-hinge', 'st-eight', 'st-ten', 'st-star'];
+  var petals = Array.prototype.slice.call(st.querySelectorAll('.petal'));
+  var cur = '0';
+  function keyEl(k) { return document.querySelector('.h8-key [data-k="' + k + '"]'); }
+  function txt(el, sel) { var x = el && el.querySelector(sel); return x ? x.textContent : ''; }
+  function apply() {
+    if (!mq.matches) return;
+    var k = cur, p = petals[+k];
+    var cls = k === '10' ? 'st-ten' : k === '8th' ? 'st-star' : p.classList.contains('g6') ? 'st-six' : p.classList.contains('gh') ? 'st-hinge' : 'st-eight';
+    STATES.forEach(function (s) { st.classList.toggle(s, s === cls); });
+    petals.forEach(function (q, i) { q.classList.toggle('hl', String(i) === k); });
+    var ke = keyEl(k); if (!ke) return;
+    card.className = 'm8card ' + (k === '10' ? 'k10' : k === '8th' ? 'k8th' : p.classList.contains('g6') ? 'g6' : p.classList.contains('gh') ? 'gh' : 'g8');
+    var grp = k === '10' ? 'The 10' : k === '8th' ? 'The 8th' : p.classList.contains('g6') ? 'The 6 · Holding midfielder' : p.classList.contains('gh') ? 'The 6 into the 8' : 'The 8 · Box to box';
+    document.getElementById('m8n').textContent = (txt(ke, 'b') ? txt(ke, 'b') + ' · ' : '') + grp;
+    document.getElementById('m8t').textContent = txt(ke, '.ki-t');
+    document.getElementById('m8s').textContent = txt(ke, '.ki-s');
+    document.getElementById('m8d').textContent = txt(ke, '.ki-d');
+    var play = document.getElementById('m8play'), go = document.getElementById('m8go');
+    if (ke.dataset.vid) {
+      play.style.display = ''; go.style.display = 'none';
+      play.href = ke.href; play.dataset.vid = ke.dataset.vid; play.dataset.title = ke.dataset.title || ''; play.dataset.more = ke.dataset.more || '';
+    } else { play.style.display = 'none'; go.style.display = ''; go.href = ke.getAttribute('href'); }
+  }
+  st.addEventListener('click', function (e) {
+    if (!mq.matches) return;
+    var p = e.target.closest('.petal'), ep = e.target.closest('.hub8-ep'), e8 = e.target.closest('.hub8-8th');
+    if (!p && !ep && !e8) return;
+    e.preventDefault(); e.stopPropagation();
+    cur = p ? String(petals.indexOf(p)) : ep ? '10' : '8th';
+    apply();
+  }, true);
+  ['mouseleave', 'focusout', 'mouseenter', 'focusin'].forEach(function (ev) { st.addEventListener(ev, function () { setTimeout(apply, 0); }, true); });
+  /* move each petal's number out towards the rim so the centre circle never covers it */
+  function nums() { petals.forEach(function (p, i) { var n = p.querySelector('.pt-n'); if (!n) return; var a = (-90 + i * 360 / 7) * Math.PI / 180;
+    n.style.transform = mq.matches ? 'translate(' + (48 * Math.cos(a)).toFixed(1) + 'px,' + (48 * Math.sin(a) + 14).toFixed(1) + 'px)' : ''; }); }
+  if (mq.addEventListener) mq.addEventListener('change', function () { nums(); apply(); });
+  nums(); apply();
 })();
 </script>
 </body>

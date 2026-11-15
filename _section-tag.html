@@ -28,14 +28,16 @@ body.gh { --c:#5aa9ff; --c2:#FFB91D; }
   </div>
 <script>
 const q=new URLSearchParams(location.search);
+/* 14 Nov 2026: optional role= (line under the name), bc= (badge colour) and a 5 badge, for The Modern 5 centre-back cards */
+if(q.get('role')) document.querySelectorAll('.jrole').forEach(e=>e.textContent=q.get('role'));
 document.body.classList.add('g'+(q.get('g')||'6'));
 document.getElementById('vid').textContent=q.get('v')||'';
 document.getElementById('name').innerHTML=q.get('t')||'';
 // same 6 / 8 badge as the rings and the cards (ty / x6 / x8 = fine centring, in badge units)
 document.fonts.ready.then(function(){const b=q.get('b')||'6'; const box=document.getElementById('badges');
  const TY=+(q.get('ty')||3.0);
- for(const d of b.split('')){ const C=d==='6'?'#5aa9ff':'#FFB91D', k=+(q.get("bk")||0.72), R=40*k, S=2*(R+14*k);
-  const DY=(d==='6'?6.75:10)+TY, DX=+(q.get('x'+d)||(d==='6'?-0.25:-0.25)), DR=10.5, cx=S/2, cy=S/2, sx=cx+DX*k, sy=cy+DY*k;
+ for(const d of b.split('')){ const C=q.get('bc')||(d==='6'?'#5aa9ff':'#FFB91D'), k=+(q.get("bk")||0.72), R=40*k, S=2*(R+14*k);
+  const DY=(d==='6'?6.75:d==='5'?+(q.get('y5')||8):10)+TY, DX=+(q.get('x'+d)||(d==='6'?-0.25:-0.25)), DR=10.5, cx=S/2, cy=S/2, sx=cx+DX*k, sy=cy+DY*k;
   let p=[];for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,t=i%2?DR*0.62*k*0.45:DR*0.62*k;p.push((sx+t*Math.cos(a)).toFixed(2)+','+(sy+t*Math.sin(a)).toFixed(2))}
   box.insertAdjacentHTML('beforeend',`<svg width="${S}" height="${S}" viewBox="0 0 ${S} ${S}"><defs><filter id="g${d}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${6*k}" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
   <circle cx="${cx}" cy="${cy}" r="${R+3*k}" fill="rgba(8,22,46,.85)"/><circle cx="${cx}" cy="${cy}" r="${R}" fill="#0b2350" stroke="${C}" stroke-width="${4*k}" filter="url(#g${d})"/>
