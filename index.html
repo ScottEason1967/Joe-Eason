@@ -1051,6 +1051,28 @@
       .explore-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+
+    /* the 8 on phones: tap a petal to select it, the card underneath has the title and Play */
+    .m8card { display: none; }
+    @media (max-width: 560px) {
+      .hub8-stage { display: block; width: 100%; }
+      .hub8-svg .pt-t, .hub8-svg .petal-play { display: none; }
+      .hub8-svg .pt-n { font-size: 46px; paint-order: stroke; stroke: rgba(6,18,44,0.8); stroke-width: 7px; stroke-linejoin: round; transition: transform 0.2s ease; }
+      .hub8-svg .petal .petal-shade { opacity: 0.62; }
+      .hub8-svg .petal.hl .petal-shade { opacity: 0; }
+      .hub8-svg .petal.hl .petal-stroke { stroke-width: 10; }
+      .hub8-svg .petal, .hub8-stage .hub8-ep, .hub8-stage .hub8-8th { outline: none; -webkit-tap-highlight-color: transparent; }
+      .hub8-stage .b8th-pill, .hub8-stage .ep-k, .hub8-stage .ep-sub { display: none; }
+      .hub-mobile-list { display: none; }
+      .m8card { display: block; background: #fff; color: #0b2350; border-radius: 14px; padding: 14px 16px 16px; border-left: 6px solid #5aa9ff; box-shadow: 0 10px 28px rgba(0,10,30,0.35); margin-bottom: 18px; }
+      .m8card.gh { border-image: linear-gradient(180deg, #5aa9ff, #FFB91D) 1; border-radius: 0 14px 14px 0; } .m8card.g8, .m8card.k8th { border-left-color: #FFB91D; } .m8card.k10 { border-left-color: #A3233A; }
+      .m8card .m8n { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: #005EB8; }
+      .m8card.g8 .m8n, .m8card.k8th .m8n { color: #a9741a; } .m8card.k10 .m8n { color: #A3233A; }
+      .m8card h3 { font-family: var(--font-display); font-weight: 700; font-size: 24px; line-height: 1.1; text-transform: uppercase; margin-top: 2px; }
+      .m8card .m8s { font-weight: 700; font-size: 13px; color: #4C6272; margin-top: 3px; }
+      .m8card .m8d { font-size: 13.5px; line-height: 1.5; color: #33475b; margin-top: 6px; }
+      .m8card .m8btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; background: #0b2350; color: #fff; font-weight: 800; font-size: 14px; border-radius: 10px; padding: 11px 18px; text-decoration: none; }
+    }
 </style>
 </head>
 <body>
@@ -1209,6 +1231,11 @@
           <span class="num-wrap"><span class="num">8</span><span class="hub-star"><i class="fas fa-star"></i></span></span>
           <span class="b8th-pill"><i class="fas fa-star"></i> The Bit You<br>Can&rsquo;t Coach</span>
         </a>
+      </div>
+      <div class="m8card" id="m8card" aria-live="polite">
+        <div class="m8n" id="m8n"></div><h3 id="m8t"></h3><div class="m8s" id="m8s"></div><div class="m8d" id="m8d"></div>
+        <a class="m8btn" id="m8play" href="#" target="_blank" rel="noopener" data-vid="" data-title=""><i class="fas fa-play"></i> Play video</a>
+        <a class="m8btn" id="m8go" href="#" style="display:none">Read more &rarr;</a>
       </div>
       <div class="hub-mobile">
       <a class="m-center m-analysis" href="central-midfielder.html">
@@ -1712,6 +1739,53 @@ document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDef
   });
   st.querySelectorAll('.hub8-ep').forEach(function (el) { bind(el, 'st-ten', '10'); });
   var e8 = st.querySelector('.hub8-8th'); if (e8) bind(e8, 'st-star', '8th');
+})();
+</script>
+<script>
+/* On phones the 8 is tap-to-select. First tap picks a petal (or the top loop / the star) and fills the card; Play is on the card. */
+(function () {
+  var st = document.getElementById('hub8'), card = document.getElementById('m8card'); if (!st || !card) return;
+  var mq = window.matchMedia('(max-width: 560px)');
+  var STATES = ['st-six', 'st-hinge', 'st-eight', 'st-ten', 'st-star'];
+  var petals = Array.prototype.slice.call(st.querySelectorAll('.petal'));
+  var cur = '0';
+  function keyEl(k) { return document.querySelector('.h8-key [data-k="' + k + '"]'); }
+  function txt(el, sel) { var x = el && el.querySelector(sel); return x ? x.textContent : ''; }
+  function apply() {
+    if (!mq.matches) return;
+    var k = cur, p = petals[+k];
+    var cls = k === '10' ? 'st-ten' : k === '8th' ? 'st-star' : p.classList.contains('g6') ? 'st-six' : p.classList.contains('gh') ? 'st-hinge' : 'st-eight';
+    STATES.forEach(function (s) { st.classList.toggle(s, s === cls); });
+    petals.forEach(function (q, i) { q.classList.toggle('hl', String(i) === k); });
+    var ke = keyEl(k); if (!ke) return;
+    card.className = 'm8card ' + (k === '10' ? 'k10' : k === '8th' ? 'k8th' : p.classList.contains('g6') ? 'g6' : p.classList.contains('gh') ? 'gh' : 'g8');
+    var grp = k === '10' ? 'The 10' : k === '8th' ? 'The 8th' : p.classList.contains('g6') ? 'The 6 · Holding midfielder' : p.classList.contains('gh') ? 'The 6 into the 8' : 'The 8 · Box to box';
+    document.getElementById('m8n').textContent = (txt(ke, 'b') ? txt(ke, 'b') + ' · ' : '') + grp;
+    document.getElementById('m8t').textContent = txt(ke, '.ki-t');
+    document.getElementById('m8s').textContent = txt(ke, '.ki-s');
+    document.getElementById('m8d').textContent = txt(ke, '.ki-d');
+    var play = document.getElementById('m8play'), go = document.getElementById('m8go');
+    if (ke.dataset.vid) {
+      play.style.display = ''; go.style.display = 'none';
+      play.href = ke.href; play.dataset.vid = ke.dataset.vid; play.dataset.title = ke.dataset.title || ''; play.dataset.more = ke.dataset.more || '';
+    } else { play.style.display = 'none'; go.style.display = ''; go.href = ke.getAttribute('href'); }
+  }
+  st.addEventListener('click', function (e) {
+    if (!mq.matches) return;
+    var p = e.target.closest('.petal'), ep = e.target.closest('.hub8-ep'), e8 = e.target.closest('.hub8-8th');
+    if (!p && !ep && !e8) return;
+    e.preventDefault(); e.stopPropagation();
+    cur = p ? String(petals.indexOf(p)) : ep ? '10' : '8th';
+    apply();
+  }, true);
+  ['mouseleave', 'focusout', 'mouseenter', 'focusin'].forEach(function (ev) { st.addEventListener(ev, function () { setTimeout(apply, 0); }, true); });
+  /* move each petal's number out towards the rim so the centre circle never covers it */
+  function nums() { petals.forEach(function (p, i) { var n = p.querySelector('.pt-n'); if (!n) return; var a = (-90 + i * 360 / 7) * Math.PI / 180;
+    n.style.transform = mq.matches ? 'translate(' + (48 * Math.cos(a)).toFixed(1) + 'px,' + (48 * Math.sin(a) + 14).toFixed(1) + 'px)' : ''; }); }
+  /* back on a wide screen (window resized, phone rotated): hand the 8 back to the normal hover behaviour */
+  function release() { STATES.forEach(function (s) { st.classList.remove(s); }); petals.forEach(function (q) { q.classList.remove('hl'); }); }
+  if (mq.addEventListener) mq.addEventListener('change', function () { nums(); if (mq.matches) apply(); else release(); });
+  nums(); apply();
 })();
 </script>
 </body>

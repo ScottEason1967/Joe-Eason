@@ -360,6 +360,46 @@
       .case-evidence { grid-template-columns: 1fr; }
     }
 
+    /* THE MODERN 5 HUB — the five videos are cut from one continuous numeral */
+    .m5-hub { display: grid; grid-template-columns: minmax(0, 430px) minmax(0, 1fr); gap: 44px; align-items: center; max-width: 1020px; margin: 0 auto 40px; }
+    #m5five { width: 100%; height: auto; display: block; }
+    #m5five path { fill: none; stroke-linejoin: round; stroke-linecap: butt; }
+    #m5five .m5rim { stroke-width: 136; opacity: 0; transition: opacity .3s; } #m5five .m5rim6 { stroke: #5aa9ff; } #m5five .m5rim8 { stroke: #FFB91D; }
+    #m5five.s6 .m5rim6, #m5five.s8 .m5rim8 { opacity: 1; }
+    #m5five .m5bed { stroke: #0b2350; stroke-width: 124; }
+    #m5five .m5seg { cursor: pointer; outline: none; -webkit-tap-highlight-color: transparent; }
+    #m5five .m5seg .m5p { stroke-width: 120; }
+    #m5five .m5seg .m5sh { stroke-width: 121; stroke: rgba(6,20,50,.62); transition: stroke .2s; }
+    #m5five .m5seg.on .m5sh { stroke: rgba(60,140,255,.34); } #m5five .m5seg.g8.on .m5sh { stroke: rgba(255,185,29,.30); }
+    #m5five .m5seg .m5ol { opacity: 0; transition: opacity .2s; } #m5five .m5seg.on .m5ol { opacity: 1; }
+    #m5five .m5seg .m5ol rect { fill: #5aa9ff; } #m5five .m5seg .m5ol polygon { fill: none; stroke: #5aa9ff; stroke-width: 11; stroke-linejoin: miter; }
+    #m5five .m5seg.g8 .m5ol rect { fill: #FFB91D; } #m5five .m5seg.g8 .m5ol polygon { stroke: #FFB91D; }
+    #m5five .m5seg text { pointer-events: none; paint-order: stroke; stroke: rgba(4,14,36,.78); stroke-width: 4.5px; stroke-linejoin: round; font-family: var(--font-display); font-weight: 700; }
+    #m5five .m5sn { font-size: 23px; fill: #5aa9ff; letter-spacing: 1px; } #m5five .m5seg.g8 .m5sn { fill: #FFB91D; } #m5five .m5seg.on .m5sn { fill: #fff; }
+    #m5five .m5st { font-size: 23px; fill: #fff; text-transform: uppercase; letter-spacing: .4px; }
+    #m5five .m5core { pointer-events: none; } #m5five .m5core circle { fill: #0b2350; stroke: rgba(255,255,255,.85); stroke-width: 3; }
+    #m5five .m5core text { font-family: var(--font-display); font-weight: 700; }
+    #m5five .m5c1 { font-size: 84px; fill: #FFB91D; } #m5five .m5c2 { font-size: 16px; letter-spacing: 3px; fill: #fff; } #m5five .m5c3 { font-size: 14px; letter-spacing: 4px; fill: #9db4d6; }
+    .m5-grp { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin: 14px 0 6px; color: #9ccbff; } .m5-grp:first-child { margin-top: 0; } .m5-grp.g8 { color: var(--amber); }
+    .m5-ki { display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,.06); border: 1.5px solid rgba(255,255,255,.14); border-radius: 12px; padding: 10px 14px; margin-bottom: 8px; color: #fff; text-decoration: none; transition: background .15s, border-color .15s; }
+    .m5-ki:hover { color: #fff; }
+    .m5-ki b { font-family: var(--font-display); font-size: 26px; line-height: 1; color: #9ccbff; width: 34px; flex-shrink: 0; } .m5-ki.g8 b { color: var(--amber); }
+    .m5-ki strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 17px; line-height: 1.2; text-transform: uppercase; letter-spacing: .5px; }
+    .m5-ki em { display: block; font-style: normal; font-size: 12.5px; color: rgba(255,255,255,.8); margin-top: 1px; }
+    .m5-ki.on { background: rgba(90,169,255,.20); border-color: #5aa9ff; } .m5-ki.g8.on { background: rgba(255,185,29,.16); border-color: var(--amber); }
+    .m5-card { margin-top: 14px; background: #fff; color: var(--text); border-radius: 14px; padding: 16px 18px; border-left: 6px solid #5aa9ff; box-shadow: 0 10px 28px rgba(0,16,48,.28); } .m5-card.g8 { border-left-color: var(--amber); }
+    .m5-cn { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); } .m5-card.g8 .m5-cn { color: #a9741a; }
+    .m5-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 26px; text-transform: uppercase; line-height: 1.1; margin-top: 2px; color: var(--blue-deep); }
+    .m5-cs { font-weight: 700; font-size: 13px; color: var(--text-sec); margin-top: 2px; }
+    .m5-card p { font-size: 14px; line-height: 1.55; color: var(--text-sec); margin-top: 8px; }
+    .m5-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; background: var(--blue-deep); color: #fff; font-weight: 800; font-size: 13.5px; border-radius: 9px; padding: 10px 16px; text-decoration: none; }
+    .m5-btn:hover { color: #fff; background: var(--blue); }
+    @media (max-width: 900px) {
+      .m5-hub { grid-template-columns: 1fr; gap: 16px; margin-bottom: 30px; }
+      .m5-five { width: 100%; max-width: 360px; margin: 0 auto; }
+      .m5-keys { display: none; } .m5-card { margin-top: 0; }
+    }
+
     /* Anchor scroll offset so the sticky nav doesn't cover the switcher */
     #cb-switch { scroll-margin-top: 70px; }
   </style>
@@ -401,7 +441,7 @@
   <div class="cb-intro cb-intro-split fi">
     <div class="cb-intro-text">
       <p class="lead">
-        The modern centre-back is not the same job it was ten years ago. Height and heart are the starting point, not the finish. Recruiters now look for <strong>five things at the same time</strong>: aerial dominance, recovery pace, positional intelligence, front-foot defending, and the ability to play out from the back under pressure.
+        The modern centre-back is not the same job it was ten years ago. Height and heart are the starting point, not the finish. Recruiters now look for <strong>five things at the same time</strong>: playing out from the back, breaking lines with a pass, driving out with the ball, defending the space, and winning the duel.
       </p>
       <p class="lead">
         At 6'2" with the athletic and technical profile evidenced across this site, Joe has the full modern CB profile. He has played <strong>17 senior games at centre-back</strong> across five clubs — Scarborough Athletic U19s, Gateshead Academy, Billingham Town, Marske United and Northallerton Town — spanning academy football through Step 5, and is currently being profiled by EFL clubs for the position.
@@ -412,82 +452,54 @@
     </div>
   </div>
 
-  <!-- PENTAGON HUB -->
+  <!-- THE MODERN 5 HUB -->
   <div class="cb-hub-label">
     <div class="rule"></div>
-    <div class="eyebrow">Five Competencies</div>
+    <div class="eyebrow">The Modern 5</div>
     <h2>What a Modern CB Needs</h2>
-    <p>Five areas of the game a modern centre-back has to deliver. Click any petal to jump to Joe's evidence for that competency.</p>
+    <p>Five areas of the game a modern centre-back has to deliver: three on the ball, two off it. Choose any part of the 5 to see Joe's evidence for it.</p>
   </div>
 
-  <div class="cb-hub-stage fi">
-    <svg class="cb-hub-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Modern Centre-Back pentagon hub">
-      <g class="petals">
-
-        <!-- Petal 1 — AERIAL DOMINANCE -->
-        <a href="#cb-switch" class="petal" data-tab="1" aria-label="Aerial Dominance — jump to section">
-          <path d="M 317.24 277.30 A 148 148 0 0 1 482.76 277.30 L 612.49 84.97 A 380 380 0 0 0 187.51 84.97 Z" class="petal-bg"/>
-          <path d="M 317.24 277.30 A 148 148 0 0 1 482.76 277.30 L 612.49 84.97 A 380 380 0 0 0 187.51 84.97 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
-          <path d="M 317.24 277.30 A 148 148 0 0 1 482.76 277.30 L 612.49 84.97 A 380 380 0 0 0 187.51 84.97 Z" class="petal-stroke" fill="none"/>
-          <text x="400.00" y="130.00" class="petal-num" text-anchor="middle">01</text>
-          <text x="400.00" y="205.60" class="petal-title" text-anchor="middle"><tspan x="400.00" dy="0">Aerial</tspan><tspan x="400.00" dy="18">Dominance</tspan></text>
-        </a>
-
-        <!-- Petal 2 — RECOVERY PACE -->
-        <a href="#cb-switch" class="petal" data-tab="2" aria-label="Recovery Pace — jump to section">
-          <path d="M 491.12 283.37 A 148 148 0 0 1 542.27 440.79 L 765.28 504.74 A 380 380 0 0 0 633.95 100.56 Z" class="petal-bg"/>
-          <path d="M 491.12 283.37 A 148 148 0 0 1 542.27 440.79 L 765.28 504.74 A 380 380 0 0 0 633.95 100.56 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
-          <path d="M 491.12 283.37 A 148 148 0 0 1 542.27 440.79 L 765.28 504.74 A 380 380 0 0 0 633.95 100.56 Z" class="petal-stroke" fill="none"/>
-          <text x="640.00" y="270.00" class="petal-num" text-anchor="middle">02</text>
-          <text x="584.89" y="339.93" class="petal-title" text-anchor="middle"><tspan x="584.89" dy="0">Recovery</tspan><tspan x="584.89" dy="18">Pace</tspan></text>
-        </a>
-
-        <!-- Petal 3 — READING & POSITIONING -->
-        <a href="#cb-switch" class="petal" data-tab="3" aria-label="Reading and Positioning — jump to section">
-          <path d="M 539.07 450.62 A 148 148 0 0 1 405.17 547.91 L 413.26 779.77 A 380 380 0 0 0 757.08 529.97 Z" class="petal-bg"/>
-          <path d="M 539.07 450.62 A 148 148 0 0 1 405.17 547.91 L 413.26 779.77 A 380 380 0 0 0 757.08 529.97 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
-          <path d="M 539.07 450.62 A 148 148 0 0 1 405.17 547.91 L 413.26 779.77 A 380 380 0 0 0 757.08 529.97 Z" class="petal-stroke" fill="none"/>
-          <text x="560.00" y="620.00" class="petal-num" text-anchor="middle">03</text>
-          <text x="514.27" y="557.27" class="petal-title" text-anchor="middle"><tspan x="514.27" dy="0">Reading &amp;</tspan><tspan x="514.27" dy="18">Positioning</tspan></text>
-        </a>
-
-        <!-- Petal 4 — FRONT-FOOT DEFENDING -->
-        <a href="#cb-switch" class="petal" data-tab="4" aria-label="Front-Foot Defending — jump to section">
-          <path d="M 394.83 547.91 A 148 148 0 0 1 260.93 450.62 L 42.92 529.97 A 380 380 0 0 0 386.74 779.77 Z" class="petal-bg"/>
-          <path d="M 394.83 547.91 A 148 148 0 0 1 260.93 450.62 L 42.92 529.97 A 380 380 0 0 0 386.74 779.77 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
-          <path d="M 394.83 547.91 A 148 148 0 0 1 260.93 450.62 L 42.92 529.97 A 380 380 0 0 0 386.74 779.77 Z" class="petal-stroke" fill="none"/>
-          <text x="240.00" y="620.00" class="petal-num" text-anchor="middle">04</text>
-          <text x="285.73" y="557.27" class="petal-title" text-anchor="middle"><tspan x="285.73" dy="0">Front-Foot</tspan><tspan x="285.73" dy="18">Defending</tspan></text>
-        </a>
-
-        <!-- Petal 5 — PLAYING OUT -->
-        <a href="#cb-switch" class="petal" data-tab="5" aria-label="Playing Out from the Back — jump to section">
-          <path d="M 257.73 440.79 A 148 148 0 0 1 308.88 283.37 L 166.05 100.56 A 380 380 0 0 0 34.72 504.74 Z" class="petal-bg"/>
-          <path d="M 257.73 440.79 A 148 148 0 0 1 308.88 283.37 L 166.05 100.56 A 380 380 0 0 0 34.72 504.74 Z" fill="rgba(0,10,30,0.15)" class="petal-shade"/>
-          <path d="M 257.73 440.79 A 148 148 0 0 1 308.88 283.37 L 166.05 100.56 A 380 380 0 0 0 34.72 504.74 Z" class="petal-stroke" fill="none"/>
-          <text x="160.00" y="270.00" class="petal-num" text-anchor="middle">05</text>
-          <text x="215.11" y="339.93" class="petal-title" text-anchor="middle"><tspan x="215.11" dy="0">Playing</tspan><tspan x="215.11" dy="18">Out</tspan></text>
-        </a>
-
-      </g>
-    </svg>
-
-    <!-- Centre disc -->
-    <div class="cb-hub-center">
-      <div class="num">5</div>
-      <div class="lbl">Modern CB</div>
-      <div class="sub">The five competencies a modern centre-back has to deliver.</div>
-    </div>
-  </div>
-
-  <!-- Mobile fallback: stacked tiles -->
-  <div class="cb-hub-mobile">
-    <div class="cb-hub-mobile-list">
-      <a href="#cb-switch" class="cb-mtile" data-tab="1"><div class="num">01</div><div class="title">Aerial Dominance</div></a>
-      <a href="#cb-switch" class="cb-mtile" data-tab="2"><div class="num">02</div><div class="title">Recovery Pace</div></a>
-      <a href="#cb-switch" class="cb-mtile" data-tab="3"><div class="num">03</div><div class="title">Reading &amp; Positioning</div></a>
-      <a href="#cb-switch" class="cb-mtile" data-tab="4"><div class="num">04</div><div class="title">Front-Foot Defending</div></a>
-      <a href="#cb-switch" class="cb-mtile" data-tab="5"><div class="num">05</div><div class="title">Playing Out</div></a>
+  <div class="m5-hub fi" id="m5hub">
+    <div class="m5-five"><svg id="m5five" viewBox="130 20 580 925" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Modern 5"><defs><pattern id="m5ph0" patternUnits="userSpaceOnUse" x="181.2" y="-24.2" width="457.6" height="610.1"><image href="img/m5-01.jpg" width="457.6" height="610.1" preserveAspectRatio="none"/></pattern><clipPath id="m5rg0"><polygon points="129.2,-16.5 900.0,-20.0 900.0,172.0 318.7,173.0"/></clipPath><pattern id="m5ph1" patternUnits="userSpaceOnUse" x="19.3" y="41.7" width="490.9" height="431.6"><image href="img/m5-02.jpg" width="490.9" height="431.6" preserveAspectRatio="none"/></pattern><clipPath id="m5rg1"><polygon points="123.5,-10.8 308.8,174.5 312.0,172.0 313.6,296.8 175.2,495.3 60.0,495.3 60.0,-20.0"/></clipPath><pattern id="m5ph2" patternUnits="userSpaceOnUse" x="212.1" y="231.3" width="411.6" height="772.2"><image href="img/m5-03.jpg" width="411.6" height="772.2" preserveAspectRatio="none"/></pattern><clipPath id="m5rg2"><polygon points="181.8,499.9 341.9,270.2 341.9,200.0 900.0,200.0 826.4,278.4 367.7,599.6"/></clipPath><pattern id="m5ph3" patternUnits="userSpaceOnUse" x="160.5" y="430.8" width="632.3" height="418.0"><image href="img/m5-04.jpg" width="632.3" height="418.0" preserveAspectRatio="none"/></pattern><clipPath id="m5rg3"><polygon points="372.3,606.1 831.0,284.9 984.7,683.8 733.0,1029.3 373.1,600.3"/></clipPath><pattern id="m5ph4" patternUnits="userSpaceOnUse" x="157.9" y="674.7" width="421.2" height="354.4"><image href="img/m5-05.jpg" width="421.2" height="354.4" preserveAspectRatio="none"/></pattern><clipPath id="m5rg4"><polygon points="366.9,605.4 726.9,1034.4 343.0,1222.3 -161.4,922.2 366.9,605.4"/></clipPath>
+<mask id="m5mFull" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="1000"><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" stroke="#fff" stroke-width="120"/></mask>
+<mask id="m5mRing" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="1000"><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" stroke="#fff" stroke-width="120"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" stroke="#000" stroke-width="109"/></mask>
+<filter id="m5gl" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5rim m5rim6" filter="url(#m5gl)"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5rim m5rim8" filter="url(#m5gl)"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5bed"/>
+<g class="m5seg g6" data-k="0" tabindex="0" role="button" aria-label="01 Playing Out" clip-path="url(#m5rg0)">
+<path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5p" stroke="url(#m5ph0)"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5sh"/>
+<g class="m5ol"><rect x="0" y="0" width="900" height="1000" mask="url(#m5mRing)"/><polygon points="129.2,-16.5 900.0,-20.0 900.0,172.0 318.7,173.0" mask="url(#m5mFull)"/></g>
+<text class="m5sn" x="450.0" y="102.0" text-anchor="middle">01</text><text class="m5st" x="450.0" y="129.0" text-anchor="middle"><tspan x="450.0" dy="0">Playing Out</tspan></text></g><g class="m5seg g6" data-k="1" tabindex="0" role="button" aria-label="02 Breaking Lines" clip-path="url(#m5rg1)">
+<path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5p" stroke="url(#m5ph1)"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5sh"/>
+<g class="m5ol"><rect x="0" y="0" width="900" height="1000" mask="url(#m5mRing)"/><polygon points="123.5,-10.8 308.8,174.5 312.0,172.0 313.6,296.8 175.2,495.3 60.0,495.3 60.0,-20.0" mask="url(#m5mFull)"/></g>
+<text class="m5sn" x="250.0" y="255.5" text-anchor="middle">02</text><text class="m5st" x="250.0" y="281.5" text-anchor="middle"><tspan x="250.0" dy="0">Breaking</tspan><tspan x="250.0" dy="25">Lines</tspan></text></g><g class="m5seg g6" data-k="2" tabindex="0" role="button" aria-label="03 Driving Out" clip-path="url(#m5rg2)">
+<path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5p" stroke="url(#m5ph2)"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5sh"/>
+<g class="m5ol"><rect x="0" y="0" width="900" height="1000" mask="url(#m5mRing)"/><polygon points="181.8,499.9 341.9,270.2 341.9,200.0 900.0,200.0 826.4,278.4 367.7,599.6" mask="url(#m5mFull)"/></g>
+<text class="m5sn" x="438.2" y="355.7" text-anchor="middle">03</text><text class="m5st" x="438.2" y="381.7" text-anchor="middle"><tspan x="438.2" dy="0">Driving</tspan><tspan x="438.2" dy="25">Out</tspan></text></g><g class="m5seg g8" data-k="3" tabindex="0" role="button" aria-label="04 Defending the Space" clip-path="url(#m5rg3)">
+<path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5p" stroke="url(#m5ph3)"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5sh"/>
+<g class="m5ol"><rect x="0" y="0" width="900" height="1000" mask="url(#m5mRing)"/><polygon points="372.3,606.1 831.0,284.9 984.7,683.8 733.0,1029.3 373.1,600.3" mask="url(#m5mFull)"/></g>
+<text class="m5sn" x="607.9" y="617.2" text-anchor="middle">04</text><text class="m5st" x="607.9" y="643.2" text-anchor="middle"><tspan x="607.9" dy="0">Defending</tspan><tspan x="607.9" dy="25">the Space</tspan></text></g><g class="m5seg g8" data-k="4" tabindex="0" role="button" aria-label="05 Winning the Duel" clip-path="url(#m5rg4)">
+<path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5p" stroke="url(#m5ph4)"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" class="m5sh"/>
+<g class="m5ol"><rect x="0" y="0" width="900" height="1000" mask="url(#m5mRing)"/><polygon points="366.9,605.4 726.9,1034.4 343.0,1222.3 -161.4,922.2 366.9,605.4" mask="url(#m5mFull)"/></g>
+<text class="m5sn" x="359.5" y="825.6" text-anchor="middle">05</text><text class="m5st" x="359.5" y="851.6" text-anchor="middle"><tspan x="359.5" dy="0">Winning</tspan><tspan x="359.5" dy="25">the Duel</tspan></text></g>
+<g class="m5core"><circle cx="370.0" cy="602.8" r="146"/><text class="m5c3" x="370.0" y="546.8" text-anchor="middle">WITH JOE</text><text class="m5c1" x="370.0" y="624.8" text-anchor="middle">3&#215;</text><text class="m5c2" x="370.0" y="658.8" text-anchor="middle">FEWER GOALS</text><text class="m5c2" x="370.0" y="679.8" text-anchor="middle">CONCEDED</text></g></svg></div>
+    <div class="m5-side">
+      <div class="m5-keys">
+        <div class="m5-grp g6">On the ball &middot; 01&ndash;03</div>
+        <a class="m5-ki g6" href="#cb-switch" data-k="0"><b>01</b><span><strong>Playing Out</strong><em>Receiving &amp; Building from the Back</em></span></a>
+        <a class="m5-ki g6" href="#cb-switch" data-k="1"><b>02</b><span><strong>Breaking Lines</strong><em>Forward Passes &amp; Switches</em></span></a>
+        <a class="m5-ki g6" href="#cb-switch" data-k="2"><b>03</b><span><strong>Driving Out</strong><em>Carrying the Ball into Midfield</em></span></a>
+        <div class="m5-grp g8">Off the ball &middot; 04&ndash;05</div>
+        <a class="m5-ki g8" href="#cb-switch" data-k="3"><b>04</b><span><strong>Defending the Space</strong><em>Cover, Recovery Runs &amp; Interceptions</em></span></a>
+        <a class="m5-ki g8" href="#cb-switch" data-k="4"><b>05</b><span><strong>Winning the Duel</strong><em>Front-Foot Defending, Tackles &amp; Headers</em></span></a>
+      </div>
+      <div class="m5-card g6" id="m5card" aria-live="polite">
+        <div class="m5-cn" id="m5cn">01 &middot; On the ball</div>
+        <h3 id="m5ct">Playing Out</h3>
+        <div class="m5-cs" id="m5cs">Receiving &amp; Building from the Back</div>
+        <p id="m5cd">Takes the ball from the keeper and the full-backs under pressure, and starts the move.</p>
+        <a class="m5-btn" id="m5go" href="#cb-switch">See Joe&rsquo;s evidence <i class="fas fa-arrow-down"></i></a>
+      </div>
     </div>
   </div>
 
@@ -496,224 +508,36 @@
     <div class="cb-tabs" role="tablist" aria-label="The five competencies of a modern centre-back">
       <button class="cb-tab active" data-tab="1" role="tab" aria-selected="true" type="button">
         <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">01</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Aerial Dominance</div>
+        <div class="cb-tab-title">Playing Out</div>
       </button>
       <button class="cb-tab" data-tab="2" role="tab" aria-selected="false" type="button">
         <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">02</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Recovery Pace</div>
+        <div class="cb-tab-title">Breaking Lines</div>
       </button>
       <button class="cb-tab" data-tab="3" role="tab" aria-selected="false" type="button">
         <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">03</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Reading &amp; Positioning</div>
+        <div class="cb-tab-title">Driving Out</div>
       </button>
       <button class="cb-tab" data-tab="4" role="tab" aria-selected="false" type="button">
         <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">04</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Front-Foot Defending</div>
+        <div class="cb-tab-title">Defending the Space</div>
       </button>
       <button class="cb-tab" data-tab="5" role="tab" aria-selected="false" type="button">
         <div class="cb-tab-thumb placeholder"><span class="cb-tab-num">05</span><i class="fas fa-video"></i><span class="lbl">Footage compiling</span></div>
-        <div class="cb-tab-title">Playing Out</div>
+        <div class="cb-tab-title">Winning the Duel</div>
       </button>
     </div>
 
     <div class="cb-panels">
 
-      <!-- PANEL 1 — AERIAL DOMINANCE -->
+      <!-- PANEL 1 — PLAYING OUT -->
       <div class="cb-panel active" data-panel="1" role="tabpanel">
         <div class="case">
           <div class="case-banner">
             <span class="num">01</span>
             <div class="heads">
               <span class="role">What a modern CB needs to do</span>
-              <h3>Dominate the aerial battle, both boxes</h3>
-            </div>
-          </div>
-          <p class="case-lead">The modern CB has to <strong>win aerial duels on both sides of the pitch</strong> — defending set pieces and long balls, and attacking corners as a genuine goal threat. Height and jump numbers are the starting point; timing and intent are what turn them into wins.</p>
-          <div class="cb-video-slot">
-            <div>
-              <i class="fas fa-video"></i>
-              <span>Aerial footage compiling</span>
-              <small>Headed goal from a corner + attacking header hitting the bar</small>
-            </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat sc-nu"><div class="v">6'2"</div><div class="l">Height</div></div>
-            <div class="case-stat sc-jp"><div class="v">60.1cm</div><div class="l"><i class="fas fa-arrow-up"></i> CMJ</div><span class="b">Elite</span></div>
-            <div class="case-stat sc-jp"><div class="v">62.5cm</div><div class="l"><i class="fas fa-arrow-up"></i> Abalakov Jump</div><span class="b">Elite</span></div>
-            <div class="case-stat sc-nu"><div class="v">85kg</div><div class="l">Frame</div></div>
-          </div>
-          <div class="phys-links">
-            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
-            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
-          </div>
-          <div class="case-evidence">
-            <div class="case-quote">
-              <span class="qkind">Reference &middot; 11 years</span>
-              <p class="q">"He has now developed into an extremely strong and physical athlete. This allows him to not only cover huge distances during games, but also dominate physically due to his height and strength."</p>
-              <div class="cq-foot">
-                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools</p></div>
-                <span class="cq-crest"><img src="img/logo-bss.png" alt="Mark Hodgson"></span>
-              </div>
-            </div>
-          </div>
-          <div class="case-analysis">
-            <p>Joe wins his headers because he combines the physical base (6'2", genuinely explosive vertical) with the timing to attack the ball at its highest point rather than react to it. The verified <strong>60.1cm countermovement jump</strong> and <strong>62.5cm Abalakov jump</strong> place him firmly in the elite range for his age group.</p>
-            <p>That physical base translates into two jobs: dominating defensive set pieces at Step 4 and higher, and being a genuine attacking threat from corners. Both boxes.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL 2 — RECOVERY PACE -->
-      <div class="cb-panel" data-panel="2" role="tabpanel">
-        <div class="case">
-          <div class="case-banner">
-            <span class="num">02</span>
-            <div class="heads">
-              <span class="role">What a modern CB needs to do</span>
-              <h3>Cover the space behind the line</h3>
-            </div>
-          </div>
-          <p class="case-lead">Modern back lines defend high. That works only if the centre-backs have the <strong>recovery pace to close down a runner in behind</strong>, and the acceleration to stop attackers turning into space. Slow CBs cost goals; fast CBs let a whole team play higher.</p>
-          <div class="cb-video-slot">
-            <div>
-              <i class="fas fa-video"></i>
-              <span>Recovery pace footage compiling</span>
-              <small>Match clips of tracking runners and last-man cover — to be added</small>
-            </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">1.62s</div><div class="l">10m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">3.89s</div><div class="l">30m Sprint</div><span class="b">Elite</span></div>
-            <div class="case-stat feat"><div class="v">34 km/h</div><div class="l">Top Speed</div></div>
-          </div>
-          <div class="phys-links">
-            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
-            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
-          </div>
-          <div class="case-evidence">
-            <div class="case-quote">
-              <span class="qkind">Scout report</span>
-              <p class="q">"Cover the ground well on recovery run. From 1 side of the pitch to the other stopping a counterattack and winning a throw in."</p>
-              <div class="cq-foot">
-                <div class="cq-who"><p class="a">William Kinniburgh</p><p class="src">Scout, Motherwell / Oxford United</p></div>
-                <span class="cq-crest"><img src="img/badge-motherwell.png" alt="William Kinniburgh"></span>
-              </div>
-            </div>
-          </div>
-          <div class="case-analysis">
-            <p>Joe's <strong>34 km/h top speed</strong> is verified across three independent platforms: PROformance instrumented testing, STATSports GPS in match conditions, and PlayerMaker boot-strap data. That speed is not lab-only — it shows up when he is chasing a ball or a runner in a game.</p>
-            <p>The 5m sprint at 0.91s matters more than the top-end for a CB. It is the burst that turns a lost yard into a recovered one when an attacker gets on the shoulder. Both numbers give a coach freedom to play a higher line.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL 3 — READING & POSITIONING -->
-      <div class="cb-panel" data-panel="3" role="tabpanel">
-        <div class="case">
-          <div class="case-banner">
-            <span class="num">03</span>
-            <div class="heads">
-              <span class="role">What a modern CB needs to do</span>
-              <h3>Read the game and organise the back line</h3>
-            </div>
-          </div>
-          <p class="case-lead">The centre-back is the eyes of the back line. He is <strong>reading the game two passes ahead</strong>, positioning early, and organising the players around him so the defence never has to react — it acts. This is the difference between a defender who runs a lot and one who covers ground he never has to.</p>
-          <div class="cb-video-slot">
-            <div>
-              <i class="fas fa-video"></i>
-              <span>Positioning &amp; organisation footage compiling</span>
-              <small>Clips of interceptions, covering runs and organising the line</small>
-            </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat feat"><div class="v">0.91</div><div class="l">Goals conceded per 90 with Joe</div></div>
-            <div class="case-stat"><div class="v">2.74</div><div class="l">Without Joe</div></div>
-            <div class="case-stat"><div class="v">−67%</div><div class="l">Difference</div><span class="b">Marske 25/26</span></div>
-          </div>
-          <div class="case-stats" style="margin-top:-14px">
-            <div class="case-stat feat"><div class="v">1.96</div><div class="l">Goals conceded per 90 with Joe</div></div>
-            <div class="case-stat"><div class="v">4.24</div><div class="l">Without Joe</div></div>
-            <div class="case-stat"><div class="v">−54%</div><div class="l">Difference</div><span class="b">Northallerton 26/27</span></div>
-          </div>
-          <div class="case-evidence">
-            <div class="case-quote">
-              <span class="qkind">Academy assessment</span>
-              <p class="q">"Excellent reading of the game and decision-making. Very good range of passing and excellent positioning; tactically disciplined and composed in possession."</p>
-              <div class="cq-foot">
-                <div class="cq-who"><p class="a">Middlesbrough FC</p><p class="src">Academy Assessment</p></div>
-                <span class="cq-crest"><img src="img/logo-boro.jpg" class="round" alt="Middlesbrough FC"></span>
-              </div>
-            </div>
-            <div class="case-quote">
-              <span class="qkind">Trial assessment</span>
-              <p class="q">"Shows maturity beyond his years. Leading, instructing and organising teammates from the moment he steps on the pitch."</p>
-              <div class="cq-foot">
-                <div class="cq-who"><p class="a">Stoke City</p><p class="src">U23 Trial Assessment</p></div>
-                <span class="cq-crest"><img src="img/badge-stoke.png" alt="Stoke City"></span>
-              </div>
-            </div>
-          </div>
-          <div class="case-analysis">
-            <p>The <strong>0.91 vs 2.74 goals-per-90 pattern</strong> at Marske United across 2025/26 is a defensive impact number — it does not care whether Joe is nominally playing midfield or the back line. The intelligence that reduces goals against from a midfield position transfers directly to CB, and typically becomes even more valuable there where the whole back line takes its cue from the CB's positioning.</p>
-            <p>The same pattern followed him to <strong>Northallerton Town in 2026/27</strong>, where he played at the back rather than in midfield: <strong>1.96 goals conceded per 90 with Joe on the pitch against 4.24 without</strong>, over four games. A small sample on its own, but it repeats the Marske pattern at a second club and in a different position.</p>
-            <p>This is also where the leadership signal sits. Multiple scouts have flagged Joe's communication and organising quality as unusually mature for his age. In a back-line role, that quality shows up in the shape of the entire defence, not just his own actions.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL 4 — FRONT-FOOT DEFENDING -->
-      <div class="cb-panel" data-panel="4" role="tabpanel">
-        <div class="case">
-          <div class="case-banner">
-            <span class="num">04</span>
-            <div class="heads">
-              <span class="role">What a modern CB needs to do</span>
-              <h3>Front-foot, don't back off</h3>
-            </div>
-          </div>
-          <p class="case-lead">Modern CBs <strong>step out to defend, not shuffle back</strong>. They engage early, meet attackers on the front foot, and win the physical exchange when it comes. The alternative — dropping and dropping — gives strikers time to turn, pick a pass, and shoot.</p>
-          <div class="cb-video-slot">
-            <div>
-              <i class="fas fa-video"></i>
-              <span>Front-foot defending footage compiling</span>
-              <small>Duels, tackles, front-foot engagements from senior matches</small>
-            </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat"><div class="v">6'2" / 85kg</div><div class="l">Physical Frame</div></div>
-            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Burst</div><span class="b">Elite</span></div>
-            <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
-          </div>
-          <div class="phys-links">
-            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
-            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
-          </div>
-          <div class="case-evidence">
-            <div class="case-quote">
-              <span class="qkind">Scout report</span>
-              <p class="q">"On field personality and combative nature which allows you to win duels all over the pitch."</p>
-              <div class="cq-foot">
-                <div class="cq-who"><p class="a">Aaron Barnes</p><p class="src">Scout, Stoke City FC</p></div>
-                <span class="cq-crest"><img src="img/badge-stoke.png" alt="Aaron Barnes"></span>
-              </div>
-            </div>
-          </div>
-          <div class="case-analysis">
-            <p>Joe defends on the front foot because he has the physical tools to make that decision safely — the 5m burst to close space, the frame to hold his line in a duel, and the strength to win a shoulder-to-shoulder. He does not need to sit off.</p>
-            <p>The verified <strong>broad jump of 305cm</strong> is a proxy for lateral power — the same trait that shows up in a defensive slide tackle or a hold-off against a striker's roll.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL 5 — PLAYING OUT -->
-      <div class="cb-panel" data-panel="5" role="tabpanel">
-        <div class="case">
-          <div class="case-banner">
-            <span class="num">05</span>
-            <div class="heads">
-              <span class="role">What a modern CB needs to do</span>
-              <h3>Two-footed, comfortable receiving, plays forward</h3>
+              <h3>Playing Out: Receiving &amp; Building from the Back</h3>
             </div>
           </div>
           <p class="case-lead">The recruitment gap between CBs who play out from the back and CBs who just hoof it is now huge. Pro clubs want the <strong>ball-playing centre-back</strong>: two-footed, comfortable receiving under pressure from a pressing striker, able to progress the ball with a pass through the lines rather than around them.</p>
@@ -721,7 +545,7 @@
             <div>
               <i class="fas fa-video"></i>
               <span>Playing-out footage compiling</span>
-              <small>Progressive passes from deeper positions — to be added</small>
+              <small>Receiving and building from the back — to be added</small>
             </div>
           </div>
           <div class="case-stats">
@@ -729,6 +553,7 @@
             <div class="case-stat"><div class="v">Long</div><div class="l">Passing Range</div><span class="b">Verified</span></div>
             <div class="case-stat"><div class="v">Composed</div><div class="l">Receiving Under Pressure</div></div>
           </div>
+          
           <div class="case-evidence">
             <div class="case-quote">
               <span class="qkind">Scout report</span>
@@ -750,6 +575,237 @@
           <div class="case-analysis">
             <p>The passing evidence for Joe already exists on this site, gathered from his midfield performances. Two-footed, verified for weight and range, comfortable receiving on the back foot with a defender close. All of that is exactly what a pressing striker asks a CB to demonstrate — and it is the part of a CB's game that decides which level a player ends up at.</p>
             <p>This is the section that will grow fastest as CB-specific footage is added, because the evidence base from midfield is already deep.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2 — BREAKING LINES -->
+      <div class="cb-panel" data-panel="2" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">02</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Breaking Lines: Forward Passes &amp; Switches</h3>
+            </div>
+          </div>
+          <p class="case-lead">The modern CB is expected to <strong>take a line of players out of the game with one pass</strong>: into midfield, into the striker, or across the pitch to switch the play. A centre-back who can only pass sideways hands the problem to someone else.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Line-breaking footage compiling</span>
+              <small>Forward passes and switches from centre-back — to be added</small>
+            </div>
+          </div>
+          
+          
+          <div class="case-evidence">
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"Your ability to see a forward pass is excellent. Your control and composure is very good. The standard in your passing and receiving a ball in space would only improve with better players around you."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">William Kinniburgh</p><p class="src">Scout, Motherwell / Oxford United</p></div>
+                <span class="cq-crest"><img src="img/badge-motherwell.png" alt="Motherwell FC"></span>
+              </div>
+            </div>
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"He is a threat with the ball, can pick a hard pass, play through the lines, and judges his attacking runs well."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">David Banjura</p><p class="src">Former National League Chief Scout</p></div>
+                <span class="cq-crest"><img src="img/badge-national-league.png" alt="National League"></span>
+              </div>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>This is where Joe's range really shows. He switches the play accurately over 40-50 yards, fizzes balls through the lines into feet and runners, and delivers quality from wide and deep positions. The ability to see a forward pass and execute it with the right weight is what multiple scouts have flagged as his standout quality.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3 — DRIVING OUT -->
+      <div class="cb-panel" data-panel="3" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">03</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Driving Out: Carrying the Ball into Midfield</h3>
+            </div>
+          </div>
+          <p class="case-lead">When the press comes and the pass is not on, the modern CB <strong>steps past the first press with the ball at his feet and carries it into midfield</strong>, committing an opponent before he releases it.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Driving-out footage compiling</span>
+              <small>Carrying the ball out of defence and into midfield — to be added</small>
+            </div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat sc-sp"><div class="v">34 km/h</div><div class="l"><i class="fas fa-gauge-high"></i> Top Speed</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-sp"><div class="v">0.91s</div><div class="l"><i class="fas fa-bolt"></i> 5m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-jp"><div class="v">305cm</div><div class="l"><i class="fas fa-arrow-up"></i> Broad Jump</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-nu"><div class="v">6'2" / 85kg</div><div class="l">Physical Frame</div></div>
+          </div>
+          <div class="phys-links">
+            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
+            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
+          </div>
+          <div class="case-evidence">
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"Showed the confidence and technical ability to carry the ball out of defence and into higher midfield areas."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Jack Manship</p><p class="src">Scout, Doncaster Rovers / Minnesota United</p></div>
+                <span class="cq-crest"><img src="img/badge-doncaster.png" alt="Doncaster Rovers FC"></span>
+              </div>
+            </div>
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"When you were able to drive forwards you were an asset to the attacking play. As a strong competitor you can really drive at players and draw fouls or threaten."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">John Rhodes</p><p class="src">Scout, Shrewsbury Town FC</p></div>
+                <span class="cq-crest"><img src="img/badge-shrewsbury.png" alt="Shrewsbury Town FC"></span>
+              </div>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>Joe carries with purpose. He doesn't dribble for the sake of it — he drives forward to break lines, commit defenders and create advantages for the players around him. At 6'2" and 85kg with a verified top speed of 34 km/h, defenders can't bump him off the ball or run him down.</p>
+            <p>Watch how he picks his moments. He recognises when a carry is more effective than a pass, and he has the physical tools to execute it against senior men.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 4 — DEFENDING THE SPACE -->
+      <div class="cb-panel" data-panel="4" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">04</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Defending the Space: Cover, Recovery Runs &amp; Interceptions</h3>
+            </div>
+          </div>
+          <p class="case-lead">The centre-back is the eyes of the back line. He is <strong>reading the game two passes ahead</strong>, positioning early, and organising the players around him so the defence never has to react — it acts. This is the difference between a defender who runs a lot and one who covers ground he never has to.</p>
+          <p class="case-lead">Modern back lines defend high. That works only if the centre-backs have the <strong>recovery pace to close down a runner in behind</strong>, and the acceleration to stop attackers turning into space. Slow CBs cost goals; fast CBs let a whole team play higher.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Defending-the-space footage compiling</span>
+              <small>Cover, recovery runs and interceptions — to be added</small>
+            </div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat feat"><div class="v">0.91</div><div class="l">Goals conceded per 90 with Joe</div></div>
+            <div class="case-stat"><div class="v">2.74</div><div class="l">Without Joe</div></div>
+            <div class="case-stat"><div class="v">−67%</div><div class="l">Difference</div><span class="b">Marske 25/26</span></div>
+          </div>
+          <div class="case-stats" style="margin-top:-14px">
+            <div class="case-stat feat"><div class="v">1.96</div><div class="l">Goals conceded per 90 with Joe</div></div>
+            <div class="case-stat"><div class="v">4.24</div><div class="l">Without Joe</div></div>
+            <div class="case-stat"><div class="v">−54%</div><div class="l">Difference</div><span class="b">Northallerton 26/27</span></div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">1.62s</div><div class="l">10m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">3.89s</div><div class="l">30m Sprint</div><span class="b">Elite</span></div>
+            <div class="case-stat feat"><div class="v">34 km/h</div><div class="l">Top Speed</div></div>
+          </div>
+          <div class="phys-links">
+            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
+            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
+          </div>
+          <div class="case-evidence">
+            <div class="case-quote">
+              <span class="qkind">Academy assessment</span>
+              <p class="q">"Excellent reading of the game and decision-making. Very good range of passing and excellent positioning; tactically disciplined and composed in possession."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Middlesbrough FC</p><p class="src">Academy Assessment</p></div>
+                <span class="cq-crest"><img src="img/logo-boro.jpg" class="round" alt="Middlesbrough FC"></span>
+              </div>
+            </div>
+            <div class="case-quote">
+              <span class="qkind">Trial assessment</span>
+              <p class="q">"Shows maturity beyond his years. Leading, instructing and organising teammates from the moment he steps on the pitch."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Stoke City</p><p class="src">U23 Trial Assessment</p></div>
+                <span class="cq-crest"><img src="img/badge-stoke.png" alt="Stoke City"></span>
+              </div>
+            </div>
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"Cover the ground well on recovery run. From 1 side of the pitch to the other stopping a counterattack and winning a throw in."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">William Kinniburgh</p><p class="src">Scout, Motherwell / Oxford United</p></div>
+                <span class="cq-crest"><img src="img/badge-motherwell.png" alt="William Kinniburgh"></span>
+              </div>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>The <strong>0.91 vs 2.74 goals-per-90 pattern</strong> at Marske United across 2025/26 is a defensive impact number — it does not care whether Joe is nominally playing midfield or the back line. The intelligence that reduces goals against from a midfield position transfers directly to CB, and typically becomes even more valuable there where the whole back line takes its cue from the CB's positioning.</p>
+            <p>The same pattern followed him to <strong>Northallerton Town in 2026/27</strong>, where he played at the back rather than in midfield: <strong>1.96 goals conceded per 90 with Joe on the pitch against 4.24 without</strong>, over four games. A small sample on its own, but it repeats the Marske pattern at a second club and in a different position.</p>
+            <p>This is also where the leadership signal sits. Multiple scouts have flagged Joe's communication and organising quality as unusually mature for his age. In a back-line role, that quality shows up in the shape of the entire defence, not just his own actions.</p>
+            <p>Joe's <strong>34 km/h top speed</strong> is verified across three independent platforms: PROformance instrumented testing, STATSports GPS in match conditions, and PlayerMaker boot-strap data. That speed is not lab-only — it shows up when he is chasing a ball or a runner in a game.</p>
+            <p>The 5m sprint at 0.91s matters more than the top-end for a CB. It is the burst that turns a lost yard into a recovered one when an attacker gets on the shoulder. Both numbers give a coach freedom to play a higher line.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 5 — WINNING THE DUEL -->
+      <div class="cb-panel" data-panel="5" role="tabpanel">
+        <div class="case">
+          <div class="case-banner">
+            <span class="num">05</span>
+            <div class="heads">
+              <span class="role">What a modern CB needs to do</span>
+              <h3>Winning the Duel: Front-Foot Defending, Tackles &amp; Headers</h3>
+            </div>
+          </div>
+          <p class="case-lead">Modern CBs <strong>step out to defend, not shuffle back</strong>. They engage early, meet attackers on the front foot, and win the physical exchange when it comes. The alternative — dropping and dropping — gives strikers time to turn, pick a pass, and shoot.</p>
+          <p class="case-lead">The modern CB has to <strong>win aerial duels on both sides of the pitch</strong> — defending set pieces and long balls, and attacking corners as a genuine goal threat. Height and jump numbers are the starting point; timing and intent are what turn them into wins.</p>
+          <div class="cb-video-slot">
+            <div>
+              <i class="fas fa-video"></i>
+              <span>Duel footage compiling</span>
+              <small>Front-foot defending, tackles and headers — headed goal from a corner + attacking header hitting the bar</small>
+            </div>
+          </div>
+          <div class="case-stats">
+            <div class="case-stat"><div class="v">6'2" / 85kg</div><div class="l">Physical Frame</div></div>
+            <div class="case-stat"><div class="v">0.91s</div><div class="l">5m Burst</div><span class="b">Elite</span></div>
+            <div class="case-stat"><div class="v">305cm</div><div class="l">Broad Jump</div><span class="b">Elite</span></div>
+          </div>
+          <div class="case-stats" style="margin-top:-14px">
+            <div class="case-stat sc-jp"><div class="v">60.1cm</div><div class="l"><i class="fas fa-arrow-up"></i> CMJ</div><span class="b">Elite</span></div>
+            <div class="case-stat sc-jp"><div class="v">62.5cm</div><div class="l"><i class="fas fa-arrow-up"></i> Abalakov Jump</div><span class="b">Elite</span></div>
+          </div>
+          <div class="phys-links">
+            <a class="phys-link" href="athletic-profile.html#tests"><i class="fas fa-chart-column"></i><span><strong>The Physical Base</strong>Test results, what the numbers mean &amp; the tests on film</span><i class="fas fa-arrow-right ar"></i></a>
+            <a class="phys-link" href="docs/reference-moore.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span><strong>PROformance reference</strong>Lee Moore MSc ASCC &middot; 9 years coaching Joe</span><i class="fas fa-arrow-right ar"></i></a>
+          </div>
+          <div class="case-evidence">
+            <div class="case-quote">
+              <span class="qkind">Scout report</span>
+              <p class="q">"On field personality and combative nature which allows you to win duels all over the pitch."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Aaron Barnes</p><p class="src">Scout, Stoke City FC</p></div>
+                <span class="cq-crest"><img src="img/badge-stoke.png" alt="Aaron Barnes"></span>
+              </div>
+            </div>
+            <div class="case-quote">
+              <span class="qkind">Reference &middot; 11 years</span>
+              <p class="q">"He has now developed into an extremely strong and physical athlete. This allows him to not only cover huge distances during games, but also dominate physically due to his height and strength."</p>
+              <div class="cq-foot">
+                <div class="cq-who"><p class="a">Mark Hodgson</p><p class="src">Head Coach, Brazilian Soccer Schools</p></div>
+                <span class="cq-crest"><img src="img/logo-bss.png" alt="Mark Hodgson"></span>
+              </div>
+            </div>
+          </div>
+          <div class="case-analysis">
+            <p>Joe defends on the front foot because he has the physical tools to make that decision safely — the 5m burst to close space, the frame to hold his line in a duel, and the strength to win a shoulder-to-shoulder. He does not need to sit off.</p>
+            <p>The verified <strong>broad jump of 305cm</strong> is a proxy for lateral power — the same trait that shows up in a defensive slide tackle or a hold-off against a striker's roll.</p>
+            <p>Joe wins his headers because he combines the physical base (6'2", genuinely explosive vertical) with the timing to attack the ball at its highest point rather than react to it. The verified <strong>60.1cm countermovement jump</strong> and <strong>62.5cm Abalakov jump</strong> place him firmly in the elite range for his age group.</p>
+            <p>That physical base translates into two jobs: dominating defensive set pieces at Step 4 and higher, and being a genuine attacking threat from corners. Both boxes.</p>
           </div>
         </div>
       </div>
@@ -828,16 +884,47 @@ document.querySelectorAll('.cb-tab').forEach(btn => {
   btn.addEventListener('click', () => activateTab(btn.dataset.tab));
 });
 
-// Petal + mobile tile clicks open the corresponding tab AND scroll to switcher
-document.querySelectorAll('.cb-hub-svg .petal, .cb-mtile').forEach(el => {
-  el.addEventListener('click', (e) => {
-    const tabId = el.dataset.tab;
-    if (tabId) {
-      activateTab(tabId);
-      // href="#cb-switch" handles the scroll for us
-    }
+// The Modern 5 hub. Desktop: hover a part of the 5 (or a row in the key) to light it up, click to jump to its section.
+// Phones and touch screens: the first tap selects a part and fills the card; the button on the card jumps to the section.
+(function () {
+  var five = document.getElementById('m5five'); if (!five) return;
+  var D = [{"n": "01", "g": "6", "t": "Playing Out", "s": "Receiving & Building from the Back", "d": "Takes the ball from the keeper and the full-backs under pressure, and starts the move."}, {"n": "02", "g": "6", "t": "Breaking Lines", "s": "Forward Passes & Switches", "d": "Passes that take a line of players out of the game: into midfield, into the striker, or across the pitch."}, {"n": "03", "g": "6", "t": "Driving Out", "s": "Carrying the Ball into Midfield", "d": "Steps past the first press with the ball at his feet and carries it into midfield."}, {"n": "04", "g": "8", "t": "Defending the Space", "s": "Cover, Recovery Runs & Interceptions", "d": "Reads the danger early: covers behind, recovers at pace and cuts out the pass."}, {"n": "05", "g": "8", "t": "Winning the Duel", "s": "Front-Foot Defending, Tackles & Headers", "d": "Steps in on the front foot and wins it: tackles, duels and headers."}];
+  var segs = Array.prototype.slice.call(five.querySelectorAll('.m5seg'));
+  var keys = Array.prototype.slice.call(document.querySelectorAll('.m5-ki'));
+  var card = document.getElementById('m5card'), goBtn = document.getElementById('m5go');
+  var tapMode = window.matchMedia('(max-width: 900px), (hover: none)');
+  var cur = 0;
+  function sel(k) {
+    cur = k; var s = D[k];
+    segs.forEach(function (e) { e.classList.toggle('on', +e.dataset.k === k); });
+    keys.forEach(function (e) { e.classList.toggle('on', +e.dataset.k === k); });
+    five.setAttribute('class', 's' + s.g);
+    card.className = 'm5-card g' + s.g;
+    document.getElementById('m5cn').textContent = s.n + ' · ' + (s.g === '6' ? 'On the ball' : 'Off the ball');
+    document.getElementById('m5ct').textContent = s.t;
+    document.getElementById('m5cs').textContent = s.s;
+    document.getElementById('m5cd').textContent = s.d;
+  }
+  function go(k) {
+    activateTab(String(k + 1));
+    document.getElementById('cb-switch').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  segs.forEach(function (e) {
+    var k = +e.dataset.k;
+    e.addEventListener('mouseenter', function () { sel(k); });
+    e.addEventListener('focus', function () { sel(k); });
+    e.addEventListener('click', function () { sel(k); if (!tapMode.matches) go(k); });
+    e.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); sel(k); go(k); } });
   });
-});
+  keys.forEach(function (e) {
+    var k = +e.dataset.k;
+    e.addEventListener('mouseenter', function () { sel(k); });
+    e.addEventListener('focus', function () { sel(k); });
+    e.addEventListener('click', function (ev) { ev.preventDefault(); sel(k); go(k); });
+  });
+  goBtn.addEventListener('click', function (ev) { ev.preventDefault(); go(cur); });
+  sel(0);
+})();
 </script>
 </body>
 </html>

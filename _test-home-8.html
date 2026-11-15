@@ -1057,7 +1057,7 @@
       padding: 7px 11px; border-radius: 9px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
     .t8-bar b { color: var(--amber); letter-spacing: 1px; margin-right: 6px; }
 
-    /* TEST: the 8 on phones */
+    /* the 8 on phones: tap a petal to select it, the card underneath has the title and Play */
     .m8card { display: none; }
     @media (max-width: 560px) {
       .hub8-stage { display: block; width: 100%; }
@@ -1066,9 +1066,9 @@
       .hub8-svg .petal .petal-shade { opacity: 0.62; }
       .hub8-svg .petal.hl .petal-shade { opacity: 0; }
       .hub8-svg .petal.hl .petal-stroke { stroke-width: 10; }
+      .hub8-svg .petal, .hub8-stage .hub8-ep, .hub8-stage .hub8-8th { outline: none; -webkit-tap-highlight-color: transparent; }
       .hub8-stage .b8th-pill, .hub8-stage .ep-k, .hub8-stage .ep-sub { display: none; }
       .hub-mobile-list { display: none; }
-      .m8hint { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.65); margin: 2px 0 10px; }
       .m8card { display: block; background: #fff; color: #0b2350; border-radius: 14px; padding: 14px 16px 16px; border-left: 6px solid #5aa9ff; box-shadow: 0 10px 28px rgba(0,10,30,0.35); margin-bottom: 18px; }
       .m8card.gh { border-image: linear-gradient(180deg, #5aa9ff, #FFB91D) 1; border-radius: 0 14px 14px 0; } .m8card.g8, .m8card.k8th { border-left-color: #FFB91D; } .m8card.k10 { border-left-color: #A3233A; }
       .m8card .m8n { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: #005EB8; }
@@ -1237,7 +1237,6 @@
           <span class="b8th-pill"><i class="fas fa-star"></i> The Bit You<br>Can&rsquo;t Coach</span>
         </a>
       </div>
-      <div class="m8hint m8card-hint" style="display:none"></div>
       <div class="m8card" id="m8card" aria-live="polite">
         <div class="m8n" id="m8n"></div><h3 id="m8t"></h3><div class="m8s" id="m8s"></div><div class="m8d" id="m8d"></div>
         <a class="m8btn" id="m8play" href="#" target="_blank" rel="noopener" data-vid="" data-title=""><i class="fas fa-play"></i> Play video</a>
@@ -1749,7 +1748,7 @@ document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDef
 })();
 </script>
 <script>
-/* TEST: on phones the 8 is tap-to-select. First tap picks a petal (or the top loop / the star) and fills the card; Play is on the card. */
+/* On phones the 8 is tap-to-select. First tap picks a petal (or the top loop / the star) and fills the card; Play is on the card. */
 (function () {
   var st = document.getElementById('hub8'), card = document.getElementById('m8card'); if (!st || !card) return;
   var mq = window.matchMedia('(max-width: 560px)');
@@ -1789,7 +1788,9 @@ document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDef
   /* move each petal's number out towards the rim so the centre circle never covers it */
   function nums() { petals.forEach(function (p, i) { var n = p.querySelector('.pt-n'); if (!n) return; var a = (-90 + i * 360 / 7) * Math.PI / 180;
     n.style.transform = mq.matches ? 'translate(' + (48 * Math.cos(a)).toFixed(1) + 'px,' + (48 * Math.sin(a) + 14).toFixed(1) + 'px)' : ''; }); }
-  if (mq.addEventListener) mq.addEventListener('change', function () { nums(); apply(); });
+  /* back on a wide screen (window resized, phone rotated): hand the 8 back to the normal hover behaviour */
+  function release() { STATES.forEach(function (s) { st.classList.remove(s); }); petals.forEach(function (q) { q.classList.remove('hl'); }); }
+  if (mq.addEventListener) mq.addEventListener('change', function () { nums(); if (mq.matches) apply(); else release(); });
   nums(); apply();
 })();
 </script>
