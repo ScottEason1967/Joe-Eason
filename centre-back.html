@@ -360,8 +360,42 @@
       .case-evidence { grid-template-columns: 1fr; }
     }
 
-    /* THE MODERN 5 HUB — the five videos are cut from one continuous numeral */
-    .m5-hub { display: grid; grid-template-columns: minmax(0, 430px) minmax(0, 1fr); gap: 44px; align-items: center; max-width: 1020px; margin: 0 auto 40px; }
+    /* ============ THE HERO, BUILT AROUND THE 5 (mirrors the homepage 8) ============ */
+    .h5 { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(180deg, #07306c 0%, #03224f 100%); border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .h5-grid { max-width: 1640px; margin: 0 auto; padding: 20px 32px 26px;
+      display: grid; grid-template-columns: minmax(280px, 0.92fr) auto minmax(330px, 1.08fr); grid-template-areas: "id hub key";
+      column-gap: clamp(24px, 3vw, 56px); align-items: center; min-height: calc(100vh - 56px); }
+    .h5-id { grid-area: id; max-width: 400px; justify-self: end; }
+    .h5-centre { grid-area: hub; align-self: start; }  /* the whole 5 is on screen when the page opens */
+    .h5-key { grid-area: key; max-width: 430px; justify-self: start; }
+    .h5-rule { width: 72px; height: 4px; background: var(--amber); border-radius: 2px; margin-bottom: 14px; }
+    .h5-eyebrow { font-size: 10.5px; font-weight: 700; letter-spacing: 1.8px; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-bottom: 10px; }
+    .h5 h1 { font-family: var(--font-display); font-size: clamp(38px, 3.3vw, 56px); font-weight: 700; line-height: 1.02; color: #fff; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 14px; }
+    .h5-photo { width: 100%; aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; background: #000; border: 1px solid var(--border-lt); box-shadow: 0 6px 20px rgba(0,32,64,0.16); margin-bottom: 14px; }
+    .h5-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; display: block; }
+    .h5-sub { font-size: 14.5px; color: rgba(255,255,255,0.9); line-height: 1.55; }
+    .h5-extra { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.55; margin-top: 9px; }
+    .h5-sub strong, .h5-extra strong { color: #fff; font-weight: 700; }
+    /* the key: the same pills as the homepage, and each one lights the 5 up like its part */
+    .h5-key h2 { font-family: var(--font-display); font-size: 27px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; margin-bottom: 6px; }
+    .h5-key > p { font-size: 12.5px; color: rgba(255,255,255,0.8); line-height: 1.45; margin-bottom: 8px; }
+    .h5-key .kg { padding: 5px 0 0; }
+    .h5-key .kg-h { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+    .h5-key .kg-t { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; }
+    .h5-key .kg-s { font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+    .h5-key .kg6 .kg-t { color: #9ccbff; } .h5-key .kg8 .kg-t { color: var(--amber); }
+    .h5-key .ki { --c: 90,169,255; display: grid; grid-template-columns: 21px auto 1fr; column-gap: 7px; row-gap: 1px; align-items: baseline; width: 100%;
+      margin: 0 0 4px; padding: 5px 7px 6px 9px; border-radius: 12px; border: 1px solid rgba(var(--c), 0.38);
+      background: linear-gradient(90deg, rgba(var(--c), 0.26) 0%, rgba(var(--c), 0.07) 100%); text-decoration: none; color: #fff; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+    .h5-key .kg8 .ki { --c: 255,185,29; }
+    .h5-key .ki b { grid-row: span 2; font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #5aa9ff; } .h5-key .kg8 .ki b { color: #FFB91D; }
+    .h5-key .ki-t { grid-column: 2; white-space: nowrap; font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; line-height: 1.2; color: #9ccbff; }
+    .h5-key .ki-s { grid-column: 3; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.2px; text-transform: uppercase; line-height: 1.25; opacity: 0.85; color: #9ccbff; }
+    .h5-key .kg8 .ki-t, .h5-key .kg8 .ki-s { color: #FFB91D; }
+    .h5-key .ki-d { grid-column: 2 / 4; font-size: 11px; color: rgba(255,255,255,0.66); line-height: 1.3; }
+    .h5-key .ki:hover, .h5-key .ki.on, .h5-key .ki:focus-visible { border-color: rgba(var(--c), 0.9); background: linear-gradient(90deg, rgba(var(--c), 0.42) 0%, rgba(var(--c), 0.14) 100%); }
+    /* the 5 itself: the five videos are cut from one continuous numeral */
+    .m5-five { margin: 0 auto; width: max(360px, min(560px, calc((100vh - 110px) * 0.627), calc(100vw - 800px))); }
     #m5five { width: 100%; height: auto; display: block; }
     #m5five path { fill: none; stroke-linejoin: round; stroke-linecap: butt; }
     #m5five .m5rim { stroke-width: 136; opacity: 0; transition: opacity .3s; } #m5five .m5rim6 { stroke: #5aa9ff; } #m5five .m5rim8 { stroke: #FFB91D; }
@@ -380,24 +414,25 @@
     #m5five .m5core { pointer-events: none; } #m5five .m5core circle { fill: #0b2350; stroke: rgba(255,255,255,.85); stroke-width: 3; }
     #m5five .m5core text { font-family: var(--font-display); font-weight: 700; }
     #m5five .m5c1 { font-size: 84px; fill: #FFB91D; } #m5five .m5c2 { font-size: 16px; letter-spacing: 3px; fill: #fff; } #m5five .m5c3 { font-size: 14px; letter-spacing: 4px; fill: #9db4d6; }
-    .m5-grp { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin: 14px 0 6px; color: #9ccbff; } .m5-grp:first-child { margin-top: 0; } .m5-grp.g8 { color: var(--amber); }
-    .m5-ki { display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,.06); border: 1.5px solid rgba(255,255,255,.14); border-radius: 12px; padding: 10px 14px; margin-bottom: 8px; color: #fff; text-decoration: none; transition: background .15s, border-color .15s; }
-    .m5-ki:hover { color: #fff; }
-    .m5-ki b { font-family: var(--font-display); font-size: 26px; line-height: 1; color: #9ccbff; width: 34px; flex-shrink: 0; } .m5-ki.g8 b { color: var(--amber); }
-    .m5-ki strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 17px; line-height: 1.2; text-transform: uppercase; letter-spacing: .5px; }
-    .m5-ki em { display: block; font-style: normal; font-size: 12.5px; color: rgba(255,255,255,.8); margin-top: 1px; }
-    .m5-ki.on { background: rgba(90,169,255,.20); border-color: #5aa9ff; } .m5-ki.g8.on { background: rgba(255,185,29,.16); border-color: var(--amber); }
-    .m5-card { margin-top: 14px; background: #fff; color: var(--text); border-radius: 14px; padding: 16px 18px; border-left: 6px solid #5aa9ff; box-shadow: 0 10px 28px rgba(0,16,48,.28); } .m5-card.g8 { border-left-color: var(--amber); }
-    .m5-cn { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); } .m5-card.g8 .m5-cn { color: #a9741a; }
-    .m5-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 26px; text-transform: uppercase; line-height: 1.1; margin-top: 2px; color: var(--blue-deep); }
-    .m5-cs { font-weight: 700; font-size: 13px; color: var(--text-sec); margin-top: 2px; }
-    .m5-card p { font-size: 14px; line-height: 1.55; color: var(--text-sec); margin-top: 8px; }
-    .m5-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; background: var(--blue-deep); color: #fff; font-weight: 800; font-size: 13.5px; border-radius: 9px; padding: 10px 16px; text-decoration: none; }
-    .m5-btn:hover { color: #fff; background: var(--blue); }
-    @media (max-width: 900px) {
-      .m5-hub { grid-template-columns: 1fr; gap: 16px; margin-bottom: 30px; }
-      .m5-five { width: 100%; max-width: 360px; margin: 0 auto; }
-      .m5-keys { display: none; } .m5-card { margin-top: 0; }
+    /* phones only: the card under the 5 (tap a part of the 5 to fill it) */
+    .m5-card { display: none; background: #fff; color: var(--text); border-radius: 14px; padding: 14px 16px 16px; border-left: 6px solid #5aa9ff; box-shadow: 0 10px 28px rgba(0,10,30,.35); margin-top: 16px; } .m5-card.g8 { border-left-color: var(--amber); }
+    .m5-cn { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue); } .m5-card.g8 .m5-cn { color: #a9741a; }
+    .m5-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; line-height: 1.1; margin-top: 2px; color: var(--blue-deep); }
+    .m5-cs { font-weight: 700; font-size: 13px; color: var(--text-sec); margin-top: 3px; }
+    .m5-card p { font-size: 13.5px; line-height: 1.5; color: var(--text-sec); margin-top: 6px; }
+    .m5-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; background: var(--blue-deep); color: #fff; font-weight: 800; font-size: 14px; border-radius: 10px; padding: 11px 18px; text-decoration: none; }
+    .m5-btn:hover { color: #fff; }
+    .cb-switch { margin-top: 30px; }
+    @media (max-width: 1199px) {
+      .h5-grid { grid-template-columns: 1fr; grid-template-areas: "id" "hub" "key"; row-gap: 34px; min-height: 0; padding: 36px 28px 40px; }
+      .h5-id, .h5-key { justify-self: center; max-width: 680px; width: 100%; }
+      .m5-five { width: min(100%, 440px); }
+    }
+    @media (max-width: 560px) {
+      .h5-key { display: none; }
+      .h5-grid { padding: 26px 18px 30px; row-gap: 24px; }
+      .m5-five { width: min(100%, 350px); }
+      .m5-card { display: block; }
     }
 
     /* Anchor scroll offset so the sticky nav doesn't cover the switcher */
@@ -426,42 +461,20 @@
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
-<div class="pg-header">
-  <div class="wrap">
-    <div class="pg-label">Also profiled at Centre-Back</div>
-    <h1>The Modern Centre-Back</h1>
-    <p>Central midfield is Joe's primary position — the analysis on <a href="central-midfielder.html" style="color:var(--amber); text-decoration: underline;">The Complete 8</a> is built around it. He is also profiled at centre-back, with 17 senior games across five clubs and current EFL interest in the role.</p>
-  </div>
-</div>
-
-<div class="wrap">
-
-  <!-- INTRO -->
-  <div class="cb-intro cb-intro-split fi">
-    <div class="cb-intro-text">
-      <p class="lead">
-        The modern centre-back is not the same job it was ten years ago. Height and heart are the starting point, not the finish. Recruiters now look for <strong>five things at the same time</strong>: playing out from the back, breaking lines with a pass, driving out with the ball, defending the space, and winning the duel.
-      </p>
-      <p class="lead">
-        At 6'2" with the athletic and technical profile evidenced across this site, Joe has the full modern CB profile. He has played <strong>17 senior games at centre-back</strong> across five clubs — Scarborough Athletic U19s, Gateshead Academy, Billingham Town, Marske United and Northallerton Town — spanning academy football through Step 5, and is currently being profiled by EFL clubs for the position.
-      </p>
+<!-- HERO: the 5, front and centre. Same layout as the homepage 8: photo and narrative left, the 5 in the middle, the list on the right -->
+<section class="h5" id="m5">
+  <div class="h5-grid">
+    <div class="h5-id fi">
+      <div class="h5-rule"></div>
+      <div class="h5-eyebrow">Also profiled at Centre-Back</div>
+      <h1>The Modern Centre-Back</h1>
+      <div class="h5-photo"><img src="img/photo-cb-intro.jpg" alt="Joe Eason in Ashington AFC colours during a senior match"></div>
+      <p class="h5-sub">Central midfield is Joe's primary position — the analysis on <a href="central-midfielder.html" style="color:var(--amber); text-decoration: underline;">The Complete 8</a> is built around it. He is also profiled at centre-back, with 17 senior games across five clubs and current EFL interest in the role.</p>
+      <p class="h5-extra">The modern centre-back is not the same job it was ten years ago. Height and heart are the starting point, not the finish. Recruiters now look for <strong>five things at the same time</strong>: playing out from the back, breaking lines with a pass, driving out with the ball, defending the space, and winning the duel.</p>
+      <p class="h5-extra">At 6'2" with the athletic and technical profile evidenced across this site, Joe has the full modern CB profile. He has played <strong>17 senior games at centre-back</strong> across five clubs — Scarborough Athletic U19s, Gateshead Academy, Billingham Town, Marske United and Northallerton Town — spanning academy football through Step 5, and is currently being profiled by EFL clubs for the position.</p>
     </div>
-    <div class="cb-intro-photo">
-      <img src="img/photo-cb-intro.jpg" alt="Joe Eason in Ashington AFC colours during a senior match">
-    </div>
-  </div>
-
-  <!-- THE MODERN 5 HUB -->
-  <div class="cb-hub-label">
-    <div class="rule"></div>
-    <div class="eyebrow">The Modern 5</div>
-    <h2>What a Modern CB Needs</h2>
-    <p>Five areas of the game a modern centre-back has to deliver: three on the ball, two off it. Choose any part of the 5 to see Joe's evidence for it.</p>
-  </div>
-
-  <div class="m5-hub fi" id="m5hub">
-    <div class="m5-five"><svg id="m5five" viewBox="130 20 580 925" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Modern 5"><defs><pattern id="m5ph0" patternUnits="userSpaceOnUse" x="181.2" y="-24.2" width="457.6" height="610.1"><image href="img/m5-01.jpg" width="457.6" height="610.1" preserveAspectRatio="none"/></pattern><clipPath id="m5rg0"><polygon points="129.2,-16.5 900.0,-20.0 900.0,172.0 318.7,173.0"/></clipPath><pattern id="m5ph1" patternUnits="userSpaceOnUse" x="19.3" y="41.7" width="490.9" height="431.6"><image href="img/m5-02.jpg" width="490.9" height="431.6" preserveAspectRatio="none"/></pattern><clipPath id="m5rg1"><polygon points="123.5,-10.8 308.8,174.5 312.0,172.0 313.6,296.8 175.2,495.3 60.0,495.3 60.0,-20.0"/></clipPath><pattern id="m5ph2" patternUnits="userSpaceOnUse" x="212.1" y="231.3" width="411.6" height="772.2"><image href="img/m5-03.jpg" width="411.6" height="772.2" preserveAspectRatio="none"/></pattern><clipPath id="m5rg2"><polygon points="181.8,499.9 341.9,270.2 341.9,200.0 900.0,200.0 826.4,278.4 367.7,599.6"/></clipPath><pattern id="m5ph3" patternUnits="userSpaceOnUse" x="160.5" y="430.8" width="632.3" height="418.0"><image href="img/m5-04.jpg" width="632.3" height="418.0" preserveAspectRatio="none"/></pattern><clipPath id="m5rg3"><polygon points="372.3,606.1 831.0,284.9 984.7,683.8 733.0,1029.3 373.1,600.3"/></clipPath><pattern id="m5ph4" patternUnits="userSpaceOnUse" x="157.9" y="674.7" width="421.2" height="354.4"><image href="img/m5-05.jpg" width="421.2" height="354.4" preserveAspectRatio="none"/></pattern><clipPath id="m5rg4"><polygon points="366.9,605.4 726.9,1034.4 343.0,1222.3 -161.4,922.2 366.9,605.4"/></clipPath>
+    <div class="h5-centre fi">
+      <div class="m5-five"><svg id="m5five" viewBox="130 20 580 925" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Modern 5"><defs><pattern id="m5ph0" patternUnits="userSpaceOnUse" x="181.2" y="-24.2" width="457.6" height="610.1"><image href="img/m5-01.jpg" width="457.6" height="610.1" preserveAspectRatio="none"/></pattern><clipPath id="m5rg0"><polygon points="129.2,-16.5 900.0,-20.0 900.0,172.0 318.7,173.0"/></clipPath><pattern id="m5ph1" patternUnits="userSpaceOnUse" x="19.3" y="41.7" width="490.9" height="431.6"><image href="img/m5-02.jpg" width="490.9" height="431.6" preserveAspectRatio="none"/></pattern><clipPath id="m5rg1"><polygon points="123.5,-10.8 308.8,174.5 312.0,172.0 313.6,296.8 175.2,495.3 60.0,495.3 60.0,-20.0"/></clipPath><pattern id="m5ph2" patternUnits="userSpaceOnUse" x="212.1" y="231.3" width="411.6" height="772.2"><image href="img/m5-03.jpg" width="411.6" height="772.2" preserveAspectRatio="none"/></pattern><clipPath id="m5rg2"><polygon points="181.8,499.9 341.9,270.2 341.9,200.0 900.0,200.0 826.4,278.4 367.7,599.6"/></clipPath><pattern id="m5ph3" patternUnits="userSpaceOnUse" x="160.5" y="430.8" width="632.3" height="418.0"><image href="img/m5-04.jpg" width="632.3" height="418.0" preserveAspectRatio="none"/></pattern><clipPath id="m5rg3"><polygon points="372.3,606.1 831.0,284.9 984.7,683.8 733.0,1029.3 373.1,600.3"/></clipPath><pattern id="m5ph4" patternUnits="userSpaceOnUse" x="157.9" y="674.7" width="421.2" height="354.4"><image href="img/m5-05.jpg" width="421.2" height="354.4" preserveAspectRatio="none"/></pattern><clipPath id="m5rg4"><polygon points="366.9,605.4 726.9,1034.4 343.0,1222.3 -161.4,922.2 366.9,605.4"/></clipPath>
 <mask id="m5mFull" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="1000"><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" stroke="#fff" stroke-width="120"/></mask>
 <mask id="m5mRing" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="1000"><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" stroke="#fff" stroke-width="120"/><path d="M630,110 L250,110 L250,395 A240,240 0 1 1 200.3,772.6" stroke="#000" stroke-width="109"/></mask>
 <filter id="m5gl" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
@@ -483,16 +496,6 @@
 <g class="m5ol"><rect x="0" y="0" width="900" height="1000" mask="url(#m5mRing)"/><polygon points="366.9,605.4 726.9,1034.4 343.0,1222.3 -161.4,922.2 366.9,605.4" mask="url(#m5mFull)"/></g>
 <text class="m5sn" x="359.5" y="825.6" text-anchor="middle">05</text><text class="m5st" x="359.5" y="851.6" text-anchor="middle"><tspan x="359.5" dy="0">Winning</tspan><tspan x="359.5" dy="25">the Duel</tspan></text></g>
 <g class="m5core"><circle cx="370.0" cy="602.8" r="146"/><text class="m5c3" x="370.0" y="546.8" text-anchor="middle">WITH JOE</text><text class="m5c1" x="370.0" y="624.8" text-anchor="middle">3&#215;</text><text class="m5c2" x="370.0" y="658.8" text-anchor="middle">FEWER GOALS</text><text class="m5c2" x="370.0" y="679.8" text-anchor="middle">CONCEDED</text></g></svg></div>
-    <div class="m5-side">
-      <div class="m5-keys">
-        <div class="m5-grp g6">On the ball &middot; 01&ndash;03</div>
-        <a class="m5-ki g6" href="#cb-switch" data-k="0"><b>01</b><span><strong>Playing Out</strong><em>Receiving &amp; Building from the Back</em></span></a>
-        <a class="m5-ki g6" href="#cb-switch" data-k="1"><b>02</b><span><strong>Breaking Lines</strong><em>Forward Passes &amp; Switches</em></span></a>
-        <a class="m5-ki g6" href="#cb-switch" data-k="2"><b>03</b><span><strong>Driving Out</strong><em>Carrying the Ball into Midfield</em></span></a>
-        <div class="m5-grp g8">Off the ball &middot; 04&ndash;05</div>
-        <a class="m5-ki g8" href="#cb-switch" data-k="3"><b>04</b><span><strong>Defending the Space</strong><em>Cover, Recovery Runs &amp; Interceptions</em></span></a>
-        <a class="m5-ki g8" href="#cb-switch" data-k="4"><b>05</b><span><strong>Winning the Duel</strong><em>Front-Foot Defending, Tackles &amp; Headers</em></span></a>
-      </div>
       <div class="m5-card g6" id="m5card" aria-live="polite">
         <div class="m5-cn" id="m5cn">01 &middot; On the ball</div>
         <h3 id="m5ct">Playing Out</h3>
@@ -501,7 +504,18 @@
         <a class="m5-btn" id="m5go" href="#cb-switch">See Joe&rsquo;s evidence <i class="fas fa-arrow-down"></i></a>
       </div>
     </div>
+    <div class="h5-key fi">
+      <div class="h5-rule"></div>
+      <div class="h5-eyebrow">The Modern 5</div>
+      <h2>What a Modern CB Needs</h2>
+      <p>Five areas of the game a modern centre-back has to deliver: three on the ball, two off it. Choose any part of the 5 to see Joe&rsquo;s evidence for it.</p>
+      <div class="kg kg6"><div class="kg-h"><span class="kg-t">On the ball</span><span class="kg-s">What he does with it &middot; 01&ndash;03</span></div><a class="ki" data-k="0" href="#cb-switch"><b>01</b><span class="ki-t">Playing Out</span><span class="ki-s">Receiving &amp; Building from the Back</span><span class="ki-d">Takes the ball from the keeper and the full-backs under pressure, and starts the move.</span></a><a class="ki" data-k="1" href="#cb-switch"><b>02</b><span class="ki-t">Breaking Lines</span><span class="ki-s">Forward Passes &amp; Switches</span><span class="ki-d">Passes that take a line of players out of the game: into midfield, into the striker, or across the pitch.</span></a><a class="ki" data-k="2" href="#cb-switch"><b>03</b><span class="ki-t">Driving Out</span><span class="ki-s">Carrying the Ball into Midfield</span><span class="ki-d">Steps past the first press with the ball at his feet and carries it into midfield.</span></a></div>
+      <div class="kg kg8"><div class="kg-h"><span class="kg-t">Off the ball</span><span class="kg-s">How he defends &middot; 04&ndash;05</span></div><a class="ki" data-k="3" href="#cb-switch"><b>04</b><span class="ki-t">Defending the Space</span><span class="ki-s">Cover, Recovery Runs &amp; Interceptions</span><span class="ki-d">Reads the danger early: covers behind, recovers at pace and cuts out the pass.</span></a><a class="ki" data-k="4" href="#cb-switch"><b>05</b><span class="ki-t">Winning the Duel</span><span class="ki-s">Front-Foot Defending, Tackles &amp; Headers</span><span class="ki-d">Steps in on the front foot and wins it: tackles, duels and headers.</span></a></div>
+    </div>
   </div>
+</section>
+
+<div class="wrap">
 
   <!-- SKILL SWITCHER -->
   <div class="cb-switch fi" id="cb-switch">
@@ -884,15 +898,15 @@ document.querySelectorAll('.cb-tab').forEach(btn => {
   btn.addEventListener('click', () => activateTab(btn.dataset.tab));
 });
 
-// The Modern 5 hub. Desktop: hover a part of the 5 (or a row in the key) to light it up, click to jump to its section.
-// Phones and touch screens: the first tap selects a part and fills the card; the button on the card jumps to the section.
+// The Modern 5 hub. Desktop and tablet: hover a part of the 5 (or a row in the key) to light it up, click to jump to its section.
+// Phones: the first tap selects a part and fills the card under the 5; the button on the card jumps to the section.
 (function () {
   var five = document.getElementById('m5five'); if (!five) return;
   var D = [{"n": "01", "g": "6", "t": "Playing Out", "s": "Receiving & Building from the Back", "d": "Takes the ball from the keeper and the full-backs under pressure, and starts the move."}, {"n": "02", "g": "6", "t": "Breaking Lines", "s": "Forward Passes & Switches", "d": "Passes that take a line of players out of the game: into midfield, into the striker, or across the pitch."}, {"n": "03", "g": "6", "t": "Driving Out", "s": "Carrying the Ball into Midfield", "d": "Steps past the first press with the ball at his feet and carries it into midfield."}, {"n": "04", "g": "8", "t": "Defending the Space", "s": "Cover, Recovery Runs & Interceptions", "d": "Reads the danger early: covers behind, recovers at pace and cuts out the pass."}, {"n": "05", "g": "8", "t": "Winning the Duel", "s": "Front-Foot Defending, Tackles & Headers", "d": "Steps in on the front foot and wins it: tackles, duels and headers."}];
   var segs = Array.prototype.slice.call(five.querySelectorAll('.m5seg'));
-  var keys = Array.prototype.slice.call(document.querySelectorAll('.m5-ki'));
+  var keys = Array.prototype.slice.call(document.querySelectorAll('.h5-key .ki'));
   var card = document.getElementById('m5card'), goBtn = document.getElementById('m5go');
-  var tapMode = window.matchMedia('(max-width: 900px), (hover: none)');
+  var phone = window.matchMedia('(max-width: 560px)');
   var cur = 0;
   function sel(k) {
     cur = k; var s = D[k];
@@ -913,7 +927,7 @@ document.querySelectorAll('.cb-tab').forEach(btn => {
     var k = +e.dataset.k;
     e.addEventListener('mouseenter', function () { sel(k); });
     e.addEventListener('focus', function () { sel(k); });
-    e.addEventListener('click', function () { sel(k); if (!tapMode.matches) go(k); });
+    e.addEventListener('click', function () { sel(k); if (!phone.matches) go(k); });
     e.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); sel(k); go(k); } });
   });
   keys.forEach(function (e) {
