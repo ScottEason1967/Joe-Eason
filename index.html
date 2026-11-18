@@ -1782,6 +1782,9 @@ document.querySelector('.hero-8')?.addEventListener('click', e => { e.preventDef
     e.preventDefault(); e.stopPropagation();
     cur = p ? String(petals.indexOf(p)) : ep ? '10' : '8th';
     apply();
+    /* 18 Nov 2026: if the card (with Play) is below the bottom of the screen, scroll just far enough to bring it into view */
+    var r = card.getBoundingClientRect(), gap = 16;
+    if (r.bottom > window.innerHeight - gap) window.scrollBy({ top: r.bottom - window.innerHeight + gap, behavior: 'smooth' });
   }, true);
   ['mouseleave', 'focusout', 'mouseenter', 'focusin'].forEach(function (ev) { st.addEventListener(ev, function () { setTimeout(apply, 0); }, true); });
   /* move each petal's number out towards the rim so the centre circle never covers it */
